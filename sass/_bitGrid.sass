@@ -1,0 +1,31 @@
+///Sección de Sass que controla el Grid
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Archivos importados
+@import bitMediaQueries
+
+///Nombres de clases del Grid
+$nomContenedor: 'bit-container'
+$nomFullContenedor: 'bit-full-container'
+$nomRow: 'row'
+$separacionFila: 5px 0px
+
+///Clases base del documento
+.#{$nomContenedor},
+.#{$nomFullContenedor}
+  width: 100%
+  margin: 0 auto
+
+.#{$nomContenedor}
+  max-width: $xl
+
+.#{$nomRow}
+  width: 100%
+  margin: $separacionFila
+
+///Ciclos para crear los estilos CSS
+///Ciclo para generar todos los elementos de la grid
++estiloGridBreakpoint('')
+@each $bp in $nomBp
+  +mediaQueriesBreakpoint($bp)

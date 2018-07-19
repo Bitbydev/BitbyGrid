@@ -1,0 +1,111 @@
+///Sección de Sass que controla los navs
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Mixin para crear un nav de color
+=crearNav($nomNav, $nomColor, $color)
+  .#{$nomNav}-#{$nomColor}
+    background-color: $color
+    & .#{$nomNav}-item,
+    & .#{$nomNav}-link
+      @if lightness($color) > 49
+        color: darken($color, 30%)
+      @else
+        color: lighten($color, 30%)
+
+    & .#{$nomNav}-link:hover,
+    & .#{$nomNav}-item:hover
+      @if lightness($color) > 49
+        color: darken($color, 60%)
+      @else
+        color: lighten($color, 60%)
+
+    & .active,
+    & .#{$nomNav}-link.active,
+    & .#{$nomNav}-item.active
+      @if lightness($color) > 49
+        color: black
+      @else
+        color: white
+
+  .#{$nomNav}-pills-#{$nomColor} .active,
+  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-link.active,
+  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-item.active
+    background-color: $color
+    @if lightness($color) > 90
+      color: black
+    @else
+      color: white
+
+  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-link,
+  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-item
+    color: $color
+    border-radius: 5px
+
+///Mixin para crear una serie de botones con una lista de colores
+=crearNavs($nomNav, $colores)
+  .#{$nomNav}
+    display: flex
+    flex-wrap: wrap
+    padding: 0px
+    margin: 0px
+    border: 0px
+    width: auto
+
+  .#{$nomNav}-item,
+  .#{$nomNav}-link
+    color: #0091ea
+    padding: .5em 1em
+    display: block
+
+    &:hover
+      color: darken(#0091ea, 10%)
+      cursor: pointer
+
+    &:disabled
+      color: darken(#616161, 10%)
+      cursor: not-allowed
+
+  .#{$nomNav}-fill .#{$nomNav}-link,
+  .#{$nomNav}-fill .#{$nomNav}-item
+    text-align: center
+    flex: 1 1 auto
+
+  .#{$nomNav}-fill
+    width: 100%
+
+  .#{$nomNav}-pills
+    & .active,
+    & .#{$nomNav}-link.active
+      background-color: #0091ea
+      color: white
+
+  .#{$nomNav}-pills .#{$nomNav}-item,
+  .#{$nomNav}-pills .#{$nomNav}-link
+    border-radius: 5px
+
+  .#{$nomNav}-tabs
+    & .#{$nomNav}-link,
+    & .#{$nomNav}-item
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
+      border-bottom: 1px #616161 solid
+
+      &:hover
+        border-top: 1px #616161 solid
+        border-right: 1px #616161 solid
+        border-left: 1px #616161 solid
+
+    & .active,
+    & .#{$nomNav}-link.active,
+    & .#{$nomNav}-item.active
+      color: #616161
+      border-bottom: 0px
+      border-top: 1px #616161 solid
+      border-right: 1px #616161 solid
+      border-left: 1px #616161 solid
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearNav($nomNav, $color, map-get($colores, $color))

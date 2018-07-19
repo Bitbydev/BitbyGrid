@@ -3950,4 +3950,614 @@ a.badge:hover {
   color: #263238;
 }
 
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  width: auto;
+}
+
+.nav-item,
+.nav-link {
+  color: #0091ea;
+  padding: 0.5em 1em;
+  display: block;
+}
+.nav-item:hover,
+.nav-link:hover {
+  color: #0071b7;
+  cursor: pointer;
+}
+.nav-item:disabled,
+.nav-link:disabled {
+  color: #484848;
+  cursor: not-allowed;
+}
+
+.nav-fill .nav-link,
+.nav-fill .nav-item {
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.nav-fill {
+  width: 100%;
+}
+
+.nav-pills .active, .nav-pills .nav-link.active {
+  background-color: #0091ea;
+  color: white;
+}
+
+.nav-pills .nav-item,
+.nav-pills .nav-link {
+  border-radius: 5px;
+}
+
+.nav-tabs .nav-link, .nav-tabs .nav-item {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px #616161 solid;
+}
+.nav-tabs .nav-link:hover, .nav-tabs .nav-item:hover {
+  border-top: 1px #616161 solid;
+  border-right: 1px #616161 solid;
+  border-left: 1px #616161 solid;
+}
+.nav-tabs .active, .nav-tabs .nav-link.active, .nav-tabs .nav-item.active {
+  color: #616161;
+  border-bottom: 0px;
+  border-top: 1px #616161 solid;
+  border-right: 1px #616161 solid;
+  border-left: 1px #616161 solid;
+}
+
+.nav-red {
+  background-color: #d50000;
+}
+.nav-red .nav-item, .nav-red .nav-link {
+  color: #ff6f6f;
+}
+.nav-red .nav-link:hover, .nav-red .nav-item:hover {
+  color: white;
+}
+.nav-red .active, .nav-red .nav-link.active, .nav-red .nav-item.active {
+  color: white;
+}
+
+.nav-pills-red .active,
+.nav-pills-red .nav-link.active,
+.nav-pills-red .nav-item.active {
+  background-color: #d50000;
+  color: white;
+}
+
+.nav-pills-red .nav-link,
+.nav-pills-red .nav-item {
+  color: #d50000;
+  border-radius: 5px;
+}
+
+.nav-blue {
+  background-color: #2962ff;
+}
+.nav-blue .nav-item, .nav-blue .nav-link {
+  color: #00268f;
+}
+.nav-blue .nav-link:hover, .nav-blue .nav-item:hover {
+  color: black;
+}
+.nav-blue .active, .nav-blue .nav-link.active, .nav-blue .nav-item.active {
+  color: black;
+}
+
+.nav-pills-blue .active,
+.nav-pills-blue .nav-link.active,
+.nav-pills-blue .nav-item.active {
+  background-color: #2962ff;
+  color: white;
+}
+
+.nav-pills-blue .nav-link,
+.nav-pills-blue .nav-item {
+  color: #2962ff;
+  border-radius: 5px;
+}
+
+.nav-green {
+  background-color: #00c853;
+}
+.nav-green .nav-item, .nav-green .nav-link {
+  color: #62ffa3;
+}
+.nav-green .nav-link:hover, .nav-green .nav-item:hover {
+  color: #fbfffd;
+}
+.nav-green .active, .nav-green .nav-link.active, .nav-green .nav-item.active {
+  color: white;
+}
+
+.nav-pills-green .active,
+.nav-pills-green .nav-link.active,
+.nav-pills-green .nav-item.active {
+  background-color: #00c853;
+  color: white;
+}
+
+.nav-pills-green .nav-link,
+.nav-pills-green .nav-item {
+  color: #00c853;
+  border-radius: 5px;
+}
+
+.nav-yellow {
+  background-color: #ffd600;
+}
+.nav-yellow .nav-item, .nav-yellow .nav-link {
+  color: #665600;
+}
+.nav-yellow .nav-link:hover, .nav-yellow .nav-item:hover {
+  color: black;
+}
+.nav-yellow .active, .nav-yellow .nav-link.active, .nav-yellow .nav-item.active {
+  color: black;
+}
+
+.nav-pills-yellow .active,
+.nav-pills-yellow .nav-link.active,
+.nav-pills-yellow .nav-item.active {
+  background-color: #ffd600;
+  color: white;
+}
+
+.nav-pills-yellow .nav-link,
+.nav-pills-yellow .nav-item {
+  color: #ffd600;
+  border-radius: 5px;
+}
+
+.nav-light {
+  background-color: #fafafa;
+}
+.nav-light .nav-item, .nav-light .nav-link {
+  color: #aeaeae;
+}
+.nav-light .nav-link:hover, .nav-light .nav-item:hover {
+  color: #616161;
+}
+.nav-light .active, .nav-light .nav-link.active, .nav-light .nav-item.active {
+  color: black;
+}
+
+.nav-pills-light .active,
+.nav-pills-light .nav-link.active,
+.nav-pills-light .nav-item.active {
+  background-color: #fafafa;
+  color: black;
+}
+
+.nav-pills-light .nav-link,
+.nav-pills-light .nav-item {
+  color: #fafafa;
+  border-radius: 5px;
+}
+
+.nav-grey {
+  background-color: #616161;
+}
+.nav-grey .nav-item, .nav-grey .nav-link {
+  color: #aeaeae;
+}
+.nav-grey .nav-link:hover, .nav-grey .nav-item:hover {
+  color: #fafafa;
+}
+.nav-grey .active, .nav-grey .nav-link.active, .nav-grey .nav-item.active {
+  color: white;
+}
+
+.nav-pills-grey .active,
+.nav-pills-grey .nav-link.active,
+.nav-pills-grey .nav-item.active {
+  background-color: #616161;
+  color: white;
+}
+
+.nav-pills-grey .nav-link,
+.nav-pills-grey .nav-item {
+  color: #616161;
+  border-radius: 5px;
+}
+
+.nav-dark {
+  background-color: #212121;
+}
+.nav-dark .nav-item, .nav-dark .nav-link {
+  color: #6e6e6e;
+}
+.nav-dark .nav-link:hover, .nav-dark .nav-item:hover {
+  color: #bababa;
+}
+.nav-dark .active, .nav-dark .nav-link.active, .nav-dark .nav-item.active {
+  color: white;
+}
+
+.nav-pills-dark .active,
+.nav-pills-dark .nav-link.active,
+.nav-pills-dark .nav-item.active {
+  background-color: #212121;
+  color: white;
+}
+
+.nav-pills-dark .nav-link,
+.nav-pills-dark .nav-item {
+  color: #212121;
+  border-radius: 5px;
+}
+
+.nav-pink {
+  background-color: #c51162;
+}
+.nav-pink .nav-item, .nav-pink .nav-link {
+  color: #f47bb1;
+}
+.nav-pink .nav-link:hover, .nav-pink .nav-item:hover {
+  color: white;
+}
+.nav-pink .active, .nav-pink .nav-link.active, .nav-pink .nav-item.active {
+  color: white;
+}
+
+.nav-pills-pink .active,
+.nav-pills-pink .nav-link.active,
+.nav-pills-pink .nav-item.active {
+  background-color: #c51162;
+  color: white;
+}
+
+.nav-pills-pink .nav-link,
+.nav-pills-pink .nav-item {
+  color: #c51162;
+  border-radius: 5px;
+}
+
+.nav-purple {
+  background-color: #aa00ff;
+}
+.nav-purple .nav-item, .nav-purple .nav-link {
+  color: #440066;
+}
+.nav-purple .nav-link:hover, .nav-purple .nav-item:hover {
+  color: black;
+}
+.nav-purple .active, .nav-purple .nav-link.active, .nav-purple .nav-item.active {
+  color: black;
+}
+
+.nav-pills-purple .active,
+.nav-pills-purple .nav-link.active,
+.nav-pills-purple .nav-item.active {
+  background-color: #aa00ff;
+  color: white;
+}
+
+.nav-pills-purple .nav-link,
+.nav-pills-purple .nav-item {
+  color: #aa00ff;
+  border-radius: 5px;
+}
+
+.nav-light-blue {
+  background-color: #0091ea;
+}
+.nav-light-blue .nav-item, .nav-light-blue .nav-link {
+  color: #84d0ff;
+}
+.nav-light-blue .nav-link:hover, .nav-light-blue .nav-item:hover {
+  color: white;
+}
+.nav-light-blue .active, .nav-light-blue .nav-link.active, .nav-light-blue .nav-item.active {
+  color: white;
+}
+
+.nav-pills-light-blue .active,
+.nav-pills-light-blue .nav-link.active,
+.nav-pills-light-blue .nav-item.active {
+  background-color: #0091ea;
+  color: white;
+}
+
+.nav-pills-light-blue .nav-link,
+.nav-pills-light-blue .nav-item {
+  color: #0091ea;
+  border-radius: 5px;
+}
+
+.nav-cyan {
+  background-color: #00b8d4;
+}
+.nav-cyan .nav-item, .nav-cyan .nav-link {
+  color: #6eecff;
+}
+.nav-cyan .nav-link:hover, .nav-cyan .nav-item:hover {
+  color: white;
+}
+.nav-cyan .active, .nav-cyan .nav-link.active, .nav-cyan .nav-item.active {
+  color: white;
+}
+
+.nav-pills-cyan .active,
+.nav-pills-cyan .nav-link.active,
+.nav-pills-cyan .nav-item.active {
+  background-color: #00b8d4;
+  color: white;
+}
+
+.nav-pills-cyan .nav-link,
+.nav-pills-cyan .nav-item {
+  color: #00b8d4;
+  border-radius: 5px;
+}
+
+.nav-light-green {
+  background-color: #64dd17;
+}
+.nav-light-green .nav-item, .nav-light-green .nav-link {
+  color: #bcf499;
+}
+.nav-light-green .nav-link:hover, .nav-light-green .nav-item:hover {
+  color: white;
+}
+.nav-light-green .active, .nav-light-green .nav-link.active, .nav-light-green .nav-item.active {
+  color: white;
+}
+
+.nav-pills-light-green .active,
+.nav-pills-light-green .nav-link.active,
+.nav-pills-light-green .nav-item.active {
+  background-color: #64dd17;
+  color: white;
+}
+
+.nav-pills-light-green .nav-link,
+.nav-pills-light-green .nav-item {
+  color: #64dd17;
+  border-radius: 5px;
+}
+
+.nav-orange {
+  background-color: #ff6d00;
+}
+.nav-orange .nav-item, .nav-orange .nav-link {
+  color: #662c00;
+}
+.nav-orange .nav-link:hover, .nav-orange .nav-item:hover {
+  color: black;
+}
+.nav-orange .active, .nav-orange .nav-link.active, .nav-orange .nav-item.active {
+  color: black;
+}
+
+.nav-pills-orange .active,
+.nav-pills-orange .nav-link.active,
+.nav-pills-orange .nav-item.active {
+  background-color: #ff6d00;
+  color: white;
+}
+
+.nav-pills-orange .nav-link,
+.nav-pills-orange .nav-item {
+  color: #ff6d00;
+  border-radius: 5px;
+}
+
+.nav-brown {
+  background-color: #4a2b20;
+}
+.nav-brown .nav-item, .nav-brown .nav-link {
+  color: #b36a50;
+}
+.nav-brown .nav-link:hover, .nav-brown .nav-item:hover {
+  color: #e1c5bb;
+}
+.nav-brown .active, .nav-brown .nav-link.active, .nav-brown .nav-item.active {
+  color: white;
+}
+
+.nav-pills-brown .active,
+.nav-pills-brown .nav-link.active,
+.nav-pills-brown .nav-item.active {
+  background-color: #4a2b20;
+  color: white;
+}
+
+.nav-pills-brown .nav-link,
+.nav-pills-brown .nav-item {
+  color: #4a2b20;
+  border-radius: 5px;
+}
+
+.nav-deep-purple {
+  background-color: #6200ea;
+}
+.nav-deep-purple .nav-item, .nav-deep-purple .nav-link {
+  color: #b884ff;
+}
+.nav-deep-purple .nav-link:hover, .nav-deep-purple .nav-item:hover {
+  color: white;
+}
+.nav-deep-purple .active, .nav-deep-purple .nav-link.active, .nav-deep-purple .nav-item.active {
+  color: white;
+}
+
+.nav-pills-deep-purple .active,
+.nav-pills-deep-purple .nav-link.active,
+.nav-pills-deep-purple .nav-item.active {
+  background-color: #6200ea;
+  color: white;
+}
+
+.nav-pills-deep-purple .nav-link,
+.nav-pills-deep-purple .nav-item {
+  color: #6200ea;
+  border-radius: 5px;
+}
+
+.nav-indigo {
+  background-color: #304ffe;
+}
+.nav-indigo .nav-item, .nav-indigo .nav-link {
+  color: #011794;
+}
+.nav-indigo .nav-link:hover, .nav-indigo .nav-item:hover {
+  color: black;
+}
+.nav-indigo .active, .nav-indigo .nav-link.active, .nav-indigo .nav-item.active {
+  color: black;
+}
+
+.nav-pills-indigo .active,
+.nav-pills-indigo .nav-link.active,
+.nav-pills-indigo .nav-item.active {
+  background-color: #304ffe;
+  color: white;
+}
+
+.nav-pills-indigo .nav-link,
+.nav-pills-indigo .nav-item {
+  color: #304ffe;
+  border-radius: 5px;
+}
+
+.nav-teal {
+  background-color: #00bfa5;
+}
+.nav-teal .nav-item, .nav-teal .nav-link {
+  color: #59ffe8;
+}
+.nav-teal .nav-link:hover, .nav-teal .nav-item:hover {
+  color: #f2fffd;
+}
+.nav-teal .active, .nav-teal .nav-link.active, .nav-teal .nav-item.active {
+  color: white;
+}
+
+.nav-pills-teal .active,
+.nav-pills-teal .nav-link.active,
+.nav-pills-teal .nav-item.active {
+  background-color: #00bfa5;
+  color: white;
+}
+
+.nav-pills-teal .nav-link,
+.nav-pills-teal .nav-item {
+  color: #00bfa5;
+  border-radius: 5px;
+}
+
+.nav-lime {
+  background-color: #aeea00;
+}
+.nav-lime .nav-item, .nav-lime .nav-link {
+  color: #dfff84;
+}
+.nav-lime .nav-link:hover, .nav-lime .nav-item:hover {
+  color: white;
+}
+.nav-lime .active, .nav-lime .nav-link.active, .nav-lime .nav-item.active {
+  color: white;
+}
+
+.nav-pills-lime .active,
+.nav-pills-lime .nav-link.active,
+.nav-pills-lime .nav-item.active {
+  background-color: #aeea00;
+  color: white;
+}
+
+.nav-pills-lime .nav-link,
+.nav-pills-lime .nav-item {
+  color: #aeea00;
+  border-radius: 5px;
+}
+
+.nav-amber {
+  background-color: #ffab00;
+}
+.nav-amber .nav-item, .nav-amber .nav-link {
+  color: #664400;
+}
+.nav-amber .nav-link:hover, .nav-amber .nav-item:hover {
+  color: black;
+}
+.nav-amber .active, .nav-amber .nav-link.active, .nav-amber .nav-item.active {
+  color: black;
+}
+
+.nav-pills-amber .active,
+.nav-pills-amber .nav-link.active,
+.nav-pills-amber .nav-item.active {
+  background-color: #ffab00;
+  color: white;
+}
+
+.nav-pills-amber .nav-link,
+.nav-pills-amber .nav-item {
+  color: #ffab00;
+  border-radius: 5px;
+}
+
+.nav-deep-orange {
+  background-color: #dd2c00;
+}
+.nav-deep-orange .nav-item, .nav-deep-orange .nav-link {
+  color: #ff9277;
+}
+.nav-deep-orange .nav-link:hover, .nav-deep-orange .nav-item:hover {
+  color: white;
+}
+.nav-deep-orange .active, .nav-deep-orange .nav-link.active, .nav-deep-orange .nav-item.active {
+  color: white;
+}
+
+.nav-pills-deep-orange .active,
+.nav-pills-deep-orange .nav-link.active,
+.nav-pills-deep-orange .nav-item.active {
+  background-color: #dd2c00;
+  color: white;
+}
+
+.nav-pills-deep-orange .nav-link,
+.nav-pills-deep-orange .nav-item {
+  color: #dd2c00;
+  border-radius: 5px;
+}
+
+.nav-blue-grey {
+  background-color: #263238;
+}
+.nav-blue-grey .nav-item, .nav-blue-grey .nav-link {
+  color: #648393;
+}
+.nav-blue-grey .nav-link:hover, .nav-blue-grey .nav-item:hover {
+  color: #bdccd3;
+}
+.nav-blue-grey .active, .nav-blue-grey .nav-link.active, .nav-blue-grey .nav-item.active {
+  color: white;
+}
+
+.nav-pills-blue-grey .active,
+.nav-pills-blue-grey .nav-link.active,
+.nav-pills-blue-grey .nav-item.active {
+  background-color: #263238;
+  color: white;
+}
+
+.nav-pills-blue-grey .nav-link,
+.nav-pills-blue-grey .nav-item {
+  color: #263238;
+  border-radius: 5px;
+}
+
 /*# sourceMappingURL=bitCore.css.map */

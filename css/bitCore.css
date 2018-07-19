@@ -1565,7 +1565,7 @@ h6 {
   color: white;
 }
 .btn-red:hover {
-  background-color: #bc0000;
+  background-color: #ef0000;
 }
 .btn-red:disabled {
   background-color: #ff3c3c;
@@ -1591,7 +1591,7 @@ h6 {
   color: white;
 }
 .btn-blue:hover {
-  background-color: #104fff;
+  background-color: #4375ff;
 }
 .btn-blue:disabled {
   background-color: #8fadff;
@@ -1617,7 +1617,7 @@ h6 {
   color: white;
 }
 .btn-green:hover {
-  background-color: #00af48;
+  background-color: #00e25e;
 }
 .btn-green:disabled {
   background-color: #2fff85;
@@ -1643,7 +1643,7 @@ h6 {
   color: white;
 }
 .btn-yellow:hover {
-  background-color: #e6c100;
+  background-color: #ffda1a;
 }
 .btn-yellow:disabled {
   background-color: #ffe666;
@@ -1695,7 +1695,7 @@ h6 {
   color: white;
 }
 .btn-grey:hover {
-  background-color: #545454;
+  background-color: #6e6e6e;
 }
 .btn-grey:disabled {
   background-color: #949494;
@@ -1721,7 +1721,7 @@ h6 {
   color: white;
 }
 .btn-dark:hover {
-  background-color: #141414;
+  background-color: #2e2e2e;
 }
 .btn-dark:disabled {
   background-color: #545454;
@@ -1747,7 +1747,7 @@ h6 {
   color: white;
 }
 .btn-pink:hover {
-  background-color: #ae0f56;
+  background-color: #dc136e;
 }
 .btn-pink:disabled {
   background-color: #f04c96;
@@ -1773,7 +1773,7 @@ h6 {
   color: white;
 }
 .btn-purple:hover {
-  background-color: #9900e6;
+  background-color: #b31aff;
 }
 .btn-purple:disabled {
   background-color: #cc66ff;
@@ -1799,7 +1799,7 @@ h6 {
   color: white;
 }
 .btn-light-blue:hover {
-  background-color: #0081d1;
+  background-color: #05a0ff;
 }
 .btn-light-blue:disabled {
   background-color: #51bdff;
@@ -1825,7 +1825,7 @@ h6 {
   color: white;
 }
 .btn-cyan:hover {
-  background-color: #00a2bb;
+  background-color: #00ceee;
 }
 .btn-cyan:disabled {
   background-color: #3be5ff;
@@ -1851,7 +1851,7 @@ h6 {
   color: white;
 }
 .btn-light-green:hover {
-  background-color: #5ac615;
+  background-color: #71e825;
 }
 .btn-light-green:disabled {
   background-color: #9ef06a;
@@ -1877,7 +1877,7 @@ h6 {
   color: white;
 }
 .btn-orange:hover {
-  background-color: #e66200;
+  background-color: #ff7c1a;
 }
 .btn-orange:disabled {
   background-color: #ffa766;
@@ -1903,7 +1903,7 @@ h6 {
   color: white;
 }
 .btn-brown:hover {
-  background-color: #382118;
+  background-color: #5c3528;
 }
 .btn-brown:disabled {
   background-color: #91543f;
@@ -1929,7 +1929,7 @@ h6 {
   color: white;
 }
 .btn-deep-purple:hover {
-  background-color: #5700d1;
+  background-color: #6d05ff;
 }
 .btn-deep-purple:disabled {
   background-color: #9a51ff;
@@ -1955,7 +1955,7 @@ h6 {
   color: white;
 }
 .btn-indigo:hover {
-  background-color: #1739fe;
+  background-color: #4965fe;
 }
 .btn-indigo:disabled {
   background-color: #96a5fe;
@@ -1981,7 +1981,7 @@ h6 {
   color: white;
 }
 .btn-teal:hover {
-  background-color: #00a68f;
+  background-color: #00d9bb;
 }
 .btn-teal:disabled {
   background-color: #26ffe1;
@@ -2007,7 +2007,7 @@ h6 {
   color: white;
 }
 .btn-lime:hover {
-  background-color: #9bd100;
+  background-color: #bfff05;
 }
 .btn-lime:disabled {
   background-color: #d2ff51;
@@ -2033,7 +2033,7 @@ h6 {
   color: white;
 }
 .btn-amber:hover {
-  background-color: #e69a00;
+  background-color: #ffb31a;
 }
 .btn-amber:disabled {
   background-color: #ffcd66;
@@ -2059,7 +2059,7 @@ h6 {
   color: white;
 }
 .btn-deep-orange:hover {
-  background-color: #c42700;
+  background-color: #f73100;
 }
 .btn-deep-orange:disabled {
   background-color: #ff6944;
@@ -2085,7 +2085,7 @@ h6 {
   color: white;
 }
 .btn-blue-grey:hover {
-  background-color: #1c2429;
+  background-color: #304047;
 }
 .btn-blue-grey:disabled {
   background-color: #4f6875;
@@ -2101,6 +2101,1850 @@ h6 {
   color: white;
 }
 .btn-blue-grey-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #263238;
+  color: #263238;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  transition: all 0.25s;
+}
+.table td, .table th {
+  padding: 0.5em 1em;
+}
+.table.table-sm td, .table.table-sm th {
+  padding: 0.375em 0.75em;
+}
+.table.table-lg td, .table.table-lg th {
+  padding: 0.625em 1.25em;
+}
+.table tr {
+  width: auto;
+  border-top: 1px #d9d9d9 solid;
+}
+.table.table-borderless tr {
+  border: 0px;
+}
+.table.table-hover tbody tr:hover {
+  background-color: #ebebeb;
+  transition: all 0.25s;
+}
+.table.table-bordered td, .table.table-bordered th {
+  border: 1px #d9d9d9 solid;
+}
+.table.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #e6e6e6;
+}
+.table.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #d1d1d1;
+}
+
+tr.red,
+td.red {
+  background-color: #d50000;
+}
+
+.thead-red,
+.tbody-red,
+.table-red {
+  color: white;
+  background-color: #d50000;
+  transition: all 0.25s;
+}
+.thead-red.table-borderless tr,
+.tbody-red.table-borderless tr,
+.table-red.table-borderless tr {
+  border: 0px;
+}
+.thead-red tr,
+.tbody-red tr,
+.table-red tr {
+  border-top: 1px #890000 solid;
+}
+.thead-red.table-hover tbody tr:hover,
+.tbody-red.table-hover tbody tr:hover,
+.table-red.table-hover tbody tr:hover {
+  background-color: #ac0000;
+  transition: all 0.25s;
+}
+.thead-red.table-bordered td, .thead-red.table-bordered th,
+.tbody-red.table-bordered td,
+.tbody-red.table-bordered th,
+.table-red.table-bordered td,
+.table-red.table-bordered th {
+  border: 1px #890000 solid;
+}
+.thead-red.table-striped tbody tr:nth-child(2n+1),
+.tbody-red.table-striped tbody tr:nth-child(2n+1),
+.table-red.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #a20000;
+}
+.thead-red.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-red.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-red.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #790000;
+}
+
+tr.blue,
+td.blue {
+  background-color: #2962ff;
+}
+
+.thead-blue,
+.tbody-blue,
+.table-blue {
+  color: black;
+  background-color: #2962ff;
+  transition: all 0.25s;
+}
+.thead-blue.table-borderless tr,
+.tbody-blue.table-borderless tr,
+.table-blue.table-borderless tr {
+  border: 0px;
+}
+.thead-blue tr,
+.tbody-blue tr,
+.table-blue tr {
+  border-top: 1px #003adc solid;
+}
+.thead-blue.table-hover tbody tr:hover,
+.tbody-blue.table-hover tbody tr:hover,
+.table-blue.table-hover tbody tr:hover {
+  background-color: #0044ff;
+  transition: all 0.25s;
+}
+.thead-blue.table-bordered td, .thead-blue.table-bordered th,
+.tbody-blue.table-bordered td,
+.tbody-blue.table-bordered th,
+.table-blue.table-bordered td,
+.table-blue.table-bordered th {
+  border: 1px #003adc solid;
+}
+.thead-blue.table-striped tbody tr:nth-child(2n+1),
+.tbody-blue.table-striped tbody tr:nth-child(2n+1),
+.table-blue.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #0041f5;
+}
+.thead-blue.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-blue.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-blue.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #0036cc;
+}
+
+tr.green,
+td.green {
+  background-color: #00c853;
+}
+
+.thead-green,
+.tbody-green,
+.table-green {
+  color: white;
+  background-color: #00c853;
+  transition: all 0.25s;
+}
+.thead-green.table-borderless tr,
+.tbody-green.table-borderless tr,
+.table-green.table-borderless tr {
+  border: 0px;
+}
+.thead-green tr,
+.tbody-green tr,
+.table-green tr {
+  border-top: 1px #007c33 solid;
+}
+.thead-green.table-hover tbody tr:hover,
+.tbody-green.table-hover tbody tr:hover,
+.table-green.table-hover tbody tr:hover {
+  background-color: #009f42;
+  transition: all 0.25s;
+}
+.thead-green.table-bordered td, .thead-green.table-bordered th,
+.tbody-green.table-bordered td,
+.tbody-green.table-bordered th,
+.table-green.table-bordered td,
+.table-green.table-bordered th {
+  border: 1px #007c33 solid;
+}
+.thead-green.table-striped tbody tr:nth-child(2n+1),
+.tbody-green.table-striped tbody tr:nth-child(2n+1),
+.table-green.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #00953e;
+}
+.thead-green.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-green.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-green.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #006c2d;
+}
+
+tr.yellow,
+td.yellow {
+  background-color: #ffd600;
+}
+
+.thead-yellow,
+.tbody-yellow,
+.table-yellow {
+  color: black;
+  background-color: #ffd600;
+  transition: all 0.25s;
+}
+.thead-yellow.table-borderless tr,
+.tbody-yellow.table-borderless tr,
+.table-yellow.table-borderless tr {
+  border: 0px;
+}
+.thead-yellow tr,
+.tbody-yellow tr,
+.table-yellow tr {
+  border-top: 1px #b39600 solid;
+}
+.thead-yellow.table-hover tbody tr:hover,
+.tbody-yellow.table-hover tbody tr:hover,
+.table-yellow.table-hover tbody tr:hover {
+  background-color: #d6b400;
+  transition: all 0.25s;
+}
+.thead-yellow.table-bordered td, .thead-yellow.table-bordered th,
+.tbody-yellow.table-bordered td,
+.tbody-yellow.table-bordered th,
+.table-yellow.table-bordered td,
+.table-yellow.table-bordered th {
+  border: 1px #b39600 solid;
+}
+.thead-yellow.table-striped tbody tr:nth-child(2n+1),
+.tbody-yellow.table-striped tbody tr:nth-child(2n+1),
+.table-yellow.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #ccab00;
+}
+.thead-yellow.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-yellow.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-yellow.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #a38900;
+}
+
+tr.light,
+td.light {
+  background-color: #fafafa;
+}
+
+.thead-light,
+.tbody-light,
+.table-light {
+  color: black;
+  background-color: #fafafa;
+  transition: all 0.25s;
+}
+.thead-light.table-borderless tr,
+.tbody-light.table-borderless tr,
+.table-light.table-borderless tr {
+  border: 0px;
+}
+.thead-light tr,
+.tbody-light tr,
+.table-light tr {
+  border-top: 1px #d4d4d4 solid;
+}
+.thead-light.table-hover tbody tr:hover,
+.tbody-light.table-hover tbody tr:hover,
+.table-light.table-hover tbody tr:hover {
+  background-color: #e6e6e6;
+  transition: all 0.25s;
+}
+.thead-light.table-bordered td, .thead-light.table-bordered th,
+.tbody-light.table-bordered td,
+.tbody-light.table-bordered th,
+.table-light.table-bordered td,
+.table-light.table-bordered th {
+  border: 1px #d4d4d4 solid;
+}
+.thead-light.table-striped tbody tr:nth-child(2n+1),
+.tbody-light.table-striped tbody tr:nth-child(2n+1),
+.table-light.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #e1e1e1;
+}
+.thead-light.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-light.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-light.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #cccccc;
+}
+
+tr.grey,
+td.grey {
+  background-color: #616161;
+}
+
+.thead-grey,
+.tbody-grey,
+.table-grey {
+  color: white;
+  background-color: #616161;
+  transition: all 0.25s;
+}
+.thead-grey.table-borderless tr,
+.tbody-grey.table-borderless tr,
+.table-grey.table-borderless tr {
+  border: 0px;
+}
+.thead-grey tr,
+.tbody-grey tr,
+.table-grey tr {
+  border-top: 1px #3b3b3b solid;
+}
+.thead-grey.table-hover tbody tr:hover,
+.tbody-grey.table-hover tbody tr:hover,
+.table-grey.table-hover tbody tr:hover {
+  background-color: #4d4d4d;
+  transition: all 0.25s;
+}
+.thead-grey.table-bordered td, .thead-grey.table-bordered th,
+.tbody-grey.table-bordered td,
+.tbody-grey.table-bordered th,
+.table-grey.table-bordered td,
+.table-grey.table-bordered th {
+  border: 1px #3b3b3b solid;
+}
+.thead-grey.table-striped tbody tr:nth-child(2n+1),
+.tbody-grey.table-striped tbody tr:nth-child(2n+1),
+.table-grey.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #484848;
+}
+.thead-grey.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-grey.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-grey.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #333333;
+}
+
+tr.dark,
+td.dark {
+  background-color: #212121;
+}
+
+.thead-dark,
+.tbody-dark,
+.table-dark {
+  color: white;
+  background-color: #212121;
+  transition: all 0.25s;
+}
+.thead-dark.table-borderless tr,
+.tbody-dark.table-borderless tr,
+.table-dark.table-borderless tr {
+  border: 0px;
+}
+.thead-dark tr,
+.tbody-dark tr,
+.table-dark tr {
+  border-top: 1px #474747 solid;
+}
+.thead-dark.table-hover tbody tr:hover,
+.tbody-dark.table-hover tbody tr:hover,
+.table-dark.table-hover tbody tr:hover {
+  background-color: #353535;
+  transition: all 0.25s;
+}
+.thead-dark.table-bordered td, .thead-dark.table-bordered th,
+.tbody-dark.table-bordered td,
+.tbody-dark.table-bordered th,
+.table-dark.table-bordered td,
+.table-dark.table-bordered th {
+  border: 1px #474747 solid;
+}
+.thead-dark.table-striped tbody tr:nth-child(2n+1),
+.tbody-dark.table-striped tbody tr:nth-child(2n+1),
+.table-dark.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #3b3b3b;
+}
+.thead-dark.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-dark.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-dark.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #4f4f4f;
+}
+
+tr.pink,
+td.pink {
+  background-color: #c51162;
+}
+
+.thead-pink,
+.tbody-pink,
+.table-pink {
+  color: white;
+  background-color: #c51162;
+  transition: all 0.25s;
+}
+.thead-pink.table-borderless tr,
+.tbody-pink.table-borderless tr,
+.table-pink.table-borderless tr {
+  border: 0px;
+}
+.thead-pink tr,
+.tbody-pink tr,
+.table-pink tr {
+  border-top: 1px #7f0b3f solid;
+}
+.thead-pink.table-hover tbody tr:hover,
+.tbody-pink.table-hover tbody tr:hover,
+.table-pink.table-hover tbody tr:hover {
+  background-color: #9f0e4f;
+  transition: all 0.25s;
+}
+.thead-pink.table-bordered td, .thead-pink.table-bordered th,
+.tbody-pink.table-bordered td,
+.tbody-pink.table-bordered th,
+.table-pink.table-bordered td,
+.table-pink.table-bordered th {
+  border: 1px #7f0b3f solid;
+}
+.thead-pink.table-striped tbody tr:nth-child(2n+1),
+.tbody-pink.table-striped tbody tr:nth-child(2n+1),
+.table-pink.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #960d4b;
+}
+.thead-pink.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-pink.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-pink.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #700a38;
+}
+
+tr.purple,
+td.purple {
+  background-color: #aa00ff;
+}
+
+.thead-purple,
+.tbody-purple,
+.table-purple {
+  color: black;
+  background-color: #aa00ff;
+  transition: all 0.25s;
+}
+.thead-purple.table-borderless tr,
+.tbody-purple.table-borderless tr,
+.table-purple.table-borderless tr {
+  border: 0px;
+}
+.thead-purple tr,
+.tbody-purple tr,
+.table-purple tr {
+  border-top: 1px #7700b3 solid;
+}
+.thead-purple.table-hover tbody tr:hover,
+.tbody-purple.table-hover tbody tr:hover,
+.table-purple.table-hover tbody tr:hover {
+  background-color: #8f00d6;
+  transition: all 0.25s;
+}
+.thead-purple.table-bordered td, .thead-purple.table-bordered th,
+.tbody-purple.table-bordered td,
+.tbody-purple.table-bordered th,
+.table-purple.table-bordered td,
+.table-purple.table-bordered th {
+  border: 1px #7700b3 solid;
+}
+.thead-purple.table-striped tbody tr:nth-child(2n+1),
+.tbody-purple.table-striped tbody tr:nth-child(2n+1),
+.table-purple.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #8800cc;
+}
+.thead-purple.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-purple.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-purple.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #6d00a3;
+}
+
+tr.light-blue,
+td.light-blue {
+  background-color: #0091ea;
+}
+
+.thead-light-blue,
+.tbody-light-blue,
+.table-light-blue {
+  color: white;
+  background-color: #0091ea;
+  transition: all 0.25s;
+}
+.thead-light-blue.table-borderless tr,
+.tbody-light-blue.table-borderless tr,
+.table-light-blue.table-borderless tr {
+  border: 0px;
+}
+.thead-light-blue tr,
+.tbody-light-blue tr,
+.table-light-blue tr {
+  border-top: 1px #00629e solid;
+}
+.thead-light-blue.table-hover tbody tr:hover,
+.tbody-light-blue.table-hover tbody tr:hover,
+.table-light-blue.table-hover tbody tr:hover {
+  background-color: #0078c1;
+  transition: all 0.25s;
+}
+.thead-light-blue.table-bordered td, .thead-light-blue.table-bordered th,
+.tbody-light-blue.table-bordered td,
+.tbody-light-blue.table-bordered th,
+.table-light-blue.table-bordered td,
+.table-light-blue.table-bordered th {
+  border: 1px #00629e solid;
+}
+.thead-light-blue.table-striped tbody tr:nth-child(2n+1),
+.tbody-light-blue.table-striped tbody tr:nth-child(2n+1),
+.table-light-blue.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #0071b7;
+}
+.thead-light-blue.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-light-blue.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-light-blue.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #00588e;
+}
+
+tr.cyan,
+td.cyan {
+  background-color: #00b8d4;
+}
+
+.thead-cyan,
+.tbody-cyan,
+.table-cyan {
+  color: white;
+  background-color: #00b8d4;
+  transition: all 0.25s;
+}
+.thead-cyan.table-borderless tr,
+.tbody-cyan.table-borderless tr,
+.table-cyan.table-borderless tr {
+  border: 0px;
+}
+.thead-cyan tr,
+.tbody-cyan tr,
+.table-cyan tr {
+  border-top: 1px #007688 solid;
+}
+.thead-cyan.table-hover tbody tr:hover,
+.tbody-cyan.table-hover tbody tr:hover,
+.table-cyan.table-hover tbody tr:hover {
+  background-color: #0095ab;
+  transition: all 0.25s;
+}
+.thead-cyan.table-bordered td, .thead-cyan.table-bordered th,
+.tbody-cyan.table-bordered td,
+.tbody-cyan.table-bordered th,
+.table-cyan.table-bordered td,
+.table-cyan.table-bordered th {
+  border: 1px #007688 solid;
+}
+.thead-cyan.table-striped tbody tr:nth-child(2n+1),
+.tbody-cyan.table-striped tbody tr:nth-child(2n+1),
+.table-cyan.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #008ca1;
+}
+.thead-cyan.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-cyan.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-cyan.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #006878;
+}
+
+tr.light-green,
+td.light-green {
+  background-color: #64dd17;
+}
+
+.thead-light-green,
+.tbody-light-green,
+.table-light-green {
+  color: white;
+  background-color: #64dd17;
+  transition: all 0.25s;
+}
+.thead-light-green.table-borderless tr,
+.tbody-light-green.table-borderless tr,
+.table-light-green.table-borderless tr {
+  border: 0px;
+}
+.thead-light-green tr,
+.tbody-light-green tr,
+.table-light-green tr {
+  border-top: 1px #459810 solid;
+}
+.thead-light-green.table-hover tbody tr:hover,
+.tbody-light-green.table-hover tbody tr:hover,
+.table-light-green.table-hover tbody tr:hover {
+  background-color: #53b813;
+  transition: all 0.25s;
+}
+.thead-light-green.table-bordered td, .thead-light-green.table-bordered th,
+.tbody-light-green.table-bordered td,
+.tbody-light-green.table-bordered th,
+.table-light-green.table-bordered td,
+.table-light-green.table-bordered th {
+  border: 1px #459810 solid;
+}
+.thead-light-green.table-striped tbody tr:nth-child(2n+1),
+.tbody-light-green.table-striped tbody tr:nth-child(2n+1),
+.table-light-green.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #4faf12;
+}
+.thead-light-green.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-light-green.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-light-green.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #3e8a0e;
+}
+
+tr.orange,
+td.orange {
+  background-color: #ff6d00;
+}
+
+.thead-orange,
+.tbody-orange,
+.table-orange {
+  color: black;
+  background-color: #ff6d00;
+  transition: all 0.25s;
+}
+.thead-orange.table-borderless tr,
+.tbody-orange.table-borderless tr,
+.table-orange.table-borderless tr {
+  border: 0px;
+}
+.thead-orange tr,
+.tbody-orange tr,
+.table-orange tr {
+  border-top: 1px #b34c00 solid;
+}
+.thead-orange.table-hover tbody tr:hover,
+.tbody-orange.table-hover tbody tr:hover,
+.table-orange.table-hover tbody tr:hover {
+  background-color: #d65c00;
+  transition: all 0.25s;
+}
+.thead-orange.table-bordered td, .thead-orange.table-bordered th,
+.tbody-orange.table-bordered td,
+.tbody-orange.table-bordered th,
+.table-orange.table-bordered td,
+.table-orange.table-bordered th {
+  border: 1px #b34c00 solid;
+}
+.thead-orange.table-striped tbody tr:nth-child(2n+1),
+.tbody-orange.table-striped tbody tr:nth-child(2n+1),
+.table-orange.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #cc5700;
+}
+.thead-orange.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-orange.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-orange.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #a34600;
+}
+
+tr.brown,
+td.brown {
+  background-color: #4a2b20;
+}
+
+.thead-brown,
+.tbody-brown,
+.table-brown {
+  color: white;
+  background-color: #4a2b20;
+  transition: all 0.25s;
+}
+.thead-brown.table-borderless tr,
+.tbody-brown.table-borderless tr,
+.table-brown.table-borderless tr {
+  border: 0px;
+}
+.thead-brown tr,
+.tbody-brown tr,
+.table-brown tr {
+  border-top: 1px #150c09 solid;
+}
+.thead-brown.table-hover tbody tr:hover,
+.tbody-brown.table-hover tbody tr:hover,
+.table-brown.table-hover tbody tr:hover {
+  background-color: #2e1a14;
+  transition: all 0.25s;
+}
+.thead-brown.table-bordered td, .thead-brown.table-bordered th,
+.tbody-brown.table-bordered td,
+.tbody-brown.table-bordered th,
+.table-brown.table-bordered td,
+.table-brown.table-bordered th {
+  border: 1px #150c09 solid;
+}
+.thead-brown.table-striped tbody tr:nth-child(2n+1),
+.tbody-brown.table-striped tbody tr:nth-child(2n+1),
+.table-brown.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #261611;
+}
+.thead-brown.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-brown.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-brown.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #0a0604;
+}
+
+tr.deep-purple,
+td.deep-purple {
+  background-color: #6200ea;
+}
+
+.thead-deep-purple,
+.tbody-deep-purple,
+.table-deep-purple {
+  color: white;
+  background-color: #6200ea;
+  transition: all 0.25s;
+}
+.thead-deep-purple.table-borderless tr,
+.tbody-deep-purple.table-borderless tr,
+.table-deep-purple.table-borderless tr {
+  border: 0px;
+}
+.thead-deep-purple tr,
+.tbody-deep-purple tr,
+.table-deep-purple tr {
+  border-top: 1px #42009e solid;
+}
+.thead-deep-purple.table-hover tbody tr:hover,
+.tbody-deep-purple.table-hover tbody tr:hover,
+.table-deep-purple.table-hover tbody tr:hover {
+  background-color: #5100c1;
+  transition: all 0.25s;
+}
+.thead-deep-purple.table-bordered td, .thead-deep-purple.table-bordered th,
+.tbody-deep-purple.table-bordered td,
+.tbody-deep-purple.table-bordered th,
+.table-deep-purple.table-bordered td,
+.table-deep-purple.table-bordered th {
+  border: 1px #42009e solid;
+}
+.thead-deep-purple.table-striped tbody tr:nth-child(2n+1),
+.tbody-deep-purple.table-striped tbody tr:nth-child(2n+1),
+.table-deep-purple.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #4d00b7;
+}
+.thead-deep-purple.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-deep-purple.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-deep-purple.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #3c008e;
+}
+
+tr.indigo,
+td.indigo {
+  background-color: #304ffe;
+}
+
+.thead-indigo,
+.tbody-indigo,
+.table-indigo {
+  color: black;
+  background-color: #304ffe;
+  transition: all 0.25s;
+}
+.thead-indigo.table-borderless tr,
+.tbody-indigo.table-borderless tr,
+.table-indigo.table-borderless tr {
+  border: 0px;
+}
+.thead-indigo tr,
+.tbody-indigo tr,
+.table-indigo tr {
+  border-top: 1px #0123e0 solid;
+}
+.thead-indigo.table-hover tbody tr:hover,
+.tbody-indigo.table-hover tbody tr:hover,
+.table-indigo.table-hover tbody tr:hover {
+  background-color: #072cfe;
+  transition: all 0.25s;
+}
+.thead-indigo.table-bordered td, .thead-indigo.table-bordered th,
+.tbody-indigo.table-bordered td,
+.tbody-indigo.table-bordered th,
+.table-indigo.table-bordered td,
+.table-indigo.table-bordered th {
+  border: 1px #0123e0 solid;
+}
+.thead-indigo.table-striped tbody tr:nth-child(2n+1),
+.tbody-indigo.table-striped tbody tr:nth-child(2n+1),
+.table-indigo.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #0127fa;
+}
+.thead-indigo.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-indigo.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-indigo.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #0120d1;
+}
+
+tr.teal,
+td.teal {
+  background-color: #00bfa5;
+}
+
+.thead-teal,
+.tbody-teal,
+.table-teal {
+  color: white;
+  background-color: #00bfa5;
+  transition: all 0.25s;
+}
+.thead-teal.table-borderless tr,
+.tbody-teal.table-borderless tr,
+.table-teal.table-borderless tr {
+  border: 0px;
+}
+.thead-teal tr,
+.tbody-teal tr,
+.table-teal tr {
+  border-top: 1px #007363 solid;
+}
+.thead-teal.table-hover tbody tr:hover,
+.tbody-teal.table-hover tbody tr:hover,
+.table-teal.table-hover tbody tr:hover {
+  background-color: #009682;
+  transition: all 0.25s;
+}
+.thead-teal.table-bordered td, .thead-teal.table-bordered th,
+.tbody-teal.table-bordered td,
+.tbody-teal.table-bordered th,
+.table-teal.table-bordered td,
+.table-teal.table-bordered th {
+  border: 1px #007363 solid;
+}
+.thead-teal.table-striped tbody tr:nth-child(2n+1),
+.tbody-teal.table-striped tbody tr:nth-child(2n+1),
+.table-teal.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #008c79;
+}
+.thead-teal.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-teal.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-teal.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #006356;
+}
+
+tr.lime,
+td.lime {
+  background-color: #aeea00;
+}
+
+.thead-lime,
+.tbody-lime,
+.table-lime {
+  color: white;
+  background-color: #aeea00;
+  transition: all 0.25s;
+}
+.thead-lime.table-borderless tr,
+.tbody-lime.table-borderless tr,
+.table-lime.table-borderless tr {
+  border: 0px;
+}
+.thead-lime tr,
+.tbody-lime tr,
+.table-lime tr {
+  border-top: 1px #759e00 solid;
+}
+.thead-lime.table-hover tbody tr:hover,
+.tbody-lime.table-hover tbody tr:hover,
+.table-lime.table-hover tbody tr:hover {
+  background-color: #90c100;
+  transition: all 0.25s;
+}
+.thead-lime.table-bordered td, .thead-lime.table-bordered th,
+.tbody-lime.table-bordered td,
+.tbody-lime.table-bordered th,
+.table-lime.table-bordered td,
+.table-lime.table-bordered th {
+  border: 1px #759e00 solid;
+}
+.thead-lime.table-striped tbody tr:nth-child(2n+1),
+.tbody-lime.table-striped tbody tr:nth-child(2n+1),
+.table-lime.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #88b700;
+}
+.thead-lime.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-lime.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-lime.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #6a8e00;
+}
+
+tr.amber,
+td.amber {
+  background-color: #ffab00;
+}
+
+.thead-amber,
+.tbody-amber,
+.table-amber {
+  color: black;
+  background-color: #ffab00;
+  transition: all 0.25s;
+}
+.thead-amber.table-borderless tr,
+.tbody-amber.table-borderless tr,
+.table-amber.table-borderless tr {
+  border: 0px;
+}
+.thead-amber tr,
+.tbody-amber tr,
+.table-amber tr {
+  border-top: 1px #b37800 solid;
+}
+.thead-amber.table-hover tbody tr:hover,
+.tbody-amber.table-hover tbody tr:hover,
+.table-amber.table-hover tbody tr:hover {
+  background-color: #d69000;
+  transition: all 0.25s;
+}
+.thead-amber.table-bordered td, .thead-amber.table-bordered th,
+.tbody-amber.table-bordered td,
+.tbody-amber.table-bordered th,
+.table-amber.table-bordered td,
+.table-amber.table-bordered th {
+  border: 1px #b37800 solid;
+}
+.thead-amber.table-striped tbody tr:nth-child(2n+1),
+.tbody-amber.table-striped tbody tr:nth-child(2n+1),
+.table-amber.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #cc8900;
+}
+.thead-amber.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-amber.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-amber.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #a36d00;
+}
+
+tr.deep-orange,
+td.deep-orange {
+  background-color: #dd2c00;
+}
+
+.thead-deep-orange,
+.tbody-deep-orange,
+.table-deep-orange {
+  color: white;
+  background-color: #dd2c00;
+  transition: all 0.25s;
+}
+.thead-deep-orange.table-borderless tr,
+.tbody-deep-orange.table-borderless tr,
+.table-deep-orange.table-borderless tr {
+  border: 0px;
+}
+.thead-deep-orange tr,
+.tbody-deep-orange tr,
+.table-deep-orange tr {
+  border-top: 1px #911d00 solid;
+}
+.thead-deep-orange.table-hover tbody tr:hover,
+.tbody-deep-orange.table-hover tbody tr:hover,
+.table-deep-orange.table-hover tbody tr:hover {
+  background-color: #b42400;
+  transition: all 0.25s;
+}
+.thead-deep-orange.table-bordered td, .thead-deep-orange.table-bordered th,
+.tbody-deep-orange.table-bordered td,
+.tbody-deep-orange.table-bordered th,
+.table-deep-orange.table-bordered td,
+.table-deep-orange.table-bordered th {
+  border: 1px #911d00 solid;
+}
+.thead-deep-orange.table-striped tbody tr:nth-child(2n+1),
+.tbody-deep-orange.table-striped tbody tr:nth-child(2n+1),
+.table-deep-orange.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #aa2200;
+}
+.thead-deep-orange.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-deep-orange.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-deep-orange.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #811a00;
+}
+
+tr.blue-grey,
+td.blue-grey {
+  background-color: #263238;
+}
+
+.thead-blue-grey,
+.tbody-blue-grey,
+.table-blue-grey {
+  color: white;
+  background-color: #263238;
+  transition: all 0.25s;
+}
+.thead-blue-grey.table-borderless tr,
+.tbody-blue-grey.table-borderless tr,
+.table-blue-grey.table-borderless tr {
+  border: 0px;
+}
+.thead-blue-grey tr,
+.tbody-blue-grey tr,
+.table-blue-grey tr {
+  border-top: 1px #455b66 solid;
+}
+.thead-blue-grey.table-hover tbody tr:hover,
+.tbody-blue-grey.table-hover tbody tr:hover,
+.table-blue-grey.table-hover tbody tr:hover {
+  background-color: #364850;
+  transition: all 0.25s;
+}
+.thead-blue-grey.table-bordered td, .thead-blue-grey.table-bordered th,
+.tbody-blue-grey.table-bordered td,
+.tbody-blue-grey.table-bordered th,
+.table-blue-grey.table-bordered td,
+.table-blue-grey.table-bordered th {
+  border: 1px #455b66 solid;
+}
+.thead-blue-grey.table-striped tbody tr:nth-child(2n+1),
+.tbody-blue-grey.table-striped tbody tr:nth-child(2n+1),
+.table-blue-grey.table-striped tbody tr:nth-child(2n+1) {
+  background-color: #3b4d56;
+}
+.thead-blue-grey.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.tbody-blue-grey.table-hover.table-striped tbody tr:nth-child(2n+1):hover,
+.table-blue-grey.table-hover.table-striped tbody tr:nth-child(2n+1):hover {
+  background-color: #4b636f;
+}
+
+.alert {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0.75em 1.25em;
+  margin: 1em 0px;
+}
+
+.alert-red {
+  background-color: #ff8989;
+  color: #a20000;
+  border-color: #ff0909;
+}
+.alert-red .alert-link {
+  font-weight: bold;
+  color: #6f0000;
+}
+.alert-red .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-blue {
+  background-color: #dce5ff;
+  color: #0041f5;
+  border-color: #5c87ff;
+}
+.alert-blue .alert-link {
+  font-weight: bold;
+  color: #0034c2;
+}
+.alert-blue .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-green {
+  background-color: #7cffb2;
+  color: #00953e;
+  border-color: #00fb68;
+}
+.alert-green .alert-link {
+  font-weight: bold;
+  color: #006229;
+}
+.alert-green .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-yellow {
+  background-color: #fff3b3;
+  color: #ccab00;
+  border-color: #ffde33;
+}
+.alert-yellow .alert-link {
+  font-weight: bold;
+  color: #998000;
+}
+.alert-yellow .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-light {
+  background-color: white;
+  color: #e1e1e1;
+  border-color: white;
+}
+.alert-light .alert-link {
+  font-weight: bold;
+  color: #c7c7c7;
+}
+.alert-light .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-grey {
+  background-color: #bababa;
+  color: #484848;
+  border-color: #7b7b7b;
+}
+.alert-grey .alert-link {
+  font-weight: bold;
+  color: #2e2e2e;
+}
+.alert-grey .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-dark {
+  background-color: #7a7a7a;
+  color: #080808;
+  border-color: #3b3b3b;
+}
+.alert-dark .alert-link {
+  font-weight: bold;
+  color: black;
+}
+.alert-dark .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-pink {
+  background-color: #f693bf;
+  color: #960d4b;
+  border-color: #ec1d7a;
+}
+.alert-pink .alert-link {
+  font-weight: bold;
+  color: #670933;
+}
+.alert-pink .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-purple {
+  background-color: #e6b3ff;
+  color: #8800cc;
+  border-color: #bb33ff;
+}
+.alert-purple .alert-link {
+  font-weight: bold;
+  color: #660099;
+}
+.alert-purple .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-light-blue {
+  background-color: #9edaff;
+  color: #0071b7;
+  border-color: #1ea9ff;
+}
+.alert-light-blue .alert-link {
+  font-weight: bold;
+  color: #005284;
+}
+.alert-light-blue .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-cyan {
+  background-color: #88efff;
+  color: #008ca1;
+  border-color: #08deff;
+}
+.alert-cyan .alert-link {
+  font-weight: bold;
+  color: #005f6e;
+}
+.alert-cyan .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-light-green {
+  background-color: #cbf7b0;
+  color: #4faf12;
+  border-color: #80eb3c;
+}
+.alert-light-green .alert-link {
+  font-weight: bold;
+  color: #3a810d;
+}
+.alert-light-green .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-orange {
+  background-color: #ffd3b3;
+  color: #cc5700;
+  border-color: #ff8a33;
+}
+.alert-orange .alert-link {
+  font-weight: bold;
+  color: #994100;
+}
+.alert-orange .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-brown {
+  background-color: #bb7962;
+  color: #261611;
+  border-color: #6e402f;
+}
+.alert-brown .alert-link {
+  font-weight: bold;
+  color: #030201;
+}
+.alert-brown .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-deep-purple {
+  background-color: #c69eff;
+  color: #4d00b7;
+  border-color: #7c1eff;
+}
+.alert-deep-purple .alert-link {
+  font-weight: bold;
+  color: #370084;
+}
+.alert-deep-purple .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-indigo {
+  background-color: #e2e6ff;
+  color: #0127fa;
+  border-color: #637afe;
+}
+.alert-indigo .alert-link {
+  font-weight: bold;
+  color: #011fc7;
+}
+.alert-indigo .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-teal {
+  background-color: #73ffec;
+  color: #008c79;
+  border-color: #00f2d1;
+}
+.alert-teal .alert-link {
+  font-weight: bold;
+  color: #00594d;
+}
+.alert-teal .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-lime {
+  background-color: #e6ff9e;
+  color: #88b700;
+  border-color: #c5ff1e;
+}
+.alert-lime .alert-link {
+  font-weight: bold;
+  color: #628400;
+}
+.alert-lime .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-amber {
+  background-color: #ffe6b3;
+  color: #cc8900;
+  border-color: #ffbc33;
+}
+.alert-amber .alert-link {
+  font-weight: bold;
+  color: #996700;
+}
+.alert-amber .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-deep-orange {
+  background-color: #ffa791;
+  color: #aa2200;
+  border-color: #ff4011;
+}
+.alert-deep-orange .alert-link {
+  font-weight: bold;
+  color: #771800;
+}
+.alert-deep-orange .alert-link:hover {
+  text-decoration: underline;
+}
+
+.alert-blue-grey {
+  background-color: #72909f;
+  color: #11171a;
+  border-color: #3b4d56;
+}
+.alert-blue-grey .alert-link {
+  font-weight: bold;
+  color: black;
+}
+.alert-blue-grey .alert-link:hover {
+  text-decoration: underline;
+}
+
+.badge {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  transition: all 0.25s;
+}
+
+a.badge:hover {
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.badge-red {
+  background-color: #d50000;
+  color: white;
+}
+.badge-red:hover {
+  background-color: #ef0000;
+}
+.badge-red:disabled {
+  background-color: #ff3c3c;
+}
+
+.badge-red-outline {
+  background-color: transparent;
+  border-color: #d50000;
+  color: #d50000;
+}
+.badge-red-outline:hover {
+  background-color: #d50000;
+  color: white;
+}
+.badge-red-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #d50000;
+  color: #d50000;
+}
+
+.badge-blue {
+  background-color: #2962ff;
+  color: white;
+}
+.badge-blue:hover {
+  background-color: #4375ff;
+}
+.badge-blue:disabled {
+  background-color: #8fadff;
+}
+
+.badge-blue-outline {
+  background-color: transparent;
+  border-color: #2962ff;
+  color: #2962ff;
+}
+.badge-blue-outline:hover {
+  background-color: #2962ff;
+  color: white;
+}
+.badge-blue-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #2962ff;
+  color: #2962ff;
+}
+
+.badge-green {
+  background-color: #00c853;
+  color: white;
+}
+.badge-green:hover {
+  background-color: #00e25e;
+}
+.badge-green:disabled {
+  background-color: #2fff85;
+}
+
+.badge-green-outline {
+  background-color: transparent;
+  border-color: #00c853;
+  color: #00c853;
+}
+.badge-green-outline:hover {
+  background-color: #00c853;
+  color: white;
+}
+.badge-green-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #00c853;
+  color: #00c853;
+}
+
+.badge-yellow {
+  background-color: #ffd600;
+  color: white;
+}
+.badge-yellow:hover {
+  background-color: #ffda1a;
+}
+.badge-yellow:disabled {
+  background-color: #ffe666;
+}
+
+.badge-yellow-outline {
+  background-color: transparent;
+  border-color: #ffd600;
+  color: #ffd600;
+}
+.badge-yellow-outline:hover {
+  background-color: #ffd600;
+  color: white;
+}
+.badge-yellow-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #ffd600;
+  color: #ffd600;
+}
+
+.badge-light {
+  background-color: #fafafa;
+  color: black;
+}
+.badge-light:hover {
+  background-color: #ededed;
+}
+.badge-light:disabled {
+  background-color: white;
+}
+
+.badge-light-outline {
+  background-color: transparent;
+  border-color: #fafafa;
+  color: #fafafa;
+}
+.badge-light-outline:hover {
+  background-color: #fafafa;
+  color: black;
+}
+.badge-light-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #fafafa;
+  color: #fafafa;
+}
+
+.badge-grey {
+  background-color: #616161;
+  color: white;
+}
+.badge-grey:hover {
+  background-color: #6e6e6e;
+}
+.badge-grey:disabled {
+  background-color: #949494;
+}
+
+.badge-grey-outline {
+  background-color: transparent;
+  border-color: #616161;
+  color: #616161;
+}
+.badge-grey-outline:hover {
+  background-color: #616161;
+  color: white;
+}
+.badge-grey-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #616161;
+  color: #616161;
+}
+
+.badge-dark {
+  background-color: #212121;
+  color: white;
+}
+.badge-dark:hover {
+  background-color: #2e2e2e;
+}
+.badge-dark:disabled {
+  background-color: #545454;
+}
+
+.badge-dark-outline {
+  background-color: transparent;
+  border-color: #212121;
+  color: #212121;
+}
+.badge-dark-outline:hover {
+  background-color: #212121;
+  color: white;
+}
+.badge-dark-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #212121;
+  color: #212121;
+}
+
+.badge-pink {
+  background-color: #c51162;
+  color: white;
+}
+.badge-pink:hover {
+  background-color: #dc136e;
+}
+.badge-pink:disabled {
+  background-color: #f04c96;
+}
+
+.badge-pink-outline {
+  background-color: transparent;
+  border-color: #c51162;
+  color: #c51162;
+}
+.badge-pink-outline:hover {
+  background-color: #c51162;
+  color: white;
+}
+.badge-pink-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #c51162;
+  color: #c51162;
+}
+
+.badge-purple {
+  background-color: #aa00ff;
+  color: white;
+}
+.badge-purple:hover {
+  background-color: #b31aff;
+}
+.badge-purple:disabled {
+  background-color: #cc66ff;
+}
+
+.badge-purple-outline {
+  background-color: transparent;
+  border-color: #aa00ff;
+  color: #aa00ff;
+}
+.badge-purple-outline:hover {
+  background-color: #aa00ff;
+  color: white;
+}
+.badge-purple-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #aa00ff;
+  color: #aa00ff;
+}
+
+.badge-light-blue {
+  background-color: #0091ea;
+  color: white;
+}
+.badge-light-blue:hover {
+  background-color: #05a0ff;
+}
+.badge-light-blue:disabled {
+  background-color: #51bdff;
+}
+
+.badge-light-blue-outline {
+  background-color: transparent;
+  border-color: #0091ea;
+  color: #0091ea;
+}
+.badge-light-blue-outline:hover {
+  background-color: #0091ea;
+  color: white;
+}
+.badge-light-blue-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #0091ea;
+  color: #0091ea;
+}
+
+.badge-cyan {
+  background-color: #00b8d4;
+  color: white;
+}
+.badge-cyan:hover {
+  background-color: #00ceee;
+}
+.badge-cyan:disabled {
+  background-color: #3be5ff;
+}
+
+.badge-cyan-outline {
+  background-color: transparent;
+  border-color: #00b8d4;
+  color: #00b8d4;
+}
+.badge-cyan-outline:hover {
+  background-color: #00b8d4;
+  color: white;
+}
+.badge-cyan-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #00b8d4;
+  color: #00b8d4;
+}
+
+.badge-light-green {
+  background-color: #64dd17;
+  color: white;
+}
+.badge-light-green:hover {
+  background-color: #71e825;
+}
+.badge-light-green:disabled {
+  background-color: #9ef06a;
+}
+
+.badge-light-green-outline {
+  background-color: transparent;
+  border-color: #64dd17;
+  color: #64dd17;
+}
+.badge-light-green-outline:hover {
+  background-color: #64dd17;
+  color: white;
+}
+.badge-light-green-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #64dd17;
+  color: #64dd17;
+}
+
+.badge-orange {
+  background-color: #ff6d00;
+  color: white;
+}
+.badge-orange:hover {
+  background-color: #ff7c1a;
+}
+.badge-orange:disabled {
+  background-color: #ffa766;
+}
+
+.badge-orange-outline {
+  background-color: transparent;
+  border-color: #ff6d00;
+  color: #ff6d00;
+}
+.badge-orange-outline:hover {
+  background-color: #ff6d00;
+  color: white;
+}
+.badge-orange-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #ff6d00;
+  color: #ff6d00;
+}
+
+.badge-brown {
+  background-color: #4a2b20;
+  color: white;
+}
+.badge-brown:hover {
+  background-color: #5c3528;
+}
+.badge-brown:disabled {
+  background-color: #91543f;
+}
+
+.badge-brown-outline {
+  background-color: transparent;
+  border-color: #4a2b20;
+  color: #4a2b20;
+}
+.badge-brown-outline:hover {
+  background-color: #4a2b20;
+  color: white;
+}
+.badge-brown-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #4a2b20;
+  color: #4a2b20;
+}
+
+.badge-deep-purple {
+  background-color: #6200ea;
+  color: white;
+}
+.badge-deep-purple:hover {
+  background-color: #6d05ff;
+}
+.badge-deep-purple:disabled {
+  background-color: #9a51ff;
+}
+
+.badge-deep-purple-outline {
+  background-color: transparent;
+  border-color: #6200ea;
+  color: #6200ea;
+}
+.badge-deep-purple-outline:hover {
+  background-color: #6200ea;
+  color: white;
+}
+.badge-deep-purple-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #6200ea;
+  color: #6200ea;
+}
+
+.badge-indigo {
+  background-color: #304ffe;
+  color: white;
+}
+.badge-indigo:hover {
+  background-color: #4965fe;
+}
+.badge-indigo:disabled {
+  background-color: #96a5fe;
+}
+
+.badge-indigo-outline {
+  background-color: transparent;
+  border-color: #304ffe;
+  color: #304ffe;
+}
+.badge-indigo-outline:hover {
+  background-color: #304ffe;
+  color: white;
+}
+.badge-indigo-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #304ffe;
+  color: #304ffe;
+}
+
+.badge-teal {
+  background-color: #00bfa5;
+  color: white;
+}
+.badge-teal:hover {
+  background-color: #00d9bb;
+}
+.badge-teal:disabled {
+  background-color: #26ffe1;
+}
+
+.badge-teal-outline {
+  background-color: transparent;
+  border-color: #00bfa5;
+  color: #00bfa5;
+}
+.badge-teal-outline:hover {
+  background-color: #00bfa5;
+  color: white;
+}
+.badge-teal-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #00bfa5;
+  color: #00bfa5;
+}
+
+.badge-lime {
+  background-color: #aeea00;
+  color: white;
+}
+.badge-lime:hover {
+  background-color: #bfff05;
+}
+.badge-lime:disabled {
+  background-color: #d2ff51;
+}
+
+.badge-lime-outline {
+  background-color: transparent;
+  border-color: #aeea00;
+  color: #aeea00;
+}
+.badge-lime-outline:hover {
+  background-color: #aeea00;
+  color: white;
+}
+.badge-lime-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #aeea00;
+  color: #aeea00;
+}
+
+.badge-amber {
+  background-color: #ffab00;
+  color: white;
+}
+.badge-amber:hover {
+  background-color: #ffb31a;
+}
+.badge-amber:disabled {
+  background-color: #ffcd66;
+}
+
+.badge-amber-outline {
+  background-color: transparent;
+  border-color: #ffab00;
+  color: #ffab00;
+}
+.badge-amber-outline:hover {
+  background-color: #ffab00;
+  color: white;
+}
+.badge-amber-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #ffab00;
+  color: #ffab00;
+}
+
+.badge-deep-orange {
+  background-color: #dd2c00;
+  color: white;
+}
+.badge-deep-orange:hover {
+  background-color: #f73100;
+}
+.badge-deep-orange:disabled {
+  background-color: #ff6944;
+}
+
+.badge-deep-orange-outline {
+  background-color: transparent;
+  border-color: #dd2c00;
+  color: #dd2c00;
+}
+.badge-deep-orange-outline:hover {
+  background-color: #dd2c00;
+  color: white;
+}
+.badge-deep-orange-outline:hover:disabled {
+  background-color: transparent;
+  border-color: #dd2c00;
+  color: #dd2c00;
+}
+
+.badge-blue-grey {
+  background-color: #263238;
+  color: white;
+}
+.badge-blue-grey:hover {
+  background-color: #304047;
+}
+.badge-blue-grey:disabled {
+  background-color: #4f6875;
+}
+
+.badge-blue-grey-outline {
+  background-color: transparent;
+  border-color: #263238;
+  color: #263238;
+}
+.badge-blue-grey-outline:hover {
+  background-color: #263238;
+  color: white;
+}
+.badge-blue-grey-outline:hover:disabled {
   background-color: transparent;
   border-color: #263238;
   color: #263238;

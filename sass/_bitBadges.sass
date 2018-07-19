@@ -1,0 +1,39 @@
+///Sección de Sass que controla los badges(medallas)
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Mixin para crear un badge de color
+=crearBadgeColor($nomBadge, $nomColor, $color)
+  .#{$nomBadge}-#{$nomColor}
+    background-color: $color
+    @if lightness($color) > 90
+      color: black
+    @else
+      color: white
+
+  a.#{$nomBadge}-#{$nomColor}:hover
+    @if lightness($color) > 90
+      background-color: darken($color, 5%)
+    @else
+      background-color: lighten($color, 5%)
+
+///Mixin para crear una serie de badges con una lista de colores
+=crearBadges($nomBadge, $colores, $tamFuente: 1em)
+  .#{$nomBadge}
+    border: 1px solid transparent
+    border-radius: 5px
+    text-align: center
+    vertical-align: middle
+    font-size: $tamFuente*.75
+    font-weight: bold
+    padding: .25em .5em
+    transition: all .25s
+
+  a.#{$nomBadge}:hover
+    cursor: pointer
+    transition: all .25s
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearBotonColor($nomBadge, $color, map-get($colores, $color))

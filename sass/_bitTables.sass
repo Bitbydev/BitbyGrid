@@ -1,0 +1,99 @@
+///Sección de Sass que controla las tablas
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins que usa el documento
+///Mixin para crear una tabla de color con todas sus configuraciones
+=crearTabla($nomTabla, $nomColor, $color)
+  tr.#{$nomColor},
+  td.#{$nomColor}
+    background-color: $color
+
+  .thead-#{$nomColor},
+  .tbody-#{$nomColor},
+  .#{$nomTabla}-#{$nomColor}
+    @if lightness($color) > 49
+      color: black
+    @else
+      color: white
+    background-color: $color
+    transition: all .25s
+
+    &.#{$nomTabla}-borderless tr
+      border: 0px
+
+    & tr
+      @if lightness($color) < 20
+        border-top: 1px lighten($color, 15%) solid
+      @else
+        border-top: 1px darken($color, 15%) solid
+
+    &.#{$nomTabla}-hover tbody tr:hover
+      @if lightness($color) < 20
+        background-color: lighten($color, 8%)
+      @else
+        background-color: darken($color, 8%)
+      transition: all .25s
+
+    &.#{$nomTabla}-bordered td,
+    &.#{$nomTabla}-bordered th,
+      @if lightness($color) < 20
+        border: 1px lighten($color, 15%) solid
+      @else
+        border: 1px darken($color, 15%) solid
+
+
+    &.#{$nomTabla}-striped tbody tr:nth-child(2n+1)
+      @if lightness($color) < 20
+        background-color: lighten($color, 10%)
+      @else
+        background-color: darken($color, 10%)
+
+    &.#{$nomTabla}-hover.#{$nomTabla}-striped tbody tr:nth-child(2n+1):hover
+      @if lightness($color) < 20
+        background-color: lighten($color, 18%)
+      @else
+        background-color: darken($color, 18%)
+
+///Mixin para crear todas las tablas de un mapa de colores y la tabla base
+=crearTablas($nomTabla, $colores, $tamanios, $modoColor: true)
+  .#{$nomTabla}
+    width: 100%
+    border-collapse: collapse
+    transition: all .25s
+
+    & td,
+    & th
+      padding: .5em 1em
+
+    $keysTam: map-keys($tamanios)
+    @each $tam in $keysTam
+      &.#{$nomTabla}-#{$tam} td,
+      &.#{$nomTabla}-#{$tam} th
+        padding: .5em*(map-get($tamanios, $tam)) 1em*(map-get($tamanios, $tam))
+
+    & tr
+      width: auto
+      border-top: 1px darken(#FFFFFF, 15%) solid
+
+    &.#{$nomTabla}-borderless tr
+      border: 0px
+
+    &.#{$nomTabla}-hover tbody tr:hover
+      background-color: darken(#FFFFFF, 8%)
+      transition: all .25s
+
+    &.#{$nomTabla}-bordered td,
+    &.#{$nomTabla}-bordered th,
+      border: 1px darken(#FFFFFF, 15%) solid
+
+    &.#{$nomTabla}-striped tbody tr:nth-child(2n+1)
+      background-color: darken(#FFFFFF, 10%)
+
+    &.#{$nomTabla}-hover.#{$nomTabla}-striped tbody tr:nth-child(2n+1):hover
+      background-color: darken(#FFFFFF, 18%)
+
+  @if $modoColor == true
+    $keysColors: map-keys($colores)
+    @each $color in $keysColors
+      +crearTabla($nomTabla, $color, map-get($colores, $color))

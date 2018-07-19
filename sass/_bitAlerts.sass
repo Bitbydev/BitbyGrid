@@ -1,0 +1,31 @@
+///Sección de Sass que controla las alertas
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Mixin para crear una alerta de color con todas sus configuraciones
+=crearAlerta($nomAlerta, $nomColor, $color)
+  .#{$nomAlerta}-#{$nomColor}
+    background-color: lighten($color, 35%)
+    color: darken($color, 10%)
+    border-color: lighten($color, 10%)
+
+    & .#{$nomAlerta}-link
+      font-weight: bold
+      color: darken($color, 20%)
+
+      &:hover
+        text-decoration: underline
+
+///Mixin para crear todas las alertas de un mapa de colores y la alerta base
+=crearAlertas($nomAlerta, $colores)
+  .#{$nomAlerta}
+    width: 100%
+    border: 1px solid transparent
+    border-radius: 5px
+    padding: .75em 1.25em
+    margin: 1em 0px
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearAlerta($nomAlerta, $color, map-get($colores, $color))

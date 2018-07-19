@@ -1,55 +1,6 @@
-///Sección de BitByGrid que crea los elementos GridCSS
+///Sección de Sass que controla las GridCSS
 ///@author: Israel Trejo
 ///@group: BitByDev
-
-///Archivos importados
-@import bitMediaQueries
-
-///Variables usadas dentro del documento
-///Mapas de columnas y espaciado
-$columnas: ($s: 1, $m: 3, $l: 4, $x: 6)
-$espacios: ($s: 0px, $m: 3px, $l: 5px, $x: 10px)
-
-///Nombres de clases de GridCSS
-$gridContenedor: 'grid-container'
-$gridAuxClase: 'grid-'
-
-///Clases creadas para esta sección
-.#{$gridAuxClase}align-center
-  align-content: center
-
-.#{$gridAuxClase}align-start
-  align-content: start
-
-.#{$gridAuxClase}align-end
-  align-content: end
-
-.#{$gridAuxClase}align-around
-  justify-content: space-around
-
-.#{$gridAuxClase}align-between
-  justify-content: space-between
-
-.#{$gridAuxClase}align-evenly
-  justify-content: space-evenly
-
-.#{$gridAuxClase}justify-center
-  justify-content: center
-
-.#{$gridAuxClase}justify-start
-  justify-content: start
-
-.#{$gridAuxClase}justify-end
-  justify-content: end
-
-.#{$gridAuxClase}justify-around
-  justify-content: space-around
-
-.#{$gridAuxClase}justify-between
-  justify-content: space-between
-
-.#{$gridAuxClase}justify-evenly
-  justify-content: space-evenly
 
 ///Mixins usados en GridCSS
 =crearGrid($nombreGrid, $cadenaElementos, $espaciado)
@@ -65,7 +16,7 @@ $gridAuxClase: 'grid-'
 //Los mapas de cantCol (cantidad de columnas por tamaño) y espaciado (espacio entre columnas por tamaño)
 //pueden tener la misma cantidad de elementos que los breakpoints, uno o menos, si son más no se tomarán en cuenta
 //los que sobrepasen a los breakpoints
-=crearBreakpointGridCSS($nombreGrid, $breakpoints, $cantCol, $espaciado)
+=crearBreakpointGridCSS($nombreGrid, $nombreGridAux, $breakpoints, $cantCol, $espaciado)
   $keysCol: map-keys($cantCol)
   $keysBp: map-keys($breakpoints)
   $keysEsp: map-keys($espaciado)
@@ -73,8 +24,45 @@ $gridAuxClase: 'grid-'
     display: grid
     width: 100%
 
+  //Clases para agregar todas las reglas de alineamiento
+  .#{$nombreGridAux}align-center
+    align-content: center
+
+  .#{$nombreGridAux}align-start
+    align-content: start
+
+  .#{$nombreGridAux}align-end
+    align-content: end
+
+  .#{$nombreGridAux}align-around
+    justify-content: space-around
+
+  .#{$nombreGridAux}align-between
+    justify-content: space-between
+
+  .#{$nombreGridAux}align-evenly
+    justify-content: space-evenly
+
+  .#{$nombreGridAux}justify-center
+    justify-content: center
+
+  .#{$nombreGridAux}justify-start
+    justify-content: start
+
+  .#{$nombreGridAux}justify-end
+    justify-content: end
+
+  .#{$nombreGridAux}justify-around
+    justify-content: space-around
+
+  .#{$nombreGridAux}justify-between
+    justify-content: space-between
+
+  .#{$nombreGridAux}justify-evenly
+    justify-content: space-evenly
+
   @for $i from 1 through length($breakpoints)
-    @media only screen and (min-width: obtenerValBp(nth($keysBp, $i)))
+    @media only screen and (min-width: map-get($breakpoints, nth($keysBp, $i)))
       .#{$nombreGrid}
         @if $i <= length($keysCol)
           $cadenaElementos: ''
@@ -84,6 +72,3 @@ $gridAuxClase: 'grid-'
 
         @if $i <= length($keysEsp)
           grid-gap: map-get($espaciado, nth($keysEsp, $i))
-
-///Funcion base para crear un bitGridCSS
-+crearBreakpointGridCSS($gridContenedor, $breakpoints, $columnas, $espacios)

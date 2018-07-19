@@ -2,30 +2,75 @@
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Archivos importados
-@import bitMediaQueries
+///Mixins usados en el documento
+///Mixin para generar la base del Grid de porcentajes
+=crearColumnaPorcentaje($porcentaje)
+  width: unquote($porcentaje+'%')
 
-///Nombres de clases del Grid
-$nomContenedor: 'bit-container'
-$nomFullContenedor: 'bit-full-container'
-$nomRow: 'row'
-$separacionFila: 5px 0px
+///Mixin para agregar offset en el grid de porcentajes
+=offsetColumnaPorcentaje($porcentaje)
+  margin-left: unquote($porcentaje+'%')
 
-///Clases base del documento
-.#{$nomContenedor},
-.#{$nomFullContenedor}
-  width: 100%
-  margin: 0 auto
+///Mixin para generar la base del Grid por columnas
+=crearColumna($noCol, $cantidadCol)
+  width: unquote(((100/$cantidadCol)*$noCol)+'%')
 
-.#{$nomContenedor}
-  max-width: $xl
+///Mixin para agregar offset en el grid por columnas
+=offsetColumna($noCol, $cantidadCol)
+  margin-left: unquote(((100/$cantidadCol)*$noCol)+'%')
 
-.#{$nomRow}
-  width: 100%
-  margin: $separacionFila
+///Mixin para crear todos los estilos de las grid de un breakpoint
+=gridBreakpoint($breakpoints, $nomBase, $modo, $cantBase:20, $nomCol: 'col-', $cantCol:12)
+  $incremento: (100/$cantBase)
+  $keysBp: map-keys($breakpoints)
+  @each $bp in $keysBp
+    @media only screen and (min-width: map-get($breakpoints, $bp))
+      @for $i from 1 through $cantBase
+        .#{$nomBase}#{$bp}-#{$i*$incremento}
+          +crearColumnaPorcentaje($i*$incremento)
 
-///Ciclos para crear los estilos CSS
-///Ciclo para generar todos los elementos de la grid
-+estiloGridBreakpoint('')
-@each $bp in $nomBp
-  +mediaQueriesBreakpoint($bp)
+        @if $i < $cantBase
+          .#{$nomBase}offset-#{$bp}-#{$i*$incremento}
+            +offsetColumnaPorcentaje($i*$incremento)
+
+      @if $modo == true
+        @for $i from 1 through $cantCol
+          .#{$nomColumnas}#{$bp}-#{$i}
+            +crearColumna($i, $cantCol)
+
+          @if $i < $cantCol
+            .#{$nomColumnas}offset-#{$bp}-#{$i}
+              +offsetColumna($i, $cantCol)
+
+  @for $i from 1 through $cantBase
+    .#{$nomBase}#{$i*5}
+      +crearColumnaPorcentaje($i*$incremento)
+
+    @if $i < $cantBase
+      .#{$nomBase}offset-#{$i*5}
+        +offsetColumnaPorcentaje($i*$incremento)
+
+  @if $modo == true
+    @for $i from 1 through $cantCol
+      .#{$nomColumnas}#{$i}
+        +crearColumna($i, $cantCol)
+
+      @if $i < $cantCol
+        .#{$nomColumnas}offset-#{$i}
+          +offsetColumna($i, $cantCol)
+
+///Mixin para crear un Grid con BitbyGrid
+=crearBitGrid($nomContenedor, $nomFullContenedor, $nomRow, $breakpoints, $nomBase, $modo, $cantBase:20, $nomCol: 'col-', $cantCol:12)
+  .#{$nomContenedor},
+  .#{$nomFullContenedor}
+    width: 100%
+    margin: 0 auto
+
+  $keys: map-keys($breakpoints)
+  .#{$nomContenedor}
+    max-width: map-get($breakpoints, nth($keys, length($keys)))
+
+  .#{$nomRow}
+    width: 100%
+
+  +gridBreakpoint($breakpoints, $nomBase, $modo, $cantBase, $nomCol, $cantCol)

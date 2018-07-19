@@ -1,0 +1,18 @@
+///Mixins que se usan de manera predeterminada en BitbyGrid
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixin base para crear un BitGrid
++crearBitGrid($nomContenedor, $nomFullContenedor, $nomRow, $breakpoints, $nomBase, true, $cantidadBase, $nomColumnas, $cantidadCol)
+
+///Mixins base para crear clases para ocultar y mostrar elementos
++hideFrom(unquote('hide-from'), $breakpoints)
++hideTo(unquote('hide-to'), $breakpoints)
++showFrom(unquote('show-from'), $breakpoints)
++showTo(unquote('show-to'), $breakpoints)
+
+///Mixin base para crear el BitFlexbox
++crearFlexbox($flexContenedor, $flexAuxClase)
+
+///Mixin base para crear un BitGridCSS
++crearBreakpointGridCSS($gridContenedor, $gridAuxClase, $breakpoints, $columnas, $espacios)

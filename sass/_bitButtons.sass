@@ -1,0 +1,64 @@
+///Sección de Sass que controla los botones
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Mixin para crear un boton de color
+=crearBotonColor($nomBoton, $nomColor, $color)
+  .#{$nomBoton}-#{$nomColor}
+    background-color: $color
+    @if lightness($color) > 90
+      color: black
+    @else
+      color: white
+
+    &:hover
+      background-color: darken($color, 5%)
+
+    &:disabled
+      background-color: lighten($color, 20%)
+
+  .#{$nomBoton}-#{$nomColor}-outline
+    background-color: transparent
+    border-color: $color
+    color: $color
+
+    &:hover
+      background-color: $color
+      @if lightness($color) > 90
+        color: black
+      @else
+        color: white
+
+      &:disabled
+        background-color: transparent
+        border-color: $color
+        color: $color
+
+///Mixin para crear una serie de botones con una lista de colores
+=crearBotones($nomBoton, $tamanios, $colores, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
+  .#{$nomBoton}
+    border: 1px solid transparent
+    border-radius: 5px
+    text-align: center
+    vertical-align: middle
+    font-size: $tamFuente
+    padding: $paddingH $paddingV
+    transition: all .25s
+
+    &:hover
+      cursor: pointer
+      transition: all .25s
+
+      &:disabled
+        cursor: not-allowed
+
+  $keysBtn: map-keys($tamanios)
+  @each $btn in $keysBtn
+    .#{$nomBoton}-#{$btn}
+      font-size: $tamFuente*map-get($tamanios, $btn)
+      padding: $paddingH*map-get($tamanios, $btn) $paddingV*map-get($tamanios, $btn)
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearBotonColor($nomBoton, $color, map-get($colores, $color))

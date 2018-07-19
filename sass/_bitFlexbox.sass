@@ -1,56 +1,53 @@
-///Sección de BitByGrid que construye los elementos Flexbox
+///Sección de Sass que construye los elementos Flexbox
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Nombres de clases de Flexbox
-$flexContenedor: 'flex-container'
-$flexAuxClase: 'flex-'
+///Mixins usados por esta sección
+=crearFlexbox($nombreFlex, $nombreFlexAux)
+  .#{$nombreFlex}
+    display: flex
 
-///Clases usadas por esta sección
-.#{$flexContenedor}
-  display: flex
+  .wrap
+    flex-wrap: wrap
 
-.wrap
-  flex-wrap: wrap
+  .nowrap
+    flex-wrap: nowrap
 
-.nowrap
-  flex-wrap: nowrap
+  .#{$nombreFlexAux}row
+    flex-direction: row
 
-.#{$flexAuxClase}row
-  flex-direction: row
+  .#{$nombreFlexAux}row-reverse
+    flex-direction: row-reverse
 
-.#{$flexAuxClase}row-reverse
-  flex-direction: row-reverse
+  .#{$nombreFlexAux}column
+    flex-direction: column
 
-.#{$flexAuxClase}column
-  flex-direction: column
+  .#{$nombreFlexAux}column-reverse
+    flex-direction: column-reverse
 
-.#{$flexAuxClase}column-reverse
-  flex-direction: column-reverse
+  .#{$nombreFlexAux}align-center
+    align-items: center
 
-.#{$flexAuxClase}align-center
-  align-items: center
+  .#{$nombreFlexAux}align-start
+    align-items: flex-start
 
-.#{$flexAuxClase}align-start
-  align-items: flex-start
+  .#{$nombreFlexAux}align-end
+    align-items: flex-end
 
-.#{$flexAuxClase}align-end
-  align-items: flex-end
+  .#{$nombreFlexAux}align-stretch
+    align-items: stretch
 
-.#{$flexAuxClase}align-stretch
-  align-items: stretch
+  .#{$nombreFlexAux}justify-center
+    justify-content: center
 
-.#{$flexAuxClase}justify-center
-  justify-content: center
+  .#{$nombreFlexAux}justify-start
+    justify-content: flex-start
 
-.#{$flexAuxClase}justify-start
-  justify-content: flex-start
+  .#{$nombreFlexAux}justify-end
+    justify-content: flex-end
 
-.#{$flexAuxClase}justify-end
-  justify-content: flex-end
+  .#{$nombreFlexAux}justify-around
+    justify-content: space-around
 
-.#{$flexAuxClase}justify-around
-  justify-content: space-around
-
-.#{$flexAuxClase}justify-between
-  justify-content: space-between
+  .#{$nombreFlexAux}justify-between
+    justify-content: space-between

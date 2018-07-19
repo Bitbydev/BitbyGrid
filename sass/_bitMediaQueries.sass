@@ -2,120 +2,34 @@
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Variables usadas dentro del documento
-///Nombres de Breakpoints usados
-$s: 'sm'
-$m: 'md'
-$l: 'lg'
-$x: 'xl'
+///Mixin para crear la funcion de ocultar un elemento después en todos los breakpoints
+=hideFrom($nombreClase, $breakpoints)
+  $keysBp: map-keys($breakpoints)
+  @each $bp in $keysBp
+    @media only screen and (min-width: map-get($breakpoints, $bp))
+      .#{$nombreClase}-#{$bp}
+        display: none
 
-///Breakpoints usados por el grid
-$sm: 576px
-$md: 768px
-$lg: 992px
-$xl: 1200px
+///Mixin para crear la funcion de ocultar un elemento antes en todos los breakpoints
+=hideTo($nombreClase, $breakpoints)
+  $keysBp: map-keys($breakpoints)
+  @each $bp in $keysBp
+    @media only screen and (max-width: map-get($breakpoints, $bp))
+      .#{$nombreClase}-#{$bp}
+        display: none
 
-///Mapa de breakpoints
-$breakpoints: ($s: $sm, $m: $md, $l: $lg, $x: $xl)
-$nomBp: $s $m $l $x
+///Mixin para crear la funcion de mostrar un elemento después en todos los breakpoints
+=showFrom($nombreClase, $breakpoints, $display: block)
+  $keysBp: map-keys($breakpoints)
+  @each $bp in $keysBp
+    @media only screen and (min-width: map-get($breakpoints, $bp))
+      .#{$nombreClase}-#{$bp}
+        display: $display
 
-///Nombres de clases usadas en media queries
-$nomBase: 'bit-col-'
-$nomColumnas: 'col-'
-
-///Funciones usadas en el documento
-///Obtener el valor de un breakpoint existente
-@function obtenerValBp($bp)
-  $valor: map_get($breakpoints, $bp)
-  @if $valor != 'null'
-    @return $valor
-  @else
-    @return null
-
-///Mixins usados en el documento
-///Mixin para generar la base del Grid de porcentajes
-=crearColumnaPorcentaje($porcentaje)
-  width: unquote($porcentaje+'%')
-
-///Mixin para agregar offset en el grid de porcentajes
-=offsetColumnaPorcentaje($porcentaje)
-  margin-left: unquote($porcentaje+'%')
-
-///Mixin para generar la base del Grid por columnas
-=crearColumna($cantidadCol)
-  width: unquote(((100/12)*$cantidadCol)+'%')
-
-///Mixin para agregar offset en el grid por columnas
-=offsetColumna($cantidadCol)
-  margin-left: unquote(((100/12)*$cantidadCol)+'%')
-
-///Mixin para crear todos los estilos de las grid de un breakpoint
-=estiloGridBreakpoint($bp)
-  @if $bp != ''
-    @for $i from 1 through 20
-      .#{$nomBase}#{$bp}-#{$i*5}
-        +crearColumnaPorcentaje($i*5)
-
-      @if $i < 20
-        .#{$nomBase}offset-#{$bp}-#{$i*5}
-          +offsetColumnaPorcentaje($i*5)
-
-    @for $i from 1 through 12
-      .#{$nomColumnas}#{$bp}-#{$i}
-        +crearColumna($i)
-
-      @if $i < 12
-        .#{$nomColumnas}offset-#{$bp}-#{$i}
-          +offsetColumna($i)
-  @else
-    @for $i from 1 through 20
-      .#{$nomBase}#{$i*5}
-        +crearColumnaPorcentaje($i*5)
-
-      @if $i < 20
-        .#{$nomBase}offset-#{$i*5}
-          +offsetColumnaPorcentaje($i*5)
-
-    @for $i from 1 through 12
-      .#{$nomColumnas}#{$i}
-        +crearColumna($i)
-
-      @if $i < 12
-        .#{$nomColumnas}offset-#{$i}
-          +offsetColumna($i)
-
-///Mixin para crear el media query de las grid de un breakpoint
-=mediaQueriesBreakpoint($bp)
-  @media only screen and (min-width: obtenerValBp($bp))
-    +estiloGridBreakpoint($bp)
-
-///Mixin para ocultar un elemento después de un breakpoint
-=hideFrom($nombreClase, $bp)
-  @media only screen and (min-width: obtenerValBp($bp))
-    .#{$nombreClase}
-      display: none
-
-///Mixin para ocultar un elemento antes de un breakpoint
-=hideTo($nombreClase, $bp)
-  @media only screen and (max-width: obtenerValBp($bp))
-    .#{$nombreClase}
-      display: none
-
-///Mixin para mostrar un elemento después de un breakpoint
-=showFrom($nombreClase, $bp, $display: block)
-  @media only screen and (min-width: obtenerValBp($bp))
-    .#{$nombreClase}
-      display: $display
-
-///Mixin para mostrar un elemento antes de un breakpoint
-=showTo($nombreClase, $bp, $display: block)
-  @media only screen and (max-width: obtenerValBp($bp))
-    .#{$nombreClase}
-      display: $display
-
-///Ciclo base para crear clases para ocultar y mostrar valores
-@each $bp in $nomBp
-  +hideFrom(unquote('hide-from-'+$bp), $bp)
-  +hideTo(unquote('hide-to-'+$bp), $bp)
-  +showFrom(unquote('show-from-'+$bp), $bp)
-  +showTo(unquote('show-to-'+$bp), $bp)
+///Mixin para crear la funcion de mostrar un elemento antes en todos los breakpoints
+=showTo($nombreClase, $breakpoints, $display: block)
+  $keysBp: map-keys($breakpoints)
+  @each $bp in $keysBp
+    @media only screen and (max-width: map-get($breakpoints, $bp))
+      .#{$nombreClase}-#{$bp}
+        display: $display

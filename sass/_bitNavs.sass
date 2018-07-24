@@ -3,8 +3,8 @@
 ///@group: BitByDev
 
 ///Mixins usados en el documento
-///Mixin para crear un nav de color
-=crearNav($nomNav, $nomColor, $color)
+///Mixin para crear un nav de color plano
+=crearNavColor($nomNav, $nomColor, $color)
   .#{$nomNav}-#{$nomColor}
     background-color: $color
     & .#{$nomNav}-item,
@@ -29,6 +29,8 @@
       @else
         color: white
 
+///Mixin para crear un nav-pills de color
+=crearNavPills($nomNav, $nomColor, $color)
   .#{$nomNav}-pills-#{$nomColor} .active,
   .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-link.active,
   .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-item.active
@@ -43,10 +45,50 @@
     color: $color
     border-radius: 5px
 
+    &:hover
+      @if lightness($color) > 49
+        color: darken($color, 30%)
+      @else
+        color: lighten($color, 30%)
+
+///Mixin para crear un nav-tabs con color
+=crearNavTabs($nomNav, $nomColor, $color)
+  .#{$nomNav}-tabs-#{$nomColor}
+    & .#{$nomNav}-link,
+    & .#{$nomNav}-item
+      color: $color
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
+      border-bottom: 1px $color solid
+      border-top: 1px solid transparent
+      border-left: 1px solid transparent
+      border-right: 1px solid transparent
+
+      &:hover
+        color: darken($color, 10%)
+        border-top: 1px $color solid
+        border-right: 1px $color solid
+        border-left: 1px $color solid
+
+    & .active,
+    & .#{$nomNav}-link.active,
+    & .#{$nomNav}-item.active
+      color: darken($color, 10%)
+      border-bottom: 0px
+      border-top: 1px $color solid
+      border-right: 1px $color solid
+      border-left: 1px $color solid
+
+///Mixin para crear un nav de color con todas sus variantes
+=crearNav($nomNav, $nomColor, $color)
+  +crearNavColor($nomNav, $nomColor, $color)
+  +crearNavPills($nomNav, $nomColor, $color)
+  +crearNavTabs($nomNav, $nomColor, $color)
+
 ///Mixin para crear una serie de botones con una lista de colores
 =crearNavs($nomNav, $colores)
   .#{$nomNav}
-    display: flex
+    display: inline-flex
     flex-wrap: wrap
     padding: 0px
     margin: 0px
@@ -63,9 +105,9 @@
       color: darken(#0091ea, 10%)
       cursor: pointer
 
-    &:disabled
-      color: darken(#616161, 10%)
-      cursor: not-allowed
+    // &.disabled
+    //   color: darken(#616161, 10%)
+    //   cursor: not-allowed
 
   .#{$nomNav}-fill .#{$nomNav}-link,
   .#{$nomNav}-fill .#{$nomNav}-item
@@ -85,26 +127,31 @@
   .#{$nomNav}-pills .#{$nomNav}-link
     border-radius: 5px
 
+  $border-color: #AAA
+
   .#{$nomNav}-tabs
     & .#{$nomNav}-link,
     & .#{$nomNav}-item
       border-top-left-radius: 5px
       border-top-right-radius: 5px
-      border-bottom: 1px #616161 solid
+      border-bottom: 1px $border-color solid
+      border-top: 1px solid transparent
+      border-left: 1px solid transparent
+      border-right: 1px solid transparent
 
       &:hover
-        border-top: 1px #616161 solid
-        border-right: 1px #616161 solid
-        border-left: 1px #616161 solid
+        border-top: 1px $border-color solid
+        border-right: 1px $border-color solid
+        border-left: 1px $border-color solid
 
     & .active,
     & .#{$nomNav}-link.active,
     & .#{$nomNav}-item.active
-      color: #616161
+      color: $border-color
       border-bottom: 0px
-      border-top: 1px #616161 solid
-      border-right: 1px #616161 solid
-      border-left: 1px #616161 solid
+      border-top: 1px $border-color solid
+      border-right: 1px $border-color solid
+      border-left: 1px $border-color solid
 
   $keysColors: map-keys($colores)
   @each $color in $keysColors

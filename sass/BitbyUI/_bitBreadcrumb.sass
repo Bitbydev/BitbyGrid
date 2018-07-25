@@ -1,0 +1,80 @@
+///Sección de Sass que controla los breacrumbs
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+=crearBreadcrumbColor($nomBc, $nomColor, $color)
+  $brillo: 60
+  .#{$nomBc}-#{$nomColor}
+    @if lightness($color) < $brillo
+      background-color: lighten($color, 40%)
+    @else
+      background-color: darken($color, 40%)
+
+    & .#{$nomBc}-item
+      & a
+        color: $color
+
+        &:hover
+          @if lightness($color) < $brillo
+            color: lighten($color, 10%)
+          @else
+            color: darken($color, 10%)
+          text-decoration: underline
+          cursor: pointer
+
+      &.active
+        & a
+          @if lightness($color) > $brillo
+            color: lighten($color, 40%)
+          @else
+            color: darken($color, 40%)
+
+          &:hover
+            text-decoration: none
+            cursor: auto
+
+      &:nth-child(n+2)
+        &:before
+          @if lightness($color) > $brillo
+            color: lighten($color, 40%)
+          @else
+            color: darken($color, 40%)
+
+=crearBreadcrumbs($nomBc, $colores, $separador: '/')
+  .#{$nomBc}
+    display: inline-flex
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    padding: 1em
+    background-color: darken(#E9ECEF, 10%)
+    list-style: none
+    border-radius: .5em
+
+  .#{$nomBc}-item
+    & a
+      color: #0091ea
+
+      &:hover
+        color: darken(#0091ea, 10%)
+        text-decoration: underline
+        cursor: pointer
+
+    &.active
+      & a
+        color: darken(#E9ECEF, 50%)
+
+        &:hover
+          text-decoration: none
+          cursor: auto
+
+    &:nth-child(n+2)
+      &:before
+        font-weight: bold
+        content: $separador
+        padding: 0px .5em
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearBreadcrumbColor($nomBc, $color, map-get($colores, $color))

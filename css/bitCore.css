@@ -5125,4 +5125,498 @@ a.badge:hover {
   border-left: 1px #263238 solid;
 }
 
+.breadcrumb {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  background-color: #cbd3da;
+  list-style: none;
+  border-radius: 0.5em;
+}
+
+.breadcrumb-item a {
+  color: #0091ea;
+}
+.breadcrumb-item a:hover {
+  color: #0071b7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-item.active a {
+  color: #5b6d7e;
+}
+.breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-item:nth-child(n+2):before {
+  font-weight: bold;
+  content: "/";
+  padding: 0px 0.5em;
+}
+
+.breadcrumb-red {
+  background-color: #ffa2a2;
+}
+.breadcrumb-red .breadcrumb-item a {
+  color: #d50000;
+}
+.breadcrumb-red .breadcrumb-item a:hover {
+  color: #ff0909;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-red .breadcrumb-item.active a {
+  color: #090000;
+}
+.breadcrumb-red .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-red .breadcrumb-item:nth-child(n+2):before {
+  color: #090000;
+}
+
+.breadcrumb-blue {
+  background-color: #f5f8ff;
+}
+.breadcrumb-blue .breadcrumb-item a {
+  color: #2962ff;
+}
+.breadcrumb-blue .breadcrumb-item a:hover {
+  color: #5c87ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-blue .breadcrumb-item.active a {
+  color: #00195c;
+}
+.breadcrumb-blue .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-blue .breadcrumb-item:nth-child(n+2):before {
+  color: #00195c;
+}
+
+.breadcrumb-green {
+  background-color: #95ffc1;
+}
+.breadcrumb-green .breadcrumb-item a {
+  color: #00c853;
+}
+.breadcrumb-green .breadcrumb-item a:hover {
+  color: #00fb68;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-green .breadcrumb-item.active a {
+  color: black;
+}
+.breadcrumb-green .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-green .breadcrumb-item:nth-child(n+2):before {
+  color: black;
+}
+
+.breadcrumb-yellow {
+  background-color: #fff7cc;
+}
+.breadcrumb-yellow .breadcrumb-item a {
+  color: #ffd600;
+}
+.breadcrumb-yellow .breadcrumb-item a:hover {
+  color: #ffde33;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-yellow .breadcrumb-item.active a {
+  color: #332b00;
+}
+.breadcrumb-yellow .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-yellow .breadcrumb-item:nth-child(n+2):before {
+  color: #332b00;
+}
+
+.breadcrumb-light {
+  background-color: #949494;
+}
+.breadcrumb-light .breadcrumb-item a {
+  color: #fafafa;
+}
+.breadcrumb-light .breadcrumb-item a:hover {
+  color: #e1e1e1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-light .breadcrumb-item.active a {
+  color: white;
+}
+.breadcrumb-light .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-light .breadcrumb-item:nth-child(n+2):before {
+  color: white;
+}
+
+.breadcrumb-grey {
+  background-color: #c7c7c7;
+}
+.breadcrumb-grey .breadcrumb-item a {
+  color: #616161;
+}
+.breadcrumb-grey .breadcrumb-item a:hover {
+  color: #7b7b7b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-grey .breadcrumb-item.active a {
+  color: black;
+}
+.breadcrumb-grey .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-grey .breadcrumb-item:nth-child(n+2):before {
+  color: black;
+}
+
+.breadcrumb-dark {
+  background-color: #878787;
+}
+.breadcrumb-dark .breadcrumb-item a {
+  color: #212121;
+}
+.breadcrumb-dark .breadcrumb-item a:hover {
+  color: #3b3b3b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-dark .breadcrumb-item.active a {
+  color: black;
+}
+.breadcrumb-dark .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-dark .breadcrumb-item:nth-child(n+2):before {
+  color: black;
+}
+
+.breadcrumb-pink {
+  background-color: #f8aacd;
+}
+.breadcrumb-pink .breadcrumb-item a {
+  color: #c51162;
+}
+.breadcrumb-pink .breadcrumb-item a:hover {
+  color: #ec1d7a;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-pink .breadcrumb-item.active a {
+  color: #090105;
+}
+.breadcrumb-pink .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-pink .breadcrumb-item:nth-child(n+2):before {
+  color: #090105;
+}
+
+.breadcrumb-purple {
+  background-color: #eeccff;
+}
+.breadcrumb-purple .breadcrumb-item a {
+  color: #aa00ff;
+}
+.breadcrumb-purple .breadcrumb-item a:hover {
+  color: #bb33ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-purple .breadcrumb-item.active a {
+  color: #220033;
+}
+.breadcrumb-purple .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-purple .breadcrumb-item:nth-child(n+2):before {
+  color: #220033;
+}
+
+.breadcrumb-light-blue {
+  background-color: #b7e4ff;
+}
+.breadcrumb-light-blue .breadcrumb-item a {
+  color: #0091ea;
+}
+.breadcrumb-light-blue .breadcrumb-item a:hover {
+  color: #1ea9ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-light-blue .breadcrumb-item.active a {
+  color: #00131e;
+}
+.breadcrumb-light-blue .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-light-blue .breadcrumb-item:nth-child(n+2):before {
+  color: #00131e;
+}
+
+.breadcrumb-cyan {
+  background-color: #a1f3ff;
+}
+.breadcrumb-cyan .breadcrumb-item a {
+  color: #00b8d4;
+}
+.breadcrumb-cyan .breadcrumb-item a:hover {
+  color: #08deff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-cyan .breadcrumb-item.active a {
+  color: #000708;
+}
+.breadcrumb-cyan .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-cyan .breadcrumb-item:nth-child(n+2):before {
+  color: #000708;
+}
+
+.breadcrumb-light-green {
+  background-color: #daf9c7;
+}
+.breadcrumb-light-green .breadcrumb-item a {
+  color: #64dd17;
+}
+.breadcrumb-light-green .breadcrumb-item a:hover {
+  color: #80eb3c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-light-green .breadcrumb-item.active a {
+  color: #102404;
+}
+.breadcrumb-light-green .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-light-green .breadcrumb-item:nth-child(n+2):before {
+  color: #102404;
+}
+
+.breadcrumb-orange {
+  background-color: #ffe2cc;
+}
+.breadcrumb-orange .breadcrumb-item a {
+  color: #ff6d00;
+}
+.breadcrumb-orange .breadcrumb-item a:hover {
+  color: #ff8a33;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-orange .breadcrumb-item.active a {
+  color: #331600;
+}
+.breadcrumb-orange .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-orange .breadcrumb-item:nth-child(n+2):before {
+  color: #331600;
+}
+
+.breadcrumb-brown {
+  background-color: #c38873;
+}
+.breadcrumb-brown .breadcrumb-item a {
+  color: #4a2b20;
+}
+.breadcrumb-brown .breadcrumb-item a:hover {
+  color: #6e402f;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-brown .breadcrumb-item.active a {
+  color: black;
+}
+.breadcrumb-brown .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-brown .breadcrumb-item:nth-child(n+2):before {
+  color: black;
+}
+
+.breadcrumb-deep-purple {
+  background-color: #d5b7ff;
+}
+.breadcrumb-deep-purple .breadcrumb-item a {
+  color: #6200ea;
+}
+.breadcrumb-deep-purple .breadcrumb-item a:hover {
+  color: #7c1eff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-deep-purple .breadcrumb-item.active a {
+  color: #0d001e;
+}
+.breadcrumb-deep-purple .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-deep-purple .breadcrumb-item:nth-child(n+2):before {
+  color: #0d001e;
+}
+
+.breadcrumb-indigo {
+  background-color: #fbfcff;
+}
+.breadcrumb-indigo .breadcrumb-item a {
+  color: #304ffe;
+}
+.breadcrumb-indigo .breadcrumb-item a:hover {
+  color: #637afe;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-indigo .breadcrumb-item.active a {
+  color: #000f62;
+}
+.breadcrumb-indigo .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-indigo .breadcrumb-item:nth-child(n+2):before {
+  color: #000f62;
+}
+
+.breadcrumb-teal {
+  background-color: #8cffef;
+}
+.breadcrumb-teal .breadcrumb-item a {
+  color: #00bfa5;
+}
+.breadcrumb-teal .breadcrumb-item a:hover {
+  color: #00f2d1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-teal .breadcrumb-item.active a {
+  color: black;
+}
+.breadcrumb-teal .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-teal .breadcrumb-item:nth-child(n+2):before {
+  color: black;
+}
+
+.breadcrumb-lime {
+  background-color: #edffb7;
+}
+.breadcrumb-lime .breadcrumb-item a {
+  color: #aeea00;
+}
+.breadcrumb-lime .breadcrumb-item a:hover {
+  color: #c5ff1e;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-lime .breadcrumb-item.active a {
+  color: #161e00;
+}
+.breadcrumb-lime .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-lime .breadcrumb-item:nth-child(n+2):before {
+  color: #161e00;
+}
+
+.breadcrumb-amber {
+  background-color: #ffeecc;
+}
+.breadcrumb-amber .breadcrumb-item a {
+  color: #ffab00;
+}
+.breadcrumb-amber .breadcrumb-item a:hover {
+  color: #ffbc33;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-amber .breadcrumb-item.active a {
+  color: #332200;
+}
+.breadcrumb-amber .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-amber .breadcrumb-item:nth-child(n+2):before {
+  color: #332200;
+}
+
+.breadcrumb-deep-orange {
+  background-color: #ffbbaa;
+}
+.breadcrumb-deep-orange .breadcrumb-item a {
+  color: #dd2c00;
+}
+.breadcrumb-deep-orange .breadcrumb-item a:hover {
+  color: #ff4011;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-deep-orange .breadcrumb-item.active a {
+  color: #110300;
+}
+.breadcrumb-deep-orange .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-deep-orange .breadcrumb-item:nth-child(n+2):before {
+  color: #110300;
+}
+
+.breadcrumb-blue-grey {
+  background-color: #819ca9;
+}
+.breadcrumb-blue-grey .breadcrumb-item a {
+  color: #263238;
+}
+.breadcrumb-blue-grey .breadcrumb-item a:hover {
+  color: #3b4d56;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.breadcrumb-blue-grey .breadcrumb-item.active a {
+  color: black;
+}
+.breadcrumb-blue-grey .breadcrumb-item.active a:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+.breadcrumb-blue-grey .breadcrumb-item:nth-child(n+2):before {
+  color: black;
+}
+
 /*# sourceMappingURL=bitCore.css.map */

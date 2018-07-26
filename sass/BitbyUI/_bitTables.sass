@@ -7,53 +7,35 @@
 =crearTabla($nomTabla, $nomColor, $color)
   tr.#{$nomColor},
   td.#{$nomColor}
-    background-color: $color
+    background-color: map-get($color, 'primary')
 
   .thead-#{$nomColor},
   .tbody-#{$nomColor},
   .#{$nomTabla}-#{$nomColor}
-    @if lightness($color) > 49
-      color: black
-    @else
-      color: white
-    background-color: $color
+    color: map-get($color, 'font-color')
+    background-color: map-get($color, 'primary')
     transition: all .25s
 
     &.#{$nomTabla}-borderless tr
       border: 0px
 
     & tr
-      @if lightness($color) < 20
-        border-top: 1px lighten($color, 15%) solid
-      @else
-        border-top: 1px darken($color, 15%) solid
+      border-top: 1px map-get($color, 'border-color') solid
 
     &.#{$nomTabla}-hover tbody tr:hover
-      @if lightness($color) < 20
-        background-color: lighten($color, 8%)
-      @else
-        background-color: darken($color, 8%)
+      background-color: map-get($color, 'secondary')
       transition: all .25s
 
     &.#{$nomTabla}-bordered td,
     &.#{$nomTabla}-bordered th,
-      @if lightness($color) < 20
-        border: 1px lighten($color, 15%) solid
-      @else
-        border: 1px darken($color, 15%) solid
+      border: 1px map-get($color, 'border-color') solid
 
 
     &.#{$nomTabla}-striped tbody tr:nth-child(2n+1)
-      @if lightness($color) < 20
-        background-color: lighten($color, 10%)
-      @else
-        background-color: darken($color, 10%)
+      background-color: map-get($color, 'secondary')
 
     &.#{$nomTabla}-hover.#{$nomTabla}-striped tbody tr:nth-child(2n+1):hover
-      @if lightness($color) < 20
-        background-color: lighten($color, 18%)
-      @else
-        background-color: darken($color, 18%)
+      background-color: darken(map-get($color, 'secondary'), 10%)
 
 ///Mixin para crear todas las tablas de un mapa de colores y la tabla base
 =crearTablas($nomTabla, $colores, $tamanios, $modoColor: true)

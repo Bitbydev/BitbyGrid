@@ -4,31 +4,21 @@
 
 ///Mixins usados en el documento
 =crearBreadcrumbColor($nomBc, $nomColor, $color)
-  $brillo: 60
   .#{$nomBc}-#{$nomColor}
-    @if lightness($color) < $brillo
-      background-color: lighten($color, 40%)
-    @else
-      background-color: darken($color, 40%)
+    background-color: map-get($color, 'bg-color')
 
     & .#{$nomBc}-item
       & a
-        color: $color
+        color: map-get($color, 'primary')
 
         &:hover
-          @if lightness($color) < $brillo
-            color: lighten($color, 10%)
-          @else
-            color: darken($color, 10%)
+          color: map-get($color, 'secondary')
           text-decoration: underline
           cursor: pointer
 
       &.active
         & a
-          @if lightness($color) > $brillo
-            color: lighten($color, 40%)
-          @else
-            color: darken($color, 40%)
+          color: map-get($color, 'secondary')
 
           &:hover
             text-decoration: none
@@ -36,10 +26,7 @@
 
       &:nth-child(n+2)
         &:before
-          @if lightness($color) > $brillo
-            color: lighten($color, 40%)
-          @else
-            color: darken($color, 40%)
+          color: map-get($color, 'secondary')
 
 =crearBreadcrumbs($nomBc, $colores, $separador: '/')
   .#{$nomBc}

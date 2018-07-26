@@ -8,11 +8,15 @@
   <title>Pruebas BitByGrid - Navs</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bitCore.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/document.js" charset="utf-8"></script>
 </head>
 <body>
   <div class="bit-container">
     <div class="row">
       <a href="index.php" class="btn btn-red btn-lg">Regresar a Inicio</a>
+      <button id="blanco" class="btn btn-light btn-lg">Cambiar a blanco</button>
+      <button id="negro" class="btn btn-dark btn-lg">Cambiar a negro</button>
       <h2>Normal</h2>
       <div class="bit-col-100">
         <nav class="nav nav-fill">

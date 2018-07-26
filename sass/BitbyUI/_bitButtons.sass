@@ -5,48 +5,33 @@
 ///Mixins usados en el documento
 ///Mixin para crear un boton de color
 =crearBotonColor($nomBoton, $nomColor, $color)
-  .#{$nomBoton}-#{$nomColor},
-  a.#{$nomBoton}-#{$nomColor},
-  .#{$nomBoton}-#{$nomColor} a
-    background-color: $color
-    @if lightness($color) > 90
-      color: black
-    @else
-      color: white
+  .#{$nomBoton}-#{$nomColor}
+    background-color: map-get($color, 'primary')
+    color: map-get($color, 'font-color')
 
     &:hover
-      @if lightness($color) > 90
-        background-color: darken($color, 5%)
-      @else
-        background-color: lighten($color, 5%)
+      background-color: map-get($color, 'secondary')
 
     &:disabled
-      background-color: lighten($color, 20%)
+      background-color: map-get($color, 'bg-color')
 
-  .#{$nomBoton}-#{$nomColor}-outline,
-  a.#{$nomBoton}-#{$nomColor}-outline,
-  .#{$nomBoton}-#{$nomColor}-outline a
+  .#{$nomBoton}-#{$nomColor}-outline
     background-color: transparent
-    border-color: $color
-    color: $color
+    border-color: map-get($color, 'primary')
+    color: map-get($color, 'primary')
 
     &:hover
-      background-color: $color
-      @if lightness($color) > 90
-        color: black
-      @else
-        color: white
+      background-color: map-get($color, 'primary')
+      color: map-get($color, 'font-color')
 
       &:disabled
         background-color: transparent
-        border-color: $color
-        color: $color
+        border-color: map-get($color, 'bg-color')
+        color: map-get($color, 'bg-color')
 
 ///Mixin para crear una serie de botones con una lista de colores
 =crearBotones($nomBoton, $tamanios, $colores, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
-  .#{$nomBoton},
-  a.#{$nomBoton},
-  .#{$nomBoton} a
+  .#{$nomBoton}
     border: 1px solid transparent
     border-radius: 5px
     text-align: center

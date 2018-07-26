@@ -6,13 +6,13 @@
 ///Mixin para crear una alerta de color con todas sus configuraciones
 =crearAlerta($nomAlerta, $nomColor, $color)
   .#{$nomAlerta}-#{$nomColor}
-    background-color: lighten($color, 35%)
-    color: darken($color, 10%)
-    border-color: lighten($color, 10%)
+    background-color: map-get($color, 'bg-color')
+    color: map-get($color, 'primary')
+    border-color: map-get($color, 'primary')
 
     & .#{$nomAlerta}-link
       font-weight: bold
-      color: darken($color, 20%)
+      color: map-get($color, 'secondary')
 
       &:hover
         text-decoration: underline

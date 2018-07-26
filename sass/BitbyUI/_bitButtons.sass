@@ -5,7 +5,9 @@
 ///Mixins usados en el documento
 ///Mixin para crear un boton de color
 =crearBotonColor($nomBoton, $nomColor, $color)
-  .#{$nomBoton}-#{$nomColor}
+  .#{$nomBoton}-#{$nomColor},
+  a.#{$nomBoton}-#{$nomColor},
+  .#{$nomBoton}-#{$nomColor} a
     background-color: $color
     @if lightness($color) > 90
       color: black
@@ -21,7 +23,9 @@
     &:disabled
       background-color: lighten($color, 20%)
 
-  .#{$nomBoton}-#{$nomColor}-outline
+  .#{$nomBoton}-#{$nomColor}-outline,
+  a.#{$nomBoton}-#{$nomColor}-outline,
+  .#{$nomBoton}-#{$nomColor}-outline a
     background-color: transparent
     border-color: $color
     color: $color
@@ -40,7 +44,9 @@
 
 ///Mixin para crear una serie de botones con una lista de colores
 =crearBotones($nomBoton, $tamanios, $colores, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
-  .#{$nomBoton}
+  .#{$nomBoton},
+  a.#{$nomBoton},
+  .#{$nomBoton} a
     border: 1px solid transparent
     border-radius: 5px
     text-align: center
@@ -48,6 +54,7 @@
     font-size: $tamFuente
     padding: $paddingH $paddingV
     transition: all .25s
+    display: inline-block
 
     &:hover
       cursor: pointer

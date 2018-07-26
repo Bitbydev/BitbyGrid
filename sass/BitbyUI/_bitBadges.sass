@@ -29,6 +29,7 @@
     font-weight: bold
     padding: .25em .5em
     transition: all .25s
+    width: auto
 
   a.#{$nomBadge}:hover
     cursor: pointer
@@ -36,4 +37,4 @@
 
   $keysColors: map-keys($colores)
   @each $color in $keysColors
-    +crearBotonColor($nomBadge, $color, map-get($colores, $color))
+    +crearBadgeColor($nomBadge, $color, map-get($colores, $color))

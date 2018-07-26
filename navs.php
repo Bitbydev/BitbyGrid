@@ -12,6 +12,7 @@
 <body>
   <div class="bit-container">
     <div class="row">
+      <a href="index.php" class="btn btn-red btn-lg">Regresar a Inicio</a>
       <h2>Normal</h2>
       <div class="bit-col-100">
         <nav class="nav nav-fill">

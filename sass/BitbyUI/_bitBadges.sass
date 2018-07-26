@@ -16,7 +16,6 @@
 =crearBadges($nomBadge, $colores, $tamFuente: 1em)
   .#{$nomBadge}
     border: 1px solid transparent
-    border-radius: 5px
     text-align: center
     vertical-align: middle
     font-size: $tamFuente*.75
@@ -24,6 +23,13 @@
     padding: .25em .5em
     transition: all .25s
     width: auto
+
+  .#{$nomBadge}
+    border-radius: .5em
+
+  .#{$nomBadge}-pill
+    border-radius: 1em
+    padding: .25em .75em
 
   a.#{$nomBadge}:hover
     cursor: pointer

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>BitByGrid Pruebas - Badges</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bitCore.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -19,6 +19,7 @@
     <button id="negro" class="btn btn-dark btn-lg">Cambiar a negro</button>
     <?php foreach ($colores as $color): ?>
       <div class="row">
+        <h2><?php echo $color ?></h2>
         <div class="bit-col-100">
           <a class="badge badge-<?php echo $color ?>">Hola Mundo!</a>
         </div>

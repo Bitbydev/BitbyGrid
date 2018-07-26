@@ -1,0 +1,45 @@
+///Sección de Sass que controla las listas
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+=crearListaColor($nomLista, $nomColor, $color)
+  .#{$nomLista}-group-#{$nomColor}
+    & .#{$nomLista}-group-item.active,
+    &-hover .#{$nomLista}-group-item.active
+      background-color: map-get($color, 'primary')
+      color: map-get($color, 'font-color')
+
+    &-hover
+      & .#{$nomLista}-group-item
+        &:hover
+          background-color: map-get($color, 'primary')
+          color: map-get($color, 'font-color')
+          
+        &.active:hover
+          background-color: map-get($color, 'secondary')
+          color: map-get($color, 'font-color')
+
+
+=crearListas($nomLista, $colores)
+  $border: #CCC
+  .#{$nomLista}-group
+    display: inline-flex
+    flex-direction: column
+    width: 100%
+
+    &-item
+      padding: 1em
+      border: 1px $border solid
+
+      &:first-child
+        border-top-left-radius: .5em
+        border-top-right-radius: .5em
+
+      &:last-child
+        border-bottom-left-radius: .5em
+        border-bottom-right-radius: .5em
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearListaColor($nomLista, $color, map-get($colores, $color))

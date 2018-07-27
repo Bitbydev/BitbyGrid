@@ -1,1 +1,1 @@
-<?php $colores = array('red', 'blue', 'green', 'yellow', 'light', 'grey', 'dark', 'pink', 'purple', 'light-blue', 'cyan', 'light-green', 'orange', 'brown', 'deep-purple', 'indigo', 'teal', 'lime', 'amber', 'deep-orange', 'blue-grey'); ?>
+<?php $colores = array('red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey'); ?>

@@ -22,20 +22,20 @@
         <h2><?php echo $color ?></h2>
         <div class="bit-col-md-25 bit-col-sm-100">
           <div class="list-group list-group-<?php echo $color ?>">
-            <a class="list-group-item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge badge-dark">5</span></a>
+            <a class="list-group-item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge badge-blue-grey">5</span></a>
           </div>
         </div>
         <div class="bit-col-md-25 bit-col-offset-5">
           <div class="list-group list-group-<?php echo $color ?>-hover">
-            <a class="list-group-item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge badge-pill badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge badge-pill badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge badge-pill badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge badge-pill badge-dark">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge badge-pill badge-dark">5</span></a>
+            <a class="list-group-item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge badge-pill badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge badge-pill badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge badge-pill badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge badge-pill badge-blue-grey">5</span></a>
+            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge badge-pill badge-blue-grey">5</span></a>
           </div>
         </div>
       </div>

@@ -6,31 +6,32 @@
 ///Mixin para crear un boton de color
 =crearBotonColor($nomBoton, $nomColor, $color)
   .#{$nomBoton}-#{$nomColor}
-    background-color: map-get($color, 'primary')
-    color: map-get($color, 'font-color')
+    background-color: map-get($color, 'primary-color')
+    color: map-get($color, 'primary-color-title')
 
     &:hover
-      background-color: map-get($color, 'secondary')
+      background-color: map-get($color, 'primary-color-dark')
 
     &:disabled
-      background-color: map-get($color, 'bg-color')
+      background-color: map-get($color, 'primary-color-light')
 
   .#{$nomBoton}-#{$nomColor}-outline
     background-color: transparent
-    border-color: map-get($color, 'primary')
-    color: map-get($color, 'primary')
+    border-color: map-get($color, 'primary-color')
+    color: map-get($color, 'primary-color')
 
     &:hover
-      background-color: map-get($color, 'primary')
-      color: map-get($color, 'font-color')
+      background-color: map-get($color, 'primary-color')
+      color: map-get($color, 'primary-color-title')
 
       &:disabled
         background-color: transparent
-        border-color: map-get($color, 'bg-color')
-        color: map-get($color, 'bg-color')
+        border-color: map-get($color, 'primary-color-light')
+        color: map-get($color, 'primary-color-title')
 
 ///Mixin para crear una serie de botones con una lista de colores
 =crearBotones($nomBoton, $tamanios, $colores, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
+  $default: map-get($colores, 'default')
   .#{$nomBoton}
     border: 1px solid transparent
     border-radius: 5px
@@ -40,13 +41,17 @@
     padding: $paddingH $paddingV
     transition: all .25s
     display: inline-block
+    background-color: map-get($default, 'primary-color')
+    color: map-get($default, 'primary-color-title')
 
     &:hover
       cursor: pointer
       transition: all .25s
+      background-color: map-get($default, 'accent-color')
 
       &:disabled
         cursor: not-allowed
+        background-color: map-get($default, 'primary-color-light')
 
   $keysBtn: map-keys($tamanios)
   @each $btn in $keysBtn

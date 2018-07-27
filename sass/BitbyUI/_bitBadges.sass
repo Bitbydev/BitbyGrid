@@ -6,11 +6,11 @@
 ///Mixin para crear un badge de color
 =crearBadgeColor($nomBadge, $nomColor, $color)
   .#{$nomBadge}-#{$nomColor}
-    background-color: map-get($color, 'primary')
-    color: map-get($color, 'font-color')
+    background-color: map-get($color, 'primary-color')
+    color: map-get($color, 'primary-color-title')
 
   a.#{$nomBadge}-#{$nomColor}:hover
-    background-color: map-get($color, 'secondary')
+    background-color: map-get($color, 'primary-color-dark')
 
 ///Mixin para crear una serie de badges con una lista de colores
 =crearBadges($nomBadge, $colores, $tamFuente: 1em)

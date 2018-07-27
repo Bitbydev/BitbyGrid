@@ -7,38 +7,40 @@
 =crearTabla($nomTabla, $nomColor, $color)
   tr.#{$nomColor},
   td.#{$nomColor}
-    background-color: map-get($color, 'primary')
+    color: map-get($default, 'primary-color-title')
+    background-color: map-get($color, 'primary-color')
 
   .thead-#{$nomColor},
   .tbody-#{$nomColor},
   .#{$nomTabla}-#{$nomColor}
-    color: map-get($color, 'font-color')
-    background-color: map-get($color, 'primary')
+    color: map-get($color, 'primary-color-title')
+    background-color: map-get($color, 'primary-color')
     transition: all .25s
 
     &.#{$nomTabla}-borderless tr
       border: 0px
 
     & tr
-      border-top: 1px map-get($color, 'border-color') solid
+      border-top: 1px map-get($color, 'primary-color-light') solid
 
     &.#{$nomTabla}-hover tbody tr:hover
-      background-color: map-get($color, 'secondary')
+      background-color: map-get($color, 'primary-color-dark')
       transition: all .25s
 
     &.#{$nomTabla}-bordered td,
     &.#{$nomTabla}-bordered th,
-      border: 1px map-get($color, 'border-color') solid
+      border: 1px map-get($color, 'primary-color-light') solid
 
 
     &.#{$nomTabla}-striped tbody tr:nth-child(2n+1)
-      background-color: map-get($color, 'secondary')
+      background-color: map-get($color, 'primary-color-dark')
 
     &.#{$nomTabla}-hover.#{$nomTabla}-striped tbody tr:nth-child(2n+1):hover
-      background-color: darken(map-get($color, 'secondary'), 10%)
+      background-color: map-get($color, 'accent-color')
 
 ///Mixin para crear todas las tablas de un mapa de colores y la tabla base
 =crearTablas($nomTabla, $colores, $tamanios, $modoColor: true)
+  $default: map-get($colores, 'default')
   .#{$nomTabla}
     width: 100%
     border-collapse: collapse
@@ -56,24 +58,23 @@
 
     & tr
       width: auto
-      border-top: 1px darken(#FFFFFF, 15%) solid
 
     &.#{$nomTabla}-borderless tr
       border: 0px
 
     &.#{$nomTabla}-hover tbody tr:hover
-      background-color: darken(#FFFFFF, 8%)
+      background-color: map-get($default, 'divider-color')
       transition: all .25s
 
     &.#{$nomTabla}-bordered td,
     &.#{$nomTabla}-bordered th,
-      border: 1px darken(#FFFFFF, 15%) solid
+      border: 1px map-get($default, 'divider-color') solid
 
     &.#{$nomTabla}-striped tbody tr:nth-child(2n+1)
-      background-color: darken(#FFFFFF, 10%)
+      background-color: map-get($default, 'divider-color')
 
     &.#{$nomTabla}-hover.#{$nomTabla}-striped tbody tr:nth-child(2n+1):hover
-      background-color: darken(#FFFFFF, 18%)
+      background-color: map-get($default, 'accent-color')
 
   @if $modoColor == true
     $keysColors: map-keys($colores)

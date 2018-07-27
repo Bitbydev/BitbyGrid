@@ -5,20 +5,20 @@
 ///Mixins usados en el documento
 =crearBreadcrumbColor($nomBc, $nomColor, $color)
   .#{$nomBc}-#{$nomColor}
-    background-color: map-get($color, 'bg-color')
+    background-color: map-get($color, 'primary-color-light')
 
     & .#{$nomBc}-item
       & a
-        color: map-get($color, 'primary')
+        color: map-get($color, 'primary-color-dark')
 
         &:hover
-          color: map-get($color, 'secondary')
+          color: map-get($color, 'accent-color')
           text-decoration: underline
           cursor: pointer
 
       &.active
         & a
-          color: map-get($color, 'secondary')
+          color: map-get($color, 'primary-color-text')
 
           &:hover
             text-decoration: none
@@ -26,31 +26,32 @@
 
       &:nth-child(n+2)
         &:before
-          color: map-get($color, 'secondary')
+          color: map-get($color, 'primary-color-text')
 
 =crearBreadcrumbs($nomBc, $colores, $separador: '/')
+  $default: map-get($colores, 'default')
   .#{$nomBc}
     display: inline-flex
     justify-content: flex-start
     align-items: center
     width: 100%
     padding: 1em
-    background-color: darken(#E9ECEF, 10%)
+    background-color: map-get($default, 'primary-color-light')
     list-style: none
     border-radius: .5em
 
   .#{$nomBc}-item
     & a
-      color: #0091ea
+      color: map-get($default, 'primary-color')
 
       &:hover
-        color: darken(#0091ea, 10%)
+        color: map-get($default, 'accent-color')
         text-decoration: underline
         cursor: pointer
 
     &.active
       & a
-        color: darken(#E9ECEF, 50%)
+        color: map-get($default, 'primary-color-dark')
 
         &:hover
           text-decoration: none
@@ -61,6 +62,7 @@
         font-weight: bold
         content: $separador
         padding: 0px .5em
+        color: map-get($default, 'primary-color-dark')
 
   $keysColors: map-keys($colores)
   @each $color in $keysColors

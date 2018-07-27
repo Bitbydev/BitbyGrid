@@ -11,17 +11,8 @@ $paddingVer: 15px
 
 ///Mapas de tamaños y colores
 $tamanios: ('sm': .75, 'lg': 1.25)
-$wht: #EEEEEE
-$blk: #111111
 
-$coloresBase: ('red': ('primary': #d50000,'secondary': #BB0000,'font-color': $wht,'bg-color': #FF9898,'border-color': #FF4C4C), 'blue': ('primary': #2962ff,'secondary': #214ECC,'font-color': $wht,'bg-color': #C1D2FF,'border-color': #759AFF), 'green': ('primary': #28A745,'secondary': #228D3A,'font-color': $wht,'bg-color': #84F59E,'border-color': #3AF365), 'yellow': ('primary': #ffd600,'secondary': #CCAB00,'font-color': $blk,'bg-color': #FFEE98,'border-color': #FFE24C), 'light': ('primary': #fafafa,'secondary': #C7C7C7,'font-color': $blk,'bg-color': #464646,'border-color': #7A7A7A), 'grey': ('primary': #616161,'secondary': #6E6E6E,'font-color': $wht,'bg-color': #BABABA,'border-color': #ADADAD), 'dark': ('primary': #212121,'secondary': #333333,'font-color': $wht,'bg-color': #B9B9B9,'border-color': #6D6D6D) )
-
-$coloresSecundarios: ('pink': ('primary': #c51162,'secondary': #920D49,'font-color': $wht,'bg-color': #D794B2,'border-color': #CF5089), 'purple': ('primary': #aa00ff,'secondary': #8800CC,'font-color': $wht,'bg-color': #DD98FF,'border-color': #C34CFF), 'light-blue': ('primary': #0091ea,'secondary': #0071B7,'font-color': $wht,'bg-color': #90CCF0,'border-color': #47AEED), 'cyan': ('primary': #00b8d4,'secondary': #008CA1,'font-color': $wht,'bg-color': #87D5E1,'border-color': #42C7DB), 'light-green': ('primary': #64dd17,'secondary': #4DAA12,'font-color': $wht,'bg-color': #BEE8A3,'border-color': #90E35C), 'orange': ('primary': #ff6d00,'secondary': #CC5700,'font-color': $wht,'bg-color': #FFC598,'border-color': #FF994C), 'brown': ('primary': #4a2b20,'secondary': #573226,'font-color': $wht,'bg-color': #E28362,'border-color': #965741) )
-
-$coloresTerciarios: ('deep-purple': ('primary': #6200ea,'secondary': #4D00B7,'font-color': $wht,'bg-color': #B890F0,'border-color': #8D47ED), 'indigo': ('primary': #304ffe,'secondary': #263FCB,'font-color': $wht,'bg-color': #C8D1FE,'border-color': #7C90FE), 'teal': ('primary': #00bfa5,'secondary': #008C79,'font-color': $wht,'bg-color': #7ED3C7,'border-color': #3CCAB6), 'lime': ('primary': #aeea00,'secondary': #88B700,'font-color': $blk,'bg-color': #D8F090,'border-color': #C3ED47), 'amber': ('primary': #ffab00,'secondary': #CC8900,'font-color': $blk,'bg-color': #FFDD98,'border-color': #FFC44C), 'deep-orange': ('primary': #dd2c00,'secondary': #AA2200,'font-color': $wht,'bg-color': #E89E8B,'border-color': #E36444), 'blue-grey': ('primary': #263238,'secondary': #2F3D45,'font-color': $wht,'bg-color': #8EBAD0,'border-color': #5A7684) )
-
-$coloresExtra: map-merge($coloresSecundarios, $coloresTerciarios)
-$coloresTotales: map-merge($coloresBase, $coloresExtra)
+$coloresTotales: ('default': $default, 'red': $red, 'pink': $pink, 'purple': $purple, 'deep-purple': $deep-purple, 'indigo': $indigo, 'blue': $blue, 'light-blue': $light-blue, 'cyan': $cyan, 'teal': $teal, 'green': $green, 'light-green': $light-green, 'lime': $lime, 'yellow': $yellow, 'amber': $amber, 'orange': $orange, 'deep-orange': $deep-orange, 'brown': $brown, 'grey': $grey, 'blue-grey': $blue-grey)
 
 ///Variables usadas para las tablas
 $nombreTabla: 'table'

@@ -6,66 +6,68 @@
 ///Mixin para crear un nav de color plano
 =crearNavColor($nomNav, $nomColor, $color)
   .#{$nomNav}-#{$nomColor}
-    background-color: map-get($color, 'primary')
+    background-color: map-get($color, 'primary-color-dark')
     & .#{$nomNav}-item,
     & .#{$nomNav}-link
-      color: map-get($color, 'bg-color')
+      color: map-get($color, 'primary-color-light')
 
     & .#{$nomNav}-link:hover,
     & .#{$nomNav}-item:hover
-      color: map-get($color, 'border-color')
+      color: map-get($color, 'accent-color')
 
     & .active,
     & .#{$nomNav}-link.active,
     & .#{$nomNav}-item.active
-      color: map-get($color, 'font-color')
+      color: map-get($color, 'primary-color-title')
 
 ///Mixin para crear un nav-pills de color
 =crearNavPills($nomNav, $nomColor, $color)
   .#{$nomNav}-pills-#{$nomColor} .active,
   .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-link.active,
   .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-item.active
-    background-color: map-get($color, 'primary')
-    color: map-get($color, 'font-color')
+    background-color: map-get($color, 'primary-color')
+    color: map-get($color, 'primary-color-title')
 
     &:hover
-      color: map-get($color, 'bg-color')
+      color: map-get($color, 'primary-color-light')
 
   .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-link,
   .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-item
-    color: map-get($color, 'primary')
+    color: map-get($color, 'primary-color')
     border-radius: 5px
+    border: 1px transparent solid
 
     &:hover
-      color: map-get($color, 'secondary')
+      color: map-get($color, 'accent-color')
+      border: 1px map-get($color, 'accent-color') solid
 
 ///Mixin para crear un nav-tabs con color
 =crearNavTabs($nomNav, $nomColor, $color)
   .#{$nomNav}-tabs-#{$nomColor}
     & .#{$nomNav}-link,
     & .#{$nomNav}-item
-      color: map-get($color, 'primary')
+      color: map-get($color, 'primary-color')
       border-top-left-radius: 5px
       border-top-right-radius: 5px
-      border-bottom: 1px map-get($color, 'primary') solid
+      border-bottom: 1px map-get($color, 'primary-color') solid
       border-top: 1px solid transparent
       border-left: 1px solid transparent
       border-right: 1px solid transparent
 
       &:hover
-        color: map-get($color, 'secondary')
-        border-top: 1px map-get($color, 'primary') solid
-        border-right: 1px map-get($color, 'primary') solid
-        border-left: 1px map-get($color, 'primary') solid
+        color: map-get($color, 'accent-color')
+        border-top: 1px map-get($color, 'accent-color') solid
+        border-right: 1px map-get($color, 'accent-color') solid
+        border-left: 1px map-get($color, 'accent-color') solid
 
     & .active,
     & .#{$nomNav}-link.active,
     & .#{$nomNav}-item.active
-      color: map-get($color, 'secondary')
+      color: map-get($color, 'primary-color-dark')
       border-bottom: 0px
-      border-top: 1px map-get($color, 'primary') solid
-      border-right: 1px map-get($color, 'primary') solid
-      border-left: 1px map-get($color, 'primary') solid
+      border-top: 1px map-get($color, 'primary-color-dark') solid
+      border-right: 1px map-get($color, 'primary-color-dark') solid
+      border-left: 1px map-get($color, 'primary-color-dark') solid
 
 ///Mixin para crear un nav de color con todas sus variantes
 =crearNav($nomNav, $nomColor, $color)
@@ -75,6 +77,7 @@
 
 ///Mixin para crear una serie de botones con una lista de colores
 =crearNavs($nomNav, $colores)
+  $default: map-get($colores, 'default')
   .#{$nomNav}
     display: inline-flex
     flex-wrap: wrap
@@ -85,12 +88,12 @@
 
   .#{$nomNav}-item,
   .#{$nomNav}-link
-    color: #0091ea
+    color: map-get($default, 'primary-color')
     padding: .5em 1em
     display: block
 
     &:hover
-      color: darken(#0091ea, 10%)
+      color: map-get($default, 'accent-color')
       cursor: pointer
 
     // &.disabled
@@ -108,14 +111,18 @@
   .#{$nomNav}-pills
     & .active,
     & .#{$nomNav}-link.active
-      background-color: #0091ea
+      background-color: map-get($default, 'accent-color')
       color: white
 
   .#{$nomNav}-pills .#{$nomNav}-item,
   .#{$nomNav}-pills .#{$nomNav}-link
     border-radius: 5px
+    border: 1px transparent solid
 
-  $border-color: #AAA
+    &:hover
+      border-color: map-get($default, 'accent-color')
+
+  $border-color: map-get($default, 'divider-color')
 
   .#{$nomNav}-tabs
     & .#{$nomNav}-link,

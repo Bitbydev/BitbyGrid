@@ -4,33 +4,38 @@
 
 ///Mixins usados en el documento
 =crearListaColor($nomLista, $nomColor, $color)
+  .#{$nomLista}-group-item.#{$nomColor}
+    background-color: map-get($color, 'primary-color')
+    color: map-get($color, 'primary-color-title')
+
   .#{$nomLista}-group-#{$nomColor}
     & .#{$nomLista}-group-item.active,
     &-hover .#{$nomLista}-group-item.active
-      background-color: map-get($color, 'primary')
-      color: map-get($color, 'font-color')
+      background-color: map-get($color, 'primary-color')
+      color: map-get($color, 'primary-color-title')
 
     &-hover
       & .#{$nomLista}-group-item
         &:hover
-          background-color: map-get($color, 'primary')
-          color: map-get($color, 'font-color')
-          
+          background-color: map-get($color, 'primary-color')
+          color: map-get($color, 'primary-color-title')
+
         &.active:hover
-          background-color: map-get($color, 'secondary')
-          color: map-get($color, 'font-color')
+          background-color: map-get($color, 'primary-color-dark')
+          color: map-get($color, 'primary-color-title')
 
 
 =crearListas($nomLista, $colores)
-  $border: #CCC
+  $default: map-get($colores, 'default')
   .#{$nomLista}-group
     display: inline-flex
     flex-direction: column
     width: 100%
 
     &-item
+      color: map-get($default, 'primary-color-text')
       padding: 1em
-      border: 1px $border solid
+      border: 1px map-get($default, 'divider-color') solid
 
       &:first-child
         border-top-left-radius: .5em

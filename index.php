@@ -21,6 +21,7 @@
           <a href="badges.php" class="nav-item">Badges</a>
           <a href="botones.php" class="nav-item">Botones</a>
           <a href="breadcrumbs.php" class="nav-item">Breadcrumbs</a>
+          <a href="colores.php" class="nav-item">Colores</a>
           <a href="listas.php" class="nav-item">Listas</a>
           <a href="navs.php" class="nav-item">Navs</a>
           <a href="tablas.php" class="nav-item">Tablas</a>

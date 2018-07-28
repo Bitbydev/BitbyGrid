@@ -27,6 +27,15 @@
 =gridBreakpoint($breakpoints, $nomBase, $modo, $cantBase:20, $nomCol: 'col-', $cantCol:12)
   $incremento: (100/$cantBase)
   $keysBp: map-keys($breakpoints)
+
+  @for $i from 1 through $cantBase
+    .#{$nomBase}#{$i*5}
+      +crearColumnaPorcentaje($i*$incremento)
+
+    @if $i < $cantBase
+      .#{$nomBase}offset-#{$i*5}
+        +offsetColumnaPorcentaje($i*$incremento)
+
   @each $bp in $keysBp
     @media only screen and (min-width: map-get($breakpoints, $bp))
       @for $i from 1 through $cantBase
@@ -46,22 +55,14 @@
             .#{$nomColumnas}offset-#{$bp}-#{$i}
               +offsetColumna($i, $cantCol)
 
-  @for $i from 1 through $cantBase
-    .#{$nomBase}#{$i*5}
-      +crearColumnaPorcentaje($i*$incremento)
+    @if $modo == true
+      @for $i from 1 through $cantCol
+        .#{$nomColumnas}#{$i}
+          +crearColumna($i, $cantCol)
 
-    @if $i < $cantBase
-      .#{$nomBase}offset-#{$i*5}
-        +offsetColumnaPorcentaje($i*$incremento)
-
-  @if $modo == true
-    @for $i from 1 through $cantCol
-      .#{$nomColumnas}#{$i}
-        +crearColumna($i, $cantCol)
-
-      @if $i < $cantCol
-        .#{$nomColumnas}offset-#{$i}
-          +offsetColumna($i, $cantCol)
+        @if $i < $cantCol
+          .#{$nomColumnas}offset-#{$i}
+            +offsetColumna($i, $cantCol)
 
 ///Mixin para crear un Grid con BitbyGrid
 =crearBitGrid($nomContenedor, $nomFullContenedor, $nomRow, $breakpoints, $nomBase, $modo, $cantBase:20, $nomCol: 'col-', $cantCol:12)

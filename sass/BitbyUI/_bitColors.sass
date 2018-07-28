@@ -1,0 +1,27 @@
+///Sección de Sass que controla los elementos básicos de color
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+=crearBackgroundColor($nomBg, $nomColor, $color)
+  .#{$nomBg}-#{$nomColor}-outline,
+  .#{$nomBg}-#{$nomColor}
+    padding: 1em
+
+  .#{$nomBg}-#{$nomColor}
+    background-color: map-get($color, 'primary-color')
+    color: map-get($color, 'primary-color-title')
+
+  .#{$nomBg}-#{$nomColor}-outline
+    border: 1px map-get($color, 'primary-color') solid
+    color: map-get($color, 'primary-color-text')
+
+=crearTextoColor($nomTexto, $nomColor, $color)
+  .#{$nomTexto}-#{$nomColor}
+    color: map-get($color, 'primary-color')
+
+=crearElementosColor($nomBg, $nomTexto, $colores)
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearBackgroundColor($nomBg, $color, map-get($colores, $color))
+    +crearTextoColor($nomTexto, $color, map-get($colores, $color))

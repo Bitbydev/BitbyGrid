@@ -4,10 +4,10 @@
 
 ///Mixins usados en el documento
 =crearBreadcrumbColor($nomBc, $nomColor, $color)
-  .#{$nomBc}-#{$nomColor}
+  .#{$nomBc}.#{$nomColor}
     background-color: map-get($color, 'primary-color-light')
 
-    & .#{$nomBc}-item
+    & .item
       & a
         color: map-get($color, 'primary-color-dark')
 
@@ -40,29 +40,29 @@
     list-style: none
     border-radius: .5em
 
-  .#{$nomBc}-item
-    & a
-      color: map-get($default, 'primary-color')
-
-      &:hover
-        color: map-get($default, 'accent-color')
-        text-decoration: underline
-        cursor: pointer
-
-    &.active
+    & .item
       & a
-        color: map-get($default, 'primary-color-dark')
+        color: map-get($default, 'primary-color')
 
         &:hover
-          text-decoration: none
-          cursor: auto
+          color: map-get($default, 'accent-color')
+          text-decoration: underline
+          cursor: pointer
 
-    &:nth-child(n+2)
-      &:before
-        font-weight: bold
-        content: $separador
-        padding: 0px .5em
-        color: map-get($default, 'primary-color-dark')
+      &.active
+        & a
+          color: map-get($default, 'primary-color-dark')
+
+          &:hover
+            text-decoration: none
+            cursor: auto
+
+      &:nth-child(n+2)
+        &:before
+          font-weight: bold
+          content: $separador
+          padding: 0px .5em
+          color: map-get($default, 'primary-color-dark')
 
   $keysColors: map-keys($colores)
   @each $color in $keysColors

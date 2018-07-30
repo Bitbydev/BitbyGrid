@@ -5,12 +5,12 @@
 ///Mixins usados en el documento
 ///Mixin para crear una alerta de color con todas sus configuraciones
 =crearAlerta($nomAlerta, $nomColor, $color)
-  .#{$nomAlerta}-#{$nomColor}
+  .#{$nomAlerta}.#{$nomColor}
     background-color: map-get($color, 'primary-color-light')
     color: map-get($color, 'primary-color-dark')
     border-color: map-get($color, 'accent-color')
 
-    & .#{$nomAlerta}-link
+    & .link
       font-weight: bold
       color: map-get($color, 'primary-color-dark')
 
@@ -19,6 +19,7 @@
 
 ///Mixin para crear todas las alertas de un mapa de colores y la alerta base
 =crearAlertas($nomAlerta, $colores)
+  $default: map-get($colores, 'default')
   .#{$nomAlerta}
     width: 100%
     border: 1px solid transparent

@@ -14,35 +14,35 @@
 <body>
   <div class="bit-container">
     <div class="row">
-      <a href="index.php" class="btn btn-red btn-lg">Regresar a Inicio</a>
-      <button id="blanco" class="btn btn-light btn-lg">Cambiar a blanco</button>
-      <button id="negro" class="btn btn-dark btn-lg">Cambiar a negro</button>
+      <a href="index.php" class="btn red lg">Regresar a Inicio</a>
+      <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
+      <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
       <h2>Normal</h2>
       <div class="bit-col-100">
-        <nav class="nav nav-fill">
-          <a href="#" class="nav-item active">Texto 1</a>
-          <a href="#" class="nav-item">Texto 2</a>
-          <a href="#" class="nav-item">Texto 3</a>
-          <a href="#" class="nav-item">Texto 4</a>
-          <a href="#" class="nav-item">Texto 5</a>
+        <nav class="nav fill">
+          <a href="#" class="item active">Texto 1</a>
+          <a href="#" class="item">Texto 2</a>
+          <a href="#" class="item">Texto 3</a>
+          <a href="#" class="item">Texto 4</a>
+          <a href="#" class="item">Texto 5</a>
         </nav>
       </div>
       <div class="bit-col-100">
-        <nav class="nav nav-fill nav-tabs">
-          <a href="#" class="nav-item active">Texto 1</a>
-          <a href="#" class="nav-item">Texto 2</a>
-          <a href="#" class="nav-item">Texto 3</a>
-          <a href="#" class="nav-item">Texto 4</a>
-          <a href="#" class="nav-item">Texto 5</a>
+        <nav class="nav fill tabs">
+          <a href="#" class="item active">Texto 1</a>
+          <a href="#" class="item">Texto 2</a>
+          <a href="#" class="item">Texto 3</a>
+          <a href="#" class="item">Texto 4</a>
+          <a href="#" class="item">Texto 5</a>
         </nav>
       </div>
       <div class="bit-col-100">
-        <nav class="nav nav-fill nav-pills">
-          <a href="#" class="nav-item active">Texto 1</a>
-          <a href="#" class="nav-item">Texto 2</a>
-          <a href="#" class="nav-item">Texto 3</a>
-          <a href="#" class="nav-item">Texto 4</a>
-          <a href="#" class="nav-item">Texto 5</a>
+        <nav class="nav fill pills">
+          <a href="#" class="item active">Texto 1</a>
+          <a href="#" class="item">Texto 2</a>
+          <a href="#" class="item">Texto 3</a>
+          <a href="#" class="item">Texto 4</a>
+          <a href="#" class="item">Texto 5</a>
         </nav>
       </div>
     </div>
@@ -51,30 +51,30 @@
         <div class="row">
           <h2><?php echo $color ?></h2>
           <div class="bit-col-100">
-            <nav class="nav nav-fill nav-<?php echo $color ?>">
-              <a href="#" class="nav-item active">Texto 1</a>
-              <a href="#" class="nav-item">Texto 2</a>
-              <a href="#" class="nav-item">Texto 3</a>
-              <a href="#" class="nav-item">Texto 4</a>
-              <a href="#" class="nav-item">Texto 5</a>
+            <nav class="nav fill nav-<?php echo $color ?>">
+              <a href="#" class="item active">Texto 1</a>
+              <a href="#" class="item">Texto 2</a>
+              <a href="#" class="item">Texto 3</a>
+              <a href="#" class="item">Texto 4</a>
+              <a href="#" class="item">Texto 5</a>
             </nav>
           </div>
           <div class="bit-col-100">
-            <nav class="nav nav-fill nav-tabs-<?php echo $color ?>">
-              <a href="#" class="nav-item active">Texto 1</a>
-              <a href="#" class="nav-item">Texto 2</a>
-              <a href="#" class="nav-item">Texto 3</a>
-              <a href="#" class="nav-item">Texto 4</a>
-              <a href="#" class="nav-item">Texto 5</a>
+            <nav class="nav fill tabs <?php echo $color ?>">
+              <a href="#" class="item active">Texto 1</a>
+              <a href="#" class="item">Texto 2</a>
+              <a href="#" class="item">Texto 3</a>
+              <a href="#" class="item">Texto 4</a>
+              <a href="#" class="item">Texto 5</a>
             </nav>
           </div>
           <div class="bit-col-100">
-            <nav class="nav nav-fill nav-pills-<?php echo $color ?>">
-              <a href="#" class="nav-item active">Texto 1</a>
-              <a href="#" class="nav-item">Texto 2</a>
-              <a href="#" class="nav-item">Texto 3</a>
-              <a href="#" class="nav-item">Texto 4</a>
-              <a href="#" class="nav-item">Texto 5</a>
+            <nav class="nav fill pills <?php echo $color ?>">
+              <a href="#" class="item active">Texto 1</a>
+              <a href="#" class="item">Texto 2</a>
+              <a href="#" class="item">Texto 3</a>
+              <a href="#" class="item">Texto 4</a>
+              <a href="#" class="item">Texto 5</a>
             </nav>
           </div>
         </div>

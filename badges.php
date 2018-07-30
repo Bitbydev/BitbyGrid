@@ -14,15 +14,26 @@
 </head>
 <body>
   <div class="bit-container">
-    <a href="index.php" class="btn btn-red btn-lg">Regresar a Inicio</a>
-    <button id="blanco" class="btn btn-light btn-lg">Cambiar a blanco</button>
-    <button id="negro" class="btn btn-dark btn-lg">Cambiar a negro</button>
+    <a href="index.php" class="btn red lg">Regresar a Inicio</a>
+    <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
+    <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
+    <div class="row">
+      <h2>Normal</h2>
+      <div class="bit-col-100">
+        <a class="badge">Hola Mundo!</a>
+        <a class="badge pill">Hola Mundo!</a>
+      </div>
+    </div>
     <?php foreach ($colores as $color): ?>
       <div class="row">
         <h2><?php echo $color ?></h2>
         <div class="bit-col-100">
-          <a class="badge badge-<?php echo $color ?>">Hola Mundo!</a>
-          <a class="badge badge-<?php echo $color ?> badge-pill">Hola Mundo!</a>
+          <a class="badge <?php echo $color ?>">Hola Mundo!</a>
+          <a class="badge <?php echo $color ?> pill">Hola Mundo!</a>
+          <a class="badge <?php echo $color ?>-light">Hola Mundo!</a>
+          <a class="badge <?php echo $color ?>-light pill">Hola Mundo!</a>
+          <a class="badge <?php echo $color ?>-dark">Hola Mundo!</a>
+          <a class="badge <?php echo $color ?>-dark pill">Hola Mundo!</a>
         </div>
       </div>
     <?php endforeach; ?>

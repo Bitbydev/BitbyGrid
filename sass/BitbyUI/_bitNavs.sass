@@ -7,34 +7,33 @@
 =crearNavColor($nomNav, $nomColor, $color)
   .#{$nomNav}-#{$nomColor}
     background-color: map-get($color, 'primary-color-dark')
-    & .#{$nomNav}-item,
-    & .#{$nomNav}-link
+    & .item,
+    & .link
       color: map-get($color, 'primary-color-light')
 
-    & .#{$nomNav}-link:hover,
-    & .#{$nomNav}-item:hover
+    & .link:hover,
+    & .item:hover
       color: map-get($color, 'accent-color')
 
     & .active,
-    & .#{$nomNav}-link.active,
-    & .#{$nomNav}-item.active
+    & .link.active,
+    & .item.active
       color: map-get($color, 'primary-color-title')
 
 ///Mixin para crear un nav-pills de color
 =crearNavPills($nomNav, $nomColor, $color)
-  .#{$nomNav}-pills-#{$nomColor} .active,
-  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-link.active,
-  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-item.active
+  .#{$nomNav}.pills.#{$nomColor} .active,
+  .#{$nomNav}.pills.#{$nomColor} .link.active,
+  .#{$nomNav}.pills.#{$nomColor} .item.active
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
     &:hover
       color: map-get($color, 'primary-color-light')
 
-  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-link,
-  .#{$nomNav}-pills-#{$nomColor} .#{$nomNav}-item
+  .#{$nomNav}.pills.#{$nomColor} .link,
+  .#{$nomNav}.pills.#{$nomColor} .item
     color: map-get($color, 'primary-color')
-    border-radius: 5px
     border: 1px transparent solid
 
     &:hover
@@ -43,9 +42,9 @@
 
 ///Mixin para crear un nav-tabs con color
 =crearNavTabs($nomNav, $nomColor, $color)
-  .#{$nomNav}-tabs-#{$nomColor}
-    & .#{$nomNav}-link,
-    & .#{$nomNav}-item
+  .#{$nomNav}.tabs.#{$nomColor}
+    & .link,
+    & .item
       color: map-get($color, 'primary-color')
       border-top-left-radius: 5px
       border-top-right-radius: 5px
@@ -61,8 +60,8 @@
         border-left: 1px map-get($color, 'accent-color') solid
 
     & .active,
-    & .#{$nomNav}-link.active,
-    & .#{$nomNav}-item.active
+    & .link.active,
+    & .item.active
       color: map-get($color, 'primary-color-dark')
       border-bottom: 0px
       border-top: 1px map-get($color, 'primary-color-dark') solid
@@ -86,36 +85,36 @@
     border: 0px
     width: auto
 
-  .#{$nomNav}-item,
-  .#{$nomNav}-link
-    color: map-get($default, 'primary-color')
-    padding: .5em 1em
-    display: block
+    & .item,
+    & .link
+      color: map-get($default, 'primary-color')
+      padding: .5em 1em
+      display: block
 
-    &:hover
-      color: map-get($default, 'accent-color')
-      cursor: pointer
+      &:hover
+        color: map-get($default, 'accent-color')
+        cursor: pointer
 
     // &.disabled
     //   color: darken(#616161, 10%)
     //   cursor: not-allowed
 
-  .#{$nomNav}-fill .#{$nomNav}-link,
-  .#{$nomNav}-fill .#{$nomNav}-item
+  .#{$nomNav}.fill .link,
+  .#{$nomNav}.fill .item
     text-align: center
     flex: 1 1 auto
 
-  .#{$nomNav}-fill
+  .#{$nomNav}.fill
     width: 100%
 
-  .#{$nomNav}-pills
+  .#{$nomNav}.pills
     & .active,
-    & .#{$nomNav}-link.active
+    & .link.active
       background-color: map-get($default, 'accent-color')
       color: white
 
-  .#{$nomNav}-pills .#{$nomNav}-item,
-  .#{$nomNav}-pills .#{$nomNav}-link
+  .#{$nomNav}.pills .item,
+  .#{$nomNav}.pills .link
     border-radius: 5px
     border: 1px transparent solid
 
@@ -124,9 +123,9 @@
 
   $border-color: map-get($default, 'divider-color')
 
-  .#{$nomNav}-tabs
-    & .#{$nomNav}-link,
-    & .#{$nomNav}-item
+  .#{$nomNav}.tabs
+    & .link,
+    & .item
       border-top-left-radius: 5px
       border-top-right-radius: 5px
       border-bottom: 1px $border-color solid
@@ -139,14 +138,12 @@
         border-right: 1px $border-color solid
         border-left: 1px $border-color solid
 
-    & .active,
-    & .#{$nomNav}-link.active,
-    & .#{$nomNav}-item.active
-      color: $border-color
-      border-bottom: 0px
-      border-top: 1px $border-color solid
-      border-right: 1px $border-color solid
-      border-left: 1px $border-color solid
+      &.active
+        color: $border-color
+        border-bottom: 0px
+        border-top: 1px $border-color solid
+        border-right: 1px $border-color solid
+        border-left: 1px $border-color solid
 
   $keysColors: map-keys($colores)
   @each $color in $keysColors

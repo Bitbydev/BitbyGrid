@@ -4,18 +4,14 @@
 
 ///Mixins usados en el documento
 =crearListaColor($nomLista, $nomColor, $color)
-  .#{$nomLista}-group-item.#{$nomColor}
+  .#{$nomLista}-group .item.#{$nomColor},
+  .#{$nomLista}-group.#{$nomColor} .item.active
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
-  .#{$nomLista}-group-#{$nomColor}
-    & .#{$nomLista}-group-item.active,
-    &-hover .#{$nomLista}-group-item.active
-      background-color: map-get($color, 'primary-color')
-      color: map-get($color, 'primary-color-title')
-
-    &-hover
-      & .#{$nomLista}-group-item
+  .#{$nomLista}-group.#{$nomColor}
+    &.hover
+      & .item
         &:hover
           background-color: map-get($color, 'primary-color')
           color: map-get($color, 'primary-color-title')
@@ -32,7 +28,7 @@
     flex-direction: column
     width: 100%
 
-    &-item
+    & .item
       color: map-get($default, 'primary-color-text')
       padding: 1em
       border: 1px map-get($default, 'divider-color') solid

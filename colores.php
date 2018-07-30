@@ -13,9 +13,9 @@
 </head>
 <body>
   <div class="bit-container">
-    <a href="index.php" class="btn btn-red btn-lg">Regresar a Inicio</a>
-    <button id="blanco" class="btn btn-light btn-lg">Cambiar a blanco</button>
-    <button id="negro" class="btn btn-dark btn-lg">Cambiar a negro</button>
+    <a href="index.php" class="btn red lg">Regresar a Inicio</a>
+    <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
+    <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <?php foreach ($colores as $color): ?>
       <h1><?php echo $color ?></h1>
       <div class="row">

@@ -16,15 +16,30 @@
 //Los mapas de cantCol (cantidad de columnas por tamaño) y espaciado (espacio entre columnas por tamaño)
 //pueden tener la misma cantidad de elementos que los breakpoints, uno o menos, si son más no se tomarán en cuenta
 //los que sobrepasen a los breakpoints
-=crearBreakpointGridCSS($nombreGrid, $nombreGridAux, $breakpoints, $cantCol, $espaciado)
+=crearBreakpointGridCSS($nombreGrid, $nombreGridFull, $nombreGridAux, $breakpoints, $cantCol, $espaciado)
   $keysCol: map-keys($cantCol)
   $keysBp: map-keys($breakpoints)
   $keysEsp: map-keys($espaciado)
+  .#{$nombreGridFull},
   .#{$nombreGrid}
     display: grid
     width: 100%
+    grid-template-columns: auto
+    grid-gap: 0em
+
+  .#{$nombreGrid}
+    max-width: 1200px
 
   //Clases para agregar todas las reglas de alineamiento
+  .#{$nombreGridAux}align-self-center
+    align-self: center
+
+  .#{$nombreGridAux}align-self-start
+    align-self: start
+
+  .#{$nombreGridAux}align-self-end
+    align-self: end
+
   .#{$nombreGridAux}align-center
     align-content: center
 
@@ -42,6 +57,15 @@
 
   .#{$nombreGridAux}align-evenly
     justify-content: space-evenly
+
+  .#{$nombreGridAux}justify-self-center
+    justify-self: center
+
+  .#{$nombreGridAux}justify-self-start
+    justify-self: start
+
+  .#{$nombreGridAux}justify-self-end
+    justify-self: end
 
   .#{$nombreGridAux}justify-center
     justify-content: center
@@ -63,7 +87,8 @@
 
   @for $i from 1 through length($breakpoints)
     @media only screen and (min-width: map-get($breakpoints, nth($keysBp, $i)))
-      .#{$nombreGrid}
+      .#{$nombreGrid},
+      .#{$nombreGridFull}
         @if $i <= length($keysCol)
           $cadenaElementos: ''
           @for $j from 1 through map-get($cantCol, nth($keysCol, $i))

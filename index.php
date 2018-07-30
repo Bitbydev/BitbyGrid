@@ -16,15 +16,15 @@
       <div class="bit-col-100">
         <h2 class="text-center">Ingresa a las pruebas deseadas</h2>
         <hr>
-        <nav class="nav nav-blue-grey">
-          <a href="alertas.php" class="nav-item">Alertas</a>
-          <a href="badges.php" class="nav-item">Badges</a>
-          <a href="botones.php" class="nav-item">Botones</a>
-          <a href="breadcrumbs.php" class="nav-item">Breadcrumbs</a>
-          <a href="colores.php" class="nav-item">Colores</a>
-          <a href="listas.php" class="nav-item">Listas</a>
-          <a href="navs.php" class="nav-item">Navs</a>
-          <a href="tablas.php" class="nav-item">Tablas</a>
+        <nav class="nav blue-grey">
+          <a href="alertas.php" class="item">Alertas</a>
+          <a href="badges.php" class="item">Badges</a>
+          <a href="botones.php" class="item">Botones</a>
+          <a href="breadcrumbs.php" class="item">Breadcrumbs</a>
+          <a href="colores.php" class="item">Colores</a>
+          <a href="listas.php" class="item">Listas</a>
+          <a href="navs.php" class="item">Navs</a>
+          <a href="tablas.php" class="item">Tablas</a>
         </nav>
       </div>
     </div>

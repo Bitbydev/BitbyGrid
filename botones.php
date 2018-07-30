@@ -14,24 +14,24 @@
 </head>
 <body>
   <div class="bit-container">
-    <a href="index.php" class="btn btn-red btn-lg">Regresar a Inicio</a>
-    <button id="blanco" class="btn btn-light btn-lg">Cambiar a blanco</button>
-    <button id="negro" class="btn btn-dark btn-lg">Cambiar a negro</button>
+    <a href="index.php" class="btn red lg">Regresar a Inicio</a>
+    <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
+    <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <div class="bit-col-100">
       <h2>Normal</h2>
-      <button class="btn btn-sm">Hola Mundo!</button>
-      <button class="btn btn">Hola Mundo!</button>
-      <button class="btn btn-lg">Hola Mundo!</button>
+      <button class="btn sm">Hola Mundo!</button>
+      <button class="btn">Hola Mundo!</button>
+      <button class="btn lg">Hola Mundo!</button>
     </div>
     <?php foreach ($colores as $color): ?>
     <div class="bit-col-100">
       <h2><?php echo $color ?></h2>
-      <button class="btn btn-<?php echo $color; ?> btn-sm">Hola Mundo!</button>
-      <button class="btn btn-<?php echo $color; ?> btn">Hola Mundo!</button>
-      <button class="btn btn-<?php echo $color; ?> btn-lg">Hola Mundo!</button>
-      <button class="btn btn-<?php echo $color; ?>-outline btn-sm">Hola Mundo!</button>
-      <button class="btn btn-<?php echo $color; ?>-outline btn">Hola Mundo!</button>
-      <button class="btn btn-<?php echo $color; ?>-outline btn-lg">Hola Mundo!</button>
+      <button class="btn <?php echo $color; ?> sm">Hola Mundo!</button>
+      <button class="btn <?php echo $color; ?>">Hola Mundo!</button>
+      <button class="btn <?php echo $color; ?> lg">Hola Mundo!</button>
+      <button class="btn <?php echo $color; ?>-outline sm">Hola Mundo!</button>
+      <button class="btn <?php echo $color; ?>-outline">Hola Mundo!</button>
+      <button class="btn <?php echo $color; ?>-outline lg">Hola Mundo!</button>
     </div>
     <?php endforeach; ?>
   </div>

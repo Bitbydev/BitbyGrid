@@ -14,28 +14,28 @@
 </head>
 <body>
   <div class="bit-container">
-    <a href="index.php" class="btn btn-red btn-lg">Regresar a Inicio</a>
-    <button id="blanco" class="btn btn-light btn-lg">Cambiar a blanco</button>
-    <button id="negro" class="btn btn-dark btn-lg">Cambiar a negro</button>
+    <a href="index.php" class="btn red lg">Regresar a Inicio</a>
+    <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
+    <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <?php foreach ($colores as $color): ?>
       <div class="row">
         <h2><?php echo $color ?></h2>
         <div class="bit-col-md-25 bit-col-sm-100">
-          <div class="list-group list-group-<?php echo $color ?>">
-            <a class="list-group-item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge badge-blue-grey">5</span></a>
+          <div class="list-group <?php echo $color ?>">
+            <a class="item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge <?php echo $color ?>-light">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge <?php echo $color ?>">5</span></a>
           </div>
         </div>
         <div class="bit-col-md-25 bit-col-offset-5">
-          <div class="list-group list-group-<?php echo $color ?>-hover">
-            <a class="list-group-item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge badge-pill badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge badge-pill badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge badge-pill badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge badge-pill badge-blue-grey">5</span></a>
-            <a class="list-group-item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge badge-pill badge-blue-grey">5</span></a>
+          <div class="list-group <?php echo $color ?> hover">
+            <a class="item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge pill <?php echo $color ?>-dark">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge pill <?php echo $color ?>">5</span></a>
           </div>
         </div>
       </div>

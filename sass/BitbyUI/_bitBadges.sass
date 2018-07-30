@@ -5,12 +5,32 @@
 ///Mixins usados en el documento
 ///Mixin para crear un badge de color
 =crearBadgeColor($nomBadge, $nomColor, $color)
-  .#{$nomBadge}-#{$nomColor}
+  .#{$nomBadge}.#{$nomColor}
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
-  a.#{$nomBadge}-#{$nomColor}:hover
+  a.#{$nomBadge}.#{$nomColor}:hover
     background-color: map-get($color, 'primary-color-dark')
+
+  .#{$nomBadge}.#{$nomColor}-light,
+  .#{$nomBadge}.#{$nomColor}-dark
+    color: map-get($color, 'primary-color')
+
+  .#{$nomBadge}.#{$nomColor}-light
+    background-color: #FFFFFF
+
+  .#{$nomBadge}.#{$nomColor}-dark
+    background-color: #212121
+
+  a.#{$nomBadge}.#{$nomColor}-light:hover,
+  a.#{$nomBadge}.#{$nomColor}-dark:hover
+    background-color: map-get($color, 'primary-color')
+
+  a.#{$nomBadge}.#{$nomColor}-light:hover
+    color: #FFFFFF
+
+  a.#{$nomBadge}.#{$nomColor}-dark:hover
+    color: #212121
 
 ///Mixin para crear una serie de badges con una lista de colores
 =crearBadges($nomBadge, $colores, $tamFuente: 1em)
@@ -23,11 +43,13 @@
     padding: .25em .5em
     transition: all .25s
     width: auto
+    color: #212121
+    background-color: #FFFFFF
 
   .#{$nomBadge}
     border-radius: .5em
 
-  .#{$nomBadge}-pill
+  .#{$nomBadge}.pill
     border-radius: 1em
     padding: .25em .75em
 

@@ -3,7 +3,7 @@
 ///@group: BitByDev
 
 ///Mixins usados por esta sección
-=crearFlexbox($nombreFlex, $nombreFlexAux)
+=crearFlexbox($nombreFlex)
   .#{$nombreFlex}
     display: flex
 
@@ -13,41 +13,41 @@
   .nowrap
     flex-wrap: nowrap
 
-  .#{$nombreFlexAux}row
+  .#{$nombreFlex}.row
     flex-direction: row
 
-  .#{$nombreFlexAux}row-reverse
+  .#{$nombreFlex}.row-reverse
     flex-direction: row-reverse
 
-  .#{$nombreFlexAux}column
+  .#{$nombreFlex}.column
     flex-direction: column
 
-  .#{$nombreFlexAux}column-reverse
+  .#{$nombreFlex}.column-reverse
     flex-direction: column-reverse
 
-  .#{$nombreFlexAux}align-center
+  .#{$nombreFlex}.align-center
     align-items: center
 
-  .#{$nombreFlexAux}align-start
+  .#{$nombreFlex}.align-start
     align-items: flex-start
 
-  .#{$nombreFlexAux}align-end
+  .#{$nombreFlex}.align-end
     align-items: flex-end
 
-  .#{$nombreFlexAux}align-stretch
+  .#{$nombreFlex}.align-stretch
     align-items: stretch
 
-  .#{$nombreFlexAux}justify-center
+  .#{$nombreFlex}.justify-center
     justify-content: center
 
-  .#{$nombreFlexAux}justify-start
+  .#{$nombreFlex}.justify-start
     justify-content: flex-start
 
-  .#{$nombreFlexAux}justify-end
+  .#{$nombreFlex}.justify-end
     justify-content: flex-end
 
-  .#{$nombreFlexAux}justify-around
+  .#{$nombreFlex}.justify-around
     justify-content: space-around
 
-  .#{$nombreFlexAux}justify-between
+  .#{$nombreFlex}.justify-between
     justify-content: space-between

@@ -24,44 +24,44 @@
   float: left
 
 ///Mixin para crear todos los estilos de las grid de un breakpoint
-=gridBreakpoint($breakpoints, $nomBase, $modo, $cantBase:20, $nomCol: 'col-', $cantCol:12)
+=gridBreakpoint($breakpoints, $nomBase, $modo, $cantBase:20, $nomCol: 'col', $cantCol:12)
   $incremento: (100/$cantBase)
   $keysBp: map-keys($breakpoints)
 
   @for $i from 1 through $cantBase
-    .#{$nomBase}#{$i*5}
+    .#{$nomBase}-#{$i*5}
       +crearColumnaPorcentaje($i*$incremento)
 
     @if $i < $cantBase
-      .#{$nomBase}offset-#{$i*5}
+      .#{$nomBase}-offset-#{$i*5}
         +offsetColumnaPorcentaje($i*$incremento)
 
   @each $bp in $keysBp
     @media only screen and (min-width: map-get($breakpoints, $bp))
       @for $i from 1 through $cantBase
-        .#{$nomBase}#{$bp}-#{$i*$incremento}
+        .#{$nomBase}-#{$bp}-#{$i*$incremento}
           +crearColumnaPorcentaje($i*$incremento)
 
         @if $i < $cantBase
-          .#{$nomBase}offset-#{$bp}-#{$i*$incremento}
+          .#{$nomBase}-#{$bp}-offset-#{$i*$incremento}
             +offsetColumnaPorcentaje($i*$incremento)
 
       @if $modo == true
         @for $i from 1 through $cantCol
-          .#{$nomColumnas}#{$bp}-#{$i}
+          .#{$nomColumnas}-#{$bp}-#{$i}
             +crearColumna($i, $cantCol)
 
           @if $i < $cantCol
-            .#{$nomColumnas}offset-#{$bp}-#{$i}
+            .#{$nomColumnas}-#{$bp}-offset-#{$i}
               +offsetColumna($i, $cantCol)
 
     @if $modo == true
       @for $i from 1 through $cantCol
-        .#{$nomColumnas}#{$i}
+        .#{$nomColumnas}-#{$i}
           +crearColumna($i, $cantCol)
 
         @if $i < $cantCol
-          .#{$nomColumnas}offset-#{$i}
+          .#{$nomColumnas}-offset-#{$i}
             +offsetColumna($i, $cantCol)
 
 ///Mixin para crear un Grid con BitbyGrid

@@ -57,9 +57,38 @@
     &.block
       width: 100%
 
+  .#{$nomBoton}-group,
+  .#{$nomBoton}-group-vertical
+    display: inline-flex
+    align-items: center
+    margin: .5em 0em
+    justify-content: center
+
+  .#{$nomBoton}-group
+    &-vertical
+      flex-direction: column
+
+      & .#{$nomBoton}:not(:first-child)
+        border-top-right-radius: 0px
+        border-top-left-radius: 0px
+
+      & .#{$nomBoton}:not(:last-child)
+        border-bottom-right-radius: 0px
+        border-bottom-left-radius: 0px
+
+    & .#{$nomBoton}:not(:first-child)
+      border-top-left-radius: 0px
+      border-bottom-left-radius: 0px
+
+    & .#{$nomBoton}:not(:last-child)
+      border-top-right-radius: 0px
+      border-bottom-right-radius: 0px
+
   $keysBtn: map-keys($tamanios)
   @each $btn in $keysBtn
-    .#{$nomBoton}.#{$btn}
+    .#{$nomBoton}.#{$btn},
+    .#{$nomBoton}-group.#{$btn} .#{$nomBoton},
+    .#{$nomBoton}-group-vertical.#{$btn} .#{$nomBoton}
       font-size: $tamFuente*map-get($tamanios, $btn)
       padding: $paddingH*map-get($tamanios, $btn) $paddingV*map-get($tamanios, $btn)
 

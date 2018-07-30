@@ -1,0 +1,33 @@
+///Sección de Sass que controla las imagenes
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+=crearImagenes($colores)
+  img
+    max-width: 100%
+    height: auto
+    display: inline-block
+
+  img.bordered,
+  img.rounded,
+  img.fill
+    border-radius: 5px
+
+  img.bordered,
+  img.fill
+    padding: .5em
+    border: 1px #BDBDBD solid
+
+  img.fill
+    background-color: #BDBDBD
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    $colorMap: map-get($colores, $color)
+    img.bordered.#{$color},
+    img.fill.#{$color}
+      border-color: map-get($colorMap, 'primary-color')
+
+    img.fill.#{$color}
+      background-color: map-get($colorMap, 'primary-color')

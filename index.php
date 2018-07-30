@@ -22,9 +22,11 @@
           <a href="botones.php" class="item">Botones</a>
           <a href="breadcrumbs.php" class="item">Breadcrumbs</a>
           <a href="colores.php" class="item">Colores</a>
+          <a href="imagenes.php" class="item">Imagenes</a>
           <a href="listas.php" class="item">Listas</a>
           <a href="navs.php" class="item">Navs</a>
           <a href="tablas.php" class="item">Tablas</a>
+          <a href="tarjetas.php" class="item">Tarjetas</a>
         </nav>
       </div>
     </div>

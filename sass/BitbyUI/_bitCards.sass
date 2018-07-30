@@ -1,0 +1,115 @@
+///Sección de Sass que controla las tarjetas
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Crear tarjeta de color
+=crearTarjetaColor($nomTarjeta, $nomColor, $color)
+  .#{$nomTarjeta}.#{$nomColor}
+    border-color: darken(map-get($color, 'primary-color-dark'), 5%)
+
+    & .body,
+    & .header,
+    & .footer
+      color: #FFFFFF
+
+      & .title
+        color: #FFFFFF
+
+      & .subtitle
+        color: map-get($color, 'primary-color-light')
+
+    & .body
+      background-color: map-get($color, 'primary-color')
+
+    & .header,
+    & .footer
+      background-color: map-get($color, 'primary-color-dark')
+      border-color: darken(map-get($color, 'primary-color-dark'), 5%)
+
+///Crear tarjeta con bordes
+=crearTarjetaColorBorde($nomTarjeta, $nomColor, $color)
+  .#{$nomTarjeta}.#{$nomColor}-outline
+    border-color: map-get($color, 'primary-color-dark')
+
+    & .body
+      color: map-get($color, 'primary-color-text')
+
+      & .title,
+      & .subtitle
+        color: map-get($color, 'primary-color-dark')
+
+    & .header,
+    & .footer
+      background-color: map-get($color, 'primary-color')
+      color: map-get($color, 'primary-color-title')
+      border-color: map-get($color, 'primary-color-dark')
+
+///Función principal para crear tarjetas
+=crearTarjetas($nomTarjeta, $colores, $breakpoints)
+  $default: map-get($colores, 'default')
+  .#{$nomTarjeta}
+    width: 100%
+    border: 1px map-get($default, 'divider-color') solid
+    border-radius: .5em
+    position: relative
+    display: flex
+    flex-direction: column
+
+    & .body,
+    & .header,
+    & .footer
+      padding: 1em
+      color: map-get($default, 'primary-color-text')
+
+      & .title,
+      & .subtitle
+        font-weight: bold
+
+      & .title
+        color: map-get($default, 'primary-color-text')
+
+      & .subtitle
+        color: map-get($default, 'secondary-color-text')
+
+    & .header,
+    & .footer
+      background-color: map-get($default, 'primary-color-light')
+
+    & .header
+      border-top-right-radius: .5em
+      border-top-left-radius: .5em
+      border-bottom: 1px map-get($default, 'divider-color') solid
+      font-weight: bold
+
+    & .footer
+      border-bottom-right-radius: .5em
+      border-bottom-left-radius: .5em
+      border-top: 1px map-get($default, 'divider-color') solid
+
+    $keysBp: map-keys($breakpoints)
+    $columnas: (2, 3, 4, 4)
+    $contador: 1
+    &-group
+      display: block
+      width: 100%
+      column-gap: 1em
+      orphans: 1
+      widows: 1
+      height: auto
+
+      & .#{$nomTarjeta}
+        margin-bottom: 1em
+        display: inline-block
+
+    @each $bp in $keysBp
+      @media only screen and (min-width: map-get($breakpoints, $bp))
+        &-group
+          column-count: nth($columnas, $contador)
+
+      $contador: $contador + 1
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearTarjetaColor($nomTarjeta, $color, map-get($colores, $color))
+    +crearTarjetaColorBorde($nomTarjeta, $color, map-get($colores, $color))

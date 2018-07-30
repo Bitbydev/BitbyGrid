@@ -34,6 +34,56 @@
     <div class="row">
       <button class="btn disabled block">Hola Mundo!</button>
     </div>
+    <div class="row">
+      <div class="btn-group sm">
+        <button class="btn">1</button>
+        <button class="btn blue">2</button>
+        <button class="btn yellow">3</button>
+        <button class="btn red">4</button>
+        <button class="btn teal">5</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="btn-group">
+        <button class="btn">1</button>
+        <button class="btn blue">2</button>
+        <button class="btn yellow">3</button>
+        <button class="btn red">4</button>
+        <button class="btn teal">5</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="btn-group lg">
+        <button class="btn">1</button>
+        <button class="btn blue">2</button>
+        <button class="btn yellow">3</button>
+        <button class="btn red">4</button>
+        <button class="btn teal">5</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="btn-group-vertical sm">
+        <button class="btn">1</button>
+        <button class="btn blue">2</button>
+        <button class="btn yellow">3</button>
+        <button class="btn red">4</button>
+        <button class="btn teal">5</button>
+      </div>
+      <div class="btn-group-vertical">
+        <button class="btn">1</button>
+        <button class="btn blue">2</button>
+        <button class="btn yellow">3</button>
+        <button class="btn red">4</button>
+        <button class="btn teal">5</button>
+      </div>
+      <div class="btn-group-vertical lg">
+        <button class="btn">1</button>
+        <button class="btn blue">2</button>
+        <button class="btn yellow">3</button>
+        <button class="btn red">4</button>
+        <button class="btn teal">5</button>
+      </div>
+    </div>
     <?php foreach ($colores as $color): ?>
     <div class="row">
       <div class="bit-col-100">

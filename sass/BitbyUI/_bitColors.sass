@@ -20,6 +20,11 @@
   .#{$nomTexto}-#{$nomColor}
     color: map-get($color, 'primary-color')
 
+  a.#{$nomTexto}-#{$nomColor}:hover
+    color: map-get($color, 'primary-color-dark')
+    text-decoration: underline
+    cursor: pointer
+
 =crearElementosColor($nomBg, $nomTexto, $colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors

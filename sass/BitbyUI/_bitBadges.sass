@@ -33,12 +33,12 @@
     color: #212121
 
 ///Mixin para crear una serie de badges con una lista de colores
-=crearBadges($nomBadge, $colores, $tamFuente: 1em)
+=crearBadges($nomBadge, $colores)
   .#{$nomBadge}
     border: 1px solid transparent
     text-align: center
     vertical-align: middle
-    font-size: $tamFuente*.75
+    font-size: inherit
     font-weight: bold
     padding: .25em .5em
     transition: all .25s

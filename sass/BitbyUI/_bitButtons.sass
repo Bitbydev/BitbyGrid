@@ -12,8 +12,9 @@
     &:hover
       background-color: map-get($color, 'primary-color-dark')
 
-    &:disabled
+    &.disabled
       background-color: map-get($color, 'primary-color-light')
+      color: map-get($color, 'secondary-color-text')
 
     &-outline
       background-color: transparent
@@ -24,10 +25,10 @@
         background-color: map-get($color, 'primary-color')
         color: map-get($color, 'primary-color-title')
 
-        &:disabled
-          background-color: transparent
-          border-color: map-get($color, 'primary-color-light')
-          color: map-get($color, 'primary-color-title')
+      &.disabled
+        border-color: map-get($color, 'primary-color-light')
+        background-color: map-get($color, 'primary-color-light')
+        color: map-get($color, 'secondary-color-text')
 
 ///Mixin para crear una serie de botones con una lista de colores
 =crearBotones($nomBoton, $tamanios, $colores, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
@@ -49,9 +50,12 @@
       transition: all .25s
       background-color: map-get($default, 'accent-color')
 
-      &:disabled
-        cursor: not-allowed
-        background-color: map-get($default, 'primary-color-light')
+    &.disabled
+      cursor: not-allowed
+      background-color: map-get($default, 'primary-color-light')
+
+    &.block
+      width: 100%
 
   $keysBtn: map-keys($tamanios)
   @each $btn in $keysBtn

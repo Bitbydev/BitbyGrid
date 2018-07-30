@@ -26,6 +26,7 @@
           <h3>Hola Mundo!</h3>
         </div>
         <h3 class="text-<?php echo $color ?>">Hola Mundo!</h3>
+        <a class="text-<?php echo $color ?>">Hola Mundo!</a>
       </div>
     <?php endforeach; ?>
   </div>

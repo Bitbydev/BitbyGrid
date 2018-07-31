@@ -17,7 +17,7 @@
     <a href="index.php" class="btn red lg">Regresar a Inicio</a>
     <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2>Normal</h2>
         <button class="btn sm">Hola Mundo!</button>
@@ -28,13 +28,13 @@
         <button class="btn lg disabled">Hola Mundo!</button>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <button class="btn block">Hola Mundo!</button>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <button class="btn disabled block">Hola Mundo!</button>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="btn-group sm">
         <button class="btn">1</button>
         <button class="btn blue">2</button>
@@ -43,7 +43,7 @@
         <button class="btn teal">5</button>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="btn-group">
         <button class="btn">1</button>
         <button class="btn blue">2</button>
@@ -52,7 +52,7 @@
         <button class="btn teal">5</button>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="btn-group lg">
         <button class="btn">1</button>
         <button class="btn blue">2</button>
@@ -61,7 +61,7 @@
         <button class="btn teal">5</button>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="btn-group-vertical sm">
         <button class="btn">1</button>
         <button class="btn blue">2</button>
@@ -85,7 +85,7 @@
       </div>
     </div>
     <?php foreach ($colores as $color): ?>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?></h2>
         <button class="btn <?php echo $color; ?> sm">Hola Mundo!</button>
@@ -99,13 +99,13 @@
         <button class="btn <?php echo $color; ?> lg disabled">Hola Mundo!</button>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <button class="btn <?php echo $color; ?> block">Hola Mundo!</button>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <button class="btn <?php echo $color; ?>-outline block">Hola Mundo!</button>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <button class="btn <?php echo $color; ?> disabled block">Hola Mundo!</button>
     </div>
     <?php endforeach; ?>

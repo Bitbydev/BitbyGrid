@@ -17,7 +17,7 @@
     <a href="index.php" class="btn red lg">Regresar a Inicio</a>
     <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <img src="http://placeimg.com/350/350/tech" alt="">
         <img class="rounded" src="http://placeimg.com/350/350/tech" alt="">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <?php foreach ($colores as $color): ?>
-      <div class="row">
+      <div class="bit-row">
         <div class="bit-col-25"><img src="http://placeimg.com/350/350/tech" alt="" class="bordered <?php echo $color ?>"></div>
         <div class="bit-col-25"><img src="http://placeimg.com/350/350/tech" alt="" class="fill <?php echo $color ?>"></div>
       </div>

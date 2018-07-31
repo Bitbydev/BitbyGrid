@@ -18,24 +18,24 @@
     <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <?php foreach ($colores as $color): ?>
-      <div class="row">
+      <div class="bit-row">
         <h2><?php echo $color ?></h2>
         <div class="bit-col-md-25 bit-col-sm-100">
           <div class="list-group <?php echo $color ?>">
-            <a class="item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge <?php echo $color ?>-light">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge <?php echo $color ?>">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge <?php echo $color ?>">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge <?php echo $color ?>">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item active flex justify-between align-center">Texto 1 <span class="badge <?php echo $color ?>-light">5</span></a>
+            <a class="item flex justify-between align-center">Texto 2 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 3 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 4 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 5 <span class="badge <?php echo $color ?>">5</span></a>
           </div>
         </div>
         <div class="bit-col-md-25 bit-col-offset-5">
           <div class="list-group <?php echo $color ?> hover">
-            <a class="item active flex-container flex-justify-between flex-align-center">Texto 1 <span class="badge pill <?php echo $color ?>-dark">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 2 <span class="badge pill <?php echo $color ?>">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 3 <span class="badge pill <?php echo $color ?>">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 4 <span class="badge pill <?php echo $color ?>">5</span></a>
-            <a class="item flex-container flex-justify-between flex-align-center">Texto 5 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item active flex justify-between align-center">Texto 1 <span class="badge pill <?php echo $color ?>-dark">5</span></a>
+            <a class="item flex justify-between align-center">Texto 2 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 3 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 4 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 5 <span class="badge pill <?php echo $color ?>">5</span></a>
           </div>
         </div>
       </div>

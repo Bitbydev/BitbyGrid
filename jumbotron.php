@@ -16,7 +16,7 @@
     <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <div class="bit-container">
-			<div class="row">
+			<div class="bit-row">
 				<div class="bit-col-100">
 					<div class="jumbotron">
 						<h1>Hola Mundo!</h1>
@@ -25,7 +25,7 @@
 				</div>
 			</div>
 			<?php foreach ($colores as $color): ?>
-			<div class="row">
+			<div class="bit-row">
 				<div class="bit-col-100">
 					<div class="jumbotron <?php echo $color?>">
 						<h1>Hola Mundo!</h1>

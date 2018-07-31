@@ -8,40 +8,42 @@
 	<title>Pruebas BitByGrid - Progress</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bitCore.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="js/jquery.js"></script>
 	<script src="js/document.js" charset="utf-8"></script>
 </head>
 <body>
     <a href="index.php" class="btn red lg">Regresar a Inicio</a>
     <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
+    <button id="progresoPlus" class="btn teal lg">Aumentar porcentaje</button>
+    <button id="progresoMinus" class="btn teal lg">Disminuir porcentaje</button>
 	<div class="bit-container">
-		<div class="row">
+		<div class="bit-row">
 			<div class="bit-col-100">
 				<div class="progress">
-					<div class="bar" style="width: 75%"></div>
+					<div class="bar"></div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="bit-row">
 			<div class="bit-col-100">
 				<div class="progress">
-					<div class="bar striped" style="width: 75%"></div>
+					<div class="bar striped"></div>
 				</div>
 			</div>
 		</div>
 		<?php foreach ($colores as $color): ?>
-		<div class="row">
+		<div class="bit-row">
 			<div class="bit-col-100">
 				<div class="progress">
-					<div class="bar <?php echo $color ?>" style="width: 75%"></div>
+					<div class="bar <?php echo $color ?>"></div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="bit-row">
 			<div class="bit-col-100">
 				<div class="progress">
-					<div class="bar striped <?php echo $color ?>" style="width: 75%"></div>
+					<div class="bar striped <?php echo $color ?>"></div>
 				</div>
 			</div>
 		</div>

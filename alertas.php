@@ -17,7 +17,7 @@
     <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <?php foreach ($colores as $color): ?>
-      <div class="row">
+      <div class="bit-row">
         <div class="bit-col-100">
           <h2><?php echo $color ?></h2>
           <div class="alert <?php echo $color ?>">Hola esta es una prueba de alerta y un <a href="#" class="link">link</a></div>

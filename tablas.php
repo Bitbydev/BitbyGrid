@@ -12,7 +12,7 @@
   <script src="js/document.js" charset="utf-8"></script>
 </head>
 <body class="bit-container">
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <a href="index.php" class="btn red lg">Regresar a Inicio</a>
       <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
@@ -54,7 +54,7 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <h2>LG</h2>
       <table class="table lg">
@@ -93,7 +93,7 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <h2>Normal</h2>
       <table class="table">
@@ -132,7 +132,7 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <h2>Hover</h2>
       <table class="table hover">
@@ -171,7 +171,7 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <h2>Bordered</h2>
       <table class="table bordered">
@@ -210,7 +210,7 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <h2>Borderless</h2>
       <table class="table borderless">
@@ -249,7 +249,7 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <h2>Striped</h2>
       <table class="table striped">
@@ -288,7 +288,7 @@
       </table>
     </div>
   </div>
-  <div class="row">
+  <div class="bit-row">
     <div class="bit-col-100">
       <h2>Striped</h2>
       <table class="table header">
@@ -328,7 +328,7 @@
     </div>
   </div>
   <?php foreach ($colores as $color): ?>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> SM</h2>
         <table class="table <?php echo $color ?> sm">
@@ -367,7 +367,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> LG</h2>
         <table class="table <?php echo $color ?> lg">
@@ -406,7 +406,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> Normal</h2>
         <table class="table <?php echo $color ?>">
@@ -445,7 +445,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> Hover</h2>
         <table class="table <?php echo $color ?> hover">
@@ -484,7 +484,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> Bordered</h2>
         <table class="table <?php echo $color ?> bordered">
@@ -523,7 +523,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> Striped</h2>
         <table class="table <?php echo $color ?> striped">
@@ -562,7 +562,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> Borderless</h2>
         <table class="table <?php echo $color ?> borderless">
@@ -601,7 +601,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2><?php echo $color ?> Header</h2>
         <table class="table header <?php echo $color ?>">

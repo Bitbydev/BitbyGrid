@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="bit-container">
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <h2 class="text-center">Ingresa a las pruebas deseadas</h2>
         <hr>
@@ -22,6 +22,7 @@
           <a href="botones.php" class="item">Botones</a>
           <a href="breadcrumbs.php" class="item">Breadcrumbs</a>
           <a href="colores.php" class="item">Colores</a>
+          <a href="forms.php" class="item">Forms</a>
           <a href="imagenes.php" class="item">Imagenes</a>
           <a href="jumbotron.php" class="item">Jumbotron</a>
           <a href="listas.php" class="item">Listas</a>

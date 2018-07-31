@@ -18,7 +18,7 @@
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <?php foreach ($colores as $color): ?>
       <h1><?php echo $color ?></h1>
-      <div class="row">
+      <div class="bit-row">
         <div class="bit-col-100 bg-<?php echo $color ?>">
           <h3>Hola Mundo!</h3>
         </div>

@@ -17,7 +17,7 @@
     <a href="index.php" class="btn red lg">Regresar a Inicio</a>
     <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
-    <div class="row">
+    <div class="bit-row">
       <h2>Normal</h2>
       <div class="bit-col-100">
         <a class="badge">Hola Mundo!</a>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <?php foreach ($colores as $color): ?>
-      <div class="row">
+      <div class="bit-row">
         <h2><?php echo $color ?></h2>
         <div class="bit-col-100">
           <a class="badge <?php echo $color ?>">Hola Mundo!</a>

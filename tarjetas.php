@@ -16,7 +16,7 @@
   <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
   <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
   <div class="bit-container">
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-25">
         <div class="card">
           <div class="header">Este es un encabezado</div>
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="bit-row">
       <div class="bit-col-100">
         <div class="card-group">
           <div class="card teal">
@@ -68,7 +68,7 @@
       </div>
     </div>
     <?php foreach ($colores as $color): ?>
-    <div class="row">
+    <div class="bit-row">
       <h2><?php echo $color ?></h2>
       <div class="bit-col-25">
         <div class="card <?php echo $color ?>">

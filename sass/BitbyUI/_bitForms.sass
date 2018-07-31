@@ -1,0 +1,118 @@
+///Sección de Sass que controla los elementos de forms
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Sección de Sass que controla los forms
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+=crearForms($nomForm, $nomInput, $colores, $tamanios)
+  input
+    margin: 1em 0em
+
+  .#{$nomForm}-element
+    border-radius: 5px
+    border: 1px #bdbdbd solid
+    padding: .5em
+    font-size: 1em
+    width: 100%
+    display: block
+    margin-bottom: 1em
+
+    &:focus
+      border: 1px #00BCD4 solid
+      box-shadow: 0 0 0 0.2rem rgba(0, 188, 212,.25)
+
+    $keysBtn: map-keys($tamanios)
+    @each $btn in $keysBtn
+      &.#{$btn}
+        font-size: 1em*map-get($tamanios, $btn) 
+    
+  .#{$nomForm}-group
+    display: inline-flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: center
+    width: 100%
+    flex-wrap: wrap
+
+    &.inline
+      flex-direction: row
+      justify-content: flex-start
+      align-items: center
+      width: auto
+
+      & .#{$nomForm}-element
+        width: auto
+        display: inline-block
+
+      & .#{$nomInput}-group
+        width: auto     
+        margin-right: .5em   
+
+        & input:not(:last-child)
+          margin-right: 0em
+
+      & input:not(:last-child),
+      & label:not(:last-child)
+        margin-right: .5em        
+
+      $keysBtn: map-keys($tamanios)
+      @each $btn in $keysBtn
+        &.#{$btn}
+          font-size: 1em*map-get($tamanios, $btn) 
+
+  .#{$nomInput}-group
+    width: 100%
+    display: flex
+    align-items: stretch
+    font-size: 1em
+    margin-bottom: 1em
+
+    & input,
+    & select,
+    & textarea
+      margin: 0em
+      margin-left: -1px
+
+    & input,
+    & .#{$nomInput}-item
+      margin-left: -1px
+
+    & .#{$nomInput}-item
+      background-color: #bdbdbd
+      border: 1px #aaaaaa solid
+      padding: 1em
+      border-radius: 5px
+
+    & input:not(:first-child),
+    & .#{$nomInput}-item:not(:first-child),
+    & select:not(:first-child),
+    & textarea:not(:first-child)
+      border-top-left-radius: 0px
+      border-bottom-left-radius: 0px
+
+    & input:not(:last-child),
+    & .#{$nomInput}-item:not(:last-child),
+    & select:not(:last-child),
+    & textarea:not(:last-child)
+      border-top-right-radius: 0px
+      border-bottom-right-radius: 0px
+
+    $keysBtn: map-keys($tamanios)
+    @each $btn in $keysBtn
+      &.#{$btn},
+      .#{$nomForm}-group.inline.#{$btn}
+        font-size: 1em*map-get($tamanios, $btn) 
+
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearInputColor($nomInput, $color, map-get($colores, $color))
+
+=crearInputColor($nomInput, $nomColor, $color)
+  .#{$nomInput}-group .#{$nomInput}-item.#{$nomColor}
+      background-color: map-get($color, 'primary-color')
+      border-color: map-get($color, 'primary-color')
+      color: map-get($color, 'primary-color-title')

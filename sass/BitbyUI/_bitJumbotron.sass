@@ -1,0 +1,46 @@
+///Sección de Sass que controla los jumbotron
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+=crearJumbotronColor($nomJt, $nomColor, $color)
+	.#{$nomJt}.#{$nomColor}
+		background-color: map-get($color, 'accent-color')
+		color: map-get($color, 'primary-color-title')
+
+		& hr
+			margin: 1em 0em
+			border-color: map-get($color, 'primary-color-dark')
+			border-style: solid
+			width: 100%
+
+		& .text
+			color: map-get($color, 'primary-color-text')
+
+		& h1,h2,h3,h4,h5,h6
+			line-height: 1.5em
+
+		& p
+			line-height: 2em
+
+=crearJumbotron($nomJt, $colores)
+	$default: map-get($colores, 'default')
+	.#{$nomJt}
+		border-radius: 5px
+		padding: 4em 2em
+		margin-bottom: 2em
+		background-color: map-get($default, 'primary-color-light')
+		color: map-get($default, 'primary-color-text')
+		display: inline-flex
+		flex-direction: column
+		width: 100%
+		justify-content: center
+		align-items: flex-start
+
+		&.fluid
+			padding: 2em 1em
+
+
+	$keysColors: map-keys($colores)
+	@each $color in $keysColors
+		+crearJumbotronColor($nomJt, $color, map-get($colores, $color))

@@ -1,0 +1,31 @@
+///Sección de Sass que controla las barras de progreso
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+=crearBarraColor($nomBarra, $nomColor, $color)
+    .#{$nomBarra} .bar.#{$nomColor}
+        background-color: map-get($color, 'primary-color')
+
+=crearBarras($nomBarra, $colores)
+    $default: map-get($colores, 'default')
+    .#{$nomBarra}
+        display: flex
+        width: 100%
+        height: 1em
+        background-color: #CFD8DC
+        border-radius: 5px
+        font-size: .75em
+        margin-top: 1em
+
+        & .bar
+            transition: width .6s ease
+            border-radius: 5px
+
+        & .bar.striped
+            background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)
+            background-size: 1em
+
+    $keysColors: map-keys($colores)
+    @each $color in $keysColors
+        +crearBarraColor($nomBarra, $color, map-get($colores, $color))

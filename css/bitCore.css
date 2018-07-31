@@ -5021,32 +5021,28 @@ a.badge.blue-grey-dark:hover {
   color: #009688;
   cursor: pointer;
 }
-
-.nav.fill .link,
-.nav.fill .item {
+.nav.sticky {
+  position: sticky;
+  top: 10px;
+}
+.nav.fill .link, .nav.fill .item {
   text-align: center;
   flex: 1 1 auto;
 }
-
 .nav.fill {
   width: 100%;
 }
-
 .nav.pills .active, .nav.pills .link.active {
   background-color: #009688;
   color: white;
 }
-
-.nav.pills .item,
-.nav.pills .link {
+.nav.pills .item, .nav.pills .link {
   border-radius: 5px;
   border: 1px transparent solid;
 }
-.nav.pills .item:hover,
-.nav.pills .link:hover {
+.nav.pills .item:hover, .nav.pills .link:hover {
   border-color: #009688;
 }
-
 .nav.tabs .link, .nav.tabs .item {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -7573,6 +7569,10 @@ a.text-blue-grey:hover {
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
   border-top: 1px #BDBDBD solid;
+}
+.card .img {
+  width: 100%;
+  height: auto;
 }
 .card-group {
   display: block;

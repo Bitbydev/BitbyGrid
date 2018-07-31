@@ -99,51 +99,51 @@
     //   color: darken(#616161, 10%)
     //   cursor: not-allowed
 
-  .#{$nomNav}.fill .link,
-  .#{$nomNav}.fill .item
-    text-align: center
-    flex: 1 1 auto
+    &.fill .link,
+    &.fill .item
+      text-align: center
+      flex: 1 1 auto
 
-  .#{$nomNav}.fill
-    width: 100%
+    &.fill
+      width: 100%
 
-  .#{$nomNav}.pills
-    & .active,
-    & .link.active
-      background-color: map-get($default, 'accent-color')
-      color: white
+    &.pills
+      & .active,
+      & .link.active
+        background-color: map-get($default, 'accent-color')
+        color: white
 
-  .#{$nomNav}.pills .item,
-  .#{$nomNav}.pills .link
-    border-radius: 5px
-    border: 1px transparent solid
-
-    &:hover
-      border-color: map-get($default, 'accent-color')
-
-  $border-color: map-get($default, 'divider-color')
-
-  .#{$nomNav}.tabs
-    & .link,
-    & .item
-      border-top-left-radius: 5px
-      border-top-right-radius: 5px
-      border-bottom: 1px $border-color solid
-      border-top: 1px solid transparent
-      border-left: 1px solid transparent
-      border-right: 1px solid transparent
+    &.pills .item,
+    &.pills .link
+      border-radius: 5px
+      border: 1px transparent solid
 
       &:hover
-        border-top: 1px $border-color solid
-        border-right: 1px $border-color solid
-        border-left: 1px $border-color solid
+        border-color: map-get($default, 'accent-color')
 
-      &.active
-        color: $border-color
-        border-bottom: 0px
-        border-top: 1px $border-color solid
-        border-right: 1px $border-color solid
-        border-left: 1px $border-color solid
+    $border-color: map-get($default, 'divider-color')
+
+    &.tabs
+      & .link,
+      & .item
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        border-bottom: 1px $border-color solid
+        border-top: 1px solid transparent
+        border-left: 1px solid transparent
+        border-right: 1px solid transparent
+
+        &:hover
+          border-top: 1px $border-color solid
+          border-right: 1px $border-color solid
+          border-left: 1px $border-color solid
+
+        &.active
+          color: $border-color
+          border-bottom: 0px
+          border-top: 1px $border-color solid
+          border-right: 1px $border-color solid
+          border-left: 1px $border-color solid
 
   $keysColors: map-keys($colores)
   @each $color in $keysColors

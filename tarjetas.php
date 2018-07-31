@@ -20,6 +20,7 @@
       <div class="bit-col-25">
         <div class="card">
           <div class="header">Este es un encabezado</div>
+          <img src="http://placeimg.com/350/350/tech" alt="" class="img">
           <div class="body">
             <h3 class="title">Titulo</h3>
             <h4 class="subtitle">Subtitulo</h4>

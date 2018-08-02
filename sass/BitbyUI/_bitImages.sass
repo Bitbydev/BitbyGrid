@@ -3,7 +3,8 @@
 ///@group: BitByDev
 
 ///Mixins usados en el documento
-=crearImagenes($colores)
+///Mixin para crear estilos base
+=crearImagenesBase()
   img
     max-width: 100%
     height: auto
@@ -22,6 +23,8 @@
   img.fill
     background-color: #BDBDBD
 
+///Mixin para crear estilos de color
+=crearImagenesColor($colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors
     $colorMap: map-get($colores, $color)

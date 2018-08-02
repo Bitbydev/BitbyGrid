@@ -3,12 +3,8 @@
 ///@group: BitByDev
 
 ///Mixins usados en el documento
-///Sección de Sass que controla los forms
-///@author: Israel Trejo
-///@group: BitByDev
-
-///Mixins usados en el documento
-=crearForms($nomForm, $nomInput, $colores, $tamanios)
+///Mixin para crear estilos Base
+=crearFormBase($nomForm)
   input
     margin: 1em 0em
 
@@ -25,11 +21,15 @@
       border: 1px #00BCD4 solid
       box-shadow: 0 0 0 0.2rem rgba(0, 188, 212,.25)
 
-    $keysBtn: map-keys($tamanios)
-    @each $btn in $keysBtn
-      &.#{$btn}
-        font-size: 1em*map-get($tamanios, $btn) 
-    
+///Mixin para crear los tamaños de input
+=crearFormTamanios($nomForm, $tamanios)
+  $keysBtn: map-keys($tamanios)
+  @each $btn in $keysBtn
+    .#{$nomForm}.#{$btn}
+      font-size: 1em * map-get($tamanios, $btn) 
+
+///Mixin para crear el grupo de form
+=crearFormGroup($nomForm, $nomInput, $tamanios) 
   .#{$nomForm}-group
     display: inline-flex
     flex-direction: column
@@ -62,8 +62,10 @@
       $keysBtn: map-keys($tamanios)
       @each $btn in $keysBtn
         &.#{$btn}
-          font-size: 1em*map-get($tamanios, $btn) 
+          font-size: 1em * map-get($tamanios, $btn)
 
+///Mixin para crear el grupo de input
+=crearInputGroup($nomForm, $nomInput, $tamanios)
   .#{$nomInput}-group
     width: 100%
     display: flex
@@ -98,21 +100,26 @@
     & .#{$nomInput}-item:not(:last-child),
     & select:not(:last-child),
     & textarea:not(:last-child)
-      border-top-right-radius: 0px
+      border-top-right-radius: 0px 
       border-bottom-right-radius: 0px
 
     $keysBtn: map-keys($tamanios)
     @each $btn in $keysBtn
       &.#{$btn},
       .#{$nomForm}-group.inline.#{$btn}
-        font-size: 1em*map-get($tamanios, $btn) 
+        font-size: 1em * map-get($tamanios, $btn) 
 
-  $keysColors: map-keys($colores)
-  @each $color in $keysColors
-    +crearInputColor($nomInput, $color, map-get($colores, $color))
-
+///Mixin para crear elementos de color
 =crearInputColor($nomInput, $nomColor, $color)
   .#{$nomInput}-group .#{$nomInput}-item.#{$nomColor}
       background-color: map-get($color, 'primary-color')
       border-color: map-get($color, 'primary-color')
       color: map-get($color, 'primary-color-title')
+
+///Mixin para crear inputs de color
+=crearInputColores($nomInput, $colores)
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearInputColor($nomInput, $color, map-get($colores, $color))
+
+  

@@ -3,6 +3,7 @@
 ///@group: BitByDev
 
 ///Mixins usados en el documento
+///Mixin para crear jumbotron de color
 =crearJumbotronColor($nomJt, $nomColor, $color)
 	.#{$nomJt}.#{$nomColor}
 		background-color: map-get($color, 'accent-color')
@@ -23,8 +24,8 @@
 		& p
 			line-height: 2em
 
-=crearJumbotron($nomJt, $colores)
-	$default: map-get($colores, 'default')
+///Mixin para crear estilos base
+=crearJumbotronBase($nomJt, $default)
 	.#{$nomJt}
 		border-radius: 5px
 		padding: 4em 2em
@@ -40,7 +41,8 @@
 		&.fluid
 			padding: 2em 1em
 
-
+///Mixin para crear todos los jumbotron de colores
+=crearJumbotronColores($nomJt, $colores)
 	$keysColors: map-keys($colores)
 	@each $color in $keysColors
 		+crearJumbotronColor($nomJt, $color, map-get($colores, $color))

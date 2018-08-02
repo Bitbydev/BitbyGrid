@@ -3,8 +3,8 @@
 ///@group: BitByDev
 
 ///Mixins que usa el documento
-///Mixin para crear una tabla de color con todas sus configuraciones
-=crearTabla($nomTabla, $nomColor, $color)
+///Mixin para crear una tabla de color
+=crearTablaColor($nomTabla, $nomColor, $color)
   tr.#{$nomColor},
   td.#{$nomColor},
   thead.#{$nomColor},
@@ -64,9 +64,8 @@
     &.hover.striped tbody tr:nth-child(2n+1):hover
       background-color: map-get($color, 'accent-color')
 
-///Mixin para crear todas las tablas de un mapa de colores y la tabla base
-=crearTablas($nomTabla, $colores, $tamanios, $modoColor: true)
-  $default: map-get($colores, 'default')
+///Mixin para crear todos los estilos base
+=crearTablaBase($nomTabla, $default)
   .#{$nomTabla}
     width: 100%
     border-collapse: collapse
@@ -75,12 +74,6 @@
     & td,
     & th
       padding: .5em 1em
-
-    $keysTam: map-keys($tamanios)
-    @each $tam in $keysTam
-      &.#{$tam} td,
-      &.#{$tam} th
-        padding: .5em*(map-get($tamanios, $tam)) 1em*(map-get($tamanios, $tam))
 
     & tr
       width: auto
@@ -106,7 +99,16 @@
     &.header thead
       background-color: map-get($default, 'divider-color')
 
-  @if $modoColor == true
-    $keysColors: map-keys($colores)
-    @each $color in $keysColors
-      +crearTabla($nomTabla, $color, map-get($colores, $color))
+///Mixin para crear todos los tamanios de las tablas
+=crearTablaTamanios($nomTabla, $tamanios)
+  $keysTam: map-keys($tamanios)
+  @each $tam in $keysTam
+    .#{$nomTabla}.#{$tam} td,
+    .#{$nomTabla}.#{$tam} th
+      padding: .5em*(map-get($tamanios, $tam)) 1em*(map-get($tamanios, $tam))
+
+///Mixin para crear todas las tablas de color
+=crearTablaColores($nomTabla, $colores)
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearTablaColor($nomTabla, $color, map-get($colores, $color))

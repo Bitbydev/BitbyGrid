@@ -3,6 +3,7 @@
 ///@group: BitByDev
 
 ///Mixins usados en el documento
+///Mixin para generar una lista de color
 =crearListaColor($nomLista, $nomColor, $color)
   .#{$nomLista}-group .item.#{$nomColor},
   .#{$nomLista}-group.#{$nomColor} .item.active
@@ -20,9 +21,8 @@
           background-color: map-get($color, 'primary-color-dark')
           color: map-get($color, 'primary-color-title')
 
-
-=crearListas($nomLista, $colores)
-  $default: map-get($colores, 'default')
+///Mixin que genera los estilos base
+=crearListaBase($nomLista, $default)
   .#{$nomLista}-group
     display: inline-flex
     flex-direction: column
@@ -41,6 +41,8 @@
         border-bottom-left-radius: .5em
         border-bottom-right-radius: .5em
 
+///Mixin para crear todas las listas de colores
+=crearListaColores($nomLista, $colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors
     +crearListaColor($nomLista, $color, map-get($colores, $color))

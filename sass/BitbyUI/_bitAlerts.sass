@@ -3,8 +3,8 @@
 ///@group: BitByDev
 
 ///Mixins usados en el documento
-///Mixin para crear una alerta de color con todas sus configuraciones
-=crearAlerta($nomAlerta, $nomColor, $color)
+///Mixin para crear una alerta de color
+=crearAlertaColor($nomAlerta, $nomColor, $color)
   .#{$nomAlerta}.#{$nomColor}
     background-color: map-get($color, 'primary-color-light')
     color: map-get($color, 'primary-color-dark')
@@ -17,9 +17,8 @@
       &:hover
         text-decoration: underline
 
-///Mixin para crear todas las alertas de un mapa de colores y la alerta base
-=crearAlertas($nomAlerta, $colores)
-  $default: map-get($colores, 'default')
+///Mixin para crear estilos base
+=crearAlertaBase($nomAlerta)
   .#{$nomAlerta}
     width: 100%
     border: 1px solid transparent
@@ -27,6 +26,8 @@
     padding: .75em 1.25em
     margin: 1em 0px
 
+///Mixin para crear todos los colores de las alertas
+=crearAlertaColores($nomAlerta, $colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors
-    +crearAlerta($nomAlerta, $color, map-get($colores, $color))
+    +crearAlertaColor($nomAlerta, $color, map-get($colores, $color))

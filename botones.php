@@ -35,6 +35,30 @@
       <button class="btn disabled block">Hola Mundo!</button>
     </div>
     <div class="bit-row">
+      <div class="btn-group">
+        <button class="btn blue">Hola Mundo!</button>
+        <button class="btn blue drop down only"></button>
+      </div>
+    </div>
+    <div class="bit-row">
+      <div class="btn-group">
+        <button class="btn blue">Hola Mundo!</button>
+        <button class="btn blue drop up only"></button>
+      </div>
+    </div>
+    <div class="bit-row">
+      <div class="btn-group">
+        <button class="btn blue">Hola Mundo!</button>
+        <button class="btn blue drop left only"></button>
+      </div>
+    </div>
+    <div class="bit-row">
+      <div class="btn-group">
+        <button class="btn blue">Hola Mundo!</button>
+        <button class="btn blue drop right only"></button>
+      </div>
+    </div>
+    <div class="bit-row">
       <div class="btn-group sm">
         <button class="btn">1</button>
         <button class="btn blue">2</button>

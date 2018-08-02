@@ -19,7 +19,7 @@
         display: none
 
 ///Mixin para crear la funcion de mostrar un elemento después en todos los breakpoints
-=showFrom($nombreClase, $breakpoints, $display: block)
+=showFrom($nombreClase, $breakpoints, $display: inline-block)
   $keysBp: map-keys($breakpoints)
   @each $bp in $keysBp
     @media only screen and (min-width: map-get($breakpoints, $bp))
@@ -27,7 +27,7 @@
         display: $display
 
 ///Mixin para crear la funcion de mostrar un elemento antes en todos los breakpoints
-=showTo($nombreClase, $breakpoints, $display: block)
+=showTo($nombreClase, $breakpoints, $display: inline-block)
   $keysBp: map-keys($breakpoints)
   @each $bp in $keysBp
     @media only screen and (max-width: map-get($breakpoints, $bp))

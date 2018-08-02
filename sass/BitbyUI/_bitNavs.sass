@@ -69,14 +69,13 @@
       border-left: 1px map-get($color, 'primary-color-dark') solid
 
 ///Mixin para crear un nav de color con todas sus variantes
-=crearNav($nomNav, $nomColor, $color)
+=crearNavsColores($nomNav, $nomColor, $color)
   +crearNavColor($nomNav, $nomColor, $color)
   +crearNavPills($nomNav, $nomColor, $color)
   +crearNavTabs($nomNav, $nomColor, $color)
 
-///Mixin para crear una serie de botones con una lista de colores
-=crearNavs($nomNav, $colores)
-  $default: map-get($colores, 'default')
+///Mixin para generar los estilos base
+=crearNavBase($nomNav, $default)
   .#{$nomNav}
     display: inline-flex
     flex-wrap: wrap
@@ -145,6 +144,8 @@
           border-right: 1px $border-color solid
           border-left: 1px $border-color solid
 
+///Mixin para generar todos los navs de colores
+=crearNavColores($nomNav, $colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors
-    +crearNav($nomNav, $color, map-get($colores, $color))
+    +crearNavsColores($nomNav, $color, map-get($colores, $color))

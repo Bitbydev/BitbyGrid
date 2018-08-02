@@ -3,6 +3,7 @@
 ///@group: BitByDev
 
 ///Mixins usados en el documento
+///Mixin para crear backgrounds de color
 =crearBackgroundColor($nomBg, $nomColor, $color)
   .#{$nomBg}-#{$nomColor}-outline,
   .#{$nomBg}-#{$nomColor}
@@ -16,6 +17,7 @@
     border: 1px map-get($color, 'primary-color') solid
     color: map-get($color, 'primary-color-text')
 
+///Mixin para crear textos de color
 =crearTextoColor($nomTexto, $nomColor, $color)
   .#{$nomTexto}-#{$nomColor}
     color: map-get($color, 'primary-color')
@@ -25,8 +27,14 @@
     text-decoration: underline
     cursor: pointer
 
-=crearElementosColor($nomBg, $nomTexto, $colores)
+///Mixin para crear textos de color
+=crearBackColores($nomBg, $colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors
     +crearBackgroundColor($nomBg, $color, map-get($colores, $color))
+
+///Mixin para crear textos de color
+=crearTextoColores($nomTexto, $colores)
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
     +crearTextoColor($nomTexto, $color, map-get($colores, $color))

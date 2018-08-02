@@ -22,20 +22,20 @@
         <h2><?php echo $color ?></h2>
         <div class="bit-col-md-25 bit-col-sm-100">
           <div class="list-group <?php echo $color ?>">
-            <a class="item active flex justify-between align-center">Texto 1 <span class="badge <?php echo $color ?>-light">5</span></a>
-            <a class="item flex justify-between align-center">Texto 2 <span class="badge <?php echo $color ?>">5</span></a>
-            <a class="item flex justify-between align-center">Texto 3 <span class="badge <?php echo $color ?>">5</span></a>
-            <a class="item flex justify-between align-center">Texto 4 <span class="badge <?php echo $color ?>">5</span></a>
-            <a class="item flex justify-between align-center">Texto 5 <span class="badge <?php echo $color ?>">5</span></a>
+            <a class="item active flex justify-between align-center">Texto 1 <span class="tag <?php echo $color ?>-light">5</span></a>
+            <a class="item flex justify-between align-center">Texto 2 <span class="tag <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 3 <span class="tag <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 4 <span class="tag <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 5 <span class="tag <?php echo $color ?>">5</span></a>
           </div>
         </div>
         <div class="bit-col-md-25 bit-col-offset-5">
           <div class="list-group <?php echo $color ?> hover">
-            <a class="item active flex justify-between align-center">Texto 1 <span class="badge pill <?php echo $color ?>-dark">5</span></a>
-            <a class="item flex justify-between align-center">Texto 2 <span class="badge pill <?php echo $color ?>">5</span></a>
-            <a class="item flex justify-between align-center">Texto 3 <span class="badge pill <?php echo $color ?>">5</span></a>
-            <a class="item flex justify-between align-center">Texto 4 <span class="badge pill <?php echo $color ?>">5</span></a>
-            <a class="item flex justify-between align-center">Texto 5 <span class="badge pill <?php echo $color ?>">5</span></a>
+            <a class="item active flex justify-between align-center">Texto 1 <span class="tag pill <?php echo $color ?>-dark">5</span></a>
+            <a class="item flex justify-between align-center">Texto 2 <span class="tag pill <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 3 <span class="tag pill <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 4 <span class="tag pill <?php echo $color ?>">5</span></a>
+            <a class="item flex justify-between align-center">Texto 5 <span class="tag pill <?php echo $color ?>">5</span></a>
           </div>
         </div>
       </div>

@@ -1,0 +1,80 @@
+///Sección de Sass que controla los Tags(medallas)
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Mixin para crear un Tag de color
+=crearTagColor($nomTag, $nomColor, $color)
+  .#{$nomTag}.#{$nomColor}
+    background-color: map-get($color, 'primary-color')
+    color: map-get($color, 'primary-color-title')
+
+  a.#{$nomTag}.#{$nomColor}:hover
+    background-color: map-get($color, 'primary-color-dark')
+
+  .#{$nomTag}.#{$nomColor}-light,
+  .#{$nomTag}.#{$nomColor}-dark
+    color: map-get($color, 'primary-color')
+
+  .#{$nomTag}.#{$nomColor}-light
+    background-color: #FFFFFF
+
+  .#{$nomTag}.#{$nomColor}-dark
+    background-color: #212121
+
+  a.#{$nomTag}.#{$nomColor}-light:hover,
+  a.#{$nomTag}.#{$nomColor}-dark:hover
+    background-color: map-get($color, 'primary-color')
+
+  a.#{$nomTag}.#{$nomColor}-light:hover
+    color: #FFFFFF
+
+  a.#{$nomTag}.#{$nomColor}-dark:hover
+    color: #212121
+
+///Mixin para crear los estilos base
+=crearTagBase($nomTag, $tamFuente: 1em)
+  .#{$nomTag}
+    border: 1px solid transparent
+    text-align: center
+    vertical-align: middle
+    font-size: $tamFuente*.75
+    font-weight: bold
+    padding: .25em .5em
+    transition: all .25s
+    width: auto
+    color: #212121
+    background-color: #FFFFFF
+    display: inline-block
+
+  .#{$nomTag}
+    border-radius: .5em
+
+  .#{$nomTag}.pill
+    border-radius: 1em
+    padding: .25em .75em
+
+  a.#{$nomTag}:hover
+    cursor: pointer
+    transition: all .25s
+
+  .#{$nomTag}-group
+    width: auto
+    display: inline-flex
+    justify-content: flex-start
+    align-items: center
+    
+    & .#{$nomTag}:not(:first-child)
+      border-top-left-radius: 0px
+      border-bottom-left-radius: 0px
+
+    & .#{$nomTag}:not(:last-child)
+      border-top-right-radius: 0px
+      border-bottom-right-radius: 0px
+
+///Mixin para crear todos los tags de color
+=crearTagColores($nomTag, $colores)
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearTagColor($nomTag, $color, map-get($colores, $color))
+  

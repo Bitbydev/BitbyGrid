@@ -2,41 +2,101 @@
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixin para generar los botones del documento
-+crearBotones($nomBoton, $tamanios, $coloresTotales, $tamanioFuente, $paddingHor, $paddingVer)
+///Procesos para generar las alertas del documento
+@if map-get($alerts, 'create') == true
+  +crearAlertaBase($nombreAlerta)
+  @if map-get($alerts, 'colors') == true
+    +crearAlertaColores($nombreAlerta, $coloresTotales)
 
-///Mixin para generar las tablas del documento
-+crearTablas($nombreTabla, $coloresTotales, $tamanios)
+///Procesos para generar los breadcrumbs del documento
+@if map-get($breadcrumbs, 'create') == true
+  +crearBreadcrumbBase($nomBreadcrumb, $default, $separador, $tamanioFuente)
+  @if map-get($breadcrumbs, 'size') == true
+    +crearBreadcrumbTamanios($nomBreadcrumb, $tamanios, $tamanioFuente)
+  @if map-get($breadcrumbs, 'colors') == true
+    +crearBreadcrumbColores($nomBreadcrumb, $coloresTotales)
 
-///Mixin para generar las alertas del documento
-+crearAlertas($nombreAlerta, $coloresTotales)
+///Procesos para generar los botones del documento
+@if map-get($buttons, 'create') == true
+  +crearBotonBase($nomBoton, $default, $tamanioFuente, $paddingHor, $paddingVer)
+  @if map-get($buttons, 'group') == true
+    +crearBotonGrupo($nomBoton)
+  @if map-get($buttons, 'size') == true
+    +crearBotonTamanios($nomBoton, $tamanios, $tamanioFuente)
+  @if map-get($buttons, 'colors') == true
+    +crearBotonColores($nomBoton, $coloresTotales)
 
-///Mixin para generar las alertas del documento
-+crearBadges($nombreBadge, $coloresTotales)
+///Procesos para generar las tarjetas del documento
+@if map-get($cards, 'create') == true
+  +crearTarjetaBase($nombreTarjeta, $default, $breakpoints)
+  @if map-get($cards, 'colors') == true
+    +crearTarjetaColores($nombreTarjeta, $coloresTotales)
+  @if map-get($cards, 'outlines') == true
+    +crearTarjetaColoresBordes($nombreTarjeta, $coloresTotales)
 
-///Mixin para generar las alertas del documento
-+crearNavs($nombreNav, $coloresTotales)
+///Procesos para generar elementos de colores
+@if map-get($colors, 'create') == true
+  @if map-get($colors, 'back') == true
+    +crearBackColores($nombreBackground, $coloresTotales)
+  @if map-get($colors, 'text') == true
+    +crearTextoColores($nombreTexto, $coloresTotales)
 
-///Mixin para generar los breadcrumbs
-+crearBreadcrumbs($nomBreadcrumb, $coloresTotales)
+///Procesos para generar los drops del documento
+@if map-get($drops, 'create') == true
+  +crearDrops($nombreDrop)
 
-///Mixin para generar las listas
-+crearListas($nombreLista, $coloresTotales)
+///Procesos para generar elementos de forms del documento
+@if map-get($forms, 'create') == true
+  +crearFormBase($nombreForm)
+  @if map-get($forms, 'size') == true
+    +crearFormTamanios($nombreForm, $tamanios)
+  @if map-get($forms, 'form-group') == true
+    +crearFormGroup($nombreForm, $nombreInput, $tamanios)
+  @if map-get($forms, 'input-group') == true
+    +crearInputGroup($nombreForm, $nombreInput, $tamanios)
+  @if map-get($forms, 'colors') == true
+    +crearInputColores($nombreInput, $coloresTotales)
 
-///Mixin para generar elementos de colores
-+crearElementosColor($nombreBackground, $nombreTexto, $coloresTotales)
+///Procesos para generar elementos de imagenes del documento
+@if map-get($images, 'create') == true
+  +crearImagenesBase()
+  @if map-get($images, 'colors') == true
+    +crearImagenesColor($coloresTotales)
 
-///Mixin para generar elementos de tarjetas
-+crearTarjetas($nombreTarjeta, $coloresTotales, $breakpoints)
+///Procesos para generar los jumbotron del documento
+@if map-get($jumbotron, 'create') == true
+  +crearJumbotronBase($nombreJt, $default)
+  @if map-get($jumbotron, 'colors') == true
+    +crearJumbotronColores($nombreJt, $coloresTotales)
 
-///Mixin para generar estilos de imagenes
-+crearImagenes($coloresTotales)
+///Procesos para generar las listas del documento
+@if map-get($lists, 'create') == true
+  +crearListaBase($nombreLista, $default)
+  @if map-get($lists, 'colors') == true
+    +crearListaColores($nombreLista, $coloresTotales)
 
-///Mixin para generar elementos de tarjetas
-+crearJumbotron($nombreJt, $coloresTotales)
+///Procesos para generar los navs del documento
+@if map-get($navs, 'create') == true
+  +crearNavBase($nombreNav, $default)
+  @if map-get($navs, 'colors') == true
+    +crearNavColores($nombreNav, $coloresTotales)
 
-///Mixin para generar elementos de barras de progreso
-+crearBarras($nombreProgress, $coloresTotales)
+///Procesos para generar las barras de progreso del documento
+@if map-get($progress, 'create') == true
+  +crearBarraBase($nombreProgress)
+  @if map-get($progress, 'colors') == true
+    +crearBarraColores($nombreProgress, $coloresTotales)
 
-///Mixin para generar elementos de forms
-+crearForms($nombreForm, $nombreInput, $coloresTotales, $tamanios)
+///Procesos para generar las tablas del documento
+@if map-get($tables, 'create') == true
+  +crearTablaBase($nombreTabla, $default)
+  @if map-get($tables, 'size') == true
+    +crearTablaTamanios($nombreTabla, $tamanios)
+  @if map-get($tables, 'colors') == true
+    +crearTablaColores($nombreTabla, $coloresTotales)
+
+///Procesos para generar las barras de progreso del documento
+@if map-get($tags, 'create') == true
+  +crearTagBase($nombreTag, $tamanioFuente)
+  @if map-get($tags, 'colors') == true
+    +crearTagColores($nombreTag, $coloresTotales)

@@ -30,9 +30,19 @@
         background-color: map-get($color, 'primary-color-light')
         color: map-get($color, 'secondary-color-text')
 
-///Mixin para crear una serie de botones con una lista de colores
-=crearBotones($nomBoton, $tamanios, $colores, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
-  $default: map-get($colores, 'default')
+    &-clear      
+      background-color: transparent
+      border-color: transparent
+      color: map-get($color, 'primary-color')
+
+      &:hover
+        color: map-get($color, 'primary-color-dark')
+
+      &.disabled
+        color: map-get($color, 'primary-color-text')
+
+///Mixin para crear estilos base
+=crearBotonBase($nomBoton, $default, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
   .#{$nomBoton}
     border: 1px solid transparent
     border-radius: 5px
@@ -57,6 +67,8 @@
     &.block
       width: 100%
 
+///Mixin para crear grupos de botones
+=crearBotonGrupo($nomBoton)
   .#{$nomBoton}-group,
   .#{$nomBoton}-group-vertical
     display: inline-flex
@@ -84,14 +96,17 @@
       border-top-right-radius: 0px
       border-bottom-right-radius: 0px
 
+///Mixin para crear todos los tamaños de botones
+=crearBotonTamanios($nomBoton, $tamanios, $tamFuente: 1em)
   $keysBtn: map-keys($tamanios)
   @each $btn in $keysBtn
     .#{$nomBoton}.#{$btn},
     .#{$nomBoton}-group.#{$btn} .#{$nomBoton},
     .#{$nomBoton}-group-vertical.#{$btn} .#{$nomBoton}
       font-size: $tamFuente*map-get($tamanios, $btn)
-      padding: $paddingH*map-get($tamanios, $btn) $paddingV*map-get($tamanios, $btn)
 
+///Mixin para crear todos los botones de colores
+=crearBotonColores($nomBoton, $colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors
     +crearBotonColor($nomBoton, $color, map-get($colores, $color))

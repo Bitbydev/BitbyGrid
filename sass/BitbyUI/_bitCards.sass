@@ -45,9 +45,8 @@
       color: map-get($color, 'primary-color-title')
       border-color: map-get($color, 'primary-color-dark')
 
-///Función principal para crear tarjetas
-=crearTarjetas($nomTarjeta, $colores, $breakpoints)
-  $default: map-get($colores, 'default')
+///Mixin para crear estilos base
+=crearTarjetaBase($nomTarjeta, $default, $breakpoints)
   .#{$nomTarjeta}
     width: 100%
     border: 1px map-get($default, 'divider-color') solid
@@ -113,7 +112,14 @@
 
       $contador: $contador + 1
 
+///Mixin para crear todos los colores de tarjetas
+=crearTarjetaColores($nomTarjeta, $colores)
   $keysColors: map-keys($colores)
   @each $color in $keysColors
     +crearTarjetaColor($nomTarjeta, $color, map-get($colores, $color))
+
+///Mixin para crear todos los colores en borde de tarjetas
+=crearTarjetaColoresBordes($nomTarjeta, $colores)
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
     +crearTarjetaColorBorde($nomTarjeta, $color, map-get($colores, $color))

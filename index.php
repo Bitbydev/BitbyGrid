@@ -21,6 +21,7 @@
           <a href="botones.php" class="item">Botones</a>
           <a href="breadcrumbs.php" class="item">Breadcrumbs</a>
           <a href="colores.php" class="item">Colores</a>
+          <a href="drops.php" class="item">Drops</a>
           <a href="forms.php" class="item">Forms</a>
           <a href="imagenes.php" class="item">Imagenes</a>
           <a href="jumbotron.php" class="item">Jumbotron</a>

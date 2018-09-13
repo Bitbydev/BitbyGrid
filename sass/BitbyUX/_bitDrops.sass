@@ -1,0 +1,109 @@
+///Sección de Sass que el estilo de los drops
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento
+///Mixin para crear el toggle del drop
+=crearDropBase($nomDrop, $nomBoton, $default)
+  .#{$nomDrop}
+
+    &:after
+      line-height: 0px
+      margin-left: 1em
+      font-size: .7em
+
+    &.only:after
+      margin-left: 0em
+
+    &.down:after
+      content: '\25BC'
+
+    &.up:after
+      content: '\25B2'
+
+    &.right:after
+      content: '\25B6'
+
+    &.left:after
+      content: '\25C0'
+
+  .#{$nomDrop}-menu
+    padding: .5em 0em
+    background-color: #FFF
+    border: 1px solid map-get($default, 'divider-color')
+    border-radius: .5em
+    width: fit-content
+    max-width: 500px
+    position: absolute
+    z-index: 1000
+    top: 0
+    right: 100%
+  
+    & .item
+      padding: .25em 1.25em
+      transition: all .25s
+      width: 100%
+      display: block
+      color: map-get($default, 'primary-color-text')
+
+      &:hover
+        cursor: pointer
+        background-color: map-get($default, 'divider-color')
+        transition: all .25s
+
+    &.bordered
+      padding: 0em
+
+      hr
+        margin: 0px
+        border: 0px
+
+      & .item
+        border-bottom: 1px map-get($default, 'divider-color') solid
+        padding: .5em 1.25em
+
+        &:first-child
+          border-top-left-radius: .5em
+          border-top-right-radius: .5em
+
+        &:last-child
+          border-bottom-left-radius: .5em
+          border-bottom-right-radius: .5em
+          border-bottom: 0px
+
+    hr
+      border-color: map-get($default, 'divider-color')
+      border-style: solid
+      border-top: 0px
+      border-right: 0px
+      border-left: 0px
+
+///Mixin para crear un drop de color
+=crearDropColor($nomDrop, $nomColor, $color)
+  .#{$nomDrop}-menu.#{$nomColor}
+    color: map-get($color, 'primary-color-title')
+    background-color: map-get($color, 'primary-color')
+    border: 1px solid map-get($color, 'primary-color-dark')
+
+    hr
+      border-color: map-get($color, 'primary-color-dark')
+      border-style: solid
+
+    & .item
+      color: map-get($default, 'primary-color-title')
+
+      &:hover
+        background-color: map-get($color, 'primary-color-dark')
+
+    &.bordered .item
+      border-bottom: 1px map-get($color, 'primary-color-dark') solid
+
+      &:last-child
+        border-bottom: 0px
+
+
+///Mixin para crear todos los drops de colores
+=crearDropColores($nomDrop, $colores)
+  $keysColors: map-keys($colores)
+  @each $color in $keysColors
+    +crearDropColor($nomDrop, $color, map-get($colores, $color))

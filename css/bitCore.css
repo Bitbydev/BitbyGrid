@@ -2833,22 +2833,22 @@ h6 {
           flex-direction: column;
 }
 
-.btn-group-vertical .btn:not(:first-child) {
+.btn-group-vertical .btn:not(:first-of-type) {
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
 
-.btn-group-vertical .btn:not(:last-child) {
+.btn-group-vertical .btn:not(:last-of-type) {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
 
-.btn-group .btn:not(:first-child) {
+.btn-group .btn:not(:first-of-type) {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
 
-.btn-group .btn:not(:last-child) {
+.btn-group .btn:not(:last-of-type) {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }

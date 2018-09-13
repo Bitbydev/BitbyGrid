@@ -113,8 +113,9 @@
       <div class="bit-col-15">
         <div class="btn-group">
           <button class="btn <?php echo $color ?>">Hola Mundo</button>
-          <button class="btn drop right <?php echo $color ?>" data-drop="prueba4<?php echo $color ?>"></button>
-          <div class="drop-menu <?php echo $color ?>" id="prueba4<?php echo $color ?>">
+          <button class="btn drop right <?php echo $color ?> only" data-drop="prueba4<?php echo $color ?>"></button>
+        </div>
+          <div class="drop-menu <?php echo $color ?>" id="prueba5<?php echo $color ?>">
             <a href="#" class="item">Hola soy un texto</a>
             <a href="#" class="item">Yo también soy un texto</a>
             <a href="#" class="item">Simulo ser un Texto</a>
@@ -122,7 +123,6 @@
             <hr>
             <a href="#" class="item">Texto abandonado</a>
           </div>
-        </div>
       </div>
     </div><h2><?php echo $color ?> bordered</h2>
     <div class="bit-row">

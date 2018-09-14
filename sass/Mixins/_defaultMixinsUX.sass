@@ -8,3 +8,7 @@
 
   @if map-get($drops, 'colors') == true
     +crearDropColores($nombreDrop, $coloresTotales)
+
+///Procesos para los modales del documento
+@if map-get($modals, 'create') == true
+  +crearModalBase($nombreModal, $default)

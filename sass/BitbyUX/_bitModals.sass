@@ -1,0 +1,60 @@
+///Sección de Sass modifica que el estilo de los drops
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Mixins usados en el documento 
+=crearModalBase($nomModal, $default)
+  .#{$nomModal}
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background-color: #000
+    opacity: .5
+
+  .#{$nomModal}-content
+    margin: 0 auto
+    width: 30%
+    min-width: 300px
+    border: 1px map-get($default, 'divider-color') solid
+    border-radius: .5em
+    // position: relative
+    display: flex
+    flex-direction: column
+
+    & .body,
+    & .header,
+    & .footer
+      padding: 1em
+      color: map-get($default, 'primary-color-text')
+
+      & .title,
+      & .subtitle
+        font-weight: bold
+
+      & .title
+        color: map-get($default, 'primary-color-text')
+
+      & .subtitle
+        color: map-get($default, 'secondary-color-text')
+
+    & .header,
+    & .footer
+      background-color: map-get($default, 'primary-color-light')
+
+    & .header
+      border-top-right-radius: .5em
+      border-top-left-radius: .5em
+      border-bottom: 1px map-get($default, 'divider-color') solid
+      font-weight: bold
+
+    & .footer
+      border-bottom-right-radius: .5em
+      border-bottom-left-radius: .5em
+      border-top: 1px map-get($default, 'divider-color') solid
+
+    & .img
+      width: 100%
+      height: auto
+

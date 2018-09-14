@@ -10945,4 +10945,80 @@ a.tag.blue-grey-dark:hover {
 .drop-menu.blue-grey.bordered .item:last-child {
   border-bottom: 0px;
 }
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
+}
+
+.modal-content {
+  margin: 0 auto;
+  width: 30%;
+  min-width: 300px;
+  border: 1px #BDBDBD solid;
+  border-radius: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-content .body,
+.modal-content .header,
+.modal-content .footer {
+  padding: 1em;
+  color: #212121;
+}
+
+.modal-content .body .title,
+.modal-content .body .subtitle,
+.modal-content .header .title,
+.modal-content .header .subtitle,
+.modal-content .footer .title,
+.modal-content .footer .subtitle {
+  font-weight: bold;
+}
+
+.modal-content .body .title,
+.modal-content .header .title,
+.modal-content .footer .title {
+  color: #212121;
+}
+
+.modal-content .body .subtitle,
+.modal-content .header .subtitle,
+.modal-content .footer .subtitle {
+  color: #757575;
+}
+
+.modal-content .header,
+.modal-content .footer {
+  background-color: #CFD8DC;
+}
+
+.modal-content .header {
+  border-top-right-radius: .5em;
+  border-top-left-radius: .5em;
+  border-bottom: 1px #BDBDBD solid;
+  font-weight: bold;
+}
+
+.modal-content .footer {
+  border-bottom-right-radius: .5em;
+  border-bottom-left-radius: .5em;
+  border-top: 1px #BDBDBD solid;
+}
+
+.modal-content .img {
+  width: 100%;
+  height: auto;
+}
 /*# sourceMappingURL=bitCore.css.map */

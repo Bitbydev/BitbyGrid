@@ -12,3 +12,7 @@
 ///Procesos para los modales del documento
 @if map-get($modals, 'create') == true
   +crearModalBase($nombreModal, $default)
+
+  @if map-get($modals, 'colors') == true
+    +crearModalColores($nombreModal, $coloresTotales)
+    

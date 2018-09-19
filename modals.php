@@ -13,15 +13,30 @@
 </head>
 <body>
   <div class="bit-container">
+    <?php $prev = "default"; ?>
+    <?php foreach ($colores as $color) : ?>
     <div class="bit-col-100">
-      <div class="modal">
-        <div class="modal-content">
-          <div class="header"></div>
-          <div class="body"></div>
-          <div class="fot"></div>
+      <div class="modal centered">
+        <div class="modal-content lg <?php echo $color ?> ">
+          <div class="header">
+            Titulo del Modal
+          </div>
+          <div class="body">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          </div>
+          <div class="footer">
+            <button class="btn blue-grey">
+              Cerrar
+            </button>
+            <button class="btn <?php echo $prev; ?> ">
+              Envíar
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    <?php $prev = $color; ?>
+    <?php endforeach; ?>
   </div>
 </body>
 </html>

@@ -9,34 +9,34 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bitCore.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/bitbyGrid.js" charset="utf-8"></script>
   <script src="js/document.js" charset="utf-8"></script>
 </head>
 <body>
   <div class="bit-container">
-    <?php $prev = "default"; ?>
-    <?php foreach ($colores as $color) : ?>
-    <div class="bit-col-100">
-      <div class="modal centered">
-        <div class="modal-content lg <?php echo $color ?> ">
-          <div class="header">
-            Titulo del Modal
-          </div>
-          <div class="body">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </div>
-          <div class="footer">
-            <button class="btn blue-grey">
-              Cerrar
-            </button>
-            <button class="btn <?php echo $prev; ?> ">
-              Envíar
-            </button>
-          </div>
-        </div>
+    <div class="bit-row">
+      <div class="bit-col-100">
+        <button data-modal="modalPrueba" class="btn red lg">Activar Modal</button>
       </div>
     </div>
-    <?php $prev = $color; ?>
-    <?php endforeach; ?>
+  </div>
+  <div class="modal centered" id="modalPrueba">
+    <div class="modal-content lg">
+      <div class="header">
+        Titulo del Modal
+      </div>
+      <div class="body">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="footer">
+        <button class="btn blue-grey close" data-dismiss="modal">
+          Cerrar
+        </button>
+        <button class="btn green">
+          Envíar
+        </button>
+      </div>
+    </div>
   </div>
 </body>
 </html>

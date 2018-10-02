@@ -117,11 +117,35 @@ function toggleDrop() {
 
  /***
   @author: Israel Trejo
-  @function: 
-  @description: 
+  @function: hideModal
+  @description: Es la función que oculta el modal
   @param: 
+    @var elemento: Es el objeto del DOM que recibe la función.
 ***/
+function hideModal() {
+  let modals = document.getElementsByClassName('modal');
+  for(let x = 0; x < modals.length; x++){
+    if (modals[x].classList.contains("show")) {
+      modals[x].classList.remove("show");
+      modals[x].style.display = "none";
+    }
+  }
+}
 
+/***
+ @author: Israel Trejo
+ @function: showModal
+ @description: Es la función que muestra el modal
+ @param: 
+   @var elemento: Es el objeto del DOM que recibe la función.
+***/
+function showModal() {
+  let modalRef = this.getAttribute('data-modal');
+  let modal = document.getElementById(modalRef);
+
+  modal.classList.add("show");
+  modal.style.display = "inline-flex";
+}
 
 /*
   Obtención de elementos y Ejecución de funciones
@@ -136,6 +160,38 @@ document.onreadystatechange = () => {
     var drops = document.getElementsByClassName("drop");
     for (let i = 0; i < drops.length; i++) {
       drops[i].addEventListener("click", toggleDrop, false);
+    }
+
+    //Listener de modales
+    var buttonsTag = document.getElementsByTagName("button");
+    var buttonsClass = document.getElementsByClassName("btn");
+    var tagsTmp = document.getElementsByTagName("input");
+
+    for (let i = 0; i < buttonsTag.length; i++) {
+      if (buttonsTag[i].getAttribute("data-modal")) {
+        buttonsTag[i].addEventListener("click", showModal, false);
+      }
+      if (buttonsTag[i].getAttribute("data-dismiss") == "modal" && buttonsTag[i].classList.contains("close")) {
+        buttonsTag[i].addEventListener("click", hideModal, false);
+      }
+    }
+
+    for (let i = 0; i < buttonsClass.length; i++) {
+      if (buttonsClass[i].getAttribute("data-modal")) {
+        buttonsClass[i].addEventListener("click", showModal, false);
+      }
+      if (buttonsClass[i].getAttribute("data-dismiss") == "modal" && buttonsClass[i].classList.contains("close")) {
+        buttonsClass[i].addEventListener("click", hideModal, false);
+      }
+    }
+
+    for (let i = 0; i < tagsTmp.length; i++) {
+      if (tagsTmp[i].getAttribute("data-modal")) {
+        tagsTmp[i].addEventListener("click", showModal, false);
+      }
+      if (tagsTmp[i].getAttribute("data-dismiss") == "modal" && tagsTmp[i].classList.contains("close")) {
+        tagsTmp[i].addEventListener("click", hideModal, false);
+      }
     }
   }
 };

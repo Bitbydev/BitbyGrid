@@ -1,0 +1,18 @@
+///VMixins que se usan de manera predeterminada en BitbyUX
+///@author: Israel Trejo
+///@group: BitByDev
+
+///Procesos para generar los drops del documento
+@if map-get($drops, 'create') == true
+  +crearDropBase($nombreDrop, $nomBoton, $default)
+
+  @if map-get($drops, 'colors') == true
+    +crearDropColores($nombreDrop, $coloresTotales)
+
+///Procesos para los modales del documento
+@if map-get($modals, 'create') == true
+  +crearModalBase($nombreModal, $default)
+
+  @if map-get($modals, 'colors') == true
+    +crearModalColores($nombreModal, $coloresTotales)
+    

@@ -3,6 +3,15 @@
 		{
 			"path": "."
 		},
+<<<<<<< HEAD
+=======
+		{
+			"path": "C:\\xampp\\htdocs\\ciosa2"
+		},
+		{
+			"path": "C:\\xampp\\htdocs\\sistema_administrativo"
+		}
+>>>>>>> 856168cf879fe5b4b640a1caef2c15267bb57c8e
 	],
 	"settings": {}
 }

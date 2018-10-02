@@ -41,10 +41,6 @@
   @if map-get($colors, 'text') == true
     +crearTextoColores($nombreTexto, $coloresTotales)
 
-///Procesos para generar los drops del documento
-@if map-get($drops, 'create') == true
-  +crearDrops($nombreDrop)
-
 ///Procesos para generar elementos de forms del documento
 @if map-get($forms, 'create') == true
   +crearFormBase($nombreForm)

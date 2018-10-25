@@ -10382,6 +10382,9 @@ a.tag.blue-grey-dark:hover {
   z-index: 1000;
   top: 0;
   right: 100%;
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .drop-menu .item {

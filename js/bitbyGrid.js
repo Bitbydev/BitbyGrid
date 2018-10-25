@@ -78,6 +78,7 @@ function showDrop(elemento) {
   }
   menu.style.left = _x + "px";
   menu.style.top = _y + scrollY + "px";
+  menu.style.opacity = 1;
 }
 
  /***
@@ -92,8 +93,9 @@ function hideDrop(elemento) {
   let menu = document.getElementById(menuRef);
 
   elemento.classList.remove("show");
-  menu.style.left = -100+"%";
-  menu.style.top = 0 + "px";
+  menu.style.opacity = 0;
+  // menu.style.left = -100+"%";
+  // menu.style.top = 0 + "px";
 }
 
  /***

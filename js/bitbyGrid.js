@@ -94,8 +94,8 @@ function hideDrop(elemento) {
 
   elemento.classList.remove("show");
   menu.style.opacity = 0;
-  // menu.style.left = -100+"%";
-  // menu.style.top = 0 + "px";
+  menu.style.left = -100+"%";
+  menu.style.top = 0 + "px";
 }
 
  /***
@@ -129,7 +129,8 @@ function hideModal() {
   for(let x = 0; x < modals.length; x++){
     if (modals[x].classList.contains("show")) {
       modals[x].classList.remove("show");
-      modals[x].style.display = "none";
+      modals[x].style.opacity = 0;
+      modals[x].style.left = "-100vw";
     }
   }
 }
@@ -146,7 +147,8 @@ function showModal() {
   let modal = document.getElementById(modalRef);
 
   modal.classList.add("show");
-  modal.style.display = "inline-flex";
+  modal.style.left = 0;
+  modal.style.opacity = 1;
 }
 
 /*

@@ -14,6 +14,9 @@
 </head>
 <body>
   <div class="bit-container">
+    <a href="index.php" class="btn red lg">Regresar a Inicio</a>
+    <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
+    <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <div class="bit-row">
       <div class="bit-col-100">
         <button data-modal="modalPrueba" class="btn red lg">Activar Modal</button>

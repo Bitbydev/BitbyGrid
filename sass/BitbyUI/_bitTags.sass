@@ -1,44 +1,44 @@
-///Sección de Sass que controla los Tags(medallas)
+///SASS file that builds the tags elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear un Tag de color
-=crearTagColor($nomTag, $nomColor, $color)
-  .#{$nomTag}.#{$nomColor}
+///Mixins used by bitTags
+///Mixin to create a color tag
+=createColorTag($nameTag, $nameColor, $color)
+  .#{$nameTag}.#{$nameColor}
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
-  a.#{$nomTag}.#{$nomColor}:hover
+  a.#{$nameTag}.#{$nameColor}:hover
     background-color: map-get($color, 'primary-color-dark')
 
-  .#{$nomTag}.#{$nomColor}-light,
-  .#{$nomTag}.#{$nomColor}-dark
+  .#{$nameTag}.#{$nameColor}-light,
+  .#{$nameTag}.#{$nameColor}-dark
     color: map-get($color, 'primary-color')
 
-  .#{$nomTag}.#{$nomColor}-light
+  .#{$nameTag}.#{$nameColor}-light
     background-color: #FFFFFF
 
-  .#{$nomTag}.#{$nomColor}-dark
+  .#{$nameTag}.#{$nameColor}-dark
     background-color: #212121
 
-  a.#{$nomTag}.#{$nomColor}-light:hover,
-  a.#{$nomTag}.#{$nomColor}-dark:hover
+  a.#{$nameTag}.#{$nameColor}-light:hover,
+  a.#{$nameTag}.#{$nameColor}-dark:hover
     background-color: map-get($color, 'primary-color')
 
-  a.#{$nomTag}.#{$nomColor}-light:hover
+  a.#{$nameTag}.#{$nameColor}-light:hover
     color: #FFFFFF
 
-  a.#{$nomTag}.#{$nomColor}-dark:hover
+  a.#{$nameTag}.#{$nameColor}-dark:hover
     color: #212121
 
-///Mixin para crear los estilos base
-=crearTagBase($nomTag, $tamFuente: 1em)
-  .#{$nomTag}
+/// Mixin to create the base style of a tag.
+=createBaseTag($nameTag, $sizeFont: 1em)
+  .#{$nameTag}
     border: 1px solid transparent
     text-align: center
     vertical-align: middle
-    font-size: $tamFuente*.75
+    font-size: $sizeFont*.75
     font-weight: bold
     padding: .25em .5em
     transition: all .25s
@@ -47,34 +47,34 @@
     background-color: #FFFFFF
     display: inline-block
 
-  .#{$nomTag}
+  .#{$nameTag}
     border-radius: .5em
 
-  .#{$nomTag}.pill
+  .#{$nameTag}.pill
     border-radius: 1em
     padding: .25em .75em
 
-  a.#{$nomTag}:hover
+  a.#{$nameTag}:hover
     cursor: pointer
     transition: all .25s
 
-  .#{$nomTag}-group
+  .#{$nameTag}-group
     width: auto
     display: inline-flex
     justify-content: flex-start
     align-items: center
     
-    & .#{$nomTag}:not(:first-child)
+    & .#{$nameTag}:not(:first-child)
       border-top-left-radius: 0px
       border-bottom-left-radius: 0px
 
-    & .#{$nomTag}:not(:last-child)
+    & .#{$nameTag}:not(:last-child)
       border-top-right-radius: 0px
       border-bottom-right-radius: 0px
 
-///Mixin para crear todos los tags de color
-=crearTagColores($nomTag, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the tags.
+=createColorsTag($nameTag, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearTagColor($nomTag, $color, map-get($colores, $color))
+    +createColorTag($nameTag, $color, map-get($colors, $color))
   

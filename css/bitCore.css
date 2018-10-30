@@ -1574,102 +1574,6 @@ h6 {
   float: left;
 }
 
-@media only screen and (min-width: 576px) {
-  .hide-from-sm {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .hide-from-md {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .hide-from-lg {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .hide-from-xl {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .hide-to-sm {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .hide-to-md {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .hide-to-lg {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .hide-to-xl {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 576px) {
-  .show-from-sm {
-    display: inline-block;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .show-from-md {
-    display: inline-block;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .show-from-lg {
-    display: inline-block;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .show-from-xl {
-    display: inline-block;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .show-to-sm {
-    display: inline-block;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .show-to-md {
-    display: inline-block;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .show-to-lg {
-    display: inline-block;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .show-to-xl {
-    display: inline-block;
-  }
-}
-
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10951,17 +10855,20 @@ a.tag.blue-grey-dark:hover {
 
 .modal {
   position: absolute;
-  display: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  opacity: 0;
   top: 0;
-  left: 0;
+  left: -100vw;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding-top: 2em;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .modal.centered {

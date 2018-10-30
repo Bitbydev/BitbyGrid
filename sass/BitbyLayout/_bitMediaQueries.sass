@@ -1,35 +1,35 @@
-///Sección de Sass que controla las media queries
+///SASS file that builds the Media Queries elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixin para crear la funcion de ocultar un elemento después en todos los breakpoints
-=hideFrom($nombreClase, $breakpoints)
+///Mixin to create the function of hiding an item later in all the breakpoints
+=hideFrom($nameClass, $breakpoints)
   $keysBp: map-keys($breakpoints)
   @each $bp in $keysBp
     @media only screen and (min-width: map-get($breakpoints, $bp))
-      .#{$nombreClase}-#{$bp}
+      .#{$nameClass}-#{$bp}
         display: none
 
-///Mixin para crear la funcion de ocultar un elemento antes en todos los breakpoints
-=hideTo($nombreClase, $breakpoints)
+///Mixin to create the function of hiding an item before in all breakpoints
+=hideTo($nameClass, $breakpoints)
   $keysBp: map-keys($breakpoints)
   @each $bp in $keysBp
     @media only screen and (max-width: map-get($breakpoints, $bp))
-      .#{$nombreClase}-#{$bp}
+      .#{$nameClass}-#{$bp}
         display: none
 
-///Mixin para crear la funcion de mostrar un elemento después en todos los breakpoints
-=showFrom($nombreClase, $breakpoints, $display: inline-block)
+///Mixin to create the function of showing an item later in all the breakpoints
+=showFrom($nameClass, $breakpoints, $display: inline-block)
   $keysBp: map-keys($breakpoints)
   @each $bp in $keysBp
     @media only screen and (min-width: map-get($breakpoints, $bp))
-      .#{$nombreClase}-#{$bp}
+      .#{$nameClass}-#{$bp}
         display: $display
 
-///Mixin para crear la funcion de mostrar un elemento antes en todos los breakpoints
-=showTo($nombreClase, $breakpoints, $display: inline-block)
+///Mixin to create the function of showing an item before in all the breakpoints
+=showTo($nameClass, $breakpoints, $display: inline-block)
   $keysBp: map-keys($breakpoints)
   @each $bp in $keysBp
     @media only screen and (max-width: map-get($breakpoints, $bp))
-      .#{$nombreClase}-#{$bp}
+      .#{$nameClass}-#{$bp}
         display: $display

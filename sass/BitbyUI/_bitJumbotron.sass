@@ -1,11 +1,11 @@
-///Sección de Sass que controla los jumbotron
+///SASS file that builds the Jumbotron elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear jumbotron de color
-=crearJumbotronColor($nomJt, $nomColor, $color)
-	.#{$nomJt}.#{$nomColor}
+///Mixins used by bitJumbotron
+///Mixin to create a color jumbotron
+=createColorJumbotron($nameJumbotron, $nameColor, $color)
+	.#{$nameJumbotron}.#{$nameColor}
 		background-color: map-get($color, 'accent-color')
 		color: map-get($color, 'primary-color-title')
 
@@ -24,9 +24,9 @@
 		& p
 			line-height: 2em
 
-///Mixin para crear estilos base
-=crearJumbotronBase($nomJt, $default)
-	.#{$nomJt}
+/// Mixin to create the base style of a Jumbotron.
+=createBaseJumbotron($nameJumbotron, $default)
+	.#{$nameJumbotron}
 		border-radius: 5px
 		padding: 4em 2em
 		margin-bottom: 2em
@@ -41,8 +41,8 @@
 		&.fluid
 			padding: 2em 1em
 
-///Mixin para crear todos los jumbotron de colores
-=crearJumbotronColores($nomJt, $colores)
-	$keysColors: map-keys($colores)
+///Mixin to create all the colors of the Jumbotron.
+=createColorsJumbotron($nameJumbotron, $colors)
+	$keysColors: map-keys($colors)
 	@each $color in $keysColors
-		+crearJumbotronColor($nomJt, $color, map-get($colores, $color))
+		+createColorJumbotron($nameJumbotron, $color, map-get($colors, $color))

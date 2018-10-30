@@ -1,40 +1,40 @@
-///Sección de Sass que controla los elementos básicos de color
+///SASS file that builds the Text and Background elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear backgrounds de color
-=crearBackgroundColor($nomBg, $nomColor, $color)
-  .#{$nomBg}-#{$nomColor}-outline,
-  .#{$nomBg}-#{$nomColor}
+///Mixins used by bitColors
+///Mixin to create a color background
+=createColorBackground($nameBackground, $nameColor, $color)
+  .#{$nameBackground}-#{$nameColor}-outline,
+  .#{$nameBackground}-#{$nameColor}
     padding: 1em
 
-  .#{$nomBg}-#{$nomColor}
+  .#{$nameBackground}-#{$nameColor}
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
-  .#{$nomBg}-#{$nomColor}-outline
+  .#{$nameBackground}-#{$nameColor}-outline
     border: 1px map-get($color, 'primary-color') solid
     color: map-get($color, 'primary-color-text')
 
-///Mixin para crear textos de color
-=crearTextoColor($nomTexto, $nomColor, $color)
-  .#{$nomTexto}-#{$nomColor}
+///Mixin to create a color text
+=createColorText($nameText, $nameColor, $color)
+  .#{$nameText}-#{$nameColor}
     color: map-get($color, 'primary-color')
 
-  a.#{$nomTexto}-#{$nomColor}:hover
+  a.#{$nameText}-#{$nameColor}:hover
     color: map-get($color, 'primary-color-dark')
     text-decoration: underline
     cursor: pointer
 
-///Mixin para crear textos de color
-=crearBackColores($nomBg, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the texts.
+=createColorsBackground($nameBackground, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearBackgroundColor($nomBg, $color, map-get($colores, $color))
+    +createColorBackground($nameBackground, $color, map-get($colors, $color))
 
-///Mixin para crear textos de color
-=crearTextoColores($nomTexto, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the backgrounds.
+=createColorsText($nameText, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearTextoColor($nomTexto, $color, map-get($colores, $color))
+    +createColorText($nameText, $color, map-get($colors, $color))

@@ -1,18 +1,18 @@
-///VMixins que se usan de manera predeterminada en BitbyUX
+///File containing the BitbyUX Mixins.
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Procesos para generar los drops del documento
+///Processes to generate the BitbyGrid drops
 @if map-get($drops, 'create') == true
-  +crearDropBase($nombreDrop, $nomBoton, $default)
+  +createBaseDrop($nameDrop, $nameButton, $default)
 
   @if map-get($drops, 'colors') == true
-    +crearDropColores($nombreDrop, $coloresTotales)
+    +createColorsDrop($nameDrop, $totalColors)
 
-///Procesos para los modales del documento
+///Processes to generate the BitbyGrid modals
 @if map-get($modals, 'create') == true
-  +crearModalBase($nombreModal, $default)
+  +createBaseModal($nameModal, $default)
 
   @if map-get($modals, 'colors') == true
-    +crearModalColores($nombreModal, $coloresTotales)
+    +createColorsModal($nameModal, $totalColors)
     

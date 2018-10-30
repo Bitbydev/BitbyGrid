@@ -1,20 +1,20 @@
-///Sección de Sass que controla las tablas
+///SASS file that builds the tables elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins que usa el documento
-///Mixin para crear una tabla de color
-=crearTablaColor($nomTabla, $nomColor, $color)
-  tr.#{$nomColor},
-  td.#{$nomColor},
-  thead.#{$nomColor},
-  tbody.#{$nomColor},
-  .#{$nomTabla}.#{$nomColor}
+///Mixins used by bitTables
+///Mixin to create a color table
+=createColorTable($nameTable, $nameColor, $color)
+  tr.#{$nameColor},
+  td.#{$nameColor},
+  thead.#{$nameColor},
+  tbody.#{$nameColor},
+  .#{$nameTable}.#{$nameColor}
     color: map-get($color, 'primary-color-title')
     background-color: map-get($color, 'primary-color')
     transition: all .25s
 
-  .#{$nomTabla}.#{$nomColor}
+  .#{$nameTable}.#{$nameColor}
     &.header
       & thead
         color: map-get($color, 'primary-color-title')
@@ -64,9 +64,9 @@
     &.hover.striped tbody tr:nth-child(2n+1):hover
       background-color: map-get($color, 'accent-color')
 
-///Mixin para crear todos los estilos base
-=crearTablaBase($nomTabla, $default)
-  .#{$nomTabla}
+/// Mixin to create the base style of a table.
+=createBaseTable($nameTable, $default)
+  .#{$nameTable}
     width: 100%
     border-collapse: collapse
     transition: all .25s
@@ -99,16 +99,16 @@
     &.header thead
       background-color: map-get($default, 'divider-color')
 
-///Mixin para crear todos los tamanios de las tablas
-=crearTablaTamanios($nomTabla, $tamanios)
-  $keysTam: map-keys($tamanios)
+///Mixin to create all the sizes of the tables.
+=createSizesTable($nameTable, $sizes)
+  $keysTam: map-keys($sizes)
   @each $tam in $keysTam
-    .#{$nomTabla}.#{$tam} td,
-    .#{$nomTabla}.#{$tam} th
-      padding: .5em*(map-get($tamanios, $tam)) 1em*(map-get($tamanios, $tam))
+    .#{$nameTable}.#{$tam} td,
+    .#{$nameTable}.#{$tam} th
+      padding: .5em*(map-get($sizes, $tam)) 1em*(map-get($sizes, $tam))
 
-///Mixin para crear todas las tablas de color
-=crearTablaColores($nomTabla, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the tables.
+=createColorsTable($nameTable, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearTablaColor($nomTabla, $color, map-get($colores, $color))
+    +createColorTable($nameTable, $color, map-get($colors, $color))

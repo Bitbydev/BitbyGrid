@@ -1,36 +1,36 @@
-///Sección de Sass que controla las GridCSS
+///SASS file that builds the GridCSS elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en GridCSS
-=crearGrid($nombreGrid, $cadenaElementos, $espaciado)
-  .#{$nombreGrid}
+///Mixins used by bitGridCSS
+=createGrid($nameGrid, $stringElements, $space)
+  .#{$nameGrid}
     display: inline-grid
-    grid-gap: $espaciado
-    grid-template-columns: $cadenaElementos
+    grid-gap: $space
+    grid-template-columns: $stringElements
     width: 100%
 
-///Mixin que crea un GridCSS con Breakpoints
-//los tres ultimos parametros deben ser mapas
-//La estructura de los mapas debe ser en cuestion de la cantidad de breakpoints deseados para el Grid
-//Los mapas de cantCol (cantidad de columnas por tamaño) y espaciado (espacio entre columnas por tamaño)
-//pueden tener la misma cantidad de elementos que los breakpoints, uno o menos, si son más no se tomarán en cuenta
-//los que sobrepasen a los breakpoints
-=crearBreakpointGridCSS($nombreGrid, $nombreGridFull, $nombreGridAux, $breakpoints, $cantCol, $espaciado)
-  $keysCol: map-keys($cantCol)
+/// Mixin that creates a GridCSS with Breakpoints
+// the last three parameters must be maps
+// The structure of the maps must be consistent with the number of breakpoints desired for the Grid
+// The maps of amountCol (number of columns by size) and space (space between columns by size)
+// they can have the same number of elements as the breakpoints, one or less, if they are more, they will not be taken into account
+// those that exceed the breakpoints
+=createGridCSS($nameGrid, $nameGridFull, $nameGridAux, $breakpoints, $amountCol, $space)
+  $keysCol: map-keys($amountCol)
   $keysBp: map-keys($breakpoints)
-  $keysEsp: map-keys($espaciado)
-  .#{$nombreGridFull},
-  .#{$nombreGrid}
+  $keysEsp: map-keys($space)
+  .#{$nameGridFull},
+  .#{$nameGrid}
     display: grid
     width: 100%
     grid-template-columns: auto
     grid-gap: 0em
 
-  .#{$nombreGrid}
+  .#{$nameGrid}
     max-width: 1200px
 
-  //Clases para agregar todas las reglas de alineamiento
+  //Classes to add all alignment rules
   .align-self-center
     align-self: center
 
@@ -85,15 +85,16 @@
   .justify-evenly
     justify-content: space-evenly
 
+  /// Process to create the automatic text string for the number of columns
   @for $i from 1 through length($breakpoints)
     @media only screen and (min-width: map-get($breakpoints, nth($keysBp, $i)))
-      .#{$nombreGrid},
-      .#{$nombreGridFull}
+      .#{$nameGrid},
+      .#{$nameGridFull}
         @if $i <= length($keysCol)
-          $cadenaElementos: ''
-          @for $j from 1 through map-get($cantCol, nth($keysCol, $i))
-            $cadenaElementos: $cadenaElementos + 'auto '
-          grid-template-columns: unquote($cadenaElementos)
+          $stringElements: ''
+          @for $j from 1 through map-get($amountCol, nth($keysCol, $i))
+            $stringElements: $stringElements + 'auto '
+          grid-template-columns: unquote($stringElements)
 
         @if $i <= length($keysEsp)
-          grid-gap: map-get($espaciado, nth($keysEsp, $i))
+          grid-gap: map-get($space, nth($keysEsp, $i))

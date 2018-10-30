@@ -1,11 +1,11 @@
-///Sección de Sass que controla los navs
+///SASS file that builds the navs elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear un nav de color plano
-=crearNavColor($nomNav, $nomColor, $color)
-  .#{$nomNav}-#{$nomColor}
+///Mixins used by bitNavs
+///Mixin to create a flat color nav
+=createColorNav($nameNav, $nameColor, $color)
+  .#{$nameNav}-#{$nameColor}
     background-color: map-get($color, 'primary-color-dark')
     & .item,
     & .link
@@ -20,19 +20,19 @@
     & .item.active
       color: map-get($color, 'primary-color-title')
 
-///Mixin para crear un nav-pills de color
-=crearNavPills($nomNav, $nomColor, $color)
-  .#{$nomNav}.pills.#{$nomColor} .active,
-  .#{$nomNav}.pills.#{$nomColor} .link.active,
-  .#{$nomNav}.pills.#{$nomColor} .item.active
+///Mixin to create a color nav pills
+=createNavPills($nameNav, $nameColor, $color)
+  .#{$nameNav}.pills.#{$nameColor} .active,
+  .#{$nameNav}.pills.#{$nameColor} .link.active,
+  .#{$nameNav}.pills.#{$nameColor} .item.active
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
     &:hover
       color: map-get($color, 'primary-color-light')
 
-  .#{$nomNav}.pills.#{$nomColor} .link,
-  .#{$nomNav}.pills.#{$nomColor} .item
+  .#{$nameNav}.pills.#{$nameColor} .link,
+  .#{$nameNav}.pills.#{$nameColor} .item
     color: map-get($color, 'primary-color')
     border: 1px transparent solid
 
@@ -40,9 +40,9 @@
       color: map-get($color, 'accent-color')
       border: 1px map-get($color, 'accent-color') solid
 
-///Mixin para crear un nav-tabs con color
-=crearNavTabs($nomNav, $nomColor, $color)
-  .#{$nomNav}.tabs.#{$nomColor}
+///Mixin to create a color nav tabs
+=createNavTabs($nameNav, $nameColor, $color)
+  .#{$nameNav}.tabs.#{$nameColor}
     & .link,
     & .item
       color: map-get($color, 'primary-color')
@@ -68,15 +68,15 @@
       border-right: 1px map-get($color, 'primary-color-dark') solid
       border-left: 1px map-get($color, 'primary-color-dark') solid
 
-///Mixin para crear un nav de color con todas sus variantes
-=crearNavsColores($nomNav, $nomColor, $color)
-  +crearNavColor($nomNav, $nomColor, $color)
-  +crearNavPills($nomNav, $nomColor, $color)
-  +crearNavTabs($nomNav, $nomColor, $color)
+///Mixin to create all the style of the navs.
+=createAllColorNav($nameNav, $nameColor, $color)
+  +createColorNav($nameNav, $nameColor, $color)
+  +createNavPills($nameNav, $nameColor, $color)
+  +createNavTabs($nameNav, $nameColor, $color)
 
-///Mixin para generar los estilos base
-=crearNavBase($nomNav, $default)
-  .#{$nomNav}
+/// Mixin to create the base style of a nav.
+=createBaseNav($nameNav, $default)
+  .#{$nameNav}
     display: inline-flex
     flex-wrap: wrap
     padding: 0px
@@ -93,10 +93,6 @@
       &:hover
         color: map-get($default, 'accent-color')
         cursor: pointer
-
-    // &.disabled
-    //   color: darken(#616161, 10%)
-    //   cursor: not-allowed
 
     &.fill .link,
     &.fill .item
@@ -144,8 +140,8 @@
           border-right: 1px $border-color solid
           border-left: 1px $border-color solid
 
-///Mixin para generar todos los navs de colores
-=crearNavColores($nomNav, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the navs.
+=createColorsNav($nameNav, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearNavsColores($nomNav, $color, map-get($colores, $color))
+    +createAllColorNav($nameNav, $color, map-get($colors, $color))

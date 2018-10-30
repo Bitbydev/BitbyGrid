@@ -1,11 +1,11 @@
-///Sección de Sass que controla los botones
+///SASS file that builds the Buttons elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear un boton de color
-=crearBotonColor($nomBoton, $nomColor, $color)
-  .#{$nomBoton}.#{$nomColor}
+///Mixins used by bitButtons
+///Mixin to create a color button
+=createColorButton($nameButton, $nameColor, $color)
+  .#{$nameButton}.#{$nameColor}
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
@@ -41,14 +41,14 @@
       &.disabled
         color: map-get($color, 'primary-color-text')
 
-///Mixin para crear estilos base
-=crearBotonBase($nomBoton, $default, $tamFuente: 1em, $paddingH: .375em, $paddingV: .75em)
-  .#{$nomBoton}
+/// Mixin to create the base style of a button.
+=createBaseButton($nameButton, $default, $sizeFont: 1em, $paddingH: .375em, $paddingV: .75em)
+  .#{$nameButton}
     border: 1px solid transparent
     border-radius: 5px
     text-align: center
     vertical-align: middle
-    font-size: $tamFuente
+    font-size: $sizeFont
     padding: $paddingH $paddingV
     transition: all .25s
     display: inline-block
@@ -67,46 +67,46 @@
     &.block
       width: 100%
 
-///Mixin para crear grupos de botones
-=crearBotonGrupo($nomBoton)
-  .#{$nomBoton}-group,
-  .#{$nomBoton}-group-vertical
+///Mixin to create button groups.
+=createGroupButton($nameButton)
+  .#{$nameButton}-group,
+  .#{$nameButton}-group-vertical
     display: inline-flex
     align-items: center
     margin: .5em 0em
     justify-content: center
 
-  .#{$nomBoton}-group
+  .#{$nameButton}-group
     &-vertical
       flex-direction: column
 
-      & .#{$nomBoton}:not(:first-of-type)
+      & .#{$nameButton}:not(:first-of-type)
         border-top-right-radius: 0px
         border-top-left-radius: 0px
 
-      & .#{$nomBoton}:not(:last-of-type)
+      & .#{$nameButton}:not(:last-of-type)
         border-bottom-right-radius: 0px
         border-bottom-left-radius: 0px
 
-    & .#{$nomBoton}:not(:first-of-type)
+    & .#{$nameButton}:not(:first-of-type)
       border-top-left-radius: 0px
       border-bottom-left-radius: 0px
 
-    & .#{$nomBoton}:not(:last-of-type)
+    & .#{$nameButton}:not(:last-of-type)
       border-top-right-radius: 0px
       border-bottom-right-radius: 0px
 
-///Mixin para crear todos los tamaños de botones
-=crearBotonTamanios($nomBoton, $tamanios, $tamFuente: 1em)
-  $keysBtn: map-keys($tamanios)
+///Mixin to create all the sizes of the buttons.
+=createSizesButton($nameButton, $sizes, $sizeFont: 1em)
+  $keysBtn: map-keys($sizes)
   @each $btn in $keysBtn
-    .#{$nomBoton}.#{$btn},
-    .#{$nomBoton}-group.#{$btn} .#{$nomBoton},
-    .#{$nomBoton}-group-vertical.#{$btn} .#{$nomBoton}
-      font-size: $tamFuente*map-get($tamanios, $btn)
+    .#{$nameButton}.#{$btn},
+    .#{$nameButton}-group.#{$btn} .#{$nameButton},
+    .#{$nameButton}-group-vertical.#{$btn} .#{$nameButton}
+      font-size: $sizeFont*map-get($sizes, $btn)
 
-///Mixin para crear todos los botones de colores
-=crearBotonColores($nomBoton, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the buttons.
+=createColorsButton($nameButton, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearBotonColor($nomBoton, $color, map-get($colores, $color))
+    +createColorButton($nameButton, $color, map-get($colors, $color))

@@ -1,23 +1,23 @@
-///Mixins que se usan de manera predeterminada en BitbyGrid
+///File containing the BitbyLayout Mixins.
 ///@author: Israel Trejo
 ///@group: BitByDev
 
 @if map-get($grids, 'create') == true
   @if map-get($grids, 'grid') == true
-    ///Mixin base para crear un BitGrid
-    +crearBitGrid($nomContenedor, $nomFullContenedor, $nomRow, $breakpoints, $nomBase, $modo, $cantidadBase, $nomColumnas, $cantidadCol)
+    ///Processes to generate a BitbyLayout
+    +createBitLayout($nameContainer, $nameFullContainer, $nameRow, $breakpoints, $nameBase, $mode, $amountBase, $nameCols, $amountCols)
 
-  @if map-get($grids, 'media-queries') == true
-    ///Mixins base para crear clases para ocultar y mostrar elementos
+  @if map-get($grids, 'media-queries') == true  
+  /// Base Mixins to create classes to hide and show items
     +hideFrom(unquote('hide-from'), $breakpoints)
     +hideTo(unquote('hide-to'), $breakpoints)
     +showFrom(unquote('show-from'), $breakpoints)
     +showTo(unquote('show-to'), $breakpoints)
 
   @if map-get($grids, 'flexbox') == true
-    ///Mixin base para crear el BitFlexbox
-    +crearFlexbox($flexContenedor)
+    ///Processes to generate a Flexbox
+    +createFlexbox($flexContainer)
 
   @if map-get($grids, 'grid-css') == true
-    ///Mixin base para crear un BitGridCSS
-    +crearBreakpointGridCSS($gridContenedor, $gridFullContenedor, $gridAuxClase, $breakpoints, $columnas, $espacios)
+    ///Processes to generate a BitGridCSS
+    +createGridCSS($gridContainer, $gridFullContainer, $gridAuxClass, $breakpoints, $cols, $spaces)

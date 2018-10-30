@@ -1,11 +1,11 @@
-///Sección de Sass que controla las tarjetas
+///SASS file that builds the Cards elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Crear tarjeta de color
-=crearTarjetaColor($nomTarjeta, $nomColor, $color)
-  .#{$nomTarjeta}.#{$nomColor}
+///Mixins used by bitCards
+///Mixin to create a color card
+=createColorCard($nameCard, $nameColor, $color)
+  .#{$nameCard}.#{$nameColor}
     border-color: darken(map-get($color, 'primary-color-dark'), 5%)
 
     & .body,
@@ -27,9 +27,9 @@
       background-color: map-get($color, 'primary-color-dark')
       border-color: darken(map-get($color, 'primary-color-dark'), 5%)
 
-///Crear tarjeta con bordes
-=crearTarjetaColorBorde($nomTarjeta, $nomColor, $color)
-  .#{$nomTarjeta}.#{$nomColor}-outline
+///Mixin to create a outline color card
+=createColorOutlineCard($nameCard, $nameColor, $color)
+  .#{$nameCard}.#{$nameColor}-outline
     border-color: map-get($color, 'primary-color-dark')
 
     & .body
@@ -45,9 +45,9 @@
       color: map-get($color, 'primary-color-title')
       border-color: map-get($color, 'primary-color-dark')
 
-///Mixin para crear estilos base
-=crearTarjetaBase($nomTarjeta, $default, $breakpoints)
-  .#{$nomTarjeta}
+/// Mixin to create the base style of a card.
+=createBaseCard($nameCard, $default, $breakpoints)
+  .#{$nameCard}
     width: 100%
     border: 1px map-get($default, 'divider-color') solid
     border-radius: .5em
@@ -91,8 +91,8 @@
       height: auto
 
     $keysBp: map-keys($breakpoints)
-    $columnas: (2, 3, 4, 4)
-    $contador: 1
+    $columns: (2, 3, 4, 4)
+    $counter: 1
     &-group
       display: block
       width: 100%
@@ -101,25 +101,25 @@
       widows: 1
       height: auto
 
-      & .#{$nomTarjeta}
+      & .#{$nameCard}
         margin-bottom: 1em
         display: inline-block
 
     @each $bp in $keysBp
       @media only screen and (min-width: map-get($breakpoints, $bp))
         &-group
-          column-count: nth($columnas, $contador)
+          column-count: nth($columns, $counter)
 
-      $contador: $contador + 1
+      $counter: $counter + 1
 
-///Mixin para crear todos los colores de tarjetas
-=crearTarjetaColores($nomTarjeta, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the cards.
+=createColorsCard($nameCard, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearTarjetaColor($nomTarjeta, $color, map-get($colores, $color))
+    +createColorCard($nameCard, $color, map-get($colors, $color))
 
-///Mixin para crear todos los colores en borde de tarjetas
-=crearTarjetaColoresBordes($nomTarjeta, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the outline colors of the cards.
+=createColorsOutlineCard($nameCard, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearTarjetaColorBorde($nomTarjeta, $color, map-get($colores, $color))
+    +createColorOutlineCard($nameCard, $color, map-get($colors, $color))

@@ -1,11 +1,11 @@
-///Sección de Sass modifica que el estilo de los drops
+///SASS file that builds the drop elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear el toggle del drop
-=crearDropBase($nomDrop, $nomBoton, $default)
-  .#{$nomDrop}
+///Mixins used by bitDrops
+/// Mixin to create the base style of a drop.
+=createBaseDrop($nameDrop, $nameButton, $default)
+  .#{$nameDrop}
 
     &:after
       line-height: 0px
@@ -27,7 +27,7 @@
     &.left:after
       content: '\25C0'
 
-  .#{$nomDrop}-menu
+  .#{$nameDrop}-menu
     padding: .5em 0em
     background-color: #FFF
     border: 1px solid map-get($default, 'divider-color')
@@ -38,7 +38,7 @@
     z-index: 1000
     top: 0
     right: 100%
-    opacity: 0;
+    opacity: 0
     transition: opacity .5s
   
     & .item
@@ -80,9 +80,9 @@
       border-right: 0px
       border-left: 0px
 
-///Mixin para crear un drop de color
-=crearDropColor($nomDrop, $nomColor, $color)
-  .#{$nomDrop}-menu.#{$nomColor}
+///Mixin to create a color drop menu
+=createColorDrop($nameDrop, $nameColor, $color)
+  .#{$nameDrop}-menu.#{$nameColor}
     color: map-get($color, 'primary-color-title')
     background-color: map-get($color, 'primary-color')
     border: 1px solid map-get($color, 'primary-color-dark')
@@ -103,9 +103,8 @@
       &:last-child
         border-bottom: 0px
 
-
-///Mixin para crear todos los drops de colores
-=crearDropColores($nomDrop, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the drop menus.
+=createColorsDrop($nameDrop, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearDropColor($nomDrop, $color, map-get($colores, $color))
+    +createColorDrop($nameDrop, $color, map-get($colors, $color))

@@ -1,11 +1,11 @@
-///Sección de Sass que controla las alertas
+///SASS file that builds the Alert elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear una alerta de color
-=crearAlertaColor($nomAlerta, $nomColor, $color)
-  .#{$nomAlerta}.#{$nomColor}
+///Mixins used by bitAlerts
+///Mixin to create a color alert
+=createColorAlert($nameAlert, $nameColor, $color)
+  .#{$nameAlert}.#{$nameColor}
     background-color: map-get($color, 'primary-color-light')
     color: map-get($color, 'primary-color-dark')
     border-color: map-get($color, 'accent-color')
@@ -17,17 +17,17 @@
       &:hover
         text-decoration: underline
 
-///Mixin para crear estilos base
-=crearAlertaBase($nomAlerta)
-  .#{$nomAlerta}
+/// Mixin to create the base style of an alert.
+=createBaseAlert($nameAlert)
+  .#{$nameAlert}
     width: 100%
     border: 1px solid transparent
     border-radius: 5px
     padding: .75em 1.25em
     margin: 1em 0px
 
-///Mixin para crear todos los colores de las alertas
-=crearAlertaColores($nomAlerta, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the alerts.
+=createColorsAlert($nameAlert, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearAlertaColor($nomAlerta, $color, map-get($colores, $color))
+    +createColorAlert($nameAlert, $color, map-get($colors, $color))

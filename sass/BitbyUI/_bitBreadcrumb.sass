@@ -1,11 +1,11 @@
-///Sección de Sass que controla los breacrumbs
+///SASS file that builds the Breadcrumbs elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear un breadcrumb de color
-=crearBreadcrumbColor($nomBc, $nomColor, $color)
-  .#{$nomBc}.#{$nomColor}
+///Mixins used by bitBreadcrumb
+///Mixin to create a color breadcrumb
+=createColorBreadcrumb($nameBreadcrumb, $nameColor, $color)
+  .#{$nameBreadcrumb}.#{$nameColor}
     background-color: map-get($color, 'primary-color-light')
 
     & .item
@@ -29,9 +29,9 @@
         &:before
           color: map-get($color, 'primary-color-text')
 
-///Mixin para crear estilos base
-=crearBreadcrumbBase($nomBc, $default, $separador: '/', $tamFuente: 1em)
-  .#{$nomBc}
+/// Mixin to create the base style of a breadcrumb.
+=createBaseBreadcrumb($nameBreadcrumb, $default, $spacer: '/', $sizeFont: 1em)
+  .#{$nameBreadcrumb}
     display: inline-flex
     justify-content: flex-start
     align-items: center
@@ -61,22 +61,22 @@
       &:nth-child(n+2)
         &:before
           font-weight: bold
-          content: $separador
+          content: $spacer
           padding: 0px .5em
           color: map-get($default, 'primary-color-dark')
 
     &.transparent
       background-color: transparent
 
-///Mixin que genera todos los tamaños de breadcrumb
-=crearBreadcrumbTamanios($nomBc, $tamanios, $tamFuente: 1em)
-  $keysTam: map-keys($tamanios)
+///Mixin to create all the sizes of the breadcrumbs.
+=createSizesBreadcrumb($nameBreadcrumb, $sizes, $sizeFont: 1em)
+  $keysTam: map-keys($sizes)
   @each $font in $keysTam
-    .#{$nomBc}.#{$font}
-      font-size: $tamFuente*map-get($tamanios, $font)
+    .#{$nameBreadcrumb}.#{$font}
+      font-size: $sizeFont*map-get($sizes, $font)
 
-///Mixin que genera todos los breadcrumbs de colores
-=crearBreadcrumbColores($nomBc, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the breadcrumb.
+=createColorsBreadcrumb($nameBreadcrumb, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearBreadcrumbColor($nomBc, $color, map-get($colores, $color))
+    +createColorBreadcrumb($nameBreadcrumb, $color, map-get($colors, $color))

@@ -1,16 +1,16 @@
-///Sección de Sass que controla las listas
+///SASS file that builds the Lists elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para generar una lista de color
-=crearListaColor($nomLista, $nomColor, $color)
-  .#{$nomLista}-group .item.#{$nomColor},
-  .#{$nomLista}-group.#{$nomColor} .item.active
+///Mixins used by bitLists
+///Mixin to create a color list
+=createColorList($nameList, $nameColor, $color)
+  .#{$nameList}-group .item.#{$nameColor},
+  .#{$nameList}-group.#{$nameColor} .item.active
     background-color: map-get($color, 'primary-color')
     color: map-get($color, 'primary-color-title')
 
-  .#{$nomLista}-group.#{$nomColor}
+  .#{$nameList}-group.#{$nameColor}
     &.hover
       & .item
         &:hover
@@ -21,9 +21,9 @@
           background-color: map-get($color, 'primary-color-dark')
           color: map-get($color, 'primary-color-title')
 
-///Mixin que genera los estilos base
-=crearListaBase($nomLista, $default)
-  .#{$nomLista}-group
+/// Mixin to create the base style of a list.
+=createBaseList($nameList, $default)
+  .#{$nameList}-group
     display: inline-flex
     flex-direction: column
     width: 100%
@@ -41,8 +41,8 @@
         border-bottom-left-radius: .5em
         border-bottom-right-radius: .5em
 
-///Mixin para crear todas las listas de colores
-=crearListaColores($nomLista, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the lists.
+=createColorsList($nameList, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearListaColor($nomLista, $color, map-get($colores, $color))
+    +createColorList($nameList, $color, map-get($colors, $color))

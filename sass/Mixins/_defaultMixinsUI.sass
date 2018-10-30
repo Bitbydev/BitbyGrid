@@ -1,98 +1,98 @@
-///Mixins que se usan de manera predeterminada en BitbyUI
+///File containing the BitbyUI Mixins.
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Procesos para generar las alertas del documento
+///Processes to generate the BitbyGrid alerts
 @if map-get($alerts, 'create') == true
-  +crearAlertaBase($nombreAlerta)
+  +createBaseAlert($nameAlert)
   @if map-get($alerts, 'colors') == true
-    +crearAlertaColores($nombreAlerta, $coloresTotales)
+    +createColorsAlert($nameAlert, $totalColors)
 
-///Procesos para generar los breadcrumbs del documento
+///Processes to generate the BitbyGrid breadcrumbs
 @if map-get($breadcrumbs, 'create') == true
-  +crearBreadcrumbBase($nomBreadcrumb, $default, $separador, $tamanioFuente)
+  +createBaseBreadcrumb($nameBreadcrumb, $default, $spacer, $sizeFont)
   @if map-get($breadcrumbs, 'size') == true
-    +crearBreadcrumbTamanios($nomBreadcrumb, $tamanios, $tamanioFuente)
+    +createSizesBreadcrumb($nameBreadcrumb, $sizes, $sizeFont)
   @if map-get($breadcrumbs, 'colors') == true
-    +crearBreadcrumbColores($nomBreadcrumb, $coloresTotales)
+    +createColorsBreadcrumb($nameBreadcrumb, $totalColors)
 
-///Procesos para generar los botones del documento
+///Processes to generate the BitbyGrid buttons
 @if map-get($buttons, 'create') == true
-  +crearBotonBase($nomBoton, $default, $tamanioFuente, $paddingHor, $paddingVer)
+  +createBaseButton($nameButton, $default, $sizeFont, $paddingHor, $paddingVer)
   @if map-get($buttons, 'group') == true
-    +crearBotonGrupo($nomBoton)
+    +createGroupButton($nameButton)
   @if map-get($buttons, 'size') == true
-    +crearBotonTamanios($nomBoton, $tamanios, $tamanioFuente)
+    +createSizesButton($nameButton, $sizes, $sizeFont)
   @if map-get($buttons, 'colors') == true
-    +crearBotonColores($nomBoton, $coloresTotales)
+    +createColorsButton($nameButton, $totalColors)
 
-///Procesos para generar las tarjetas del documento
+///Processes to generate the BitbyGrid cards
 @if map-get($cards, 'create') == true
-  +crearTarjetaBase($nombreTarjeta, $default, $breakpoints)
+  +createBaseCard($nameCard, $default, $breakpoints)
   @if map-get($cards, 'colors') == true
-    +crearTarjetaColores($nombreTarjeta, $coloresTotales)
+    +createColorsCard($nameCard, $totalColors)
   @if map-get($cards, 'outlines') == true
-    +crearTarjetaColoresBordes($nombreTarjeta, $coloresTotales)
+    +createColorsOutlineCard($nameCard, $totalColors)
 
-///Procesos para generar elementos de colores
+///Processes to generate the BitbyGrid texts and backgrounds
 @if map-get($colors, 'create') == true
   @if map-get($colors, 'back') == true
-    +crearBackColores($nombreBackground, $coloresTotales)
+    +createColorsBackground($nameBackground, $totalColors)
   @if map-get($colors, 'text') == true
-    +crearTextoColores($nombreTexto, $coloresTotales)
+    +createColorsText($nameText, $totalColors)
 
-///Procesos para generar elementos de forms del documento
+///Processes to generate the BitbyGrid forms and inputs
 @if map-get($forms, 'create') == true
-  +crearFormBase($nombreForm)
+  +createBaseForm($nameForm)
   @if map-get($forms, 'size') == true
-    +crearFormTamanios($nombreForm, $tamanios)
+    +createSizesForm($nameForm, $sizes)
   @if map-get($forms, 'form-group') == true
-    +crearFormGroup($nombreForm, $nombreInput, $tamanios)
+    +createGroupForm($nameForm, $nameInput, $sizes)
   @if map-get($forms, 'input-group') == true
-    +crearInputGroup($nombreForm, $nombreInput, $tamanios)
+    +createGroupInput($nameForm, $nameInput, $sizes)
   @if map-get($forms, 'colors') == true
-    +crearInputColores($nombreInput, $coloresTotales)
+    +createColorsInput($nameInput, $totalColors)
 
-///Procesos para generar elementos de imagenes del documento
+///Processes to generate the BitbyGrid images
 @if map-get($images, 'create') == true
-  +crearImagenesBase()
+  +createBaseImage()
   @if map-get($images, 'colors') == true
-    +crearImagenesColor($coloresTotales)
+    +createColorsImage($totalColors)
 
-///Procesos para generar los jumbotron del documento
+///Processes to generate the BitbyGrid jumbotron
 @if map-get($jumbotron, 'create') == true
-  +crearJumbotronBase($nombreJt, $default)
+  +createBaseJumbotron($nameJumbotron, $default)
   @if map-get($jumbotron, 'colors') == true
-    +crearJumbotronColores($nombreJt, $coloresTotales)
+    +createColorsJumbotron($nameJumbotron, $totalColors)
 
-///Procesos para generar las listas del documento
+///Processes to generate the BitbyGrid lists
 @if map-get($lists, 'create') == true
-  +crearListaBase($nombreLista, $default)
+  +createBaseList($nameList, $default)
   @if map-get($lists, 'colors') == true
-    +crearListaColores($nombreLista, $coloresTotales)
+    +createColorsList($nameList, $totalColors)
 
-///Procesos para generar los navs del documento
+///Processes to generate the BitbyGrid navs
 @if map-get($navs, 'create') == true
-  +crearNavBase($nombreNav, $default)
+  +createBaseNav($nameNav, $default)
   @if map-get($navs, 'colors') == true
-    +crearNavColores($nombreNav, $coloresTotales)
+    +createColorsNav($nameNav, $totalColors)
 
-///Procesos para generar las barras de progreso del documento
+///Processes to generate the BitbyGrid progress bars
 @if map-get($progress, 'create') == true
-  +crearBarraBase($nombreProgress)
+  +createBaseBar($nameBar)
   @if map-get($progress, 'colors') == true
-    +crearBarraColores($nombreProgress, $coloresTotales)
+    +createColorsBar($nameBar, $totalColors)
 
-///Procesos para generar las tablas del documento
+///Processes to generate the BitbyGrid tables
 @if map-get($tables, 'create') == true
-  +crearTablaBase($nombreTabla, $default)
+  +createBaseTable($nameTable, $default)
   @if map-get($tables, 'size') == true
-    +crearTablaTamanios($nombreTabla, $tamanios)
+    +createSizesTable($nameTable, $sizes)
   @if map-get($tables, 'colors') == true
-    +crearTablaColores($nombreTabla, $coloresTotales)
+    +createColorsTable($nameTable, $totalColors)
 
-///Procesos para generar las barras de progreso del documento
+///Processes to generate the BitbyGrid tags
 @if map-get($tags, 'create') == true
-  +crearTagBase($nombreTag, $tamanioFuente)
+  +createBaseTag($nameTag, $sizeFont)
   @if map-get($tags, 'colors') == true
-    +crearTagColores($nombreTag, $coloresTotales)
+    +createColorsTag($nameTag, $totalColors)

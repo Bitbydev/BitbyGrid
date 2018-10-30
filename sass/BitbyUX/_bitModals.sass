@@ -1,11 +1,11 @@
-///Sección de Sass modifica que el estilo de los drops
+///SASS file that builds the modal elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento 
-///Mixin para crear modal de color
-=crearModalColor($nomModal, $nomColor, $color)
-  .#{$nomModal}-content.#{$nomColor}
+///Mixins used by bitModals
+///Mixin to create a color modal
+=createColorModal($nameModal, $nameColor, $color)
+  .#{$nameModal}-content.#{$nameColor}
     border: 1px map-get($color, 'primary-color-dark') solid
 
     & .body,
@@ -30,25 +30,26 @@
     & .footer
       border-top: 1px map-get($color, 'primary-color-dark') solid
 
-///Mixin para crear el modal base
-=crearModalBase($nomModal, $default)
-  .#{$nomModal}
+/// Mixin to create the base style of a modal.
+=createBaseModal($nameModal, $default)
+  .#{$nameModal}
     position: absolute
-    display: none
+    display: inline-flex
+    opacity: 0
     top: 0
-    left: 0
+    left: -100vw
     width: 100vw
     height: 100vh
     background-color: rgba(0, 0, 0, .5)
     justify-content: space-around
     padding-top: 2em
-    transition: all 2s
+    transition: opacity .5s
 
     &.centered
       align-items: center
       padding-top: 0em
 
-  .#{$nomModal}-content
+  .#{$nameModal}-content
     width: 35%
     height: min-content
     min-width: 450px
@@ -105,8 +106,8 @@
       width: 100%
       height: auto
 
-///Mixin para crear todos los modales de colores
-=crearModalColores($nomModal, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the modals.
+=createColorsModal($nameModal, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearModalColor($nomModal, $color, map-get($colores, $color))
+    +createColorModal($nameModal, $color, map-get($colors, $color))

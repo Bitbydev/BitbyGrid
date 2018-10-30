@@ -1,14 +1,14 @@
-///Sección de Sass que controla los elementos de forms
+///SASS file that builds the Forms and Inputs elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear estilos Base
-=crearFormBase($nomForm)
+///Mixins used by bitForms
+/// Mixin to create the base style of a form.
+=createBaseForm($nameForm)
   input
     margin: 1em 0em
 
-  .#{$nomForm}-element
+  .#{$nameForm}-element
     border-radius: 5px
     border: 1px #bdbdbd solid
     padding: .5em
@@ -21,16 +21,16 @@
       border: 1px #00BCD4 solid
       box-shadow: 0 0 0 0.2rem rgba(0, 188, 212,.25)
 
-///Mixin para crear los tamaños de input
-=crearFormTamanios($nomForm, $tamanios)
-  $keysBtn: map-keys($tamanios)
+///Mixin to create all the sizes of the inputs.
+=createSizesForm($nameForm, $sizes)
+  $keysBtn: map-keys($sizes)
   @each $btn in $keysBtn
-    .#{$nomForm}.#{$btn}
-      font-size: 1em * map-get($tamanios, $btn) 
+    .#{$nameForm}.#{$btn}
+      font-size: 1em * map-get($sizes, $btn) 
 
-///Mixin para crear el grupo de form
-=crearFormGroup($nomForm, $nomInput, $tamanios) 
-  .#{$nomForm}-group
+///Mixin to create form groups.
+=createGroupForm($nameForm, $nameInput, $sizes) 
+  .#{$nameForm}-group
     display: inline-flex
     flex-direction: column
     align-items: flex-start
@@ -44,11 +44,11 @@
       align-items: center
       width: auto
 
-      & .#{$nomForm}-element
+      & .#{$nameForm}-element
         width: auto
         display: inline-block
 
-      & .#{$nomInput}-group
+      & .#{$nameInput}-group
         width: auto     
         margin-right: .5em   
 
@@ -59,14 +59,14 @@
       & label:not(:last-child)
         margin-right: .5em        
 
-      $keysBtn: map-keys($tamanios)
+      $keysBtn: map-keys($sizes)
       @each $btn in $keysBtn
         &.#{$btn}
-          font-size: 1em * map-get($tamanios, $btn)
+          font-size: 1em * map-get($sizes, $btn)
 
-///Mixin para crear el grupo de input
-=crearInputGroup($nomForm, $nomInput, $tamanios)
-  .#{$nomInput}-group
+///Mixin to create input groups.
+=createGroupInput($nameForm, $nameInput, $sizes)
+  .#{$nameInput}-group
     width: 100%
     display: flex
     align-items: stretch
@@ -80,46 +80,46 @@
       margin-left: -1px
 
     & input,
-    & .#{$nomInput}-item
+    & .#{$nameInput}-item
       margin-left: -1px
 
-    & .#{$nomInput}-item
+    & .#{$nameInput}-item
       background-color: #bdbdbd
       border: 1px #aaaaaa solid
       padding: 1em
       border-radius: 5px
 
     & input:not(:first-child),
-    & .#{$nomInput}-item:not(:first-child),
+    & .#{$nameInput}-item:not(:first-child),
     & select:not(:first-child),
     & textarea:not(:first-child)
       border-top-left-radius: 0px
       border-bottom-left-radius: 0px
 
     & input:not(:last-child),
-    & .#{$nomInput}-item:not(:last-child),
+    & .#{$nameInput}-item:not(:last-child),
     & select:not(:last-child),
     & textarea:not(:last-child)
       border-top-right-radius: 0px 
       border-bottom-right-radius: 0px
 
-    $keysBtn: map-keys($tamanios)
+    $keysBtn: map-keys($sizes)
     @each $btn in $keysBtn
       &.#{$btn},
-      .#{$nomForm}-group.inline.#{$btn}
-        font-size: 1em * map-get($tamanios, $btn) 
+      .#{$nameForm}-group.inline.#{$btn}
+        font-size: 1em * map-get($sizes, $btn) 
 
-///Mixin para crear elementos de color
-=crearInputColor($nomInput, $nomColor, $color)
-  .#{$nomInput}-group .#{$nomInput}-item.#{$nomColor}
+///Mixin to create a color input
+=createColorInput($nameInput, $nameColor, $color)
+  .#{$nameInput}-group .#{$nameInput}-item.#{$nameColor}
       background-color: map-get($color, 'primary-color')
       border-color: map-get($color, 'primary-color')
       color: map-get($color, 'primary-color-title')
 
-///Mixin para crear inputs de color
-=crearInputColores($nomInput, $colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the inputs.
+=createColorsInput($nameInput, $colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    +crearInputColor($nomInput, $color, map-get($colores, $color))
+    +createColorInput($nameInput, $color, map-get($colors, $color))
 
   

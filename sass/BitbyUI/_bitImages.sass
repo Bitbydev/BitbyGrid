@@ -1,10 +1,10 @@
-///Sección de Sass que controla las imagenes
+///SASS file that builds the Images elements
 ///@author: Israel Trejo
 ///@group: BitByDev
 
-///Mixins usados en el documento
-///Mixin para crear estilos base
-=crearImagenesBase()
+///Mixins used by bitImages
+/// Mixin to create the base style of a image.
+=createBaseImage()
   img
     max-width: 100%
     height: auto
@@ -23,11 +23,11 @@
   img.fill
     background-color: #BDBDBD
 
-///Mixin para crear estilos de color
-=crearImagenesColor($colores)
-  $keysColors: map-keys($colores)
+///Mixin to create all the colors of the images.
+=createColorsImage($colors)
+  $keysColors: map-keys($colors)
   @each $color in $keysColors
-    $colorMap: map-get($colores, $color)
+    $colorMap: map-get($colors, $color)
     img.bordered.#{$color},
     img.fill.#{$color}
       border-color: map-get($colorMap, 'primary-color')

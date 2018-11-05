@@ -23,13 +23,13 @@
       </div>
     </div>
   </div>
-  <div class="modal centered" id="modalPrueba">
-    <div class="modal-content lg">
+  <div class="modal" id="modalPrueba">
+    <div class="modal-content">
       <div class="header">
         Titulo del Modal
       </div>
       <div class="body">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Cuerpo del modal
       </div>
       <div class="footer">
         <button class="btn blue-grey close" data-dismiss="modal">

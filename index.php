@@ -29,6 +29,7 @@
           <a href="modals.php" class="item">Modales</a>
           <a href="navs.php" class="item">Navs</a>
           <a href="progress.php" class="item">Progress Bar</a>
+          <a href="tabs.php" class="item">Tabs</a>
           <a href="tablas.php" class="item">Tablas</a>
           <a href="tags.php" class="item">Tags</a>
           <a href="tarjetas.php" class="item">Tarjetas</a>

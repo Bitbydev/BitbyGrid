@@ -19,7 +19,7 @@
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <div class="bit-row">
       <div class="bit-col-25">
-        <button class="btn drop down" data-drop="prueba1" data-direction="down">Hola Mundo!</button>
+        <button class="btn drop down" data-component="drop" data-target="prueba1" data-direction="down">Hola Mundo!</button>
         <div class="drop-menu" id="prueba1">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="bit-col-25">
-        <button class="btn drop up" data-drop="prueba2" data-direction="up">Hola Mundo!</button>
+        <button class="btn drop up" data-component="drop" data-target="prueba2" data-direction="up">Hola Mundo!</button>
         <div class="drop-menu" id="prueba2">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="bit-col-25">
-        <button class="btn drop left" data-drop="prueba3" data-direction="left">Hola Mundo!</button>
+        <button class="btn drop left" data-component="drop" data-target="prueba3" data-direction="left">Hola Mundo!</button>
         <div class="drop-menu" id="prueba3">
           <li href="#" class="item">Hola soy un texto</li>
           <li href="#" class="item">Yo también soy un texto</li>
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="bit-col-25">
-        <button class="btn drop right" data-drop="prueba4" data-direction="right">Hola Mundo!</button>
+        <button class="btn drop right" data-component="drop" data-target="prueba4" data-direction="right">Hola Mundo!</button>
         <div class="drop-menu" id="prueba4">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -67,7 +67,7 @@
     <h2><?php echo $color ?></h2>
     <div class="bit-row">
       <div class="bit-col-15">
-        <button class="btn drop down <?php echo $color ?>" data-drop="prueba1<?php echo $color?>" data-direction="down">Hola Mundo!</button>
+        <button class="btn drop down <?php echo $color ?>" data-component="drop" data-target="prueba1<?php echo $color?>" data-direction="down">Hola Mundo!</button>
         <div class="drop-menu <?php echo $color ?>" id="prueba1<?php echo $color ?>">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="bit-col-15">
-        <button class="btn drop up <?php echo $color ?>" data-drop="prueba2<?php echo $color ?>" data-direction="up">Hola Mundo!</button>
+        <button class="btn drop up <?php echo $color ?>" data-component="drop" data-target="prueba2<?php echo $color ?>" data-direction="up">Hola Mundo!</button>
         <div class="drop-menu <?php echo $color ?>" id="prueba2<?php echo $color ?>">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -89,7 +89,7 @@
         </div>
       </div>
       <div class="bit-col-15">
-        <button class="btn drop left <?php echo $color ?>" data-drop="prueba3<?php echo $color ?>" data-direction="left">Hola Mundo!</button>
+        <button class="btn drop left <?php echo $color ?>" data-component="drop" data-target="prueba3<?php echo $color ?>" data-direction="left">Hola Mundo!</button>
         <div class="drop-menu <?php echo $color ?>" id="prueba3<?php echo $color ?>">
           <li href="#" class="item">Hola soy un texto</li>
           <li href="#" class="item">Yo también soy un texto</li>
@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="bit-col-15">
-        <button class="btn drop right <?php echo $color ?>" data-drop="prueba4<?php echo $color ?>" data-direction="right">Hola Mundo!</button>
+        <button class="btn drop right <?php echo $color ?>" data-component="drop" data-target="prueba4<?php echo $color ?>" data-direction="right">Hola Mundo!</button>
         <div class="drop-menu <?php echo $color ?>" id="prueba4<?php echo $color ?>">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -113,7 +113,7 @@
       <div class="bit-col-15">
         <div class="btn-group">
           <button class="btn <?php echo $color ?>">Hola Mundo</button>
-          <button class="btn drop right <?php echo $color ?> only" data-drop="prueba4<?php echo $color ?>"></button>
+          <button class="btn drop right <?php echo $color ?> only" data-component="drop" data-target="prueba4<?php echo $color ?>"></button>
         </div>
           <div class="drop-menu <?php echo $color ?>" id="prueba5<?php echo $color ?>">
             <a href="#" class="item">Hola soy un texto</a>
@@ -127,7 +127,7 @@
     </div><h2><?php echo $color ?> bordered</h2>
     <div class="bit-row">
       <div class="bit-col-25">
-        <button class="btn drop down <?php echo $color ?>" data-drop="prueba1<?php echo $color ?>b">Hola Mundo!</button>
+        <button class="btn drop down <?php echo $color ?>" data-component="drop" data-target="prueba1<?php echo $color ?>b">Hola Mundo!</button>
         <div class="drop-menu bordered <?php echo $color ?>" id="prueba1<?php echo $color ?>b">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -138,7 +138,7 @@
         </div>
       </div>
       <div class="bit-col-25">
-        <button class="btn drop up <?php echo $color ?>" data-drop="prueba2<?php echo $color ?>b">Hola Mundo!</button>
+        <button class="btn drop up <?php echo $color ?>" data-component="drop" data-target="prueba2<?php echo $color ?>b">Hola Mundo!</button>
         <div class="drop-menu bordered <?php echo $color ?>" id="prueba2<?php echo $color ?>b">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>
@@ -149,7 +149,7 @@
         </div>
       </div>
       <div class="bit-col-25">
-        <button class="btn drop left <?php echo $color ?>" data-drop="prueba3<?php echo $color ?>b">Hola Mundo!</button>
+        <button class="btn drop left <?php echo $color ?>" data-component="drop" data-target="prueba3<?php echo $color ?>b">Hola Mundo!</button>
         <div class="drop-menu bordered <?php echo $color ?>" id="prueba3<?php echo $color ?>b">
           <li href="#" class="item">Hola soy un texto</li>
           <li href="#" class="item">Yo también soy un texto</li>
@@ -160,7 +160,7 @@
         </div>
       </div>
       <div class="bit-col-25">
-        <button class="btn drop right <?php echo $color ?>" data-drop="prueba4<?php echo $color ?>b">Hola Mundo!</button>
+        <button class="btn drop right <?php echo $color ?>" data-component="drop" data-target="prueba4<?php echo $color ?>b">Hola Mundo!</button>
         <div class="drop-menu bordered <?php echo $color ?>" id="prueba4<?php echo $color ?>b">
           <a href="#" class="item">Hola soy un texto</a>
           <a href="#" class="item">Yo también soy un texto</a>

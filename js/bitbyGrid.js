@@ -24,7 +24,7 @@ var debugMode = true;
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function showDrop(elemento) {
-  let menuRef = elemento.getAttribute('data-drop');
+  let menuRef = elemento.getAttribute('data-target');
   let menu = document.getElementById(menuRef);
   if (menu != null) {
     menu.style.display = "block";
@@ -121,7 +121,7 @@ function toggleDrop() {
   let listDrop = document.getElementsByClassName("drop-menu show");
   flag = false;
   for (let i = 0; i < listDrop.length; i++) {
-    if (listDrop[i].getAttribute("id") == this.getAttribute("data-drop")) {
+    if (listDrop[i].getAttribute("id") == this.getAttribute("data-target")) {
       flag = true;
     }
     hideDrop(listDrop[i]);
@@ -192,7 +192,7 @@ function hideModal() {
  @param:
 ***/
 function showModal() {
-  let modalRef = this.getAttribute('data-modal');
+  let modalRef = this.getAttribute('data-target');
   let modal = document.getElementById(modalRef);
   if (modal != null) {
     if(modal.classList.contains("hide")){
@@ -338,7 +338,9 @@ document.onreadystatechange = () => {
     //Listener de drops
     var drops = document.getElementsByClassName("drop");
     for (let i = 0; i < drops.length; i++) {
-      drops[i].addEventListener("click", toggleDrop, false);
+      if (drops[i].getAttribute("data-component") == "drop") {
+        drops[i].addEventListener("click", toggleDrop, false);
+      }
     }
 
     //Listener de animaciones de drops
@@ -353,8 +355,10 @@ document.onreadystatechange = () => {
     var tagsTmp = document.getElementsByTagName("input");
 
     for (let i = 0; i < buttonsTag.length; i++) {
-      if (buttonsTag[i].getAttribute("data-modal")) {
-        buttonsTag[i].addEventListener("click", showModal, false);
+      if (buttonsTag[i].getAttribute("data-target")) {
+        if (buttonsTag[i].getAttribute("data-component") == "modal") {
+          buttonsTag[i].addEventListener("click", showModal, false);
+        }
       }
       if (buttonsTag[i].getAttribute("data-dismiss") == "modal" && buttonsTag[i].classList.contains("close")) {
         buttonsTag[i].addEventListener("click", hideModal, false);
@@ -362,8 +366,10 @@ document.onreadystatechange = () => {
     }
 
     for (let i = 0; i < buttonsClass.length; i++) {
-      if (buttonsClass[i].getAttribute("data-modal")) {
-        buttonsClass[i].addEventListener("click", showModal, false);
+      if (buttonsClass[i].getAttribute("data-target")) {
+        if (buttonsClass[i].getAttribute("data-component") == "modal") {
+          buttonsClass[i].addEventListener("click", showModal, false);
+        }
       }
       if (buttonsClass[i].getAttribute("data-dismiss") == "modal" && buttonsClass[i].classList.contains("close")) {
         buttonsClass[i].addEventListener("click", hideModal, false);
@@ -371,8 +377,10 @@ document.onreadystatechange = () => {
     }
 
     for (let i = 0; i < tagsTmp.length; i++) {
-      if (tagsTmp[i].getAttribute("data-modal")) {
-        tagsTmp[i].addEventListener("click", showModal, false);
+      if (tagsTmp[i].getAttribute("data-target")) {
+        if (tagsTmp[i].getAttribute("data-component") == "modal") {
+          tagsTmp[i].addEventListener("click", showModal, false);
+        }
       }
       if (tagsTmp[i].getAttribute("data-dismiss") == "modal" && tagsTmp[i].classList.contains("close")) {
         tagsTmp[i].addEventListener("click", hideModal, false);

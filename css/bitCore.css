@@ -1,6 +1,9 @@
 .tab-item {
   -webkit-transition: all .25s;
   transition: all .25s;
+  width: inherit;
+  height: inherit;
+  display: none;
 }
 
 @-webkit-keyframes show {

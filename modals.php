@@ -19,7 +19,7 @@
     <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
     <div class="bit-row">
       <div class="bit-col-100">
-        <button data-modal="modalPrueba" class="btn red lg">Activar Modal</button>
+        <button data-component="modal" data-target="modalPrueba" class="btn red lg">Activar Modal</button>
       </div>
     </div>
   </div>

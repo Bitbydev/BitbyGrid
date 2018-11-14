@@ -29,7 +29,8 @@
             <div id="collapse3" class="item">Este es mi tab número 3</div>
             <a data-target="collapse4" class="item flex align-center justify-between" data-component="collapse">Texto 4 <span class="tag red">5</span></a>
             <div id="collapse4" data-target="collapse6" class="item" data-component="collapse">Este es mi tab número 4</div>
-            <div id="collapse6" class="item collapse">Este es mi tab número 6</div>
+            <div id="collapse6" data-target="collapse7" class="item collapse" data-component="collapse">Este es mi tab número 6</div>
+            <div id="collapse7" class="item collapse">Este es mi tab número 7</div>
             <a data-target="collapse5" class="item flex align-center justify-between" data-component="collapse">Texto 5 <span class="tag red">5</span></a>
             <div id="collapse5" class="item">Este es mi tab número 5</div>
           </div>

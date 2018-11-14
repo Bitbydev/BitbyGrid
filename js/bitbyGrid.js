@@ -331,7 +331,6 @@ function showCollapse(elemento) {
   let collapse = document.getElementById(colRef);
   if (collapse != null) {
     collapse.classList.remove("collapse");
-    // collapse.removeAttribute("style");
   } else {
     showError(1, tabRef);
   }
@@ -349,12 +348,12 @@ function hideCollapse(elemento) {
   let collapse = document.getElementById(colRef);
   if (collapse != null) {
     collapse.classList.add("collapse");
-    // collapse.style.height = 0;
-    // collapse.style.borderTop = 0;
-    // collapse.style.borderBottom = 0;
-    // collapse.style.paddingTop = 0;
-    // collapse.style.paddingBottom = 0;
-    // collapse.style.overflow = "hidden";
+    if(collapse.getAttribute("data-component") == "collapse"){
+      let target = document.getElementById(collapse.getAttribute("data-target"));
+      if (target != null && target.classList.contains("collapse") == false){
+        hideCollapse(collapse);
+      }
+    }
   } else {
     showError(1, tabRef);
   }
@@ -400,10 +399,16 @@ document.onreadystatechange = () => {
         switch (c) {
           case "collapse":
             e.addEventListener("click", toggleCollapse, false);
+            m = document.getElementById(e.getAttribute("data-target"));
+            if (m != null) {
+              m.style.transition = ".25s ease all";
+            } else {
+              showError(1, e.getAttribute("data-target"));
+            }
             break;
 
           case "drop":
-            e.addEventListener("click", toggledrop, false);
+            e.addEventListener("click", toggleDrop, false);
             m = document.getElementById(e.getAttribute("data-target"));
             if (m != null) {
               m.addEventListener("animationend", toggleDropMenu, false);

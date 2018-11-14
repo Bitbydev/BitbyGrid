@@ -6,7 +6,8 @@
 ///Mixin to create a flat color nav
 =createColorNav($nameNav, $nameColor, $color)
   .#{$nameNav}-#{$nameColor}
-    background-color: map-get($color, 'primary-color-dark')
+    background-color: map-get($color, 'primary-color')
+
     & .item,
     & .link
       color: map-get($color, 'primary-color-light')
@@ -68,6 +69,16 @@
       border-right: 1px map-get($color, 'primary-color-dark') solid
       border-left: 1px map-get($color, 'primary-color-dark') solid
 
+    &.outside .active,
+    &.outside .link.active,
+    &.outside .item.active
+      background-color: map-get($color, 'primary-color')
+      color: map-get($color, 'primary-color-title')
+      border-bottom: 0px
+      border-top: 1px map-get($color, 'primary-color') solid
+      border-right: 1px map-get($color, 'primary-color') solid
+      border-left: 1px map-get($color, 'primary-color') solid
+
 ///Mixin to create all the style of the navs.
 =createAllColorNav($nameNav, $nameColor, $color)
   +createColorNav($nameNav, $nameColor, $color)
@@ -89,6 +100,7 @@
       color: map-get($default, 'primary-color')
       padding: .5em 1em
       display: block
+      transition: .2s all
 
       &:hover
         color: map-get($default, 'accent-color')

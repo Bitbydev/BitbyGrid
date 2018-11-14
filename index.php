@@ -20,6 +20,7 @@
           <a href="alertas.php" class="item">Alertas</a>
           <a href="botones.php" class="item">Botones</a>
           <a href="breadcrumbs.php" class="item">Breadcrumbs</a>
+          <a href="collapse.php" class="item">Collapse</a>
           <a href="colores.php" class="item">Colores</a>
           <a href="drops.php" class="item">Drops</a>
           <a href="forms.php" class="item">Forms</a>

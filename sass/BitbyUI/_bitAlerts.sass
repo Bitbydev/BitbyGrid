@@ -6,13 +6,12 @@
 ///Mixin to create a color alert
 =createColorAlert($nameAlert, $nameColor, $color)
   .#{$nameAlert}.#{$nameColor}
-    background-color: map-get($color, 'primary-color-light')
-    color: map-get($color, 'primary-color-dark')
-    border-color: map-get($color, 'accent-color')
+    background-color: map-get($color, 'accent-color')
+    color: map-get($color, 'primary-color-title')
 
     & .link
       font-weight: bold
-      color: map-get($color, 'primary-color-dark')
+      color: map-get($color, 'primary-color-title')
 
       &:hover
         text-decoration: underline

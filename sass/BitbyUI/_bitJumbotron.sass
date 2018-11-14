@@ -6,17 +6,17 @@
 ///Mixin to create a color jumbotron
 =createColorJumbotron($nameJumbotron, $nameColor, $color)
 	.#{$nameJumbotron}.#{$nameColor}
-		background-color: map-get($color, 'accent-color')
-		color: map-get($color, 'primary-color-title')
+		background-color: map-get($color, 'primary-color-light')
+		color: map-get($color, 'primary-color-text')
 
 		& hr
 			margin: 1em 0em
-			border-color: map-get($color, 'primary-color-dark')
+			border-color: map-get($color, 'primary-color')
 			border-style: solid
 			width: 100%
 
 		& .text
-			color: map-get($color, 'primary-color-text')
+			color: map-get($color, 'primary-color-title')
 
 		& h1,h2,h3,h4,h5,h6
 			line-height: 1.5em
@@ -31,7 +31,7 @@
 		padding: 4em 2em
 		margin-bottom: 2em
 		background-color: map-get($default, 'primary-color-light')
-		color: map-get($default, 'primary-color-text')
+		color: map-get($default, 'secondary-color-text')
 		display: inline-flex
 		flex-direction: column
 		width: 100%

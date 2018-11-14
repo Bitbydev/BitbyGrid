@@ -20,14 +20,14 @@
       <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
       <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
       <div class="bit-col-100">
-        <nav class="nav fill tabs" data-direction="vertical">
-          <a href="#" data-tab="myTab" data-option="0" class="tab-control item active">Texto 1</a>
-          <a href="#" data-tab="myTab" data-option="1" class="tab-control item">Texto 2</a>
-          <a href="#" data-tab="myTab" data-option="2" class="tab-control item">Texto 3</a>
-          <a href="#" data-tab="myTab" data-option="3" class="tab-control item">Texto 4</a>
-          <a href="#" data-tab="myTab" data-option="4" class="tab-control item">Texto 5</a>
+        <nav class="nav fill tabs teal" data-direction="vertical">
+          <a data-component="tab" data-target="myTab" data-option="0" class="tab-control item active">Texto 1</a>
+          <a data-component="tab" data-target="myTab" data-option="1" class="tab-control item">Texto 2</a>
+          <a data-component="tab" data-target="myTab" data-option="2" class="tab-control item active">Texto 3</a>
+          <a data-component="tab" data-target="myTab" data-option="3" class="tab-control item">Texto 4</a>
+          <a data-component="tab" data-target="myTab" data-option="4" class="tab-control item active">Texto 5</a>
         </nav>
-        <div class="tab-container" style="width:100%; overflow:hidden; height:100px; background-color:red;" id="myTab">
+        <div class="tab-container" style="width:100%; overflow:hidden; height:100px;" id="myTab">
           <div class="tab-item">Este es mi tab número 1</div>
           <div class="tab-item">Este es mi tab número 2</div>
           <div class="tab-item">Este es mi tab número 3</div>
@@ -37,5 +37,47 @@
       </div>
     </div>
   </div>
+  
+  <div class="bit-container">
+    <div class="bit-row">
+      <div class="bit-col-100">
+        <nav class="nav fill nav-red" data-direction="vertical">
+          <a data-component="tab" data-target="myTab2" data-option="0" class="tab-control item active">Texto 1</a>
+          <a data-component="tab" data-target="myTab2" data-option="1" class="tab-control item">Texto 2</a>
+          <a data-component="tab" data-target="myTab2" data-option="2" class="tab-control item">Texto 3</a>
+          <a data-component="tab" data-target="myTab2" data-option="3" class="tab-control item">Texto 4</a>
+          <a data-component="tab" data-target="myTab2" data-option="4" class="tab-control item">Texto 5</a>
+        </nav>
+        <div class="tab-container" style="width:100%; overflow:hidden; height:100px;" id="myTab2">
+          <div class="tab-item">Este es mi tab número 1</div>
+          <div class="tab-item">Este es mi tab número 2</div>
+          <div class="tab-item">Este es mi tab número 3</div>
+          <div class="tab-item">Este es mi tab número 4</div>
+          <div class="tab-item">Este es mi tab número 5</div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div class="bit-container">
+    <div class="bit-row">
+      <div class="bit-col-50">
+        <nav class="nav fill pills blue column" data-direction="vertical">
+          <a data-component="tab" data-target="myTab3" data-option="0" class="tab-control item active">Texto 1</a>
+          <a data-component="tab" data-target="myTab3" data-option="1" class="tab-control item">Texto 2</a>
+          <a data-component="tab" data-target="myTab3" data-option="2" class="tab-control item">Texto 3</a>
+          <a data-component="tab" data-target="myTab3" data-option="3" class="tab-control item">Texto 4</a>
+          <a data-component="tab" data-target="myTab3" data-option="4" class="tab-control item">Texto 5</a>
+        </nav>
+      </div>
+      <div class="bit-col-50" id="myTab3">
+        <div class="tab-item">Este es mi tab número 1</div>
+        <div class="tab-item">Este es mi tab número 2</div>
+        <div class="tab-item">Este es mi tab número 3</div>
+        <div class="tab-item">Este es mi tab número 4</div>
+        <div class="tab-item">Este es mi tab número 5</div>
+      </div>
+    </div>
+  </div>  
 </body>
 </html>

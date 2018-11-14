@@ -88,6 +88,7 @@ function showDrop(elemento) {
       menu.classList.remove("hide");
     }
     menu.classList.add("show");
+    elemento.classList.add("active");
   }else{
     showError(1, menuRef);
   }
@@ -119,12 +120,16 @@ function hideDrop(menu) {
 ***/
 function toggleDrop() {
   let listDrop = document.getElementsByClassName("drop-menu show");
+  let listMenu = document.getElementsByClassName("drop active");
   flag = false;
   for (let i = 0; i < listDrop.length; i++) {
     if (listDrop[i].getAttribute("id") == this.getAttribute("data-target")) {
       flag = true;
     }
     hideDrop(listDrop[i]);
+  }
+  for (let i = 0; i < listMenu.length; i++) {
+    listMenu[i].classList.remove("active");
   }
   if (flag == false) {
     showDrop(this);
@@ -198,7 +203,7 @@ function showModal() {
     if(modal.classList.contains("hide")){
       modal.classList.remove("hide");
     }
-    modal.style.display = "inline-flex";
+    modal.style.maxWidth = 100+"%";
     modal.classList.add("show");
   }else{
     showError(1, modalRef);
@@ -215,7 +220,7 @@ function toggleModal(){
   if(this.classList.contains("show")){
     this.style.opacity = 1;
   } else if (this.classList.contains("hide")) {
-    this.style.display = "none";
+    this.style.maxWidth = 0;
     this.style.opacity = 0;
   }
 }
@@ -228,33 +233,21 @@ function toggleModal(){
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function showTab(elemento){
-  let tabRef = elemento.getAttribute('data-tab');
+  let tabRef = elemento.getAttribute('data-target');
   let tabContainer = document.getElementById(tabRef);
   if (tabContainer != null) {
+    let tabOptions = tabContainer.getElementsByClassName("tab-item");
     let tabOption = elemento.getAttribute('data-option');
-    let tabOptionContainer = document.getElementById(tabOption);
-    if (tabOptionContainer != null) {
+    let option = tabOptions[tabOption];
+    if (tabOption != null && option != null) {
       elemento.classList.add("active");
-      let tabParent = elemento.parentElement;
-      console.log(tabParent);
-      let tabDirection = tabParent.getAttribute('data-direction');
-      console.log(tabDirection);
-      switch (tabDirection) {
-        case "vertical":
-          tabOptionContainer.style.top = 0;
-          // tabOptionContainer.style.display = "block";
-          break;
-
-        case "horizontal":
-          tabOptionContainer.style.left = 0;
-          // tabOptionContainer.style.display = "block";
-          break;
-
-        default:
-          // tabOptionContainer.style.display = "block";
-          break;
+      if(option.classList.contains("hide")){
+        option.classList.remove("hide");
       }
+      option.style.maxWidth = 100+"%";
+      option.classList.add("show");
     }else{
+      //Error pendiente
       showError(1, tabOption);
     }
   }else{
@@ -269,61 +262,122 @@ function showTab(elemento){
 @param:
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
-function hideTab(element){
-  let tabParent = element.parentElement;
-  if(tabParent != null){
-    let tabDirection = tabParent.getAttribute('data-direction');
-    console.log(tabDirection);
-    let tabControl = tabParent.getElementsByClassName("tab-control");
-    for(let x = 0; x < tabControl.length; x++){
-      let tabTmp = tabControl[x];
-      if (tabTmp.classList.contains("active")) {
-        let tabRef = tabTmp.getAttribute('data-tab');
-        let tabContainer = document.getElementById(tabRef);
-        if (tabContainer != null) {
-          let tabOption = tabTmp.getAttribute('data-option');
-          let tabOptionContainer = document.getElementById(tabOption);
-          if (tabOptionContainer != null) {
-            tabTmp.classList.remove("active");
-            switch (tabDirection) {
-              case "vertical":
-                tabOptionContainer.style.top = 100 + "%";
-                // tabOptionContainer.style.display = "none";
-                break;
-
-              case "horizontal":
-                tabOptionContainer.style.left = 100 + "%";
-                // tabOptionContainer.style.display = "none";
-                break;
-
-              default:
-                // tabOptionContainer.style.display = "none";
-                break;
-            }
-          } else {
-            showError(1, tabOption);
-          }
-        } else {
-          showError(1, tabRef);
-        }
+function hideTab(elemento) {
+  let tabRef = elemento.getAttribute('data-target');
+  let tabContainer = document.getElementById(tabRef);
+  if (tabContainer != null) {
+    let tabOptions = tabContainer.getElementsByClassName("tab-item");
+    let tabOption = elemento.getAttribute('data-option');
+    let option = tabOptions[tabOption];
+    if (tabOption != null && option != null) {
+      if (elemento.classList.contains("active")) {
+        elemento.classList.remove("active");
       }
+      if (option.classList.contains("show")) {
+        option.classList.remove("show");
+      }
+      option.classList.add("hide");
+    } else {
+      //Error pendiente
+      showError(1, tabOption);
     }
-  }else{
-    showError(2, elemento.getAttribute("id"));
+  } else {
+    showError(1, tabRef);
   }
 }
 
 /*** 
 @author: Israel Trejo
-@function: toggleTab
+@function: toggle
 @description: Es la función que alterna los tabs
 @param:
 ***/
 function toggleTab() {
-  // console.log(listDrop);
-  console.log(this);
-  hideTab(this);
-  showTab(this);
+  if(!this.classList.contains("active")){
+    let listTab = document.getElementsByClassName("tab-control active");
+    for(let x = 0; x < listTab.length; x++){
+      if (this.parentElement == listTab[x].parentElement) {
+        hideTab(listTab[x]);
+      }
+    }
+    showTab(this);
+  }
+}
+
+/***
+ @author: Israel Trejo
+ @function: toggleTabItem
+ @description: Es la función que administra la animación del tab item
+ @param:
+***/
+function toggleTabItem() {
+  if (this.classList.contains("show")) {
+    this.style.opacity = 1;
+  } else if (this.classList.contains("hide")) {
+    this.style.maxWidth = 0;
+    this.style.opacity = 0;
+  }
+}
+
+/*** 
+@author: Israel Trejo
+@function: showCollapse
+@description: Es la función que muestra un collapse
+@param:
+    @var elemento: Es el objeto del DOM que recibe la función.
+***/
+function showCollapse(elemento) {
+  let colRef = elemento.getAttribute('data-target');
+  let collapse = document.getElementById(colRef);
+  if (collapse != null) {
+    collapse.classList.remove("collapse");
+    // collapse.removeAttribute("style");
+  } else {
+    showError(1, tabRef);
+  }
+}
+
+/*** 
+@author: Israel Trejo
+@function: hideCollapse
+@description: Es la función que oculta un collapse
+@param:
+    @var elemento: Es el objeto del DOM que recibe la función.
+***/
+function hideCollapse(elemento) {
+  let colRef = elemento.getAttribute('data-target');
+  let collapse = document.getElementById(colRef);
+  if (collapse != null) {
+    collapse.classList.add("collapse");
+    // collapse.style.height = 0;
+    // collapse.style.borderTop = 0;
+    // collapse.style.borderBottom = 0;
+    // collapse.style.paddingTop = 0;
+    // collapse.style.paddingBottom = 0;
+    // collapse.style.overflow = "hidden";
+  } else {
+    showError(1, tabRef);
+  }
+}
+
+/***
+ @author: Israel Trejo
+ @function: toggleCollapse
+ @description: Es la función que alterna los collapse
+ @param:
+***/
+function toggleCollapse() {
+  let colRef = this.getAttribute('data-target');
+  let collapse = document.getElementById(colRef);
+  if (collapse != null) {
+    if(collapse.classList.contains("collapse")){
+      showCollapse(this);
+    }else{
+      hideCollapse(this);
+    }
+  } else {
+    showError(1, tabRef);
+  }
 }
 
 /*
@@ -335,69 +389,74 @@ document.onreadystatechange = () => {
     /*
       Definición de listeners
     */
-    //Listener de drops
-    var drops = document.getElementsByClassName("drop");
-    for (let i = 0; i < drops.length; i++) {
-      if (drops[i].getAttribute("data-component") == "drop") {
-        drops[i].addEventListener("click", toggleDrop, false);
-      }
-    }
+    //Listener de todos los elementos de BitbyUx
+    var bitbyux = document.querySelectorAll("*[data-component], *[data-dismiss]");
+    // console.log(bitbyux);
+    for(let i = 0; i < bitbyux.length; i++){
+      let m, n;
+      let e = bitbyux[i];
+      let c = e.getAttribute("data-component");
+      if (c != null) {
+        switch (c) {
+          case "collapse":
+            e.addEventListener("click", toggleCollapse, false);
+            break;
 
-    //Listener de animaciones de drops
-    var dropMenu = document.getElementsByClassName("drop-menu");
-    for (let i = 0; i < dropMenu.length; i++) {
-      dropMenu[i].addEventListener("animationend", toggleDropMenu, false);
-    }
+          case "drop":
+            e.addEventListener("click", toggledrop, false);
+            m = document.getElementById(e.getAttribute("data-target"));
+            if (m != null) {
+              m.addEventListener("animationend", toggleDropMenu, false);
+            } else {
+              showError(1, e.getAttribute("data-target"));
+            }
+            break;
 
-    //Listener de modales
-    var buttonsTag = document.getElementsByTagName("button");
-    var buttonsClass = document.getElementsByClassName("btn");
-    var tagsTmp = document.getElementsByTagName("input");
+          case "modal":
+            e.addEventListener("click", showModal, false);
+            m = document.getElementById(e.getAttribute("data-target"));
+            if (m != null) {
+              m.addEventListener("animationend", toggleModal, false);
+            } else {
+              showError(1, e.getAttribute("data-target"));
+            }
+            break;
+            
+          case "tab":
+            e.addEventListener("click", toggleTab, false);
+            if (e.classList.contains("active")) {
+              e.classList.remove("active");
+              e.click();
+            }
+            m = document.getElementById(e.getAttribute("data-target"));
+            if(m != null){
+              n = m.children[e.getAttribute("data-option")];
+              if(n != null){
+                n.addEventListener("animationend", toggleTabItem, false);
+              }else{
+                //Error pendiente
+                showError(1, e.getAttribute("data-target"));
+              }
+            }else{
+              showError(1, e.getAttribute("data-target"));
+            }
+            break;
 
-    for (let i = 0; i < buttonsTag.length; i++) {
-      if (buttonsTag[i].getAttribute("data-target")) {
-        if (buttonsTag[i].getAttribute("data-component") == "modal") {
-          buttonsTag[i].addEventListener("click", showModal, false);
+          default:
+              console.log("Valor no valido: " + c);
+              break;
+        }
+      }else{
+        c = e.getAttribute("data-dismiss");
+        switch(c){
+          case "modal":
+            e.addEventListener("click", hideModal, false);
+            break;
+
+          default:
+            break;
         }
       }
-      if (buttonsTag[i].getAttribute("data-dismiss") == "modal" && buttonsTag[i].classList.contains("close")) {
-        buttonsTag[i].addEventListener("click", hideModal, false);
-      }
-    }
-
-    for (let i = 0; i < buttonsClass.length; i++) {
-      if (buttonsClass[i].getAttribute("data-target")) {
-        if (buttonsClass[i].getAttribute("data-component") == "modal") {
-          buttonsClass[i].addEventListener("click", showModal, false);
-        }
-      }
-      if (buttonsClass[i].getAttribute("data-dismiss") == "modal" && buttonsClass[i].classList.contains("close")) {
-        buttonsClass[i].addEventListener("click", hideModal, false);
-      }
-    }
-
-    for (let i = 0; i < tagsTmp.length; i++) {
-      if (tagsTmp[i].getAttribute("data-target")) {
-        if (tagsTmp[i].getAttribute("data-component") == "modal") {
-          tagsTmp[i].addEventListener("click", showModal, false);
-        }
-      }
-      if (tagsTmp[i].getAttribute("data-dismiss") == "modal" && tagsTmp[i].classList.contains("close")) {
-        tagsTmp[i].addEventListener("click", hideModal, false);
-      }
-    }
-
-    //Listener de animaciones de modales
-    var modals = document.getElementsByClassName("modal");
-    for (let i = 0; i < modals.length; i++) {
-      modals[i].addEventListener("animationend", toggleModal, false);
-    }
-
-    //Listener de tab Controls
-    var tabController = document.getElementsByClassName("tab-control");
-    for (let i = 0; i < tabController.length; i++) {
-      tabController[i].addEventListener("click", toggleTab, false);
-      console.log(tabController[i]);
     }
   }
 };

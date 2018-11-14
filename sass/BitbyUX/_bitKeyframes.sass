@@ -16,12 +16,44 @@
   100%
     opacity: 0
 
+@keyframes show-c
+  0%
+    opacity: 0
+    border: 0
+    height: 0
+    padding-bottom: 0
+    padding-top: 0
+
+  100%
+    opacity: 1
+    height: initial
+    
+@keyframes hide-c
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
+    height: 0
+    padding-bottom: 0
+    padding-top: 0
+    
 .show
   animation-name: show
-  animation-duration: .5s
+  animation-duration: .25s
   animation-fill-mode: forwards  
 
 .hide
   animation-name: hide
-  animation-duration: .5s
+  animation-duration: .25s
+  animation-fill-mode: forwards   
+    
+.show-c
+  animation-name: show-c
+  animation-duration: .25s
+  animation-fill-mode: forwards  
+
+.hide-c
+  animation-name: hide-c
+  animation-duration: .25s
   animation-fill-mode: forwards   

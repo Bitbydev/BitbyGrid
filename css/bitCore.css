@@ -6140,10 +6140,20 @@ img.fill.blue-grey {
   width: 100%;
 }
 
+.list-group.hover .item:hover {
+  background-color: #009688;
+  color: #FFFFFF;
+}
+
 .list-group .item {
   color: #212121;
   padding: 1em;
   border: 1px #BDBDBD solid;
+}
+
+.list-group .item.active {
+  background-color: #009688;
+  color: #FFFFFF;
 }
 
 .list-group .item:first-child {
@@ -10439,6 +10449,18 @@ a.tag.blue-grey-dark:hover {
   color: #212121;
 }
 
+.autocomplete {
+  position: absolute;
+  background-color: #FFF;
+  max-height: 50%;
+  overflow-y: auto;
+}
+
+.autocomplete * {
+  -webkit-transition: .25s background-color ease;
+  transition: .25s background-color ease;
+}
+
 .collapse {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -10446,6 +10468,12 @@ a.tag.blue-grey-dark:hover {
   border-bottom: 0 !important;
   height: 0 !important;
   overflow: hidden !important;
+}
+
+.label-creator * {
+  -webkit-transition: .25s all ease;
+  transition: .25s all ease;
+  margin: .5em;
 }
 
 .tab-item {

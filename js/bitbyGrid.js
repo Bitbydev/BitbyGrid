@@ -379,71 +379,272 @@ function toggleCollapse() {
   }
 }
 
+ /***
+  @author: Israel Trejo
+  @function: autocomplete
+  @description: Función que genera un menú de autocompletado
+  @param: 
+    @var name: ID del elemento del DOM que detectará la escritura.
+    @var arr: Arreglo de palabras que serán revisadas para el autocompletado.
+    @var options: JSON para cambiar las clases del contenedor y de los items.
+***/
+//Arreglo de prueba
+var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua &amp; Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia &amp; Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre &amp; Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts &amp; Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad &amp; Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks &amp; Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
+function autocomplete(name, arr, options = null) {
+  let element = document.getElementById(name);
+  if (element != null) {
+    var elementCurrent;
+    if(options == null){
+      options = {container: "list-group hover", item: "item"};
+    }
+
+    element.addEventListener("input", function () {
+      var divList, elementList, count, valInput = this.value;
+      closeLists();
+      if (!valInput) {
+        return false;
+      }
+      elementCurrent = -1;
+      divList = document.createElement("div");
+      divList.setAttribute("id", this.id + "-list");
+      divList.setAttribute("class", options.container);
+      divList.classList.add("autocomplete");
+      divList.style.width = element.clientWidth+"px";
+      this.parentNode.appendChild(divList);
+      for (count = 0; count < arr.length; count++) {
+        var str = arr[count];
+        if (typeof str == "string") {
+          var pos = str.toUpperCase().search(valInput.toUpperCase());
+          if (pos > -1) {
+            if (str.substr(pos, valInput.length).toUpperCase() == valInput.toUpperCase()) {
+              elementList = document.createElement("div");
+              elementList.setAttribute("class", options.item);
+              elementList.innerHTML = str.substr(0, pos);
+              elementList.innerHTML += "<strong>" + str.substr(pos, valInput.length) + "</strong>";
+              elementList.innerHTML += str.substr(valInput.length + pos);
+              elementList.innerHTML += "<input type='hidden' value='" + str + "'>";
+              elementList.addEventListener("click", function (e) {
+                element.value = this.getElementsByTagName("input")[0].value;
+                closeLists();
+              });
+              divList.appendChild(elementList);
+            }
+          }
+        }
+      }
+    });
+
+    element.addEventListener("keydown", function (e) {
+      var list = document.getElementById(this.id + "-list");
+      if (list) {
+        list = list.getElementsByTagName("div");
+      }
+      if (e.keyCode == 40) {
+        elementCurrent++;
+        addActive(list);
+      } else if (e.keyCode == 38) {
+        elementCurrent--;
+        addActive(list);
+      } else if (e.keyCode == 13) {
+        e.preventDefault();
+        if (elementCurrent > -1) {
+          if (list) {
+            list[elementCurrent].click();
+          }
+        }
+      }
+    });
+
+    function addActive(list) {
+      if (!list) {
+        return false;
+      }
+      removeActive(list);
+      if (elementCurrent >= list.length) {
+        elementCurrent = 0;
+      }
+      if (elementCurrent < 0) {
+        elementCurrent = (list.length - 1);
+      }
+      list[elementCurrent].classList.add("active");
+    }
+
+    function removeActive(list) {
+      for (var i = 0; i < list.length; i++) {
+        list[i].classList.remove("active");
+      }
+    }
+
+    function closeLists(e) {
+      var items = document.getElementsByClassName(options.container);
+      for (var i = 0; i < items.length; i++) {
+        if (e != items[i] && e != element) {
+          items[i].parentNode.removeChild(items[i]);
+        }
+      }
+    }
+
+    document.addEventListener("click", function (e) {
+      closeLists(e.target);
+    });
+  }else{
+    showError(1, name);
+  }
+}
+
+ /***
+  @author: Israel Trejo
+  @function: labelCreator
+  @description: Función que genera un contenedor con etiquetas dinamicas
+  @param: 
+    @var name: Nombre del elemento del DOM que detectará la escritura.
+    @var options: JSON para cambiar las clases del contenedor y de los items.
+***/  
+function labelCreator(name, options = null) {
+  let element = document.getElementById(name);
+  if (element != null) {
+    if (options == null) {
+      options = { element: "span", item: "tag teal shadow-lg show", delimiter: "," };
+    }
+    // console.log(options);
+    let val, length, data, target = element.getAttribute("data-target");
+    element.addEventListener("input", function () {
+      val = this.value;
+      length = val.length;
+      if (val[length - 1] == options.delimiter) {
+        data = val.substr(0, length - 1);
+        let container = document.getElementById(target);
+        if (container != null) {
+          if(container.classList.contains("label-creator") == false){
+            container.classList.add("label-creator");
+          }
+          let item = document.createElement(options.element);
+          item.innerHTML = data;
+          item.setAttribute("class", options.item);
+          container.appendChild(item);
+          element.value = "";
+        // let div = document.getElementsByClassName("close-e");
+        // div[div.length - 1].addEventListener("click", function () {
+        //   let parent = this.parentElement;
+        //   let mail = parent.getAttribute("data-email");
+        //   let input = document.getElementById("correos");
+        //   let val = input.value.replace(mail + ",", "");
+        //   input.value = val;
+        //   parent.parentElement.removeChild(parent);
+        // }, false);
+        }else{
+          showError(1, target);
+        }
+      }
+    } , false);
+
+    element.addEventListener("change", function () {
+      val = this.value;
+      length = val.length;
+      data = val.substr(0, length);
+      let container = document.getElementById(target);
+      if (container != null) {
+        if (container.classList.contains("label-creator") == false) {
+          container.classList.add("label-creator");
+        }
+        let item = document.createElement(options.element);
+        item.innerHTML = data;
+        item.setAttribute("class", options.item);
+        container.appendChild(item);
+        element.value = "";
+        // let div = document.getElementsByClassName("close-e");
+        // div[div.length - 1].addEventListener("click", function () {
+        //   let parent = this.parentElement;
+        //   let mail = parent.getAttribute("data-email");
+        //   let input = document.getElementById("correos");
+        //   let val = input.value.replace(mail + ",", "");
+        //   input.value = val;
+        //   parent.parentElement.removeChild(parent);
+        // }, false);
+      } else {
+        showError(1, target);
+      }
+    } , false);
+  }else{
+    showError(1, name);
+  }
+}
 /*
   Obtención de elementos y Ejecución de funciones
 */
 
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
+    // autocomplete("auto", countries);
+    // autocomplete("auto2", countries);
+    // labelCreator("auto3");
     /*
       Definición de listeners
     */
     //Listener de todos los elementos de BitbyUx
     var bitbyux = document.querySelectorAll("*[data-component], *[data-dismiss]");
-    // console.log(bitbyux);
+    // console.log(window);
     for(let i = 0; i < bitbyux.length; i++){
       let m, n;
       let e = bitbyux[i];
-      let c = e.getAttribute("data-component");
+      let c = e.dataset.component;
       if (c != null) {
         switch (c) {
+          case "auto":
+            autocomplete(e.id, window[e.dataset.var]);
+            break;
+
           case "collapse":
             e.addEventListener("click", toggleCollapse, false);
-            m = document.getElementById(e.getAttribute("data-target"));
+            m = document.getElementById(e.dataset.target);
             if (m != null) {
               m.style.transition = ".25s ease all";
             } else {
-              showError(1, e.getAttribute("data-target"));
+              showError(1, e.dataset.target);
             }
             break;
 
           case "drop":
             e.addEventListener("click", toggleDrop, false);
-            m = document.getElementById(e.getAttribute("data-target"));
+            m = document.getElementById(e.dataset.target);
             if (m != null) {
               m.addEventListener("animationend", toggleDropMenu, false);
             } else {
-              showError(1, e.getAttribute("data-target"));
+              showError(1, e.dataset.target);
             }
             break;
 
           case "modal":
             e.addEventListener("click", showModal, false);
-            m = document.getElementById(e.getAttribute("data-target"));
+            m = document.getElementById(e.dataset.target);
             if (m != null) {
               m.addEventListener("animationend", toggleModal, false);
             } else {
-              showError(1, e.getAttribute("data-target"));
+              showError(1, e.dataset.target);
             }
             break;
-            
+
+          case "label":
+            labelCreator(e.id);
+            break;
+
           case "tab":
             e.addEventListener("click", toggleTab, false);
             if (e.classList.contains("active")) {
               e.classList.remove("active");
               e.click();
             }
-            m = document.getElementById(e.getAttribute("data-target"));
+            m = document.getElementById(e.dataset.target);
             if(m != null){
-              n = m.children[e.getAttribute("data-option")];
+              n = m.children[e.dataset.option];
               if(n != null){
                 n.addEventListener("animationend", toggleTabItem, false);
               }else{
                 //Error pendiente
-                showError(1, e.getAttribute("data-target"));
+                showError(1, e.dataset.target);
               }
             }else{
-              showError(1, e.getAttribute("data-target"));
+              showError(1, e.dataset.target);
             }
             break;
 
@@ -452,7 +653,7 @@ document.onreadystatechange = () => {
               break;
         }
       }else{
-        c = e.getAttribute("data-dismiss");
+        c = e.dataset.dismiss;
         switch(c){
           case "modal":
             e.addEventListener("click", hideModal, false);

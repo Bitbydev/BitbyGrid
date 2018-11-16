@@ -18,6 +18,7 @@
         <hr>
         <nav class="nav blue-grey">
           <a href="alertas.php" class="item">Alertas</a>
+          <a href="autocompletar.php" class="item">Autocompletar</a>
           <a href="botones.php" class="item">Botones</a>
           <a href="breadcrumbs.php" class="item">Breadcrumbs</a>
           <a href="collapse.php" class="item">Collapse</a>
@@ -26,6 +27,7 @@
           <a href="forms.php" class="item">Forms</a>
           <a href="imagenes.php" class="item">Imagenes</a>
           <a href="jumbotron.php" class="item">Jumbotron</a>
+          <a href="crearEtiquetas.php" class="item">Label Creator</a>
           <a href="listas.php" class="item">Listas</a>
           <a href="modals.php" class="item">Modales</a>
           <a href="navs.php" class="item">Navs</a>

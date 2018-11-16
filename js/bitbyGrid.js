@@ -407,9 +407,12 @@ function autocomplete(name, arr, options = null) {
       elementCurrent = -1;
       divList = document.createElement("div");
       divList.setAttribute("id", this.id + "-list");
-      divList.setAttribute("class", options.container);
-      divList.classList.add("autocomplete");
-      divList.style.width = element.clientWidth+"px";
+      divList.setAttribute("class", options.container + " autocomplete");
+      let position = element.getBoundingClientRect();
+      divList.style.width = position.width+"px";
+      divList.style.top = position.height + position.top+"px";
+      console.log();
+      divList.style.marginTop = element.style.marginBottom+"px";
       this.parentNode.appendChild(divList);
       for (count = 0; count < arr.length; count++) {
         var str = arr[count];

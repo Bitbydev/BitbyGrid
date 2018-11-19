@@ -19,14 +19,10 @@
 @keyframes show-c
   0%
     opacity: 0
-    border: 0
-    height: 0
-    padding-bottom: 0
-    padding-top: 0
 
   100%
     opacity: 1
-    height: initial
+    position: relative
     
 @keyframes hide-c
   0%
@@ -34,9 +30,7 @@
 
   100%
     opacity: 0
-    height: 0
-    padding-bottom: 0
-    padding-top: 0
+    position: absolute
     
 .show
   animation-name: show

@@ -241,11 +241,13 @@ function showTab(elemento){
     let option = tabOptions[tabOption];
     if (tabOption != null && option != null) {
       elemento.classList.add("active");
-      if(option.classList.contains("hide")){
-        option.classList.remove("hide");
+      if(option.classList.contains("hide-c")){
+        option.classList.remove("hide-c");
       }
-      option.style.maxWidth = 100+"%";
-      option.classList.add("show");
+      option.style.removeProperty("padding");
+      option.style.maxWidth = 100 + "%";
+      option.style.maxHeight = 100 + "%";
+      option.classList.add("show-c");
     }else{
       //Error pendiente
       showError(1, tabOption);
@@ -273,10 +275,10 @@ function hideTab(elemento) {
       if (elemento.classList.contains("active")) {
         elemento.classList.remove("active");
       }
-      if (option.classList.contains("show")) {
-        option.classList.remove("show");
+      if (option.classList.contains("show-c")) {
+        option.classList.remove("show-c");
       }
-      option.classList.add("hide");
+      option.classList.add("hide-c");
     } else {
       //Error pendiente
       showError(1, tabOption);
@@ -294,13 +296,15 @@ function hideTab(elemento) {
 ***/
 function toggleTab() {
   if(!this.classList.contains("active")){
-    let listTab = document.getElementsByClassName("tab-control active");
+    let parent = this.parentElement;
+    let listTab = parent.getElementsByClassName("control active");
     for(let x = 0; x < listTab.length; x++){
       if (this.parentElement == listTab[x].parentElement) {
         hideTab(listTab[x]);
       }
     }
     showTab(this);
+    // setTimeout(showTab, 250, this);
   }
 }
 
@@ -311,11 +315,15 @@ function toggleTab() {
  @param:
 ***/
 function toggleTabItem() {
-  if (this.classList.contains("show")) {
+  if (this.classList.contains("show-c")) {
+    this.style.position = "relative";
     this.style.opacity = 1;
-  } else if (this.classList.contains("hide")) {
-    this.style.maxWidth = 0;
-    this.style.opacity = 0;
+  } else if (this.classList.contains("hide-c")) {
+    this.style.removeProperty("position");
+    this.style.removeProperty("maxHeight");
+    this.style.removeProperty("maxWidth");
+    this.style.removeProperty("opacity");
+    this.style.padding = "initial";
   }
 }
 

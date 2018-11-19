@@ -6,6 +6,8 @@
 ///Mixin to generate the basis of the Grid by percentages
 =createColumnPercentage($percentage)
   width: unquote($percentage+'%')
+  position: relative
+  display: inline-block
   float: left
 
 ///Mixin to add offset in the grid by percentages
@@ -15,6 +17,8 @@
 ///Mixin to generate the basis of the grid by columns
 =createColumn($numCol, $amountCol)
   width: unquote(((100/$amountCol)*$numCol)+'%')
+  position: relative
+  display: inline-block
   float: left
 
 ///Mixin to add offset in the grid by columns
@@ -76,6 +80,8 @@
   .#{$nameRow}
     width: 100%
     margin: .5em 0em
-    display: inline-block
+    display: block
+    position: relative
+    float: left
 
   +gridBreakpoint($breakpoints, $nameBase, $mode, $amountBase, $nameCol, $amountCol)

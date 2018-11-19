@@ -95,11 +95,15 @@ h6 {
 .bit-row {
   width: 100%;
   margin: .5em 0em;
-  display: inline-block;
+  display: block;
+  position: relative;
+  float: left;
 }
 
 .bit-col-5 {
   width: 5%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -109,6 +113,8 @@ h6 {
 
 .bit-col-10 {
   width: 10%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -118,6 +124,8 @@ h6 {
 
 .bit-col-15 {
   width: 15%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -127,6 +135,8 @@ h6 {
 
 .bit-col-20 {
   width: 20%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -136,6 +146,8 @@ h6 {
 
 .bit-col-25 {
   width: 25%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -145,6 +157,8 @@ h6 {
 
 .bit-col-30 {
   width: 30%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -154,6 +168,8 @@ h6 {
 
 .bit-col-35 {
   width: 35%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -163,6 +179,8 @@ h6 {
 
 .bit-col-40 {
   width: 40%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -172,6 +190,8 @@ h6 {
 
 .bit-col-45 {
   width: 45%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -181,6 +201,8 @@ h6 {
 
 .bit-col-50 {
   width: 50%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -190,6 +212,8 @@ h6 {
 
 .bit-col-55 {
   width: 55%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -199,6 +223,8 @@ h6 {
 
 .bit-col-60 {
   width: 60%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -208,6 +234,8 @@ h6 {
 
 .bit-col-65 {
   width: 65%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -217,6 +245,8 @@ h6 {
 
 .bit-col-70 {
   width: 70%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -226,6 +256,8 @@ h6 {
 
 .bit-col-75 {
   width: 75%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -235,6 +267,8 @@ h6 {
 
 .bit-col-80 {
   width: 80%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -244,6 +278,8 @@ h6 {
 
 .bit-col-85 {
   width: 85%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -253,6 +289,8 @@ h6 {
 
 .bit-col-90 {
   width: 90%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -262,6 +300,8 @@ h6 {
 
 .bit-col-95 {
   width: 95%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -271,12 +311,16 @@ h6 {
 
 .bit-col-100 {
   width: 100%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
 @media only screen and (min-width: 576px) {
   .bit-col-sm-5 {
     width: 5%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-5 {
@@ -284,6 +328,8 @@ h6 {
   }
   .bit-col-sm-10 {
     width: 10%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-10 {
@@ -291,6 +337,8 @@ h6 {
   }
   .bit-col-sm-15 {
     width: 15%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-15 {
@@ -298,6 +346,8 @@ h6 {
   }
   .bit-col-sm-20 {
     width: 20%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-20 {
@@ -305,6 +355,8 @@ h6 {
   }
   .bit-col-sm-25 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-25 {
@@ -312,6 +364,8 @@ h6 {
   }
   .bit-col-sm-30 {
     width: 30%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-30 {
@@ -319,6 +373,8 @@ h6 {
   }
   .bit-col-sm-35 {
     width: 35%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-35 {
@@ -326,6 +382,8 @@ h6 {
   }
   .bit-col-sm-40 {
     width: 40%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-40 {
@@ -333,6 +391,8 @@ h6 {
   }
   .bit-col-sm-45 {
     width: 45%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-45 {
@@ -340,6 +400,8 @@ h6 {
   }
   .bit-col-sm-50 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-50 {
@@ -347,6 +409,8 @@ h6 {
   }
   .bit-col-sm-55 {
     width: 55%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-55 {
@@ -354,6 +418,8 @@ h6 {
   }
   .bit-col-sm-60 {
     width: 60%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-60 {
@@ -361,6 +427,8 @@ h6 {
   }
   .bit-col-sm-65 {
     width: 65%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-65 {
@@ -368,6 +436,8 @@ h6 {
   }
   .bit-col-sm-70 {
     width: 70%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-70 {
@@ -375,6 +445,8 @@ h6 {
   }
   .bit-col-sm-75 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-75 {
@@ -382,6 +454,8 @@ h6 {
   }
   .bit-col-sm-80 {
     width: 80%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-80 {
@@ -389,6 +463,8 @@ h6 {
   }
   .bit-col-sm-85 {
     width: 85%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-85 {
@@ -396,6 +472,8 @@ h6 {
   }
   .bit-col-sm-90 {
     width: 90%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-90 {
@@ -403,6 +481,8 @@ h6 {
   }
   .bit-col-sm-95 {
     width: 95%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-sm-offset-95 {
@@ -410,10 +490,14 @@ h6 {
   }
   .bit-col-sm-100 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-1 {
     width: 8.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-1 {
@@ -421,6 +505,8 @@ h6 {
   }
   .col-sm-2 {
     width: 16.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-2 {
@@ -428,6 +514,8 @@ h6 {
   }
   .col-sm-3 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-3 {
@@ -435,6 +523,8 @@ h6 {
   }
   .col-sm-4 {
     width: 33.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-4 {
@@ -442,6 +532,8 @@ h6 {
   }
   .col-sm-5 {
     width: 41.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-5 {
@@ -449,6 +541,8 @@ h6 {
   }
   .col-sm-6 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-6 {
@@ -456,6 +550,8 @@ h6 {
   }
   .col-sm-7 {
     width: 58.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-7 {
@@ -463,6 +559,8 @@ h6 {
   }
   .col-sm-8 {
     width: 66.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-8 {
@@ -470,6 +568,8 @@ h6 {
   }
   .col-sm-9 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-9 {
@@ -477,6 +577,8 @@ h6 {
   }
   .col-sm-10 {
     width: 83.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-10 {
@@ -484,6 +586,8 @@ h6 {
   }
   .col-sm-11 {
     width: 91.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-sm-offset-11 {
@@ -491,12 +595,16 @@ h6 {
   }
   .col-sm-12 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
 }
 
 .col-1 {
   width: 8.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -506,6 +614,8 @@ h6 {
 
 .col-2 {
   width: 16.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -515,6 +625,8 @@ h6 {
 
 .col-3 {
   width: 25%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -524,6 +636,8 @@ h6 {
 
 .col-4 {
   width: 33.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -533,6 +647,8 @@ h6 {
 
 .col-5 {
   width: 41.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -542,6 +658,8 @@ h6 {
 
 .col-6 {
   width: 50%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -551,6 +669,8 @@ h6 {
 
 .col-7 {
   width: 58.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -560,6 +680,8 @@ h6 {
 
 .col-8 {
   width: 66.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -569,6 +691,8 @@ h6 {
 
 .col-9 {
   width: 75%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -578,6 +702,8 @@ h6 {
 
 .col-10 {
   width: 83.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -587,6 +713,8 @@ h6 {
 
 .col-11 {
   width: 91.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -596,12 +724,16 @@ h6 {
 
 .col-12 {
   width: 100%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
 @media only screen and (min-width: 768px) {
   .bit-col-md-5 {
     width: 5%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-5 {
@@ -609,6 +741,8 @@ h6 {
   }
   .bit-col-md-10 {
     width: 10%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-10 {
@@ -616,6 +750,8 @@ h6 {
   }
   .bit-col-md-15 {
     width: 15%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-15 {
@@ -623,6 +759,8 @@ h6 {
   }
   .bit-col-md-20 {
     width: 20%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-20 {
@@ -630,6 +768,8 @@ h6 {
   }
   .bit-col-md-25 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-25 {
@@ -637,6 +777,8 @@ h6 {
   }
   .bit-col-md-30 {
     width: 30%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-30 {
@@ -644,6 +786,8 @@ h6 {
   }
   .bit-col-md-35 {
     width: 35%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-35 {
@@ -651,6 +795,8 @@ h6 {
   }
   .bit-col-md-40 {
     width: 40%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-40 {
@@ -658,6 +804,8 @@ h6 {
   }
   .bit-col-md-45 {
     width: 45%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-45 {
@@ -665,6 +813,8 @@ h6 {
   }
   .bit-col-md-50 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-50 {
@@ -672,6 +822,8 @@ h6 {
   }
   .bit-col-md-55 {
     width: 55%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-55 {
@@ -679,6 +831,8 @@ h6 {
   }
   .bit-col-md-60 {
     width: 60%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-60 {
@@ -686,6 +840,8 @@ h6 {
   }
   .bit-col-md-65 {
     width: 65%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-65 {
@@ -693,6 +849,8 @@ h6 {
   }
   .bit-col-md-70 {
     width: 70%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-70 {
@@ -700,6 +858,8 @@ h6 {
   }
   .bit-col-md-75 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-75 {
@@ -707,6 +867,8 @@ h6 {
   }
   .bit-col-md-80 {
     width: 80%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-80 {
@@ -714,6 +876,8 @@ h6 {
   }
   .bit-col-md-85 {
     width: 85%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-85 {
@@ -721,6 +885,8 @@ h6 {
   }
   .bit-col-md-90 {
     width: 90%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-90 {
@@ -728,6 +894,8 @@ h6 {
   }
   .bit-col-md-95 {
     width: 95%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-md-offset-95 {
@@ -735,10 +903,14 @@ h6 {
   }
   .bit-col-md-100 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-1 {
     width: 8.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-1 {
@@ -746,6 +918,8 @@ h6 {
   }
   .col-md-2 {
     width: 16.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-2 {
@@ -753,6 +927,8 @@ h6 {
   }
   .col-md-3 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-3 {
@@ -760,6 +936,8 @@ h6 {
   }
   .col-md-4 {
     width: 33.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-4 {
@@ -767,6 +945,8 @@ h6 {
   }
   .col-md-5 {
     width: 41.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-5 {
@@ -774,6 +954,8 @@ h6 {
   }
   .col-md-6 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-6 {
@@ -781,6 +963,8 @@ h6 {
   }
   .col-md-7 {
     width: 58.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-7 {
@@ -788,6 +972,8 @@ h6 {
   }
   .col-md-8 {
     width: 66.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-8 {
@@ -795,6 +981,8 @@ h6 {
   }
   .col-md-9 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-9 {
@@ -802,6 +990,8 @@ h6 {
   }
   .col-md-10 {
     width: 83.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-10 {
@@ -809,6 +999,8 @@ h6 {
   }
   .col-md-11 {
     width: 91.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-md-offset-11 {
@@ -816,12 +1008,16 @@ h6 {
   }
   .col-md-12 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
 }
 
 .col-1 {
   width: 8.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -831,6 +1027,8 @@ h6 {
 
 .col-2 {
   width: 16.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -840,6 +1038,8 @@ h6 {
 
 .col-3 {
   width: 25%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -849,6 +1049,8 @@ h6 {
 
 .col-4 {
   width: 33.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -858,6 +1060,8 @@ h6 {
 
 .col-5 {
   width: 41.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -867,6 +1071,8 @@ h6 {
 
 .col-6 {
   width: 50%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -876,6 +1082,8 @@ h6 {
 
 .col-7 {
   width: 58.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -885,6 +1093,8 @@ h6 {
 
 .col-8 {
   width: 66.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -894,6 +1104,8 @@ h6 {
 
 .col-9 {
   width: 75%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -903,6 +1115,8 @@ h6 {
 
 .col-10 {
   width: 83.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -912,6 +1126,8 @@ h6 {
 
 .col-11 {
   width: 91.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -921,12 +1137,16 @@ h6 {
 
 .col-12 {
   width: 100%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
 @media only screen and (min-width: 992px) {
   .bit-col-lg-5 {
     width: 5%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-5 {
@@ -934,6 +1154,8 @@ h6 {
   }
   .bit-col-lg-10 {
     width: 10%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-10 {
@@ -941,6 +1163,8 @@ h6 {
   }
   .bit-col-lg-15 {
     width: 15%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-15 {
@@ -948,6 +1172,8 @@ h6 {
   }
   .bit-col-lg-20 {
     width: 20%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-20 {
@@ -955,6 +1181,8 @@ h6 {
   }
   .bit-col-lg-25 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-25 {
@@ -962,6 +1190,8 @@ h6 {
   }
   .bit-col-lg-30 {
     width: 30%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-30 {
@@ -969,6 +1199,8 @@ h6 {
   }
   .bit-col-lg-35 {
     width: 35%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-35 {
@@ -976,6 +1208,8 @@ h6 {
   }
   .bit-col-lg-40 {
     width: 40%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-40 {
@@ -983,6 +1217,8 @@ h6 {
   }
   .bit-col-lg-45 {
     width: 45%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-45 {
@@ -990,6 +1226,8 @@ h6 {
   }
   .bit-col-lg-50 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-50 {
@@ -997,6 +1235,8 @@ h6 {
   }
   .bit-col-lg-55 {
     width: 55%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-55 {
@@ -1004,6 +1244,8 @@ h6 {
   }
   .bit-col-lg-60 {
     width: 60%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-60 {
@@ -1011,6 +1253,8 @@ h6 {
   }
   .bit-col-lg-65 {
     width: 65%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-65 {
@@ -1018,6 +1262,8 @@ h6 {
   }
   .bit-col-lg-70 {
     width: 70%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-70 {
@@ -1025,6 +1271,8 @@ h6 {
   }
   .bit-col-lg-75 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-75 {
@@ -1032,6 +1280,8 @@ h6 {
   }
   .bit-col-lg-80 {
     width: 80%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-80 {
@@ -1039,6 +1289,8 @@ h6 {
   }
   .bit-col-lg-85 {
     width: 85%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-85 {
@@ -1046,6 +1298,8 @@ h6 {
   }
   .bit-col-lg-90 {
     width: 90%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-90 {
@@ -1053,6 +1307,8 @@ h6 {
   }
   .bit-col-lg-95 {
     width: 95%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-lg-offset-95 {
@@ -1060,10 +1316,14 @@ h6 {
   }
   .bit-col-lg-100 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-1 {
     width: 8.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-1 {
@@ -1071,6 +1331,8 @@ h6 {
   }
   .col-lg-2 {
     width: 16.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-2 {
@@ -1078,6 +1340,8 @@ h6 {
   }
   .col-lg-3 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-3 {
@@ -1085,6 +1349,8 @@ h6 {
   }
   .col-lg-4 {
     width: 33.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-4 {
@@ -1092,6 +1358,8 @@ h6 {
   }
   .col-lg-5 {
     width: 41.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-5 {
@@ -1099,6 +1367,8 @@ h6 {
   }
   .col-lg-6 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-6 {
@@ -1106,6 +1376,8 @@ h6 {
   }
   .col-lg-7 {
     width: 58.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-7 {
@@ -1113,6 +1385,8 @@ h6 {
   }
   .col-lg-8 {
     width: 66.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-8 {
@@ -1120,6 +1394,8 @@ h6 {
   }
   .col-lg-9 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-9 {
@@ -1127,6 +1403,8 @@ h6 {
   }
   .col-lg-10 {
     width: 83.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-10 {
@@ -1134,6 +1412,8 @@ h6 {
   }
   .col-lg-11 {
     width: 91.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-lg-offset-11 {
@@ -1141,12 +1421,16 @@ h6 {
   }
   .col-lg-12 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
 }
 
 .col-1 {
   width: 8.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1156,6 +1440,8 @@ h6 {
 
 .col-2 {
   width: 16.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1165,6 +1451,8 @@ h6 {
 
 .col-3 {
   width: 25%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1174,6 +1462,8 @@ h6 {
 
 .col-4 {
   width: 33.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1183,6 +1473,8 @@ h6 {
 
 .col-5 {
   width: 41.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1192,6 +1484,8 @@ h6 {
 
 .col-6 {
   width: 50%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1201,6 +1495,8 @@ h6 {
 
 .col-7 {
   width: 58.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1210,6 +1506,8 @@ h6 {
 
 .col-8 {
   width: 66.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1219,6 +1517,8 @@ h6 {
 
 .col-9 {
   width: 75%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1228,6 +1528,8 @@ h6 {
 
 .col-10 {
   width: 83.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1237,6 +1539,8 @@ h6 {
 
 .col-11 {
   width: 91.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1246,12 +1550,16 @@ h6 {
 
 .col-12 {
   width: 100%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
 @media only screen and (min-width: 1200px) {
   .bit-col-xl-5 {
     width: 5%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-5 {
@@ -1259,6 +1567,8 @@ h6 {
   }
   .bit-col-xl-10 {
     width: 10%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-10 {
@@ -1266,6 +1576,8 @@ h6 {
   }
   .bit-col-xl-15 {
     width: 15%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-15 {
@@ -1273,6 +1585,8 @@ h6 {
   }
   .bit-col-xl-20 {
     width: 20%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-20 {
@@ -1280,6 +1594,8 @@ h6 {
   }
   .bit-col-xl-25 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-25 {
@@ -1287,6 +1603,8 @@ h6 {
   }
   .bit-col-xl-30 {
     width: 30%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-30 {
@@ -1294,6 +1612,8 @@ h6 {
   }
   .bit-col-xl-35 {
     width: 35%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-35 {
@@ -1301,6 +1621,8 @@ h6 {
   }
   .bit-col-xl-40 {
     width: 40%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-40 {
@@ -1308,6 +1630,8 @@ h6 {
   }
   .bit-col-xl-45 {
     width: 45%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-45 {
@@ -1315,6 +1639,8 @@ h6 {
   }
   .bit-col-xl-50 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-50 {
@@ -1322,6 +1648,8 @@ h6 {
   }
   .bit-col-xl-55 {
     width: 55%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-55 {
@@ -1329,6 +1657,8 @@ h6 {
   }
   .bit-col-xl-60 {
     width: 60%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-60 {
@@ -1336,6 +1666,8 @@ h6 {
   }
   .bit-col-xl-65 {
     width: 65%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-65 {
@@ -1343,6 +1675,8 @@ h6 {
   }
   .bit-col-xl-70 {
     width: 70%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-70 {
@@ -1350,6 +1684,8 @@ h6 {
   }
   .bit-col-xl-75 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-75 {
@@ -1357,6 +1693,8 @@ h6 {
   }
   .bit-col-xl-80 {
     width: 80%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-80 {
@@ -1364,6 +1702,8 @@ h6 {
   }
   .bit-col-xl-85 {
     width: 85%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-85 {
@@ -1371,6 +1711,8 @@ h6 {
   }
   .bit-col-xl-90 {
     width: 90%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-90 {
@@ -1378,6 +1720,8 @@ h6 {
   }
   .bit-col-xl-95 {
     width: 95%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .bit-col-xl-offset-95 {
@@ -1385,10 +1729,14 @@ h6 {
   }
   .bit-col-xl-100 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-1 {
     width: 8.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-1 {
@@ -1396,6 +1744,8 @@ h6 {
   }
   .col-xl-2 {
     width: 16.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-2 {
@@ -1403,6 +1753,8 @@ h6 {
   }
   .col-xl-3 {
     width: 25%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-3 {
@@ -1410,6 +1762,8 @@ h6 {
   }
   .col-xl-4 {
     width: 33.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-4 {
@@ -1417,6 +1771,8 @@ h6 {
   }
   .col-xl-5 {
     width: 41.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-5 {
@@ -1424,6 +1780,8 @@ h6 {
   }
   .col-xl-6 {
     width: 50%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-6 {
@@ -1431,6 +1789,8 @@ h6 {
   }
   .col-xl-7 {
     width: 58.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-7 {
@@ -1438,6 +1798,8 @@ h6 {
   }
   .col-xl-8 {
     width: 66.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-8 {
@@ -1445,6 +1807,8 @@ h6 {
   }
   .col-xl-9 {
     width: 75%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-9 {
@@ -1452,6 +1816,8 @@ h6 {
   }
   .col-xl-10 {
     width: 83.33333%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-10 {
@@ -1459,6 +1825,8 @@ h6 {
   }
   .col-xl-11 {
     width: 91.66667%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
   .col-xl-offset-11 {
@@ -1466,12 +1834,16 @@ h6 {
   }
   .col-xl-12 {
     width: 100%;
+    position: relative;
+    display: inline-block;
     float: left;
   }
 }
 
 .col-1 {
   width: 8.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1481,6 +1853,8 @@ h6 {
 
 .col-2 {
   width: 16.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1490,6 +1864,8 @@ h6 {
 
 .col-3 {
   width: 25%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1499,6 +1875,8 @@ h6 {
 
 .col-4 {
   width: 33.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1508,6 +1886,8 @@ h6 {
 
 .col-5 {
   width: 41.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1517,6 +1897,8 @@ h6 {
 
 .col-6 {
   width: 50%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1526,6 +1908,8 @@ h6 {
 
 .col-7 {
   width: 58.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1535,6 +1919,8 @@ h6 {
 
 .col-8 {
   width: 66.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1544,6 +1930,8 @@ h6 {
 
 .col-9 {
   width: 75%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1553,6 +1941,8 @@ h6 {
 
 .col-10 {
   width: 83.33333%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1562,6 +1952,8 @@ h6 {
 
 .col-11 {
   width: 91.66667%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -1571,6 +1963,8 @@ h6 {
 
 .col-12 {
   width: 100%;
+  position: relative;
+  display: inline-block;
   float: left;
 }
 
@@ -10481,7 +10875,8 @@ a.tag.blue-grey-dark:hover {
   width: inherit;
   height: inherit;
   max-width: 0;
-  overflow-x: hidden;
+  max-height: 0;
+  opacity: 0;
 }
 
 @-webkit-keyframes show {
@@ -10523,28 +10918,20 @@ a.tag.blue-grey-dark:hover {
 @-webkit-keyframes show-c {
   0% {
     opacity: 0;
-    border: 0;
-    height: 0;
-    padding-bottom: 0;
-    padding-top: 0;
   }
   100% {
     opacity: 1;
-    height: initial;
+    position: relative;
   }
 }
 
 @keyframes show-c {
   0% {
     opacity: 0;
-    border: 0;
-    height: 0;
-    padding-bottom: 0;
-    padding-top: 0;
   }
   100% {
     opacity: 1;
-    height: initial;
+    position: relative;
   }
 }
 
@@ -10554,9 +10941,7 @@ a.tag.blue-grey-dark:hover {
   }
   100% {
     opacity: 0;
-    height: 0;
-    padding-bottom: 0;
-    padding-top: 0;
+    position: absolute;
   }
 }
 
@@ -10566,9 +10951,7 @@ a.tag.blue-grey-dark:hover {
   }
   100% {
     opacity: 0;
-    height: 0;
-    padding-bottom: 0;
-    padding-top: 0;
+    position: absolute;
   }
 }
 

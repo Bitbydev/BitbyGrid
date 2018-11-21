@@ -22,57 +22,40 @@
     </div>
     <div class="bit-row">
       <div class="bit-col-100">
-        <nav class="nav fill tabs teal" data-direction="vertical">
-          <a data-component="tab" data-target="myTab" data-option="0" class="control item active">Texto 1</a>
-          <a data-component="tab" data-target="myTab" data-option="1" class="control item">Texto 2</a>
-          <a data-component="tab" data-target="myTab" data-option="2" class="control item active">Texto 3</a>
-          <a data-component="tab" data-target="myTab" data-option="3" class="control item">Texto 4</a>
-          <a data-component="tab" data-target="myTab" data-option="4" class="control item active">Texto 5</a>
+        <nav class="nav fill tabs teal" data-component="tab" data-target="myTab">
+          <a data-option="0" class="control item active">Texto 1</a>
+          <a data-option="1" class="control item">Texto 2</a>
+          <a data-option="2" class="control item active">Texto 3</a>
+          <a data-option="3" class="control item">Texto 4</a>
+          <a data-option="4" class="control item active">Texto 5</a>
         </nav>
-        <div class="bit-row">
-          <div class="bit-col-100" id="myTab">
-            <div class="tab-item bg-purple" style="height:100px">Este es mi tab número 1</div>
-            <div class="tab-item bg-yellow" style="height:200px">Este es mi tab número 2</div>
-            <div class="tab-item bg-red" style="height:300px">Este es mi tab número 3</div>
-            <div class="tab-item bg-blue" style="height:400px">Este es mi tab número 4</div>
-            <div class="tab-item bg-teal" style="height:500px">Este es mi tab número 5</div>
+        <div class="bit-col-100 tab" id="myTab">
+          <div class="content">
+            <div class="item" style="height: 100px"><p>Este es mi tab Numero 0</p></div>
+            <div class="item" style="height: 200px"><p>Este es mi tab Numero 1</p></div>
+            <div class="item" style="height: 300px"><p>Este es mi tab Numero 2</p></div>
+            <div class="item" style="height: 400px"><p>Este es mi tab Numero 3</p></div>
+            <div class="item" style="height: 500px"><p>Este es mi tab Numero 4</p></div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="bit-row">
-      <div class="bit-col-100">
-        <nav class="nav fill nav-red" data-direction="vertical">
-          <a data-component="tab" data-target="myTab2" data-option="0" class="control item active">Texto 1</a>
-          <a data-component="tab" data-target="myTab2" data-option="1" class="control item">Texto 2</a>
-          <a data-component="tab" data-target="myTab2" data-option="2" class="control item">Texto 3</a>
-          <a data-component="tab" data-target="myTab2" data-option="3" class="control item">Texto 4</a>
-          <a data-component="tab" data-target="myTab2" data-option="4" class="control item">Texto 5</a>
-        </nav>
-        <div class="tab-container" style="width:100%; overflow:hidden; height:100px;" id="myTab2">
-          <div class="tab-item">Este es mi tab número 1</div>
-          <div class="tab-item">Este es mi tab número 2</div>
-          <div class="tab-item">Este es mi tab número 3</div>
-          <div class="tab-item">Este es mi tab número 4</div>
-          <div class="tab-item">Este es mi tab número 5</div>
-        </div>
-      </div>
-    </div><div class="bit-row">
       <div class="bit-col-50">
-        <nav class="nav fill pills blue column" data-direction="vertical">
-          <a data-component="tab" data-target="myTab3" data-option="0" class="control item active">Texto 1</a>
-          <a data-component="tab" data-target="myTab3" data-option="1" class="control item">Texto 2</a>
-          <a data-component="tab" data-target="myTab3" data-option="2" class="control item">Texto 3</a>
-          <a data-component="tab" data-target="myTab3" data-option="3" class="control item">Texto 4</a>
-          <a data-component="tab" data-target="myTab3" data-option="4" class="control item">Texto 5</a>
+        <nav class="nav fill pills red" data-component="tab" data-target="myTab1">
+          <p data-option="0" class="control item">Opción 1</p>
+          <p data-option="1" class="control item">Opción 2</p>
+          <p data-option="2" class="control item">Opción 3</p>
+          <p data-option="3" class="control item">Opción 4</p>
+          <p data-option="4" class="control item">Opción 5</p>
         </nav>
       </div>
-      <div class="bit-col-50" id="myTab3">
-        <div class="tab-item" style="height:200px;">Este es mi tab número 1</div>
-        <div class="tab-item" style="height:200px;">Este es mi tab número 2</div>
-        <div class="tab-item" style="height:200px;">Este es mi tab número 3</div>
-        <div class="tab-item" style="height:200px;">Este es mi tab número 4</div>
-        <div class="tab-item" style="height:200px;">Este es mi tab número 5</div>
+      <div class="bit-col-50 tab" id="myTab1">
+        <div class="content">
+          <div class="item bg-red">Hola mundo este es un tab numero 1</div>
+          <div class="item bg-teal">Hola mundo este es un tab numero 2</div>
+          <div class="item bg-blue">Hola mundo este es un tab numero 3</div>
+          <div class="item bg-orange">Hola mundo este es un tab numero 4</div>
+          <div class="item bg-purple">Hola mundo este es un tab numero 5</div>
+        </div>
       </div>
     </div>
   </div> 

@@ -16,21 +16,20 @@
   100%
     opacity: 0
 
-@keyframes show-c
+@keyframes show-t
   0%
-    opacity: 0
-
-  100%
-    opacity: 1
-    position: relative
-    
-@keyframes hide-c
-  0%
-    opacity: 1
-
-  100%
     opacity: 0
     position: absolute
+
+  100%
+    opacity: 1
+    
+@keyframes hide-t
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
     
 .show
   animation-name: show
@@ -42,12 +41,12 @@
   animation-duration: .25s
   animation-fill-mode: forwards   
     
-.show-c
-  animation-name: show-c
+.show-t
+  animation-name: show-t
   animation-duration: .25s
   animation-fill-mode: forwards  
 
-.hide-c
-  animation-name: hide-c
+.hide-t
+  animation-name: hide-t
   animation-duration: .25s
-  animation-fill-mode: forwards   
+  animation-fill-mode: forwards 

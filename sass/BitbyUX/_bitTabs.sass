@@ -3,10 +3,19 @@
 ///@group: BitByDev
 
 ///Classes & Mixins used by bitTabs
-.tab-item
-  position: absolute
-  width: inherit
-  height: inherit
-  max-width: 0
-  max-height: 0
-  opacity: 0
+.tab
+  width: 100%
+  box-sizing: content-box
+
+  & .content
+    position: relative
+    width: 100%
+    transition: height .25s ease
+
+    & .item
+      position: absolute
+      width: 100%
+      max-width: 0%
+      max-height: 0%
+      opacity: 0
+      display: inline-block

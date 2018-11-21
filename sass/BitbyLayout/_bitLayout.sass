@@ -5,10 +5,9 @@
 ///Mixins used by bitLayout
 ///Mixin to generate the basis of the Grid by percentages
 =createColumnPercentage($percentage)
-  width: unquote($percentage+'%')
-  position: relative
-  display: inline-block
-  float: left
+  min-height: 1px
+  flex: 0 0 unquote($percentage+'%')
+  max-width: unquote($percentage+'%')
 
 ///Mixin to add offset in the grid by percentages
 =offsetColumnPercentage($percentage)
@@ -16,10 +15,9 @@
 
 ///Mixin to generate the basis of the grid by columns
 =createColumn($numCol, $amountCol)
-  width: unquote(((100/$amountCol)*$numCol)+'%')
-  position: relative
-  display: inline-block
-  float: left
+  min-height: 1px
+  flex: 0 0 unquote(((100/$amountCol)*$numCol)+'%')
+  max-width: unquote(((100/$amountCol)*$numCol)+'%')
 
 ///Mixin to add offset in the grid by columns
 =offsetColumn($numCol, $amountCol)
@@ -80,8 +78,7 @@
   .#{$nameRow}
     width: 100%
     margin: .5em 0em
-    display: block
-    position: relative
-    float: left
+    display: flex
+    flex-wrap: wrap
 
   +gridBreakpoint($breakpoints, $nameBase, $mode, $amountBase, $nameCol, $amountCol)

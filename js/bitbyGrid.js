@@ -233,24 +233,31 @@ function toggleModal(){
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function showTab(elemento){
-  let tabRef = elemento.getAttribute('data-target');
+  let tabRef = elemento.parentElement.getAttribute('data-target');
   let tabContainer = document.getElementById(tabRef);
   if (tabContainer != null) {
-    let tabOptions = tabContainer.getElementsByClassName("tab-item");
-    let tabOption = elemento.getAttribute('data-option');
-    let option = tabOptions[tabOption];
-    if (tabOption != null && option != null) {
-      elemento.classList.add("active");
-      if(option.classList.contains("hide-c")){
-        option.classList.remove("hide-c");
+    tabContainer = tabContainer.getElementsByClassName("content")[0];
+    if (tabContainer != null) {
+      let tabOptions = tabContainer.getElementsByClassName("item");
+      let tabOption = elemento.getAttribute('data-option');
+      let option = tabOptions[tabOption];
+      if (tabOption != null && option != null) {
+        elemento.classList.add("active");
+        option.style.removeProperty("padding");
+        option.style.maxWidth = 100 + "%";
+        option.style.maxHeight = "initial";
+        let box = option.getBoundingClientRect();
+        tabContainer.style.height = box.height + "px";
+        if (option.classList.contains("hide-t")) {
+          option.classList.remove("hide-t");
+        }
+        option.classList.add("show-t");
+      } else {
+        //Error pendiente
+        showError(1, tabOption);
       }
-      option.style.removeProperty("padding");
-      option.style.maxWidth = 100 + "%";
-      option.style.maxHeight = 100 + "%";
-      option.classList.add("show-c");
     }else{
-      //Error pendiente
-      showError(1, tabOption);
+      showError(3, "content");
     }
   }else{
     showError(1, tabRef);
@@ -265,23 +272,31 @@ function showTab(elemento){
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function hideTab(elemento) {
-  let tabRef = elemento.getAttribute('data-target');
-  let tabContainer = document.getElementById(tabRef);
+  let tabRef = elemento.parentElement.getAttribute('data-target');
+  let tabContainer = document.getElementById(tabRef)
   if (tabContainer != null) {
-    let tabOptions = tabContainer.getElementsByClassName("tab-item");
-    let tabOption = elemento.getAttribute('data-option');
-    let option = tabOptions[tabOption];
-    if (tabOption != null && option != null) {
-      if (elemento.classList.contains("active")) {
-        elemento.classList.remove("active");
+    tabContainer = tabContainer.getElementsByClassName("content")[0];
+    if (tabContainer != null) {
+      let tabOptions = tabContainer.getElementsByClassName("item");
+      let tabOption = elemento.getAttribute('data-option');
+      let option = tabOptions[tabOption];
+      if (tabOption != null && option != null) {
+        if (elemento.classList.contains("active")) {
+          elemento.classList.remove("active");
+        }
+        option.style.removeProperty("position");
+        let box = option.getBoundingClientRect();
+        tabContainer.style.height = box.height + "px";
+        option.classList.add("hide-t");
+        if (option.classList.contains("show-t")) {
+          option.classList.remove("show-t");
+        }
+      } else {
+        //Error pendiente
+        showError(1, tabOption);
       }
-      if (option.classList.contains("show-c")) {
-        option.classList.remove("show-c");
-      }
-      option.classList.add("hide-c");
-    } else {
-      //Error pendiente
-      showError(1, tabOption);
+    }else{
+      showError(3, "content");
     }
   } else {
     showError(1, tabRef);
@@ -290,7 +305,7 @@ function hideTab(elemento) {
 
 /*** 
 @author: Israel Trejo
-@function: toggle
+@function: toggleTab
 @description: Es la función que alterna los tabs
 @param:
 ***/
@@ -304,7 +319,6 @@ function toggleTab() {
       }
     }
     showTab(this);
-    // setTimeout(showTab, 250, this);
   }
 }
 
@@ -315,13 +329,13 @@ function toggleTab() {
  @param:
 ***/
 function toggleTabItem() {
-  if (this.classList.contains("show-c")) {
-    this.style.position = "relative";
+  if (this.classList.contains("show-t")) {
     this.style.opacity = 1;
-  } else if (this.classList.contains("hide-c")) {
-    this.style.removeProperty("position");
-    this.style.removeProperty("maxHeight");
-    this.style.removeProperty("maxWidth");
+    this.style.position = "relative";
+    this.parentElement.style.removeProperty("height");
+  } else if (this.classList.contains("hide-t")) {
+    this.style.removeProperty("max-height");
+    this.style.removeProperty("max-width");
     this.style.removeProperty("opacity");
     this.style.padding = "initial";
   }
@@ -515,7 +529,7 @@ function labelCreator(name, options = null) {
   let element = document.getElementById(name);
   if (element != null) {
     if (options == null) {
-      options = { element: "span", item: "tag teal shadow-lg show", delimiter: "," };
+      options = { element: "span", item: "tag red shadow-lg show", delimiter: "," };
     }
     // console.log(options);
     let val, length, data, target = element.getAttribute("data-target");
@@ -534,15 +548,6 @@ function labelCreator(name, options = null) {
           item.setAttribute("class", options.item);
           container.appendChild(item);
           element.value = "";
-        // let div = document.getElementsByClassName("close-e");
-        // div[div.length - 1].addEventListener("click", function () {
-        //   let parent = this.parentElement;
-        //   let mail = parent.getAttribute("data-email");
-        //   let input = document.getElementById("correos");
-        //   let val = input.value.replace(mail + ",", "");
-        //   input.value = val;
-        //   parent.parentElement.removeChild(parent);
-        // }, false);
         }else{
           showError(1, target);
         }
@@ -563,15 +568,6 @@ function labelCreator(name, options = null) {
         item.setAttribute("class", options.item);
         container.appendChild(item);
         element.value = "";
-        // let div = document.getElementsByClassName("close-e");
-        // div[div.length - 1].addEventListener("click", function () {
-        //   let parent = this.parentElement;
-        //   let mail = parent.getAttribute("data-email");
-        //   let input = document.getElementById("correos");
-        //   let val = input.value.replace(mail + ",", "");
-        //   input.value = val;
-        //   parent.parentElement.removeChild(parent);
-        // }, false);
       } else {
         showError(1, target);
       }
@@ -580,15 +576,142 @@ function labelCreator(name, options = null) {
     showError(1, name);
   }
 }
+
+/*** 
+@author: Israel Trejo
+@function: toggleSlider
+@description: Es la función que alterna los slide
+@param:
+***/
+function toggleSlider() {
+  if (!this.classList.contains("active")) {
+    let parent = this.parentElement;
+    let listSlide = parent.getElementsByClassName("control active");
+    for (let x = 0; x < listSlide.length; x++) {
+      if (this.parentElement == listSlide[x].parentElement) {
+        listSlide[x].classList.remove("active");
+      }
+    }
+    this.classList.add("active");
+    let slide = document.getElementById(parent.dataset.target);
+    slide = slide.getElementsByClassName("content")[0];
+    slide.style.marginLeft = -(this.dataset.option * 100)+"%";
+  }
+}
+
+/*** 
+@author: Israel Trejo
+@function: showSlide
+@description: Es la función que muestra un Slide
+@param:
+    @var elemento: Es el objeto del DOM que recibe la función.
+***/
+function showSlide(elemento) {
+  let SlideRef = elemento.parentElement.getAttribute('data-target');
+  let SlideContainer = document.getElementById(SlideRef);
+  if (SlideContainer != null) {
+    let SlideOptions = SlideContainer.getElementsByClassName("item");
+    let SlideOption = elemento.getAttribute('data-option');
+    let option = SlideOptions[SlideOption];
+    if (SlideOption != null && option != null) {
+      elemento.classList.add("active");
+      if (option.classList.contains("hide-s")) {
+        option.classList.remove("hide-s");
+      }
+      option.style.removeProperty("padding");
+      option.style.maxWidth = 100 + "%";
+      option.style.maxHeight = 100 + "%";
+      option.classList.add("show-s");
+    } else {
+      //Error pendiente
+      showError(1, SlideOption);
+    }
+  } else {
+    showError(1, SlideRef);
+  }
+}
+
+/*** 
+@author: Israel Trejo
+@function: hideSlide
+@description: Es la función que oculta un Slide
+@param:
+    @var elemento: Es el objeto del DOM que recibe la función.
+***/
+function hideSlide(elemento) {
+  let SlideRef = elemento.parentElement.getAttribute('data-target');
+  let SlideContainer = document.getElementById(SlideRef);
+  if (SlideContainer != null) {
+    let SlideOptions = SlideContainer.getElementsByClassName("item");
+    let SlideOption = elemento.getAttribute('data-option');
+    let option = SlideOptions[SlideOption];
+    if (SlideOption != null && option != null) {
+      if (elemento.classList.contains("active")) {
+        elemento.classList.remove("active");
+      }
+      if (option.classList.contains("show-s")) {
+        option.classList.remove("show-s");
+      }
+      option.classList.add("hide-s");
+    } else {
+      //Error pendiente
+      showError(1, SlideOption);
+    }
+  } else {
+    showError(1, SlideRef);
+  }
+}
+
+/*** 
+@author: Israel Trejo
+@function: toggleSlide
+@description: Es la función que alterna los Slides
+@param:
+***/
+function toggleSlide() {
+  if (!this.classList.contains("active")) {
+    let parent = this.parentElement;
+    let listSlide = parent.getElementsByClassName("control active");
+    for (let x = 0; x < listSlide.length; x++) {
+      if (this.parentElement == listSlide[x].parentElement) {
+        hideSlide(listSlide[x]);
+      }
+    }
+    showSlide(this);
+    // setTimeout(showSlide, 250, this);
+  }
+}
+
+/***
+ @author: Israel Trejo
+ @function: toggleSlideItem
+ @description: Es la función que administra la animación del Slide item
+ @param:
+***/
+function toggleSlideItem() {
+  if (this.classList.contains("show-s")) {
+    // this.style.position = "relative";
+    // this.style.opacity = 1;
+  } else if (this.classList.contains("hide-s")) {
+    // this.style.removeProperty("position");
+    this.style.removeProperty("max-height");
+    this.style.removeProperty("max-width");
+    // this.style.removeProperty("opacity");
+    this.style.padding = "initial";
+  }
+}
+
 /*
   Obtención de elementos y Ejecución de funciones
 */
 
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
-    // autocomplete("auto", countries);
-    // autocomplete("auto2", countries);
-    // labelCreator("auto3");
+    /* Seccion pruebas*/
+    // let prueba = document.querySelectorAll("*[data-prueba]");
+    // for(let x=0; x < prueba.length; x++){
+    //   prueba[x].addEventListener("click", function(){console.log("Hola"), false});
+    // }
     /*
       Definición de listeners
     */
@@ -596,7 +719,7 @@ document.onreadystatechange = () => {
     var bitbyux = document.querySelectorAll("*[data-component], *[data-dismiss]");
     // console.log(window);
     for(let i = 0; i < bitbyux.length; i++){
-      let m, n;
+      let m, n, x, y;
       let e = bitbyux[i];
       let c = e.dataset.component;
       if (c != null) {
@@ -640,22 +763,50 @@ document.onreadystatechange = () => {
             break;
 
           case "tab":
-            e.addEventListener("click", toggleTab, false);
-            if (e.classList.contains("active")) {
-              e.classList.remove("active");
-              e.click();
+            x = e.children;
+            if (e.getElementsByClassName("active").length < 1 && x.length > 0) {
+              x[0].classList.add("active");
             }
-            m = document.getElementById(e.dataset.target);
-            if(m != null){
-              n = m.children[e.dataset.option];
-              if(n != null){
-                n.addEventListener("animationend", toggleTabItem, false);
-              }else{
-                //Error pendiente
+            for (let i = 0; i < x.length; i++) {
+              y = x[i];
+              y.addEventListener("click", toggleTab, false);
+              if (y.classList.contains("active")) {
+                y.classList.remove("active");
+                y.click();
+              }
+              m = document.getElementById(e.dataset.target);
+              if (m != null) {
+                m = m.getElementsByClassName("content")[0];
+                if (m != null) {
+                  n = m.children[y.dataset.option];
+                  if (n != null) {
+                    n.addEventListener("animationend", toggleTabItem, false);
+                  } else {
+                    //Error pendiente
+                    showError(1, e.dataset.target);
+                  }
+                } else {
+                  //error pendiente de no hijos
+                  showError(3, "content");
+                }
+              } else {
                 showError(1, e.dataset.target);
               }
-            }else{
-              showError(1, e.dataset.target);
+            }
+            break;
+
+          case "slide":
+            x = e.children;
+            m = document.getElementById(e.dataset.target);
+            m = m.getElementsByClassName("content")[0];
+            m.style.width = (x.length*100)+"%";
+            for (let i = 0; i < x.length; i++) {
+              y = x[i];
+              y.addEventListener("click", toggleSlide, false);
+              if (y.classList.contains("active")) {
+                y.classList.remove("active");
+                y.click();
+              }
             }
             break;
 

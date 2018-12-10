@@ -11237,6 +11237,10 @@ a.tag.blue-grey-dark:hover {
           animation-fill-mode: forwards;
 }
 
+*[data-component] {
+  cursor: pointer;
+}
+
 .drop:after {
   line-height: 0px;
   margin-left: 1em;

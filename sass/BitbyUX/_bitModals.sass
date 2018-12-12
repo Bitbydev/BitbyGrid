@@ -4,31 +4,49 @@
 
 ///Mixins used by bitModals
 ///Mixin to create a color modal
-=createColorModal($nameModal, $nameColor, $color)
-  .#{$nameModal}-content.#{$nameColor}
-    border: 1px map-get($color, 'primary-color-dark') solid
+=createColorModalScale($nameModal, $nameColor, $color)
+  .#{$nameModal}-content 
+    &.#{$nameColor}
+      border: 1px map-get($color, 'primary-color-dark') solid
 
-    & .body,
-    & .header,
-    & .footer
+      & .body,
+      & .header,
+      & .footer
+        color: map-get($color, 'primary-color-title')
+
+        & .title
+          color: map-get($color, 'primary-color-title')
+
+        & .subtitle
+          color: map-get($color, 'primary-color-title')
+
+      & .header,
+      & .footer
+        background-color: map-get($color, 'primary-color-dark')
+        
+      & .body
+        background-color: map-get($color, 'primary-color')
+
+      & .header
+        border-bottom: 1px map-get($color, 'primary-color-dark') solid
+
+      & .footer
+        border-top: 1px map-get($color, 'primary-color-dark') solid
+
+///Mixin to create a color segments in modal
+=createColorModal($nameModal, $nameColor, $color)
+  .#{$nameModal}-content 
+    & .body.#{$nameColor},
+    & .header.#{$nameColor},
+    & .footer.#{$nameColor}
       color: map-get($color, 'primary-color-title')
+      background-color: map-get($color, 'primary-color')
 
       & .title
         color: map-get($color, 'primary-color-title')
 
       & .subtitle
         color: map-get($color, 'primary-color-title')
-
-    & .header,
-    & .footer,
-    & .body
-      background-color: map-get($color, 'primary-color')
-
-    & .header
-      border-bottom: 1px map-get($color, 'primary-color-dark') solid
-
-    & .footer
-      border-top: 1px map-get($color, 'primary-color-dark') solid
 
 /// Mixin to create the base style of a modal.
 =createBaseModal($nameModal, $default)
@@ -57,9 +75,16 @@
     max-width: 600px
     border: 1px map-get($default, 'divider-color') solid
     border-radius: .5em
-    // position: relative
     display: flex
     flex-direction: column
+
+    & div:not(:last-child)
+      border-bottom-right-radius: 0em
+      border-bottom-left-radius: 0em
+
+    & div:not(:first-child)
+      border-top-right-radius: 0em
+      border-top-left-radius: 0em
 
     &.lg
       width: 70%
@@ -76,6 +101,10 @@
     & .footer
       padding: 1em
       color: map-get($default, 'primary-color-text')
+      border-top-right-radius: .5em
+      border-top-left-radius: .5em
+      border-bottom-right-radius: .5em
+      border-bottom-left-radius: .5em
 
       & .title,
       & .subtitle
@@ -93,14 +122,10 @@
       background-color: map-get($default, 'primary-color-title')
 
     & .header
-      border-top-right-radius: .5em
-      border-top-left-radius: .5em
       border-bottom: 1px map-get($default, 'divider-color') solid
       font-weight: bold
 
     & .footer
-      border-bottom-right-radius: .5em
-      border-bottom-left-radius: .5em
       border-top: 1px map-get($default, 'divider-color') solid
 
     & .img
@@ -110,5 +135,8 @@
 ///Mixin to create all the colors of the modals.
 =createColorsModal($nameModal, $colors)
   $keysColors: map-keys($colors)
+  @each $color in $keysColors
+    +createColorModalScale($nameModal, $color, map-get($colors, $color))
+
   @each $color in $keysColors
     +createColorModal($nameModal, $color, map-get($colors, $color))

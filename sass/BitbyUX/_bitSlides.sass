@@ -5,6 +5,7 @@
 ///Classes & Mixins used by bitSlides
 .slide
   width: 100%
+  position: relative
   box-sizing: content-box
 
   & .content
@@ -20,3 +21,84 @@
       opacity: 0
       display: inline-block
     
+  & .indicators
+    width: 100%
+    position: absolute
+    display: flex
+    bottom: 0
+    justify-content: center
+    z-index: 1000
+
+    &.line
+      & .item
+        padding: .12em 1em
+        background-color: #BDBDBD
+        margin: .5em .2em
+        border: .01em solid #BCBCBC
+        box-sizing: content-box
+
+        &:hover
+          background-color: #CCC
+
+        &.active,
+        &.active:hover
+          background-color: #FFF
+
+      &.lg
+        & .item
+          padding: .24em 1.5em
+
+      &.xl
+        & .item
+          padding: .36em 2em
+
+    &.circle
+      & .item
+        padding: .35em
+        background-color: #BDBDBD
+        margin: .5em .2em
+        border: .01em solid #BCBCBC
+        box-sizing: content-box
+        border-radius: 100%
+
+        &:hover
+          background-color: #CCC
+
+        &.active,
+        &.active:hover
+          background-color: #FFF
+
+      &.lg
+        & .item
+          padding: .5em
+
+      &.xl
+        & .item
+          padding: .75em
+
+  & .next,
+  & .prev
+    position: absolute
+    display: flex
+    top: 0
+    bottom: 0
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    z-index: 1000
+    opacity: .5
+
+    &:hover
+      opacity: 1
+
+  & .next
+    right: 0
+
+    &.out
+      transform: translateX(100%)
+
+  & .prev
+    left: 0
+
+    &.out
+      transform: translateX(-100%)

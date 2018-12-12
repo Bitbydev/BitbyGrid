@@ -585,34 +585,34 @@ function labelCreator(name, options = null) {
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function showSlide(elemento) {
-  let tabRef = elemento.parentElement.getAttribute('data-target');
-  let tabContainer = document.getElementById(tabRef);
-  if (tabContainer != null) {
-    tabContainer = tabContainer.getElementsByClassName("content")[0];
-    if (tabContainer != null) {
-      let tabOptions = tabContainer.getElementsByClassName("item");
-      let tabOption = elemento.getAttribute('data-option');
-      let option = tabOptions[tabOption];
-      if (tabOption != null && option != null) {
+  let slideRef = elemento.parentElement.getAttribute('data-target');
+  let slideContainer = document.getElementById(slideRef);
+  if (slideContainer != null) {
+    slideContainer = slideContainer.getElementsByClassName("content")[0];
+    if (slideContainer != null) {
+      let slideOptions = slideContainer.getElementsByClassName("item");
+      let slideOption = elemento.getAttribute('data-option');
+      let option = slideOptions[slideOption];
+      if (slideOption != null && option != null) {
         elemento.classList.add("active");
         option.style.removeProperty("padding");
         option.style.maxWidth = 100 + "%";
         option.style.maxHeight = "initial";
         let box = option.getBoundingClientRect();
-        tabContainer.style.height = box.height + "px";
+        slideContainer.style.height = box.height + "px";
         if (option.classList.contains("hide-t")) {
           option.classList.remove("hide-t");
         }
         option.classList.add("show-t");
       } else {
         //Error pendiente
-        showError(1, tabOption);
+        showError(1, slideOption);
       }
     } else {
       showError(3, "content");
     }
   } else {
-    showError(1, tabRef);
+    showError(1, slideRef);
   }
 }
 
@@ -624,34 +624,34 @@ function showSlide(elemento) {
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function hideSlide(elemento) {
-  let tabRef = elemento.parentElement.getAttribute('data-target');
-  let tabContainer = document.getElementById(tabRef)
-  if (tabContainer != null) {
-    tabContainer = tabContainer.getElementsByClassName("content")[0];
-    if (tabContainer != null) {
-      let tabOptions = tabContainer.getElementsByClassName("item");
-      let tabOption = elemento.getAttribute('data-option');
-      let option = tabOptions[tabOption];
-      if (tabOption != null && option != null) {
+  let slideRef = elemento.parentElement.getAttribute('data-target');
+  let slideContainer = document.getElementById(slideRef)
+  if (slideContainer != null) {
+    slideContainer = slideContainer.getElementsByClassName("content")[0];
+    if (slideContainer != null) {
+      let slideOptions = slideContainer.getElementsByClassName("item");
+      let slideOption = elemento.getAttribute('data-option');
+      let option = slideOptions[slideOption];
+      if (slideOption != null && option != null) {
         if (elemento.classList.contains("active")) {
           elemento.classList.remove("active");
         }
         option.style.removeProperty("position");
         let box = option.getBoundingClientRect();
-        tabContainer.style.height = box.height + "px";
+        slideContainer.style.height = box.height + "px";
         option.classList.add("hide-t");
         if (option.classList.contains("show-t")) {
           option.classList.remove("show-t");
         }
       } else {
         //Error pendiente
-        showError(1, tabOption);
+        showError(1, slideOption);
       }
     } else {
       showError(3, "content");
     }
   } else {
-    showError(1, tabRef);
+    showError(1, slideRef);
   }
 }
 
@@ -664,10 +664,10 @@ function hideSlide(elemento) {
 function toggleSlide() {
   if (!this.classList.contains("active")) {
     let parent = this.parentElement;
-    let listTab = parent.getElementsByClassName("control active");
-    for (let x = 0; x < listTab.length; x++) {
-      if (this.parentElement == listTab[x].parentElement) {
-        hideSlide(listTab[x]);
+    let listSlide = parent.getElementsByClassName("control active");
+    for (let x = 0; x < listSlide.length; x++) {
+      if (this.parentElement == listSlide[x].parentElement) {
+        hideSlide(listSlide[x]);
       }
     }
     showSlide(this);
@@ -788,15 +788,33 @@ document.onreadystatechange = () => {
 
           case "slide":
             x = e.children;
-            m = document.getElementById(e.dataset.target);
-            m = m.getElementsByClassName("content")[0];
-            m.style.width = (x.length*100)+"%";
+            if (e.getElementsByClassName("active").length < 1 && x.length > 0) {
+              x[0].classList.add("active");
+            }
             for (let i = 0; i < x.length; i++) {
               y = x[i];
               y.addEventListener("click", toggleSlide, false);
               if (y.classList.contains("active")) {
                 y.classList.remove("active");
                 y.click();
+              }
+              m = document.getElementById(e.dataset.target);
+              if (m != null) {
+                m = m.getElementsByClassName("content")[0];
+                if (m != null) {
+                  n = m.children[y.dataset.option];
+                  if (n != null) {
+                    n.addEventListener("animationend", toggleSlideItem, false);
+                  } else {
+                    //Error pendiente
+                    showError(1, e.dataset.target);
+                  }
+                } else {
+                  //error pendiente de no hijos
+                  showError(3, "content");
+                }
+              } else {
+                showError(1, e.dataset.target);
               }
             }
             break;

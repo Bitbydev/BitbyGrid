@@ -6,7 +6,6 @@
 .slide
   width: 100%
   position: relative
-  box-sizing: content-box
 
   & .content
     position: relative
@@ -29,20 +28,31 @@
     justify-content: center
     z-index: 1000
 
+    & .item
+      background-color: #BDBDBD
+      margin: .5em .2em
+      border: .01em solid #BCBCBC
+      box-sizing: content-box
+      padding: .35em
+
+      &:hover
+        background-color: #CCC
+
+      &.active,
+      &.active:hover
+        background-color: #FFF
+
+    &.lg
+      & .item
+        padding: .5em
+
+    &.xl
+      & .item
+        padding: .75em
+
     &.line
       & .item
         padding: .12em 1em
-        background-color: #BDBDBD
-        margin: .5em .2em
-        border: .01em solid #BCBCBC
-        box-sizing: content-box
-
-        &:hover
-          background-color: #CCC
-
-        &.active,
-        &.active:hover
-          background-color: #FFF
 
       &.lg
         & .item
@@ -54,27 +64,7 @@
 
     &.circle
       & .item
-        padding: .35em
-        background-color: #BDBDBD
-        margin: .5em .2em
-        border: .01em solid #BCBCBC
-        box-sizing: content-box
         border-radius: 100%
-
-        &:hover
-          background-color: #CCC
-
-        &.active,
-        &.active:hover
-          background-color: #FFF
-
-      &.lg
-        & .item
-          padding: .5em
-
-      &.xl
-        & .item
-          padding: .75em
 
   & .next,
   & .prev

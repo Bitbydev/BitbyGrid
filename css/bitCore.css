@@ -11127,8 +11127,6 @@ a.tag.blue-grey-dark:hover {
 .slide {
   width: 100%;
   position: relative;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
 }
 
 .slide .content {
@@ -11160,21 +11158,33 @@ a.tag.blue-grey-dark:hover {
   z-index: 1000;
 }
 
-.slide .indicators.line .item {
-  padding: .12em 1em;
+.slide .indicators .item {
   background-color: #BDBDBD;
   margin: .5em .2em;
   border: .01em solid #BCBCBC;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  padding: .35em;
 }
 
-.slide .indicators.line .item:hover {
+.slide .indicators .item:hover {
   background-color: #CCC;
 }
 
-.slide .indicators.line .item.active, .slide .indicators.line .item.active:hover {
+.slide .indicators .item.active, .slide .indicators .item.active:hover {
   background-color: #FFF;
+}
+
+.slide .indicators.lg .item {
+  padding: .5em;
+}
+
+.slide .indicators.xl .item {
+  padding: .75em;
+}
+
+.slide .indicators.line .item {
+  padding: .12em 1em;
 }
 
 .slide .indicators.line.lg .item {
@@ -11186,29 +11196,7 @@ a.tag.blue-grey-dark:hover {
 }
 
 .slide .indicators.circle .item {
-  padding: .35em;
-  background-color: #BDBDBD;
-  margin: .5em .2em;
-  border: .01em solid #BCBCBC;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
   border-radius: 100%;
-}
-
-.slide .indicators.circle .item:hover {
-  background-color: #CCC;
-}
-
-.slide .indicators.circle .item.active, .slide .indicators.circle .item.active:hover {
-  background-color: #FFF;
-}
-
-.slide .indicators.circle.lg .item {
-  padding: .5em;
-}
-
-.slide .indicators.circle.xl .item {
-  padding: .75em;
 }
 
 .slide .next,

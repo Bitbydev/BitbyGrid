@@ -674,6 +674,30 @@ function toggleSlide() {
   }
 }
 
+/*** 
+@author: Israel Trejo
+@function: toggleSlideIndicator
+@description: Es la función que alterna los slide mediante los indicadores
+@param:
+  @var elemento:  Es el objeto del DOM que recibe la función.
+***/
+function toggleSlideIndicator(elemento) {
+  if (elemento != null) {
+    if (!elemento.classList.contains("active")) {
+      let parent = elemento.parentElement;
+      let listSlide = parent.getElementsByClassName("control active");
+      for (let x = 0; x < listSlide.length; x++) {
+        if (elemento.parentElement == listSlide[x].parentElement) {
+          hideSlide(listSlide[x]);
+        }
+      }
+      showSlide(elemento);
+    }
+  }else{
+    //error
+  }
+}
+
 /***
  @author: Israel Trejo
  @function: toggleSlideItem
@@ -692,6 +716,131 @@ function toggleSlideItem() {
     this.style.padding = "initial";
   }
 }
+
+/*** 
+@author: Israel Trejo
+@function: nextSlide
+@description: Es la función que cambia al siguiente slide
+@param:
+***/
+function nextSlide() {
+  let slideRef = this.getAttribute('data-target');
+  let slideContainer = document.getElementById(slideRef);
+  if (slideContainer != null) {
+    let slideIndicator = slideContainer.getElementsByClassName("indicators")[0];
+    if (slideIndicator != null) {
+      slideContainer = slideContainer.getElementsByClassName("content")[0];
+      if (slideContainer != null) {
+        let refActual = slideContainer.dataset.actual;
+        refActual++;
+        if (refActual >= slideContainer.children.length) {
+          refActual = 0;
+        }
+        toggleSlideIndicator(slideIndicator.children[refActual]);
+        slideContainer.dataset.actual = refActual;
+      } else {
+        showError(3, "content");
+      }
+    } else {
+      slideContainer = slideContainer.getElementsByClassName("content")[0];
+      if (slideContainer != null) {
+        let refActual = slideContainer.dataset.actual;
+        let slideActual = slideContainer.children[refActual];
+        slideActual.style.removeProperty("position");
+        let box = slideActual.getBoundingClientRect();
+        slideContainer.style.height = box.height + "px";
+        slideActual.classList.add("hide-t");
+        if (slideActual.classList.contains("show-t")) {
+          slideActual.classList.remove("show-t");
+        }
+
+        refActual++;
+        if (refActual >= slideContainer.children.length) {
+          refActual = 0;
+        }
+        slideActual = slideContainer.children[refActual];
+        slideActual.style.removeProperty("padding");
+        slideActual.style.maxWidth = 100 + "%";
+        slideActual.style.maxHeight = "initial";
+        box = slideActual.getBoundingClientRect();
+        slideContainer.style.height = box.height + "px";
+        if (slideActual.classList.contains("hide-t")) {
+          slideActual.classList.remove("hide-t");
+        }
+        slideActual.classList.add("show-t");
+
+        slideContainer.dataset.actual = refActual;
+      } else {
+        showError(3, "content");
+      }
+    }
+  } else {
+    showError(1, slideRef);
+  }
+}
+
+/*** 
+@author: Israel Trejo
+@function: prevSlide
+@description: Es la función que cambia al slide previo
+@param:
+***/
+function prevSlide() {
+  let slideRef = this.getAttribute('data-target');
+  let slideContainer = document.getElementById(slideRef);
+  if (slideContainer != null) {
+    let slideIndicator = slideContainer.getElementsByClassName("indicators")[0];
+    if (slideIndicator != null) {
+      slideContainer = slideContainer.getElementsByClassName("content")[0];
+      if (slideContainer != null) {
+        let refActual = slideContainer.dataset.actual;
+        refActual--;
+        if (refActual < 0 ) {
+          refActual = slideContainer.children.length;
+        }
+        toggleSlideIndicator(slideIndicator.children[refActual]);
+        slideContainer.dataset.actual = refActual;
+      } else {
+        showError(3, "content");
+      }
+    } else {
+      slideContainer = slideContainer.getElementsByClassName("content")[0];
+      if (slideContainer != null) {
+        let refActual = slideContainer.dataset.actual;
+        let slideActual = slideContainer.children[refActual];
+        slideActual.style.removeProperty("position");
+        let box = slideActual.getBoundingClientRect();
+        slideContainer.style.height = box.height + "px";
+        slideActual.classList.add("hide-t");
+        if (slideActual.classList.contains("show-t")) {
+          slideActual.classList.remove("show-t");
+        }
+
+        refActual--;
+        if (refActual < 0) {
+          refActual = slideContainer.children.length - 1;
+        }
+        slideActual = slideContainer.children[refActual];
+        slideActual.style.removeProperty("padding");
+        slideActual.style.maxWidth = 100 + "%";
+        slideActual.style.maxHeight = "initial";
+        box = slideActual.getBoundingClientRect();
+        slideContainer.style.height = box.height + "px";
+        if (slideActual.classList.contains("hide-t")) {
+          slideActual.classList.remove("hide-t");
+        }
+        slideActual.classList.add("show-t");
+
+        slideContainer.dataset.actual = refActual;
+      } else {
+        showError(3, "content");
+      }
+    }
+  } else {
+    showError(1, slideRef);
+  }
+}
+
 /*
   Obtención de elementos y Ejecución de funciones
 */
@@ -816,6 +965,61 @@ document.onreadystatechange = () => {
               } else {
                 showError(1, e.dataset.target);
               }
+            }
+            break;
+
+          case "slide-control-next":
+            x = e;
+            x.addEventListener("click", nextSlide, false);
+            m = document.getElementById(e.dataset.target);
+            if (m != null) {
+              m = m.getElementsByClassName("content")[0];
+              if (m != null) {
+                for (let a = 0; a < m.children.length; a++) {
+                  n = m.children[a];
+                  if (n != null) {
+                    n.addEventListener("animationend", toggleSlideItem, false);
+                  } else {
+                    //Error pendiente
+                    showError(1, e.dataset.target);
+                  }
+                }
+                m.dataset.actual = m.children.length;
+                m.dataset.actual--;
+                x.click();
+              } else {
+                //error pendiente de no hijos
+                showError(3, "content");
+              }
+            } else {
+              showError(1, e.dataset.target);
+            }
+            break;
+
+          case "slide-control-prev":
+            x = e;
+            x.addEventListener("click", prevSlide, false);
+            m = document.getElementById(e.dataset.target);
+            if (m != null) {
+              m = m.getElementsByClassName("content")[0];
+              if (m != null) {
+                for (let a = 0; a < m.children.length; a++) {
+                  n = m.children[a];
+                  if (n != null) {
+                    n.addEventListener("animationend", toggleSlideItem, false);
+                  } else {
+                    //Error pendiente
+                    showError(1, e.dataset.target);
+                  }
+                }
+                m.dataset.actual = 1;
+                x.click();
+              } else {
+                //error pendiente de no hijos
+                showError(3, "content");
+              }
+            } else {
+              showError(1, e.dataset.target);
             }
             break;
 

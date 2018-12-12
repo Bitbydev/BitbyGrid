@@ -579,128 +579,119 @@ function labelCreator(name, options = null) {
 
 /*** 
 @author: Israel Trejo
-@function: toggleSlider
-@description: Es la función que alterna los slide
-@param:
-***/
-function toggleSlider() {
-  if (!this.classList.contains("active")) {
-    let parent = this.parentElement;
-    let listSlide = parent.getElementsByClassName("control active");
-    for (let x = 0; x < listSlide.length; x++) {
-      if (this.parentElement == listSlide[x].parentElement) {
-        listSlide[x].classList.remove("active");
-      }
-    }
-    this.classList.add("active");
-    let slide = document.getElementById(parent.dataset.target);
-    slide = slide.getElementsByClassName("content")[0];
-    slide.style.marginLeft = -(this.dataset.option * 100)+"%";
-  }
-}
-
-/*** 
-@author: Israel Trejo
 @function: showSlide
-@description: Es la función que muestra un Slide
+@description: Es la función que muestra un slide
 @param:
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function showSlide(elemento) {
-  let SlideRef = elemento.parentElement.getAttribute('data-target');
-  let SlideContainer = document.getElementById(SlideRef);
-  if (SlideContainer != null) {
-    let SlideOptions = SlideContainer.getElementsByClassName("item");
-    let SlideOption = elemento.getAttribute('data-option');
-    let option = SlideOptions[SlideOption];
-    if (SlideOption != null && option != null) {
-      elemento.classList.add("active");
-      if (option.classList.contains("hide-s")) {
-        option.classList.remove("hide-s");
+  let tabRef = elemento.parentElement.getAttribute('data-target');
+  let tabContainer = document.getElementById(tabRef);
+  if (tabContainer != null) {
+    tabContainer = tabContainer.getElementsByClassName("content")[0];
+    if (tabContainer != null) {
+      let tabOptions = tabContainer.getElementsByClassName("item");
+      let tabOption = elemento.getAttribute('data-option');
+      let option = tabOptions[tabOption];
+      if (tabOption != null && option != null) {
+        elemento.classList.add("active");
+        option.style.removeProperty("padding");
+        option.style.maxWidth = 100 + "%";
+        option.style.maxHeight = "initial";
+        let box = option.getBoundingClientRect();
+        tabContainer.style.height = box.height + "px";
+        if (option.classList.contains("hide-t")) {
+          option.classList.remove("hide-t");
+        }
+        option.classList.add("show-t");
+      } else {
+        //Error pendiente
+        showError(1, tabOption);
       }
-      option.style.removeProperty("padding");
-      option.style.maxWidth = 100 + "%";
-      option.style.maxHeight = 100 + "%";
-      option.classList.add("show-s");
     } else {
-      //Error pendiente
-      showError(1, SlideOption);
+      showError(3, "content");
     }
   } else {
-    showError(1, SlideRef);
+    showError(1, tabRef);
   }
 }
 
 /*** 
 @author: Israel Trejo
 @function: hideSlide
-@description: Es la función que oculta un Slide
+@description: Es la función que oculta un slide
 @param:
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function hideSlide(elemento) {
-  let SlideRef = elemento.parentElement.getAttribute('data-target');
-  let SlideContainer = document.getElementById(SlideRef);
-  if (SlideContainer != null) {
-    let SlideOptions = SlideContainer.getElementsByClassName("item");
-    let SlideOption = elemento.getAttribute('data-option');
-    let option = SlideOptions[SlideOption];
-    if (SlideOption != null && option != null) {
-      if (elemento.classList.contains("active")) {
-        elemento.classList.remove("active");
+  let tabRef = elemento.parentElement.getAttribute('data-target');
+  let tabContainer = document.getElementById(tabRef)
+  if (tabContainer != null) {
+    tabContainer = tabContainer.getElementsByClassName("content")[0];
+    if (tabContainer != null) {
+      let tabOptions = tabContainer.getElementsByClassName("item");
+      let tabOption = elemento.getAttribute('data-option');
+      let option = tabOptions[tabOption];
+      if (tabOption != null && option != null) {
+        if (elemento.classList.contains("active")) {
+          elemento.classList.remove("active");
+        }
+        option.style.removeProperty("position");
+        let box = option.getBoundingClientRect();
+        tabContainer.style.height = box.height + "px";
+        option.classList.add("hide-t");
+        if (option.classList.contains("show-t")) {
+          option.classList.remove("show-t");
+        }
+      } else {
+        //Error pendiente
+        showError(1, tabOption);
       }
-      if (option.classList.contains("show-s")) {
-        option.classList.remove("show-s");
-      }
-      option.classList.add("hide-s");
     } else {
-      //Error pendiente
-      showError(1, SlideOption);
+      showError(3, "content");
     }
   } else {
-    showError(1, SlideRef);
+    showError(1, tabRef);
   }
 }
 
 /*** 
 @author: Israel Trejo
 @function: toggleSlide
-@description: Es la función que alterna los Slides
+@description: Es la función que alterna los slide
 @param:
 ***/
 function toggleSlide() {
   if (!this.classList.contains("active")) {
     let parent = this.parentElement;
-    let listSlide = parent.getElementsByClassName("control active");
-    for (let x = 0; x < listSlide.length; x++) {
-      if (this.parentElement == listSlide[x].parentElement) {
-        hideSlide(listSlide[x]);
+    let listTab = parent.getElementsByClassName("control active");
+    for (let x = 0; x < listTab.length; x++) {
+      if (this.parentElement == listTab[x].parentElement) {
+        hideSlide(listTab[x]);
       }
     }
     showSlide(this);
-    // setTimeout(showSlide, 250, this);
   }
 }
 
 /***
  @author: Israel Trejo
  @function: toggleSlideItem
- @description: Es la función que administra la animación del Slide item
+ @description: Es la función que administra la animación del slide item
  @param:
 ***/
 function toggleSlideItem() {
-  if (this.classList.contains("show-s")) {
-    // this.style.position = "relative";
-    // this.style.opacity = 1;
-  } else if (this.classList.contains("hide-s")) {
-    // this.style.removeProperty("position");
+  if (this.classList.contains("show-t")) {
+    this.style.opacity = 1;
+    this.style.position = "relative";
+    this.parentElement.style.removeProperty("height");
+  } else if (this.classList.contains("hide-t")) {
     this.style.removeProperty("max-height");
     this.style.removeProperty("max-width");
-    // this.style.removeProperty("opacity");
+    this.style.removeProperty("opacity");
     this.style.padding = "initial";
   }
 }
-
 /*
   Obtención de elementos y Ejecución de funciones
 */

@@ -3,41 +3,20 @@
 ///@group: BitByDev
 
 ///Classes & Mixins used by bitSlides
-.slider
-  overflow: hidden
-
-  // & .controls
-  //   position: absolute
-  //   left: 50%
-  //   // margin-top: 75%
-  //   bottom: 0
-  //   transform: translate(-50%, 100%)
-
-  //   &.center
-  //     bottom: 50%
-  //     transform: translate(-50%, -50%)
-
-  //   &.top
-  //     margin-top: 0%
-    
-  // & .content
-  //   display: flex
-  //   height: auto
-  //   transition: all .5s ease
-
-  //   & .item
-  //     width: 100%
+.slide
+  width: 100%
+  box-sizing: content-box
 
   & .content
     position: relative
     width: 100%
-    height: 100%
+    transition: height .25s ease
 
     & .item
       position: absolute
       width: 100%
-      height: auto
       max-width: 0%
       max-height: 0%
-      // opacity: 0
+      opacity: 0
+      display: inline-block
     

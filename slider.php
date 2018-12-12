@@ -19,22 +19,23 @@
       <a href="index.php" class="btn red lg">Regresar a Inicio</a>
       <button id="blanco" class="btn grey lg">Cambiar a blanco</button>
       <button id="negro" class="btn blue-grey lg">Cambiar a negro</button>
+    </div>
+    <div class="bit-row">
       <div class="bit-col-100">
-        <div class="slider bit-col-100" id="mySlider">
+        <div class="btn-group" data-component="slide" data-target="mySlide">
+          <a data-option="0" class="btn red control item active">1</a>
+          <a data-option="1" class="btn red control item">2</a>
+          <a data-option="2" class="btn red control item active">3</a>
+          <a data-option="3" class="btn red control item">4</a>
+          <a data-option="4" class="btn red control item active">5</a>
+        </div>
+        <div class="bit-col-100 tab" id="mySlide">
           <div class="content">
-            <div style="height:500px;" class="item bg-red">Este es mi tab número 1</div>
-            <div style="height:500px;" class="item bg-blue">Este es mi tab número 2</div>
-            <div style="height:500px;" class="item bg-teal">Este es mi tab número 3</div>
-            <div style="height:500px;" class="item bg-yellow">Este es mi tab número 4</div>
-            <div style="height:500px;" class="item bg-green">Este es mi tab número 5</div>
-
-            <div class="btn-group controls" data-component="slide" data-target="mySlider">
-              <button data-option="0" class="control btn red">1</button>
-              <button data-option="1" class="control btn blue">2</button>
-              <button data-option="2" class="control btn teal">3</button>
-              <button data-option="3" class="control btn yellow">4</button>
-              <button data-option="4" class="control btn green">5</button>
-            </div>
+            <div class="item bg-teal"><p>Este es mi slide Numero 1</p></div>
+            <div class="item bg-red"><p>Este es mi slide Numero 2</p></div>
+            <div class="item bg-grey"><p>Este es mi slide Numero 3</p></div>
+            <div class="item bg-green"><p>Este es mi slide Numero 4</p></div>
+            <div class="item bg-blue"><p>Este es mi slide Numero 5</p></div>
           </div>
         </div>
       </div>

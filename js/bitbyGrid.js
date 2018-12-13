@@ -588,8 +588,10 @@ function showSlide(elemento) {
   let slideRef = elemento.parentElement.getAttribute('data-target');
   let slideContainer = document.getElementById(slideRef);
   if (slideContainer != null) {
+    let classes = getAnimationSlide(slideContainer.dataset.transition, "next");
     slideContainer = slideContainer.getElementsByClassName("content")[0];
     if (slideContainer != null) {
+      let slideParent = slideContainer.parentElement;
       let slideOptions = slideContainer.getElementsByClassName("item");
       let slideOption = elemento.getAttribute('data-option');
       let option = slideOptions[slideOption];
@@ -599,11 +601,20 @@ function showSlide(elemento) {
         option.style.maxWidth = 100 + "%";
         option.style.maxHeight = "initial";
         let box = option.getBoundingClientRect();
+        slideParent.style.height = box.height + "px";
         slideContainer.style.height = box.height + "px";
-        if (option.classList.contains("hide-t")) {
-          option.classList.remove("hide-t");
+        if (typeof classes.remove === 'undefined') {
+          if (option.classList.contains(classes.hide)) {
+            option.classList.remove(classes.hide);
+          }
+        }else{
+          for (let x = 0; x < classes.remove.length; x++) {
+            if (option.classList.contains(classes.remove[x])) {
+              option.classList.remove(classes.remove[x]);
+            }
+          }
         }
-        option.classList.add("show-t");
+        option.classList.add(classes.show);
       } else {
         //Error pendiente
         showError(1, slideOption);
@@ -625,10 +636,12 @@ function showSlide(elemento) {
 ***/
 function hideSlide(elemento) {
   let slideRef = elemento.parentElement.getAttribute('data-target');
-  let slideContainer = document.getElementById(slideRef)
+  let slideContainer = document.getElementById(slideRef);
   if (slideContainer != null) {
+    let classes = getAnimationSlide(slideContainer.dataset.transition, "next");
     slideContainer = slideContainer.getElementsByClassName("content")[0];
     if (slideContainer != null) {
+      let slideParent = slideContainer.parentElement
       let slideOptions = slideContainer.getElementsByClassName("item");
       let slideOption = elemento.getAttribute('data-option');
       let option = slideOptions[slideOption];
@@ -638,11 +651,20 @@ function hideSlide(elemento) {
         }
         option.style.removeProperty("position");
         let box = option.getBoundingClientRect();
+        slideParent.style.height = box.height + "px";
         slideContainer.style.height = box.height + "px";
-        option.classList.add("hide-t");
-        if (option.classList.contains("show-t")) {
-          option.classList.remove("show-t");
+        if (typeof classes.remove === 'undefined') {
+          if (option.classList.contains(classes.show)) {
+            option.classList.remove(classes.show);
+          }
+        } else {
+          for (let x = 0; x < classes.remove.length; x++) {
+            if (option.classList.contains(classes.remove[x])) {
+              option.classList.remove(classes.remove[x]);
+            }
+          }
         }
+        option.classList.add(classes.hide);
       } else {
         //Error pendiente
         showError(1, slideOption);
@@ -705,11 +727,11 @@ function toggleSlideIndicator(elemento) {
  @param:
 ***/
 function toggleSlideItem() {
-  if (this.classList.contains("show-t")) {
+  if (this.className.search("show") > -1) {
     this.style.opacity = 1;
     this.style.position = "relative";
     this.parentElement.style.removeProperty("height");
-  } else if (this.classList.contains("hide-t")) {
+  } else if (this.className.search("hide") > -1) {
     this.style.removeProperty("max-height");
     this.style.removeProperty("max-width");
     this.style.removeProperty("opacity");
@@ -727,6 +749,7 @@ function nextSlide() {
   let slideRef = this.getAttribute('data-target');
   let slideContainer = document.getElementById(slideRef);
   if (slideContainer != null) {
+    let classes = getAnimationSlide(slideContainer.dataset.transition, "next");
     let slideIndicator = slideContainer.getElementsByClassName("indicators")[0];
     if (slideIndicator != null) {
       slideContainer = slideContainer.getElementsByClassName("content")[0];
@@ -743,16 +766,26 @@ function nextSlide() {
       }
     } else {
       slideContainer = slideContainer.getElementsByClassName("content")[0];
+      let slideParent = slideContainer.parentElement;
       if (slideContainer != null) {
         let refActual = slideContainer.dataset.actual;
         let slideActual = slideContainer.children[refActual];
         slideActual.style.removeProperty("position");
         let box = slideActual.getBoundingClientRect();
+        slideParent.style.height = box.height + "px";
         slideContainer.style.height = box.height + "px";
-        slideActual.classList.add("hide-t");
-        if (slideActual.classList.contains("show-t")) {
-          slideActual.classList.remove("show-t");
+        if (typeof classes.remove === 'undefined') {
+          if (slideActual.classList.contains(slideActual.show)) {
+            slideActual.classList.remove(slideActual.show);
+          }
+        } else {
+          for (let x = 0; x < classes.remove.length; x++) {
+            if (slideActual.classList.contains(classes.remove[x])) {
+              slideActual.classList.remove(classes.remove[x]);
+            }
+          }
         }
+        slideActual.classList.add(classes.hide);
 
         refActual++;
         if (refActual >= slideContainer.children.length) {
@@ -763,11 +796,20 @@ function nextSlide() {
         slideActual.style.maxWidth = 100 + "%";
         slideActual.style.maxHeight = "initial";
         box = slideActual.getBoundingClientRect();
+        slideParent.style.height = box.height + "px";
         slideContainer.style.height = box.height + "px";
-        if (slideActual.classList.contains("hide-t")) {
-          slideActual.classList.remove("hide-t");
+        if (typeof classes.remove === 'undefined') {
+          if (slideActual.classList.contains(slideActual.hide)) {
+            slideActual.classList.remove(slideActual.hide);
+          }
+        } else {
+          for (let x = 0; x < classes.remove.length; x++) {
+            if (slideActual.classList.contains(classes.remove[x])) {
+              slideActual.classList.remove(classes.remove[x]);
+            }
+          }
         }
-        slideActual.classList.add("show-t");
+        slideActual.classList.add(classes.show);
 
         slideContainer.dataset.actual = refActual;
       } else {
@@ -789,6 +831,7 @@ function prevSlide() {
   let slideRef = this.getAttribute('data-target');
   let slideContainer = document.getElementById(slideRef);
   if (slideContainer != null) {
+    let classes = getAnimationSlide(slideContainer.dataset.transition, "prev");
     let slideIndicator = slideContainer.getElementsByClassName("indicators")[0];
     if (slideIndicator != null) {
       slideContainer = slideContainer.getElementsByClassName("content")[0];
@@ -811,10 +854,18 @@ function prevSlide() {
         slideActual.style.removeProperty("position");
         let box = slideActual.getBoundingClientRect();
         slideContainer.style.height = box.height + "px";
-        slideActual.classList.add("hide-t");
-        if (slideActual.classList.contains("show-t")) {
-          slideActual.classList.remove("show-t");
+        if (typeof classes.remove === 'undefined') {
+          if (slideActual.classList.contains(slideActual.show)) {
+            slideActual.classList.remove(slideActual.show);
+          }
+        } else {
+          for (let x = 0; x < classes.remove.length; x++) {
+            if (slideActual.classList.contains(classes.remove[x])) {
+              slideActual.classList.remove(classes.remove[x]);
+            }
+          }
         }
+        slideActual.classList.add(classes.hide);
 
         refActual--;
         if (refActual < 0) {
@@ -826,10 +877,18 @@ function prevSlide() {
         slideActual.style.maxHeight = "initial";
         box = slideActual.getBoundingClientRect();
         slideContainer.style.height = box.height + "px";
-        if (slideActual.classList.contains("hide-t")) {
-          slideActual.classList.remove("hide-t");
+        if (typeof classes.remove === 'undefined') {
+          if (slideActual.classList.contains(slideActual.hide)) {
+            slideActual.classList.remove(slideActual.hide);
+          }
+        } else {
+          for (let x = 0; x < classes.remove.length; x++) {
+            if (slideActual.classList.contains(classes.remove[x])) {
+              slideActual.classList.remove(classes.remove[x]);
+            }
+          }
         }
-        slideActual.classList.add("show-t");
+        slideActual.classList.add(classes.show);
 
         slideContainer.dataset.actual = refActual;
       } else {
@@ -839,6 +898,72 @@ function prevSlide() {
   } else {
     showError(1, slideRef);
   }
+}
+
+/*** 
+@author: Israel Trejo
+@function: getAnimationSlide
+@description: Es una función que retorna las clases CSS con animación que debe tener un slide en base a la transition definida por el desarrollador
+@param:
+  @var transition: String obtenido del dataset del slide
+  @var action: String que indica si se desea el siguiente elemento o el elemento anterior
+@returns:
+  @var classTransition: Objeto con las clases CSS que tienen las animaciones necesarias
+***/
+function getAnimationSlide(transition, action = "next"){
+  let classTransition = {hide: "hide-t", show: "show-t"};
+  if(typeof transition !== 'undefined'){
+    switch (transition) {
+      case "horizontal":
+        if (action == "next") {
+          classTransition = { 
+            hide: "hide-next-slide-horizontal", 
+            show: "show-next-slide-horizontal", 
+            remove: [
+              "hide-next-slide-horizontal", "show-next-slide-horizontal",
+              "hide-prev-slide-horizontal", "show-prev-slide-horizontal"
+            ]
+          };
+        } else {
+          classTransition = { 
+            hide: "hide-prev-slide-horizontal", 
+            show: "show-prev-slide-horizontal",
+            remove: [
+              "hide-next-slide-horizontal", "show-next-slide-horizontal",
+              "hide-prev-slide-horizontal", "show-prev-slide-horizontal"
+            ]
+          };
+        }
+        break;
+
+      case "vertical":
+        if (action == "next") {
+          classTransition = { 
+            hide: "hide-next-slide-vertical", 
+            show: "show-next-slide-vertical",
+            remove: [
+              "hide-next-slide-vertical", "show-next-slide-vertical",
+              "hide-prev-slide-vertical", "show-prev-slide-vertical"
+            ]
+          };
+        } else {
+          classTransition = { 
+            hide: "hide-prev-slide-vertical",
+            show: "show-prev-slide-vertical",
+            remove: [
+              "hide-next-slide-vertical", "show-next-slide-vertical",
+              "hide-prev-slide-vertical", "show-prev-slide-vertical"
+            ]
+          };
+        }
+        break;
+
+      case "fade":
+      default:
+        break;
+    }
+  }
+  return classTransition
 }
 
 /*
@@ -936,34 +1061,101 @@ document.onreadystatechange = () => {
             break;
 
           case "slide":
-            x = e.children;
-            if (e.getElementsByClassName("active").length < 1 && x.length > 0) {
-              x[0].classList.add("active");
-            }
-            for (let i = 0; i < x.length; i++) {
-              y = x[i];
-              y.addEventListener("click", toggleSlide, false);
-              if (y.classList.contains("active")) {
-                y.classList.remove("active");
-                y.click();
-              }
+            if (e.classList.contains("auto")) {
+              e.addEventListener("click", nextSlide, false);
               m = document.getElementById(e.dataset.target);
               if (m != null) {
                 m = m.getElementsByClassName("content")[0];
                 if (m != null) {
-                  n = m.children[y.dataset.option];
-                  if (n != null) {
-                    n.addEventListener("animationend", toggleSlideItem, false);
-                  } else {
-                    //Error pendiente
-                    showError(1, e.dataset.target);
+                  for (let a = 0; a < m.children.length; a++) {
+                    n = m.children[a];
+                    if (n != null) {
+                      n.addEventListener("animationend", toggleSlideItem, false);
+                    } else {
+                      //Error pendiente
+                      showError(1, e.dataset.target);
+                    }
                   }
+                  m.dataset.actual = m.children.length;
+                  m.dataset.actual--;
+                  let duration;
+                  if (typeof e.dataset.duration === 'undefined') {
+                    duration = 3000;
+                  } else {
+                    duration = parseInt(e.dataset.duration);
+                  }
+                  setInterval(function () {
+                    e.click();
+                  }, duration);
                 } else {
                   //error pendiente de no hijos
                   showError(3, "content");
                 }
               } else {
                 showError(1, e.dataset.target);
+              }
+            } else if(e.classList.contains("auto-reverse")) {
+              e.addEventListener("click", prevSlide, false);
+              m = document.getElementById(e.dataset.target);
+              if (m != null) {
+                m = m.getElementsByClassName("content")[0];
+                if (m != null) {
+                  for (let a = 0; a < m.children.length; a++) {
+                    n = m.children[a];
+                    if (n != null) {
+                      n.addEventListener("animationend", toggleSlideItem, false);
+                    } else {
+                      //Error pendiente
+                      showError(1, e.dataset.target);
+                    }
+                  }
+                  m.dataset.actual = 1;
+                  let duration;
+                  if (typeof e.dataset.duration === 'undefined') {
+                    duration = 3000;
+                  } else {
+                    duration = parseInt(e.dataset.duration);
+                  }
+                  setInterval(function () {
+                    e.click();
+                  }, duration);
+                } else {
+                  //error pendiente de no hijos
+                  showError(3, "content");
+                }
+              } else {
+                showError(1, e.dataset.target);
+              }
+            } else {
+              x = e.children;
+              if (e.getElementsByClassName("active").length < 1 && x.length > 0) {
+                x[0].classList.add("active");
+              }
+              for (let i = 0; i < x.length; i++) {
+                y = x[i];
+                y.addEventListener("click", toggleSlide, false);
+                if (y.classList.contains("active")) {
+                  y.classList.remove("active");
+                  y.click();
+                }
+                m = document.getElementById(e.dataset.target);
+                if (m != null) {
+                  m = m.getElementsByClassName("content")[0];
+                  if (m != null) {
+                    n = m.children[y.dataset.option];
+                    if (n != null) {
+                      n.addEventListener("animationend", toggleSlideItem, false);
+                    } else {
+                      //Error pendiente
+                      showError(1, e.dataset.target);
+                    }
+                  } else {
+                    //error pendiente de no hijos
+                    showError(3, "content");
+                  }
+                } else {
+                  showError(1, e.dataset.target);
+                }
               }
             }
             break;

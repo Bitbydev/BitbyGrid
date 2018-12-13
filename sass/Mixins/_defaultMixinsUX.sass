@@ -15,4 +15,15 @@
 
   @if map-get($modals, 'colors') == true
     +createColorsModal($nameModal, $totalColors)
+
+///Processes to generate the BitbyGrid tabs
+@if map-get($tabs, 'create') == true
+  +createBaseTab($nameTab)
+
+///Processes to generate the BitbyGrid slides
+@if map-get($slides, 'create') == true
+  +createBaseSlide($nameSlide)
+
+  @if map-get($slides, 'colors') == true
+    +createColorsIndicator($nameSlide, $totalColors)
     

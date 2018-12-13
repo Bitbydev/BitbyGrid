@@ -3,92 +3,116 @@
 ///@group: BitByDev
 
 ///Classes & Mixins used by bitSlides
-.slide
-  width: 100%
-  position: relative
-
-  & .content
+=createBaseSlide($nameSlide)
+  .#{$nameSlide}
+    width: 100%
     position: relative
-    width: 100%
-    transition: height .25s ease
 
-    & .item
-      position: absolute
+    & .container
       width: 100%
-      max-width: 0%
-      max-height: 0%
-      opacity: 0
-      display: inline-block
-    
-  & .indicators
-    width: 100%
-    position: absolute
-    display: flex
-    bottom: 0
-    justify-content: center
-    z-index: 1000
+      overflow: hidden
+      position: relative
 
-    & .item
-      background-color: #BDBDBD
-      margin: .5em .2em
-      border: .01em solid #BCBCBC
-      box-sizing: content-box
-      padding: .35em
+    & .content
+      position: relative
+      width: 100%
+      transition: height .25s ease
 
-      &:hover
-        background-color: #CCC
-
-      &.active,
-      &.active:hover
-        background-color: #FFF
-
-    &.lg
       & .item
-        padding: .5em
+        position: absolute
+        width: 100%
+        max-width: 0%
+        max-height: 0%
+        opacity: 0
+        display: inline-block
+      
+    & .indicators
+      width: 100%
+      position: absolute
+      display: flex
+      bottom: 0
+      justify-content: center
+      z-index: 1000
 
-    &.xl
       & .item
-        padding: .75em
+        background-color: #BDBDBD
+        margin: .5em .2em
+        border: .01em solid #BCBCBC
+        box-sizing: content-box
+        padding: .35em
 
-    &.line
-      & .item
-        padding: .12em 1em
+        &:hover
+          background-color: #CCC
+
+        &.active,
+        &.active:hover
+          background-color: #FFF
 
       &.lg
         & .item
-          padding: .24em 1.5em
+          padding: .5em
 
       &.xl
         & .item
-          padding: .36em 2em
+          padding: .75em
 
-    &.circle
-      & .item
-        border-radius: 100%
+      &.line
+        & .item
+          padding: .12em 1em
 
-  & .next,
-  & .prev
-    position: absolute
-    display: flex
-    top: 0
-    bottom: 0
-    justify-content: center
-    align-items: center
-    cursor: pointer
-    z-index: 1000
-    opacity: .5
+        &.lg
+          & .item
+            padding: .24em 1.5em
+
+        &.xl
+          & .item
+            padding: .36em 2em
+
+      &.circle
+        & .item
+          border-radius: 100%
+
+    & .next,
+    & .prev
+      position: absolute
+      display: flex
+      top: 0
+      bottom: 0
+      justify-content: center
+      align-items: center
+      cursor: pointer
+      z-index: 1000
+      opacity: .5
+
+      &:hover
+        opacity: 1
+
+    & .next
+      right: 0
+
+      &.out
+        transform: translateX(100%)
+
+    & .prev
+      left: 0
+
+      &.out
+        transform: translateX(-100%)
+
+=createColorIndicator($nameSlide, $nameColor, $color)
+  .#{$nameSlide} .indicators.#{$nameColor} .item
+    background-color: map-get($color, 'primary-color')
+    border-color: map-get($color, 'primary-color-dark')
 
     &:hover
-      opacity: 1
+      background-color: map-get($color, 'primary-color-light')
 
-  & .next
-    right: 0
+    &.active,
+    &.active:hover
+      background-color: map-get($color, 'accent-color')
 
-    &.out
-      transform: translateX(100%)
-
-  & .prev
-    left: 0
-
-    &.out
-      transform: translateX(-100%)
+///Mixin to create all the colors of the modals.
+=createColorsIndicator($nameSlide, $colors)
+  $keysColors: map-keys($colors)
+  @each $color in $keysColors
+    +createColorIndicator($nameSlide, $color, map-get($colors, $color))

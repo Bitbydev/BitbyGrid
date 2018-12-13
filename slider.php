@@ -29,21 +29,23 @@
           <div class="next" data-component="slide-control-next" data-target="mySlide">
             <button class="btn red-outline">&gt;</button>
           </div>
-          <div class="content">
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=0" alt="">
-            </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=1" alt="">
-            </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=2" alt="">
-            </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=3" alt="">
-            </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=4" alt="">
+          <div class="container">
+            <div class="content">
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=0" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=1" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=2" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=3" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=4" alt="">
+              </div>
             </div>
           </div>
           <div class="indicators" data-component="slide" data-target="mySlide">
@@ -59,29 +61,105 @@
 
     <div class="bit-row">
       <div class="bit-col-100">
-        <div class="bit-col-100 slide" id="mySlide2">
+        <div class="bit-col-100 slide" id="mySlide2" data-transition="horizontal">
           <div class="prev out" data-component="slide-control-prev" data-target="mySlide2">
             <button class="btn red-outline">&lt;</button>
           </div>
           <div class="next out" data-component="slide-control-next" data-target="mySlide2">
             <button class="btn red-outline">&gt;</button>
           </div>
-          <div class="content">
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=7" alt="">
+          <div class="container">
+            <div class="content">
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=7" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=8" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=9" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=6" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=5" alt="">
+              </div>
             </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=8" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bit-row">
+      <div class="bit-col-100">
+        <div class="bit-col-100 slide" id="mySlide3" data-transition="horizontal">
+          <div class="prev out" data-component="slide-control-prev" data-target="mySlide3">
+            <button class="btn red">&lt;</button>
+          </div>
+          <div class="next out" data-component="slide-control-next" data-target="mySlide3">
+            <button class="btn red">&gt;</button>
+          </div>
+          <div class="container">
+            <div class="content">
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=2" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=4" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=6" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=8" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=10" alt="">
+              </div>
             </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=9" alt="">
+          </div>
+
+          <div class="indicators circle" data-component="slide" data-target="mySlide3">
+            <a data-option="0" class="item control"></a>
+            <a data-option="1" class="item control"></a>
+            <a data-option="2" class="item control"></a>
+            <a data-option="3" class="item control"></a>
+            <a data-option="4" class="item control"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bit-row">
+      <div class="bit-col-100">
+        <div class="bit-col-100 slide auto" id="mySlide4" data-component="slide" data-target="mySlide4" data-transition="horizontal" data-duration="3000">
+          <div class="container">
+            <div class="content">
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=2" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=4" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=6" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=8" alt="">
+              </div>
+              <div class="item">
+                <img src="https://picsum.photos/2000/800/?image=10" alt="">
+              </div>
             </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=6" alt="">
-            </div>
-            <div class="item">
-              <img src="https://picsum.photos/2000/800/?image=5" alt="">
-            </div>
+          </div>
+
+          <div class="indicators circle" data-component="slide" data-target="mySlide4">
+            <a data-option="0" class="item control"></a>
+            <a data-option="1" class="item control"></a>
+            <a data-option="2" class="item control"></a>
+            <a data-option="3" class="item control"></a>
+            <a data-option="4" class="item control"></a>
           </div>
         </div>
       </div>

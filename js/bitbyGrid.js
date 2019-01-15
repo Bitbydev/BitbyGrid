@@ -89,17 +89,17 @@ function showDrop(elemento) {
     }
     menu.classList.add("show");
     elemento.classList.add("active");
-  }else{
+  } else {
     showError(1, menuRef);
   }
 }
 
- /***
-  @author: Israel Trejo
-  @function: hideDrop
-  @description: Oculta el drop
-  @param: 
-    @var elemento: Es el objeto del DOM que recibe la función.
+/***
+ @author: Israel Trejo
+ @function: hideDrop
+ @description: Oculta el drop
+ @param: 
+   @var elemento: Es el objeto del DOM que recibe la función.
 ***/
 function hideDrop(menu) {
   if (menu != null) {
@@ -107,16 +107,16 @@ function hideDrop(menu) {
       menu.classList.remove("show");
     }
     menu.classList.add("hide");
-  }else{
+  } else {
     showError(1, menu);
   }
 }
 
- /***
-  @author: Israel Trejo
-  @function: toggleDrop
-  @description: Es la función que intercambia la visibilidad del drop menu
-  @param:
+/***
+ @author: Israel Trejo
+ @function: toggleDrop
+ @description: Es la función que intercambia la visibilidad del drop menu
+ @param:
 ***/
 function toggleDrop() {
   let listDrop = document.getElementsByClassName("drop-menu show");
@@ -151,11 +151,11 @@ function toggleDropMenu() {
   }
 }
 
- /***
-  @author: Israel Trejo
-  @function: hideModal
-  @description: Es la función que oculta el modal
-  @param: 
+/***
+ @author: Israel Trejo
+ @function: hideModal
+ @description: Es la función que oculta el modal
+ @param: 
 ***/
 function hideModal() {
   let dismiss = this.getAttribute("data-dismiss");
@@ -174,18 +174,18 @@ function hideModal() {
       } else {
         child = parent;
         parent = parent.parentNode;
-        if(parent == null){
+        if (parent == null) {
           flag = true;
           showError(2, child.nodeName);
         }
         contador++;
       }
-      if(contador >= 10){
+      if (contador >= 10) {
         flag = true;
         showError(4, dismiss);
       }
     } while (flag == false);
-  }else{
+  } else {
     showError(3, dismiss);
   }
 }
@@ -200,12 +200,12 @@ function showModal() {
   let modalRef = this.getAttribute('data-target');
   let modal = document.getElementById(modalRef);
   if (modal != null) {
-    if(modal.classList.contains("hide")){
+    if (modal.classList.contains("hide")) {
       modal.classList.remove("hide");
     }
-    modal.style.maxWidth = 100+"%";
+    modal.style.maxWidth = 100 + "%";
     modal.classList.add("show");
-  }else{
+  } else {
     showError(1, modalRef);
   }
 }
@@ -216,8 +216,8 @@ function showModal() {
  @description: Es la función que administra la animación del modal
  @param:
 ***/
-function toggleModal(){
-  if(this.classList.contains("show")){
+function toggleModal() {
+  if (this.classList.contains("show")) {
     this.style.opacity = 1;
   } else if (this.classList.contains("hide")) {
     this.style.maxWidth = 0;
@@ -232,7 +232,7 @@ function toggleModal(){
 @param:
     @var elemento: Es el objeto del DOM que recibe la función.
 ***/
-function showTab(elemento){
+function showTab(elemento) {
   let tabRef = elemento.parentElement.getAttribute('data-target');
   let tabContainer = document.getElementById(tabRef);
   if (tabContainer != null) {
@@ -256,10 +256,10 @@ function showTab(elemento){
         //Error pendiente
         showError(1, tabOption);
       }
-    }else{
+    } else {
       showError(3, "content");
     }
-  }else{
+  } else {
     showError(1, tabRef);
   }
 }
@@ -295,7 +295,7 @@ function hideTab(elemento) {
         //Error pendiente
         showError(1, tabOption);
       }
-    }else{
+    } else {
       showError(3, "content");
     }
   } else {
@@ -310,10 +310,10 @@ function hideTab(elemento) {
 @param:
 ***/
 function toggleTab() {
-  if(!this.classList.contains("active")){
+  if (!this.classList.contains("active")) {
     let parent = this.parentElement;
     let listTab = parent.getElementsByClassName("control active");
-    for(let x = 0; x < listTab.length; x++){
+    for (let x = 0; x < listTab.length; x++) {
       if (this.parentElement == listTab[x].parentElement) {
         hideTab(listTab[x]);
       }
@@ -370,9 +370,9 @@ function hideCollapse(elemento) {
   let collapse = document.getElementById(colRef);
   if (collapse != null) {
     collapse.classList.add("collapse");
-    if(collapse.getAttribute("data-component") == "collapse"){
+    if (collapse.getAttribute("data-component") == "collapse") {
       let target = document.getElementById(collapse.getAttribute("data-target"));
-      if (target != null && target.classList.contains("collapse") == false){
+      if (target != null && target.classList.contains("collapse") == false) {
         hideCollapse(collapse);
       }
     }
@@ -391,9 +391,9 @@ function toggleCollapse() {
   let colRef = this.getAttribute('data-target');
   let collapse = document.getElementById(colRef);
   if (collapse != null) {
-    if(collapse.classList.contains("collapse")){
+    if (collapse.classList.contains("collapse")) {
       showCollapse(this);
-    }else{
+    } else {
       hideCollapse(this);
     }
   } else {
@@ -401,14 +401,14 @@ function toggleCollapse() {
   }
 }
 
- /***
-  @author: Israel Trejo
-  @function: autocomplete
-  @description: Función que genera un menú de autocompletado
-  @param: 
-    @var name: ID del elemento del DOM que detectará la escritura.
-    @var arr: Arreglo de palabras que serán revisadas para el autocompletado.
-    @var options: JSON para cambiar las clases del contenedor y de los items.
+/***
+ @author: Israel Trejo
+ @function: autocomplete
+ @description: Función que genera un menú de autocompletado
+ @param: 
+   @var name: ID del elemento del DOM que detectará la escritura.
+   @var arr: Arreglo de palabras que serán revisadas para el autocompletado.
+   @var options: JSON para cambiar las clases del contenedor y de los items.
 ***/
 //Arreglo de prueba
 var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua &amp; Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia &amp; Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre &amp; Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts &amp; Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad &amp; Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks &amp; Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
@@ -416,8 +416,8 @@ function autocomplete(name, arr, options = null) {
   let element = document.getElementById(name);
   if (element != null) {
     var elementCurrent;
-    if(options == null){
-      options = {container: "list-group hover", item: "item"};
+    if (options == null) {
+      options = { container: "list-group hover", item: "item" };
     }
 
     element.addEventListener("input", function () {
@@ -431,10 +431,10 @@ function autocomplete(name, arr, options = null) {
       divList.setAttribute("id", this.id + "-list");
       divList.setAttribute("class", options.container + " autocomplete");
       let position = element.getBoundingClientRect();
-      divList.style.width = position.width+"px";
-      divList.style.top = position.height + position.top+"px";
+      divList.style.width = position.width + "px";
+      divList.style.top = position.height + position.top + "px";
       console.log();
-      divList.style.marginTop = element.style.marginBottom+"px";
+      divList.style.marginTop = element.style.marginBottom + "px";
       this.parentNode.appendChild(divList);
       for (count = 0; count < arr.length; count++) {
         var str = arr[count];
@@ -512,19 +512,19 @@ function autocomplete(name, arr, options = null) {
     document.addEventListener("click", function (e) {
       closeLists(e.target);
     });
-  }else{
+  } else {
     showError(1, name);
   }
 }
 
- /***
-  @author: Israel Trejo
-  @function: labelCreator
-  @description: Función que genera un contenedor con etiquetas dinamicas
-  @param: 
-    @var name: Nombre del elemento del DOM que detectará la escritura.
-    @var options: JSON para cambiar las clases del contenedor y de los items.
-***/  
+/***
+ @author: Israel Trejo
+ @function: labelCreator
+ @description: Función que genera un contenedor con etiquetas dinamicas
+ @param: 
+   @var name: Nombre del elemento del DOM que detectará la escritura.
+   @var options: JSON para cambiar las clases del contenedor y de los items.
+***/
 function labelCreator(name, options = null) {
   let element = document.getElementById(name);
   if (element != null) {
@@ -540,7 +540,7 @@ function labelCreator(name, options = null) {
         data = val.substr(0, length - 1);
         let container = document.getElementById(target);
         if (container != null) {
-          if(container.classList.contains("label-creator") == false){
+          if (container.classList.contains("label-creator") == false) {
             container.classList.add("label-creator");
           }
           let item = document.createElement(options.element);
@@ -548,11 +548,11 @@ function labelCreator(name, options = null) {
           item.setAttribute("class", options.item);
           container.appendChild(item);
           element.value = "";
-        }else{
+        } else {
           showError(1, target);
         }
       }
-    } , false);
+    }, false);
 
     element.addEventListener("change", function () {
       val = this.value;
@@ -571,8 +571,8 @@ function labelCreator(name, options = null) {
       } else {
         showError(1, target);
       }
-    } , false);
-  }else{
+    }, false);
+  } else {
     showError(1, name);
   }
 }
@@ -607,7 +607,7 @@ function showSlide(elemento) {
           if (option.classList.contains(classes.hide)) {
             option.classList.remove(classes.hide);
           }
-        }else{
+        } else {
           for (let x = 0; x < classes.remove.length; x++) {
             if (option.classList.contains(classes.remove[x])) {
               option.classList.remove(classes.remove[x]);
@@ -715,7 +715,7 @@ function toggleSlideIndicator(elemento) {
       }
       showSlide(elemento);
     }
-  }else{
+  } else {
     //error
   }
 }
@@ -838,7 +838,7 @@ function prevSlide() {
       if (slideContainer != null) {
         let refActual = slideContainer.dataset.actual;
         refActual--;
-        if (refActual < 0 ) {
+        if (refActual < 0) {
           refActual = slideContainer.children.length;
         }
         toggleSlideIndicator(slideIndicator.children[refActual]);
@@ -910,23 +910,23 @@ function prevSlide() {
 @returns:
   @var classTransition: Objeto con las clases CSS que tienen las animaciones necesarias
 ***/
-function getAnimationSlide(transition, action = "next"){
-  let classTransition = {hide: "hide-t", show: "show-t"};
-  if(typeof transition !== 'undefined'){
+function getAnimationSlide(transition, action = "next") {
+  let classTransition = { hide: "hide-t", show: "show-t" };
+  if (typeof transition !== 'undefined') {
     switch (transition) {
       case "horizontal":
         if (action == "next") {
-          classTransition = { 
-            hide: "hide-next-slide-horizontal", 
-            show: "show-next-slide-horizontal", 
+          classTransition = {
+            hide: "hide-next-slide-horizontal",
+            show: "show-next-slide-horizontal",
             remove: [
               "hide-next-slide-horizontal", "show-next-slide-horizontal",
               "hide-prev-slide-horizontal", "show-prev-slide-horizontal"
             ]
           };
         } else {
-          classTransition = { 
-            hide: "hide-prev-slide-horizontal", 
+          classTransition = {
+            hide: "hide-prev-slide-horizontal",
             show: "show-prev-slide-horizontal",
             remove: [
               "hide-next-slide-horizontal", "show-next-slide-horizontal",
@@ -938,8 +938,8 @@ function getAnimationSlide(transition, action = "next"){
 
       case "vertical":
         if (action == "next") {
-          classTransition = { 
-            hide: "hide-next-slide-vertical", 
+          classTransition = {
+            hide: "hide-next-slide-vertical",
             show: "show-next-slide-vertical",
             remove: [
               "hide-next-slide-vertical", "show-next-slide-vertical",
@@ -947,7 +947,7 @@ function getAnimationSlide(transition, action = "next"){
             ]
           };
         } else {
-          classTransition = { 
+          classTransition = {
             hide: "hide-prev-slide-vertical",
             show: "show-prev-slide-vertical",
             remove: [
@@ -983,7 +983,7 @@ document.onreadystatechange = () => {
     //Listener de todos los elementos de BitbyUx
     var bitbyux = document.querySelectorAll("*[data-component], *[data-dismiss]");
     // console.log(window);
-    for(let i = 0; i < bitbyux.length; i++){
+    for (let i = 0; i < bitbyux.length; i++) {
       let m, n, x, y;
       let e = bitbyux[i];
       let c = e.dataset.component;
@@ -1062,7 +1062,8 @@ document.onreadystatechange = () => {
 
           case "slide":
             if (e.classList.contains("auto")) {
-              e.addEventListener("click", nextSlide, false);
+              var event = new CustomEvent("changeSlide", null);
+              e.addEventListener("changeSlide", nextSlide, false);
               m = document.getElementById(e.dataset.target);
               if (m != null) {
                 m = m.getElementsByClassName("content")[0];
@@ -1085,7 +1086,7 @@ document.onreadystatechange = () => {
                     duration = parseInt(e.dataset.duration);
                   }
                   setInterval(function () {
-                    e.click();
+                    e.dispatchEvent(event);
                   }, duration);
                 } else {
                   //error pendiente de no hijos
@@ -1094,8 +1095,9 @@ document.onreadystatechange = () => {
               } else {
                 showError(1, e.dataset.target);
               }
-            } else if(e.classList.contains("auto-reverse")) {
-              e.addEventListener("click", prevSlide, false);
+            } else if (e.classList.contains("auto-reverse")) {
+              var event = new CustomEvent("changeSlide", null);
+              e.addEventListener("changeSlide", prevSlide, false);
               m = document.getElementById(e.dataset.target);
               if (m != null) {
                 m = m.getElementsByClassName("content")[0];
@@ -1117,7 +1119,7 @@ document.onreadystatechange = () => {
                     duration = parseInt(e.dataset.duration);
                   }
                   setInterval(function () {
-                    e.click();
+                    e.dispatchEvent(event);
                   }, duration);
                 } else {
                   //error pendiente de no hijos
@@ -1216,12 +1218,12 @@ document.onreadystatechange = () => {
             break;
 
           default:
-              console.log("Valor no valido: " + c);
-              break;
+            console.log("Valor no valido: " + c);
+            break;
         }
-      }else{
+      } else {
         c = e.dataset.dismiss;
-        switch(c){
+        switch (c) {
           case "modal":
             e.addEventListener("click", hideModal, false);
             break;
@@ -1244,7 +1246,7 @@ document.onreadystatechange = () => {
  @description: Es la función que se encarga de mostrar todos los errores que se generan por el uso incorrecto de BitbyGrid
  @param:
 ***/
-function showError(tipoError, elemento){
+function showError(tipoError, elemento) {
   if (debugMode == true) {
     switch (tipoError) {
       case 1:
@@ -1264,8 +1266,8 @@ function showError(tipoError, elemento){
         break;
 
       default:
-       console.log("Error 0: Esta accediendo de manera incorrecta al núcleo de errores.");
-       break;
+        console.log("Error 0: Esta accediendo de manera incorrecta al núcleo de errores.");
+        break;
     }
   }
 }

@@ -238,7 +238,14 @@ function showTab(elemento) {
   if (tabContainer != null) {
     tabContainer = tabContainer.getElementsByClassName("content")[0];
     if (tabContainer != null) {
+      let tabTmp = [];
       let tabOptions = tabContainer.getElementsByClassName("item");
+      for (let x = 0; x < tabOptions.length; x++) {
+        if (tabOptions[x].parentNode === tabContainer) {
+          tabTmp.push(tabOptions[x]);
+        }
+      }
+      tabOptions = tabTmp;
       let tabOption = elemento.getAttribute('data-option');
       let option = tabOptions[tabOption];
       if (tabOption != null && option != null) {
@@ -277,7 +284,14 @@ function hideTab(elemento) {
   if (tabContainer != null) {
     tabContainer = tabContainer.getElementsByClassName("content")[0];
     if (tabContainer != null) {
+      let tabTmp = [];
       let tabOptions = tabContainer.getElementsByClassName("item");
+      for (let x = 0; x < tabOptions.length; x++) {
+        if (tabOptions[x].parentNode === tabContainer) {
+          tabTmp.push(tabOptions[x]);
+        }
+      }
+      tabOptions = tabTmp;
       let tabOption = elemento.getAttribute('data-option');
       let option = tabOptions[tabOption];
       if (tabOption != null && option != null) {
@@ -592,7 +606,14 @@ function showSlide(elemento) {
     slideContainer = slideContainer.getElementsByClassName("content")[0];
     if (slideContainer != null) {
       let slideParent = slideContainer.parentElement;
+      let slideTmp = [];
       let slideOptions = slideContainer.getElementsByClassName("item");
+      for (let x = 0; x < slideOptions.length; x++) {
+        if (slideOptions[x].parentNode === slideContainer) {
+          slideTmp.push(slideOptions[x]);
+        }
+      }
+      slideOptions = slideTmp;
       let slideOption = elemento.getAttribute('data-option');
       let option = slideOptions[slideOption];
       if (slideOption != null && option != null) {
@@ -641,8 +662,15 @@ function hideSlide(elemento) {
     let classes = getAnimationSlide(slideContainer.dataset.transition, "next");
     slideContainer = slideContainer.getElementsByClassName("content")[0];
     if (slideContainer != null) {
-      let slideParent = slideContainer.parentElement
+      let slideParent = slideContainer.parentElement;
+      let slideTmp = [];
       let slideOptions = slideContainer.getElementsByClassName("item");
+      for (let x = 0; x < slideOptions.length; x++) {
+        if (slideOptions[x].parentNode === slideContainer) {
+          slideTmp.push(slideOptions[x]);
+        }
+      }
+      slideOptions = slideTmp;
       let slideOption = elemento.getAttribute('data-option');
       let option = slideOptions[slideOption];
       if (slideOption != null && option != null) {
